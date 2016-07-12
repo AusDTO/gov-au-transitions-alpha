@@ -52,22 +52,25 @@
       return query_string;
     },
 
+    initMapAutocomplete: function () {
+      var input = document.querySelectorAll(".autocomplete-address");
+
+      this.setMapAutocomplete(input[0]);
+    },
+
     /**
      * Sets the map autocomplete functionality for the page if the correct
      * selector exists. At the moment just sets the firs selector if finds.
      **/
-    setMapAutocomplete: function () {
-      var input = document.querySelectorAll(".autocomplete-address"),
-        autocomplete;
+    setMapAutocomplete: function (input) {
+      var autocomplete;
 
-      if (input.length) {
-        autocomplete = new google.maps.places.Autocomplete(input[0], {
-          types: [/*'(cities)',*/ '(regions)'],
-          componentRestrictions: {'country': 'au'}
-        });
-        if (input[0].getAttribute("data-addmore") === "true") {
-          autocomplete.addListener('place_changed', this.addMore.bind(this, input[0]));
-        }
+      autocomplete = new google.maps.places.Autocomplete(input, {
+        types: [/*'(cities)',*/ '(regions)'],
+        componentRestrictions: {'country': 'au'}
+      });
+      if (input.getAttribute("data-addmore") === "true") {
+        autocomplete.addListener('place_changed', this.addMore.bind(this, input));
       }
     },
 
@@ -79,9 +82,22 @@
       add.appendChild(document.createTextNode("Add More (click here)!!"));
       input.parentNode.appendChild(add);
 
-      add.addEventListener("click", function () {
-        alert("adding a new address selector");
-      });
+      add.addEventListener("click", function (e) {
+        e.preventDefault();
+        this.addNewLocationInput(add);
+      }.bind(this));
+    },
+
+    addNewLocationInput: function (elmnt) {
+      var input = document.createElement("input");
+
+      input.type = "text";
+      input.setAttribute("placeholder", "Please enter a suburb");
+      input.setAttribute("data-addmore", "true");
+
+      elmnt.parentNode.insertBefore(input, elmnt);
+      elmnt.parentNode.removeChild(elmnt);
+      this.setMapAutocomplete(input);
     }
   };
 
@@ -92,7 +108,7 @@
   // });
   window.initAutocomplete = function () {
     if (alfa) {
-      alfa.setMapAutocomplete();
+      alfa.initMapAutocomplete();
     }
   };
 }());
