@@ -1,0 +1,38 @@
+---
+layout: page
+title: "Aged care help"
+agency: ""
+agencySub: Information for aged care.
+permalink: /q5/
+---
+<section class="form-wrapper">
+  <h2>Does any of the following apply to them?</h2>
+
+  <form id="transition" method="get" action="/q6/">
+    <fieldset>
+      <legend>Select whatever applies so we can give you the right steps, forms and contacts for their situation.</legend>
+      <input id="pensioner" name="apply" type="checkbox" value="pensioner">
+      <label for="pensioner">Age pensioner</label>
+      <input id="full" name="pensiontype" type="radio" value="full">
+      <label for="full">full</label>
+      <input id="half" name="pensiontype" type="radio" value="half">
+      <label for="half">half</label>
+
+      <input id="disability" name="apply" type="checkbox" value="disability">
+      <label for="disability">Has a disability </label>
+      <input id="disabilitypensioner" name="apply" type="checkbox" value="disabilitypensioner">
+      <label for="disabilitypensioner">Disability pensioner</label>
+      <input id="65years" name="apply" type="checkbox" value="65years">
+      <label for="65years">65 years or older</label>
+      <input id="veteran" name="apply" type="checkbox" value="veteran">
+      <label for="veteran">Veteran / war widower</label>
+
+      <input id="aboriginal" name="apply" type="checkbox" value="aboriginal">
+      <label for="aboriginal">Aboriginal or Torres Strait Islander</label>
+      <input id="50plus" name="50plus" type="radio" value="50plus">
+      <label for="50plus">50 years or older</label>
+
+    </fieldset>
+    <button type="submit">Next &gt;</button>
+  </form>
+</section>
