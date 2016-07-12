@@ -1,0 +1,6 @@
+{
+  "name": "gov_au_transitions",
+  "dependencies": {
+    "jquery": "~2.2.3"
+  }
+}
