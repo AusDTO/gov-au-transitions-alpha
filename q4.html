@@ -1,22 +1,28 @@
 ---
 layout: page
-title: Test page is the best
+title: "Aged care help"
 agency: ""
 agencySub: Information for aged care.
 permalink: /q4/
 ---
 <section class="form-wrapper">
-  <h2>Are they able to stay at home?</h2>
+  <h2>Where do they want to live?</h2>
 
-  <form id="transition" method="get" action="/q4/">
-    <fieldset id="reply">
-      <legend>Many oler people are able to recieve help so they can be something and sponsored to stay in their homes.</legend>
-      <input id="yes" name="reply" type="radio" value="Yes">
-      <label for="yes">Yes</label>
-      <input id="no" name="reply" type="radio" value="No">
-      <label for="no">No</label>
-      <input id="maybe" name="reply" type="radio" value="Maybe">
-      <label for="maybe">I don't know</label>
+  <form id="transition" method="get" action="/q5/">
+    <fieldset id="live">
+      <legend>You may have a clear idea about their wish to stay at home. Select whatever applies and don’t worry if you don’t know at this stage.</legend>
+      <input id="home" name="live" type="radio" value="home">
+      <label for="home">Own home </label>
+      <input id="family" name="live" type="radio" value="family">
+      <label for="family">Family or friend’s home</label>
+      <input id="nursinghome" name="live" type="radio" value="nursinghome">
+      <label for="nursinghome">Nursing home</label>
+      <input id="retirementvillage" name="live" type="radio" value="retirementvillage">
+      <label for="retirementvillage">Retirement village</label>
+      <input id="supported" name="live" type="radio" value="supported">
+      <label for="supported">Supported living</label>
+      <input id="dontknow" name="live" type="radio" value="dontknow">
+      <label for="dontknow">I don't know</label>
     </fieldset>
     <button type="submit">Next &gt;</button>
   </form>

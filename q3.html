@@ -1,19 +1,22 @@
 ---
 layout: page
-title: Test page is the best
+title: "Aged care help"
 agency: ""
 agencySub: Information for aged care.
 permalink: /q3/
 ---
 <section class="form-wrapper">
-  <h2>Which areas are they considering living in?</h2>
+  <h2>Do you have concerns about them living at home safely?</h2>
 
   <form id="transition" method="get" action="/q4/">
-    <fieldset id="reply">
-      <legend>Please enter the postcode/s or suburb/s of the area/s they are considering.</legend>
-      <label for="potential-address">Address</label>
-      <input id="potential-address" name="address" type="text" value=""
-        class="autocomplete-address" data-addmore="true" placeholder="Please enter a suburb" />
+    <fieldset id="home">
+      <legend>Some things you might like to think about is whether they have any difficulties with day to day living, navigating their home safely and feeling supported and secure.</legend>
+      <input id="yes" name="home" type="radio" value="Yes">
+      <label for="yes">Yes</label>
+      <input id="no" name="home" type="radio" value="No">
+      <label for="no">No</label>
+      <input id="maybe" name="home" type="radio" value="Maybe">
+      <label for="maybe">I don't know</label>
     </fieldset>
     <button type="submit">Next &gt;</button>
   </form>
