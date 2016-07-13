@@ -1,4 +1,4 @@
-@import 'http://gov-au-ui-kit.apps.staging.digital.gov.au/latest/_ui-kit.scss';
+@import "_ui-kit.scss";
 
 .footer-logo {
   width: 207px;
@@ -9,4 +9,76 @@ header[role=banner] .hero.reduced {
 }
 header[role=banner] .hero .tagline {
   margin: 0;
+}
+
+.accordion {
+  $base-border-color: $non-white !default;
+  // $base-line-height: 1.5em !default;
+  // $base-spacing: 1.5em !default;
+  $dark-gray: #333 !default;
+  $base-font-color: $dark-gray !default;
+  $accordion-menu-border-color: $base-border-color;
+  $accordion-menu-color: $base-font-color !default;
+  $accordion-menu-border: 4px solid $white;
+  $accordion-menu-background: $non-white;
+  $accordion-menu-hover: lighten($accordion-menu-background, 2%);
+  $accordion-menu-sub-background: darken($accordion-menu-background, 5%);
+  $accordion-menu-sub-inset: darken($accordion-menu-sub-background, 6%);
+  $accordion-menu-sub-hover: lighten($accordion-menu-sub-background, 2%);
+  $accordion-menu-list-padding: $small-spacing $base-spacing;
+
+  background-color: $accordion-menu-background;
+  border: none;
+  margin: 0 0 $base-spacing 0;
+  padding: 0;
+
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    border-bottom: $accordion-menu-border;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    > a {
+      color: $accordion-menu-color;
+      display: block;
+      padding: $accordion-menu-list-padding;
+      text-decoration: none;
+      border: none;
+      font-weight: bold;
+
+      .badge--default {
+        float: right;
+      }
+    }
+
+    &:last-child {
+      border: 0;
+    }
+
+    &:focus,
+    &:hover {
+      background-color: $accordion-menu-hover;
+    }
+  }
+
+  .submenu {
+    display: none;
+    > p {
+      padding: $accordion-menu-list-padding;
+    }
+    .module {
+      padding: $accordion-menu-list-padding;
+      border-top: 4px solid $white;
+    }
+  }
+
+  .is-expanded {
+    display: block;
+    padding-bottom: 0;
+  }
 }

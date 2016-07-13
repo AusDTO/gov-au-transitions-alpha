@@ -18,6 +18,9 @@
         i,
         element;
 
+      if (!form) {
+        return;
+      }
       for (i in values) {
         if (values.hasOwnProperty(i)) {
           element = document.createElement("input");
@@ -32,7 +35,7 @@
     getQueryString: function () {
       var query_string = {},
         query = window.location.search.substring(1),
-        vars = query.split("&"),
+        vars = query === "" ? [] : query.split("&"),
         i,
         pair,
         arr;
@@ -55,7 +58,9 @@
     initMapAutocomplete: function () {
       var input = document.querySelectorAll(".autocomplete-address");
 
-      this.setMapAutocomplete(input[0]);
+      if (input.length) {
+        this.setMapAutocomplete(input[0]);
+      }
     },
 
     /**
@@ -98,14 +103,22 @@
       elmnt.parentNode.insertBefore(input, elmnt);
       elmnt.parentNode.removeChild(elmnt);
       this.setMapAutocomplete(input);
+    },
+
+    enableAccordions: function () {
+      $('.js-accordion-trigger').bind('click', function(e){
+        jQuery(this).parent().find('.submenu').slideToggle('fast');  // apply the toggle to the ul
+        jQuery(this).parent().toggleClass('is-expanded');
+        e.preventDefault();
+      });
     }
   };
 
   var alfa = new AlfaLoader();
   alfa.loadFormVarsFromUrl();
-  // document.addEventListener("DOMContentLoaded", function () {
-  //   //alfa.setMapAutocomplete();
-  // });
+  document.addEventListener("DOMContentLoaded", function () {
+    alfa.enableAccordions();
+  });
   window.initAutocomplete = function () {
     if (alfa) {
       alfa.initMapAutocomplete();
