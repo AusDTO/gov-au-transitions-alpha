@@ -1,9 +1,10 @@
 assets:
   sources:
-    - _assets/fonts
+    - _assets
     - _assets/images
     - _assets/javascripts
     - _assets/stylesheets
+    - _assets/fonts
     - _vendor/
 
 baseurl: /
