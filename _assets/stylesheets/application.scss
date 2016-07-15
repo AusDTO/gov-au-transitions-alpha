@@ -12,6 +12,16 @@ header[role=banner] .hero .tagline {
   margin: 0;
 }
 
+.transition-main {
+  padding: 0 $base-spacing;
+}
+.question-header {
+  padding: $base-spacing 0;
+  a {
+    padding-bottom: $base-spacing;
+  }
+}
+
 .accordion {
   $base-border-color: $non-white !default;
   // $base-line-height: 1.5em !default;
