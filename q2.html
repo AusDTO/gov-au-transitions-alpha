@@ -6,64 +6,61 @@ agencySub: Information for aged care.
 permalink: /q2/
 ---
 <section class="form-wrapper">
-  <h3>What do they need help with?</h3>
+  <h3>What do you think they need help with?</h3>
 
   <form id="transition" method="get" action="/q3/">
     <fieldset id="home">
-      <legend>Select from these day-to-day tasks where the person may need help in their daily routines.</legend>
+      <legend>For guidance to useful services, select the everyday tasks the person may need help with.</legend>
+      <h4>Managing at home</h4>
       <input id="dressing" name="help" type="checkbox" value="dressing">
       <label for="dressing">Dressing themselves</label>
       <input id="toilet" name="help" type="checkbox" value="toilet">
       <label for="toilet">Going to the toilet</label>
-
       <input id="showering" name="help" type="checkbox" value="showering">
       <label for="showering">Showering</label>
-
       <input id="moving" name="help" type="checkbox" value="moving">
       <label for="moving">Moving around the house</label>
-
+      <input id="cleaning" name="help" type="checkbox" value="cleaning">
+      <label for="cleaning">Cleaning</label>
+      <input id="washing" name="help" type="checkbox" value="washing">
+      <label for="washing">Hanging out and bringing in washing</label>
+      <input id="gardening" name="help" type="checkbox" value="gardening">
+      <label for="gardening">Gardening</label>
       <input id="eating" name="help" type="checkbox" value="eating">
       <label for="eating">Eating</label>
+      <input id="cooking" name="help" type="checkbox" value="cooking">
+      <label for="cooking">Cooking/preparing meals</label>
+      <input id="shopping" name="help" type="checkbox" value="shopping">
+      <label for="shopping">Shopping</label>
+      <input id="carrying" name="help" type="checkbox" value="carrying">
+      <label for="carrying">Carrying shopping</label>
+    </fieldset>
 
+    <fieldset>
+      <h4>Managing medication</h4>
       <input id="health" name="help" type="checkbox" value="health">
       <label for="health">Managing a health condition</label>
 
       <input id="medication" name="help" type="checkbox" value="medication">
       <label for="medication">Taking medication</label>
+    </fieldset>
 
-      <input id="cooking" name="help" type="checkbox" value="cooking">
-      <label for="cooking">Cooking/preparing meals</label>
-
-      <input id="shoppinglist" name="help" type="checkbox" value="shoppinglist">
-      <label for="shoppinglist">Creating a shopping list</label>
-
-      <input id="shopping" name="help" type="checkbox" value="shopping">
-      <label for="shopping">Shopping</label>
-
-      <input id="carryingshopping" name="help" type="checkbox" value="carryingshopping">
-      <label for="carryingshopping">Carrying shopping</label>
-
-      <input id="cleaning" name="help" type="checkbox" value="cleaning">
-      <label for="cleaning">Cleaning</label>
-
-      <input id="washing" name="help" type="checkbox" value="washing">
-      <label for="washing">Hanging out and bringing in washing</label>
-
+    <fieldset>
+      <h4>Financial matters</h4>
       <input id="bills" name="help" type="checkbox" value="bills">
       <label for="bills">Paying bills</label>
 
       <input id="money" name="help" type="checkbox" value="money">
       <label for="money">Managing money</label>
+    </fieldset>
 
+    <fieldset>
+      <h4>Getting out and about</h4>
       <input id="appointments" name="help" type="checkbox" value="appointments">
       <label for="appointments">Getting to appointments</label>
 
-      <input id="publictransport" name="help" type="checkbox" value="publictransport">
-      <label for="publictransport">Traveling on public transport</label>
-
-      <input id="driving" name="help" type="checkbox" value="driving">
-      <label for="driving">Driving</label>
-
+      <input id="transport" name="help" type="checkbox" value="transport">
+      <label for="transport">Traveling on public transport</label>
     </fieldset>
     <button type="submit">Next &gt;</button>
   </form>
