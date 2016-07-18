@@ -12,6 +12,37 @@ header[role=banner] .hero .tagline {
   margin: 0;
 }
 
+.transition-main {
+  padding: 0 $base-spacing;
+}
+.question-header {
+  padding: $base-spacing 0 0 0;
+  div {
+    margin-top: $base-spacing;
+  }
+  a {
+    position: relative;
+    display: inline-block;
+    margin-left: 1.5em;
+    &:before {
+      position: absolute;
+      display: block;
+      padding-right: 1em;
+      font: normal normal normal 14px/1 FontAwesome;
+      border-bottom: none;
+      left: -1.5em;
+      top: 0.5em;
+    }
+  }
+  .badge--default  {
+    background-color: $dark-aqua;
+  }
+}
+
+#transition legend {
+  margin-bottom: $base-spacing;
+}
+
 .accordion {
   $base-border-color: $non-white !default;
   // $base-line-height: 1.5em !default;
