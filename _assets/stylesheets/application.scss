@@ -39,6 +39,23 @@ header[role=banner] .hero .tagline {
   }
 }
 
+.addmore {
+  position: relative;
+  display: inline-block;
+  margin-left: 1.5em;
+  margin-top: $small-spacing;
+  &:before {
+    position: absolute;
+    display: block;
+    padding-right: 1em;
+    font: normal normal normal 20px/1 FontAwesome;
+    border-bottom: none;
+    left: -1.2em;
+    top: 0.2em;
+    content: "\f055";
+  }
+}
+
 #transition legend {
   margin-bottom: $base-spacing;
 }
@@ -145,4 +162,16 @@ header[role=banner] .hero .tagline {
     display: block;
     padding-bottom: 0;
   }
+}
+.list-horizontal {
+  border-top: solid 1px $light-grey;
+  padding: $base-spacing 0;
+  button {
+    margin: $base-spacing 0 0 0;
+  }
+}
+
+fieldset h4 {
+  border-bottom: 1px solid $light-grey;
+  padding-bottom: $small-spacing;
 }

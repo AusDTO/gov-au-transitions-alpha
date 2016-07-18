@@ -83,8 +83,8 @@
       var add = document.createElement("a");
 
       add.href = "#";
-      add.setAttribute("class", "something");
-      add.appendChild(document.createTextNode("Add More (click here)!!"));
+      add.setAttribute("class", "addmore");
+      add.appendChild(document.createTextNode("Add more"));
       input.parentNode.appendChild(add);
 
       add.addEventListener("click", function (e) {
