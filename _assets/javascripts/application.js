@@ -38,13 +38,19 @@
         vars = query === "" ? [] : query.split("&"),
         i,
         pair,
-        arr;
+        arr,
+        decoded;
 
       for (i = 0; i < vars.length; i++) {
         pair = vars[i].split("=");
 
         if (typeof query_string[pair[0]] === "undefined") {
-          query_string[pair[0]] = decodeURIComponent(pair[1]);
+          decoded = decodeURIComponent(pair[1]);
+          if (decoded.indexOf(",") > 0) {
+            query_string[pair[0]] = decoded.split(",");
+          } else {
+            query_string[pair[0]] = decoded;
+          }
         } else if (typeof query_string[pair[0]] === "string") {
           arr = [ query_string[pair[0]], decodeURIComponent(pair[1]) ];
           query_string[pair[0]] = arr;
@@ -111,6 +117,34 @@
         jQuery(this).parent().toggleClass('is-expanded');
         e.preventDefault();
       });
+    },
+
+    addBusinessLogic: function () {
+      var query = this.getQueryString(),
+          form = document.getElementById("transition");
+
+      if (!form) {
+        return;
+      }
+      // this conditon ensures that the live value is always an array
+      if (query["live"] && typeof query["live"] === 'string') {
+        query["live"] = [query["live"]];
+      }
+      // Q5 needs to show variant q6 page for live [home, family] and Q7 for all other cases.
+      if (form.getAttribute("data-current-question") === "q5"
+          && query["live"]
+          && query["live"].indexOf("home") === -1
+          && query["live"].indexOf("family") === -1) {
+        form.action = "/q7/";
+      }
+      if (form.getAttribute("data-current-question") === "q6"
+          && query["live"]
+          && query["live"].indexOf("nursinghome") === -1
+          && query["live"].indexOf("retirementvillage") === -1
+          && query["live"].indexOf("dontknow") === -1) {
+        form.action = "/results/";
+      }
+
     }
   };
 
@@ -118,6 +152,7 @@
   alfa.loadFormVarsFromUrl();
   document.addEventListener("DOMContentLoaded", function () {
     alfa.enableAccordions();
+    alfa.addBusinessLogic();
   });
   window.initAutocomplete = function () {
     if (alfa) {
