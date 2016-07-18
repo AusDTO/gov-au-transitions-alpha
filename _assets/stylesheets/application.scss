@@ -122,18 +122,21 @@ header[role=banner] .hero .tagline {
       position: relative;
       display: inline-block;
       margin-left: 1.5em;
+      margin-top: 0.6em;
       &:before {
         position: absolute;
         display: block;
         padding-right: 1em;
-        font: normal normal normal 14px/1 FontAwesome;
+        font: normal normal normal 18px/1 FontAwesome;
         border-bottom: none;
-        left: -1.5em;
-        top: 0.5em;
+        left: -1.1em;
+        top: 0.3em;
         content: "\f054";
       }
       &.phone::before {
         content: "\f095";
+        font-size: 22px;
+        top: .2em;
       }
     }
   }
