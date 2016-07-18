@@ -34,9 +34,7 @@ header[role=banner] .hero .tagline {
       top: 0.5em;
     }
   }
-  .badge--default  {
-    background-color: $dark-aqua;
-  }
+
 }
 
 .addmore {
@@ -134,6 +132,9 @@ header[role=banner] .hero .tagline {
     .module {
       padding: $accordion-menu-list-padding;
       border-top: 4px solid $white;
+    }
+    .results-heading {
+      margin-bottom: $small-spacing;
     }
     .link {
       position: relative;
