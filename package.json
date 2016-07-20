@@ -1,0 +1,29 @@
+{
+  "name": "gov-au-transitions",
+  "version": "1.0.0",
+  "description": "package json for the transitions alpha project",
+  "main": "bin/setup.js",
+  "bin": {
+    "gov-au-transitions": "setup.js"
+  },
+  "scripts": {
+    "test": "test",
+    "start": "node bin/setup.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AusDTO/gov-au-transitions.git"
+  },
+  "keywords": [
+    "npm"
+  ],
+  "author": "transitions team",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AusDTO/gov-au-transitions/issues"
+  },
+  "homepage": "https://github.com/AusDTO/gov-au-transitions#readme",
+  "dependencies": {
+    "download-file": "^0.1.5"
+  }
+}
