@@ -12,9 +12,16 @@ header[role=banner] .hero .tagline {
   margin: 0;
 }
 
-.transition-main {
-  padding: 0 $base-spacing;
+@include media($tablet) {
+  .transition-main {
+    padding: 0 $base-spacing;
+  }
 }
+@include media($desktop) {
+  .transition-main {
+    padding: 0;
+  }
+};
 .question-header {
   padding: $base-spacing 0 0 0;
   div {
