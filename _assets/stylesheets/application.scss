@@ -183,11 +183,30 @@ fieldset h4 {
   border-bottom: 1px solid $light-grey;
   padding-bottom: $small-spacing;
 }
-.hero-gradient {
+main.hero-gradient {
   background-image: radial-gradient(circle at 100% 52%, $light-aqua, $aqua);
   color: $white;
+  @include outer-container(100%);
+  padding: 0;
+  .transition-main {
+  }
   button, a[role="button"] {
     background: transparent;
     border: 1px solid $white;
+  }
+}
+.asside-content {
+  @extend main;
+}
+.related-topics {
+  border-left: 1px solid $grey;
+  padding-left: $small-spacing;
+  @include media($tablet) {
+    & {
+      @include span-columns(4);
+    }
+  }
+  a {
+    color: $grey;
   }
 }
