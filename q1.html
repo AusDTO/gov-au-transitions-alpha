@@ -10,41 +10,19 @@ permalink: /q1/
     <a href="#" class="fa-chevron-left">Back</a>
     <div><strong>Question </strong><span class="badge--default">1/6</span></div>
   </div>
+  <h3>Do you ever have concerns about them living at home safely?</h3>
 
-  <h3>What are you concerned about?</h3>
   <form id="transition" method="get" action="/q2/">
-    <fieldset>
-      <legend>As we age things change. Select any health concerns that may apply to the complexity of their needs.</legend>
-    </fieldset>
-    <fieldset>
-      <h4>Emotional / mental wellbeing</h4>
-      <input id="confusion" name="noticed" type="checkbox" value="confusion">
-      <label for="confusion">Confusion</label>
-      <input id="loneliness" name="noticed" type="checkbox" value="loneliness">
-      <label for="loneliness">Loneliness</label>
-      <input id="Anxiety" name="noticed" type="checkbox" value="Anxiety">
-      <label for="Anxiety">Anxiety</label>
-      <input id="depression" name="noticed" type="checkbox" value="depression">
-      <label for="depression">Depression</label>
-      <input id="forgetfulness" name="noticed" type="checkbox" value="forgetfulness">
-      <label for="forgetfulness">Forgetfulness</label>
-      <input id="alcohol" name="noticed" type="checkbox" value="alcohol">
-      <label for="alcohol">Alcohol abuse</label>
-      <input id="drug" name="noticed" type="checkbox" value="drug">
-      <label for="drug">Drug abuse</label>
-      </fieldset>
-      <fieldset>
-        <h4>Physical wellbeing</h4>
-      <input id="toilet" name="noticed" type="checkbox" value="toilet">
-      <label for="toilet">Toileting issues</label>
-      <input id="weight" name="noticed" type="checkbox" value="weight">
-      <label for="weight">Sudden loss of weight</label>
-      <input id="eating" name="noticed" type="checkbox" value="eating">
-      <label for="eating">Not eating properly or well</label>
-      <input id="hygine" name="noticed" type="checkbox" value="hygine">
-      <label for="hygine">General personal hygiene</label>
-      <input id="driving" name="noticed" type="checkbox" value="driving">
-      <label for="driving">Trouble driving</label>
+    <fieldset id="home">
+      <legend>Think about whether they have any difficulties with day-to-day living, getting around safely and feeling supported and secure.</legend>
+      <input id="yes" name="home" type="radio" value="Yes">
+      <label for="yes">Yes</label>
+      <input id="no" name="home" type="radio" value="No">
+      <label for="no">No</label>
+      <input id="sometimes" name="home" type="radio" value="sometimes">
+      <label for="sometimes">Sometimes</label>
+      <input id="maybe" name="home" type="radio" value="Maybe">
+      <label for="maybe">I don't know</label>
     </fieldset>
     <button type="submit">Next <i class="fa fa-chevron-right" aria-hidden="true"></i></button>
   </form>

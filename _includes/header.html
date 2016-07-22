@@ -1,27 +1,27 @@
+<div class="skip-to">
+  <!-- <a href="#content">Skip to main content</a>
+  <a href="#nav">Skip to section navigation</a> -->
+</div>
 <header role="banner">
-  {% if loggedin == "true" %}
-    <section class="controls">
-      <div class="wrapper">
-        <a href="#" class="login">Logout</a>
-      </div>
-    </section>
-  {% endif %}
+
   <section class="govau--header">
     <div class="wrapper">
       <div class="govau--logo">
-        <a href="#" class="logo">gov.au</a> <span class="badge--default">draft</span>
-      </div>
-      <div class="feedback">
-        <a href="#" class="button--feedback">Give feedback</a>
+          <a class="logo" href="/" title="GOV.AU homepage">
+            <img src="{% asset_path govau_crest-white.svg %}" alt="Gov au logo">
+            <!--{{ site.title }} <span class="element-invisible">homepage</span></a>-->
+            <span class="badge--alpha">prototype</span>
+          </a>
       </div>
     </div>
   </section>
-  <section class="hero reduced">
-    <div class="wrapper">
-      {% if page.agency != "" %}
-        <a href="#" class="site-title">{{ page.agency }}</a>
-      {% endif %}
-      <p class="tagline">{{ page.agencySub }}</p>
-    </div>
-  </section>
+
 </header>
+<nav class="breadcrumbs" aria-label="breadcrumb">
+	<div class="wrapper">
+		<ul>
+			<li><a href="/">Home</a></li>
+			<li>{{ page.agencySub }}</li>
+		</ul>
+	</div>
+</nav>

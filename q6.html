@@ -8,17 +8,64 @@ permalink: /q6/
 <section class="form-wrapper">
   <div class="question-header">
     <a href="#" class="fa-chevron-left">Back</a>
-    <div><strong>Question </strong><span class="badge--default">6/6</span></div>
+    <div><strong>Question </strong><span class="badge--default">5/6</span></div>
   </div>
-  <h3>In what suburb, town or postcode do they live?</h3>
+  <h3>What do you think they need help with?</h3>
 
-  <form id="transition" data-current-question="q6" method="get" action="/q7/">
-    <fieldset id="reply">
-      <legend>For suggestions of local services in their area, please enter a suburb, town or postcode. If they are looking to move, enter the area they are hoping to move to.</legend>
-      <label for="current-address">Address</label>
-      <input id="current-address" name="address" type="text" value=""
-        class="autocomplete-address" data-addmore="false" placeholder="Please enter a suburb, town or postcode" />
+  <form id="transition" method="get" action="/q7/">
+    <fieldset id="home">
+      <legend>For guidance to useful services, select the everyday tasks the person may need help with.</legend>
+      <h4>Managing at home</h4>
+      <input id="dressing" name="help" type="checkbox" value="dressing">
+      <label for="dressing">Dressing themselves</label>
+      <input id="toilet" name="help" type="checkbox" value="toilet">
+      <label for="toilet">Going to the toilet</label>
+      <input id="showering" name="help" type="checkbox" value="showering">
+      <label for="showering">Showering</label>
+      <input id="moving" name="help" type="checkbox" value="moving">
+      <label for="moving">Moving around the house</label>
+      <input id="cleaning" name="help" type="checkbox" value="cleaning">
+      <label for="cleaning">Cleaning</label>
+      <input id="washing" name="help" type="checkbox" value="washing">
+      <label for="washing">Hanging out and bringing in washing</label>
+      <input id="gardening" name="help" type="checkbox" value="gardening">
+      <label for="gardening">Gardening</label>
+      <input id="eating" name="help" type="checkbox" value="eating">
+      <label for="eating">Eating</label>
+      <input id="cooking" name="help" type="checkbox" value="cooking">
+      <label for="cooking">Cooking/preparing meals</label>
+      <input id="shopping" name="help" type="checkbox" value="shopping">
+      <label for="shopping">Shopping</label>
+      <input id="carrying" name="help" type="checkbox" value="carrying">
+      <label for="carrying">Carrying shopping</label>
     </fieldset>
-    <button type="submit">Next  <i class="fa fa-chevron-right" aria-hidden="true"></i></button>
+
+    <fieldset>
+      <h4>Managing medication</h4>
+      <input id="health" name="help" type="checkbox" value="health">
+      <label for="health">Managing a health condition</label>
+
+      <input id="medication" name="help" type="checkbox" value="medication">
+      <label for="medication">Taking medication</label>
+    </fieldset>
+
+    <fieldset>
+      <h4>Financial matters</h4>
+      <input id="bills" name="help" type="checkbox" value="bills">
+      <label for="bills">Paying bills</label>
+
+      <input id="money" name="help" type="checkbox" value="money">
+      <label for="money">Managing money</label>
+    </fieldset>
+
+    <fieldset>
+      <h4>Getting out and about</h4>
+      <input id="appointments" name="help" type="checkbox" value="appointments">
+      <label for="appointments">Getting to appointments</label>
+
+      <input id="transport" name="help" type="checkbox" value="transport">
+      <label for="transport">Traveling on public transport</label>
+    </fieldset>
+    <button type="submit">Next <i class="fa fa-chevron-right" aria-hidden="true"></i></button>
   </form>
 </section>

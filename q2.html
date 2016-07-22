@@ -10,62 +10,22 @@ permalink: /q2/
     <a href="#" class="fa-chevron-left">Back</a>
     <div><strong>Question </strong><span class="badge--default">2/6</span></div>
   </div>
-  <h3>What do you think they need help with?</h3>
+  <h3>Where do they want to live?</h3>
 
-  <form id="transition" method="get" action="/q3/">
-    <fieldset id="home">
-      <legend>For guidance to useful services, select the everyday tasks the person may need help with.</legend>
-      <h4>Managing at home</h4>
-      <input id="dressing" name="help" type="checkbox" value="dressing">
-      <label for="dressing">Dressing themselves</label>
-      <input id="toilet" name="help" type="checkbox" value="toilet">
-      <label for="toilet">Going to the toilet</label>
-      <input id="showering" name="help" type="checkbox" value="showering">
-      <label for="showering">Showering</label>
-      <input id="moving" name="help" type="checkbox" value="moving">
-      <label for="moving">Moving around the house</label>
-      <input id="cleaning" name="help" type="checkbox" value="cleaning">
-      <label for="cleaning">Cleaning</label>
-      <input id="washing" name="help" type="checkbox" value="washing">
-      <label for="washing">Hanging out and bringing in washing</label>
-      <input id="gardening" name="help" type="checkbox" value="gardening">
-      <label for="gardening">Gardening</label>
-      <input id="eating" name="help" type="checkbox" value="eating">
-      <label for="eating">Eating</label>
-      <input id="cooking" name="help" type="checkbox" value="cooking">
-      <label for="cooking">Cooking/preparing meals</label>
-      <input id="shopping" name="help" type="checkbox" value="shopping">
-      <label for="shopping">Shopping</label>
-      <input id="carrying" name="help" type="checkbox" value="carrying">
-      <label for="carrying">Carrying shopping</label>
+  <form id="transition" data-current-question="q2" method="get" action="/q3/">
+    <fieldset id="live">
+      <legend>There are many options available including support at home. Select as many as apply.</legend>
+      <input id="home" name="live" type="checkbox" value="home">
+      <label for="home">Own home with support</label>
+      <input id="family" name="live" type="checkbox" value="family">
+      <label for="family">Family or friend’s home</label>
+      <input id="nursinghome" name="live" type="checkbox" value="nursinghome">
+      <label for="nursinghome">Nursing home</label>
+      <input id="retirementvillage" name="live" type="checkbox" value="retirementvillage">
+      <label for="retirementvillage">Retirement village</label>
+      <input id="dontknow" name="live" type="checkbox" value="dontknow">
+      <label for="dontknow">I don't know</label>
     </fieldset>
-
-    <fieldset>
-      <h4>Managing medication</h4>
-      <input id="health" name="help" type="checkbox" value="health">
-      <label for="health">Managing a health condition</label>
-
-      <input id="medication" name="help" type="checkbox" value="medication">
-      <label for="medication">Taking medication</label>
-    </fieldset>
-
-    <fieldset>
-      <h4>Financial matters</h4>
-      <input id="bills" name="help" type="checkbox" value="bills">
-      <label for="bills">Paying bills</label>
-
-      <input id="money" name="help" type="checkbox" value="money">
-      <label for="money">Managing money</label>
-    </fieldset>
-
-    <fieldset>
-      <h4>Getting out and about</h4>
-      <input id="appointments" name="help" type="checkbox" value="appointments">
-      <label for="appointments">Getting to appointments</label>
-
-      <input id="transport" name="help" type="checkbox" value="transport">
-      <label for="transport">Traveling on public transport</label>
-    </fieldset>
-    <button type="submit">Next <i class="fa fa-chevron-right" aria-hidden="true"></i></button>
+    <button type="submit">Next  <i class="fa fa-chevron-right" aria-hidden="true"></i></button>
   </form>
 </section>

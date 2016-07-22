@@ -8,26 +8,44 @@ permalink: /q5/
 <section class="form-wrapper">
   <div class="question-header">
     <a href="#" class="fa-chevron-left">Back</a>
-    <div><strong>Question </strong><span class="badge--default">5/6</span></div>
+    <div><strong>Question </strong><span class="badge--default">4/6</span></div>
   </div>
-  <h3>Do any of the following factors apply to them?</h3>
 
-  <form id="transition" data-current-question="q5" method="get" action="/q6/">
+  <h3>What are you concerned about?</h3>
+  <form id="transition" method="get" action="/q6/">
     <fieldset>
-      <legend>Select whatever applies for guidance to the right steps, forms and contacts for their situation.</legend>
-      <input id="65years" name="apply" type="checkbox" value="65years">
-      <label for="65years">65 years or older</label>
-      <input id="pensioner" name="apply" type="checkbox" value="pensioner">
-      <label for="pensioner">Age pensioner</label>
-      <input id="disabilitypensioner" name="apply" type="checkbox" value="disabilitypensioner">
-      <label for="disabilitypensioner">Disability pensioner</label>
-      <input id="veteran" name="apply" type="checkbox" value="veteran">
-      <label for="veteran">Veteran / war widower</label>
-
-      <input id="aboriginal" name="apply" type="checkbox" value="aboriginal">
-      <label for="aboriginal">Aboriginal or Torres Strait Islander and 50 years or older</label>
-
+      <legend>As we age things change. Select any health concerns that may apply to the complexity of their needs.</legend>
     </fieldset>
-    <button type="submit">Next  <i class="fa fa-chevron-right" aria-hidden="true"></i></button>
+    <fieldset>
+      <h4>Emotional / mental wellbeing</h4>
+      <input id="confusion" name="noticed" type="checkbox" value="confusion">
+      <label for="confusion">Confusion</label>
+      <input id="loneliness" name="noticed" type="checkbox" value="loneliness">
+      <label for="loneliness">Loneliness</label>
+      <input id="Anxiety" name="noticed" type="checkbox" value="Anxiety">
+      <label for="Anxiety">Anxiety</label>
+      <input id="depression" name="noticed" type="checkbox" value="depression">
+      <label for="depression">Depression</label>
+      <input id="forgetfulness" name="noticed" type="checkbox" value="forgetfulness">
+      <label for="forgetfulness">Forgetfulness</label>
+      <input id="alcohol" name="noticed" type="checkbox" value="alcohol">
+      <label for="alcohol">Alcohol abuse</label>
+      <input id="drug" name="noticed" type="checkbox" value="drug">
+      <label for="drug">Drug abuse</label>
+      </fieldset>
+      <fieldset>
+        <h4>Physical wellbeing</h4>
+      <input id="toilet" name="noticed" type="checkbox" value="toilet">
+      <label for="toilet">Toileting issues</label>
+      <input id="weight" name="noticed" type="checkbox" value="weight">
+      <label for="weight">Sudden loss of weight</label>
+      <input id="eating" name="noticed" type="checkbox" value="eating">
+      <label for="eating">Not eating properly or well</label>
+      <input id="hygine" name="noticed" type="checkbox" value="hygine">
+      <label for="hygine">General personal hygiene</label>
+      <input id="driving" name="noticed" type="checkbox" value="driving">
+      <label for="driving">Trouble driving</label>
+    </fieldset>
+    <button type="submit">Next <i class="fa fa-chevron-right" aria-hidden="true"></i></button>
   </form>
 </section>

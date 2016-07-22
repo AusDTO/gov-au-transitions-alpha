@@ -130,19 +130,19 @@
       if (query["live"] && typeof query["live"] === 'string') {
         query["live"] = [query["live"]];
       }
-      // Q5 needs to show variant q6 page for live [home, family] and Q7 for all other cases.
-      if (form.getAttribute("data-current-question") === "q5"
+      // Q2 needs to show variant Q3 page for live [home, family] and Q4 for all other cases.
+      if (form.getAttribute("data-current-question") === "q2"
           && query["live"]
           && query["live"].indexOf("home") === -1
           && query["live"].indexOf("family") === -1) {
-        form.action = "/q7/";
+        form.action = "/q4/";
       }
-      if (form.getAttribute("data-current-question") === "q6"
+      if (form.getAttribute("data-current-question") === "q3"
           && query["live"]
           && query["live"].indexOf("nursinghome") === -1
           && query["live"].indexOf("retirementvillage") === -1
           && query["live"].indexOf("dontknow") === -1) {
-        form.action = "/results/";
+        form.action = "/q5/";
       }
 
     }

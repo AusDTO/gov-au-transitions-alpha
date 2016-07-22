@@ -8,22 +8,17 @@ permalink: /q3/
 <section class="form-wrapper">
   <div class="question-header">
     <a href="#" class="fa-chevron-left">Back</a>
-    <div><strong>Question </strong><span class="badge--default">3/6</span></div>
+    <div><strong>Question </strong><span class="badge--default">3a/6</span></div>
   </div>
-  <h3>Do you ever have concerns about them living at home safely?</h3>
+  <h3>In what suburb, town or postcode do they live?</h3>
 
-  <form id="transition" method="get" action="/q4/">
-    <fieldset id="home">
-      <legend>Think about whether they have any difficulties with day-to-day living, getting around safely and feeling supported and secure.</legend>
-      <input id="yes" name="home" type="radio" value="Yes">
-      <label for="yes">Yes</label>
-      <input id="no" name="home" type="radio" value="No">
-      <label for="no">No</label>
-      <input id="sometimes" name="home" type="radio" value="sometimes">
-      <label for="sometimes">Sometimes</label>
-      <input id="maybe" name="home" type="radio" value="Maybe">
-      <label for="maybe">I don't know</label>
+  <form id="transition" data-current-question="q3" method="get" action="/q4/">
+    <fieldset id="reply">
+      <legend>For suggestions of local services in their area, please enter a suburb, town or postcode. If they are looking to move, enter the area they are hoping to move to.</legend>
+      <label for="current-address">Suburb, town or postcode</label>
+      <input id="current-address" name="address" type="text" value=""
+        class="autocomplete-address" data-addmore="false" placeholder="Please enter a suburb, town or postcode" />
     </fieldset>
-    <button type="submit">Next <i class="fa fa-chevron-right" aria-hidden="true"></i></button>
+    <button type="submit">Next  <i class="fa fa-chevron-right" aria-hidden="true"></i></button>
   </form>
 </section>
