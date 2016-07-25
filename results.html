@@ -15,9 +15,6 @@ permalink: /results/
     <div class="accordion-panel">
       {% include alternate.html %}
     </div>
-    <div class="topic-links">
-      this content will be the topic links
-    </div>
   </details>
 
   <details aria-expanded="false" aria-hidden="false" data-result-set="athome">
@@ -25,12 +22,23 @@ permalink: /results/
     <div class="accordion-panel">
       {% include homehelp.html %}
     </div>
+    <div class="topic-links">
+        <h4>Topics</h4>
+          <a href="#" class="link"><strong>Getting assessed for home help</strong></a></br>
+          <a href="#" class="link"><strong>Choosing a provider</strong></a></br>
+          <a href="#" class="link"><strong>Making the home safe</strong></a></br>
+          <a href="#" class="link"><strong>Personal alarms</strong></a></br>
+    </div>
   </details>
 
   <details aria-expanded="false" aria-hidden="false" data-result-set="medical">
     <summary>Review medication situation<span class="badge--default">3</span></summary>
     <div class="accordion-panel">
       {% include medication.html %}
+    </div>
+    <div class="topic-links">
+        <h4>Topics</h4>
+          <a href="#" class="link"><strong>Managing medicines</strong></a></br>
     </div>
   </details>
 
@@ -62,6 +70,10 @@ permalink: /results/
     <summary>Organising consent<span class="badge--default">5</span></summary>
     <div class="accordion-panel">
       {% include consent.html %}
+    </div>
+    <div class="topic-links">
+        <h4>Topics</h4>
+          <a href="#" class="link"><strong>Organising consent</strong></a></br>
     </div>
   </details>
 
