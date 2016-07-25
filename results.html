@@ -8,47 +8,54 @@ permalink: /results/
 <section class="results-wrapper form-wrapper">
   <h2>Your guided results</h2>
 
-  <p class="abstract">Based on your situation, here is your guide to information and services in your area. Explore these options to know how to help your older person be supported to stay in their home.</p>
+  <p class="abstract" id="result-blurb">Based on your situation, here is your guide to information and services in your area.</p>
 
-  <details data-label="accordion-example" aria-expanded="true">
-    <summary>Alternative living options<span class="badge--default">2</span></summary>
+  <details aria-expanded="false" aria-hidden="false" data-result-set="altliving">
+    <summary>Alternative living options<span class="badge--default">6</span></summary>
     <div class="accordion-panel">
       {% include alternate.html %}
     </div>
   </details>
 
-  <details data-label="accordion-example" aria-expanded="true">
+  <details aria-expanded="false" aria-hidden="false" data-result-set="athome">
     <summary>Explore in-home support<span class="badge--default">5</span></summary>
     <div class="accordion-panel">
       {% include homehelp.html %}
     </div>
   </details>
 
-  <details data-label="accordion-example" aria-expanded="true">
+  <details aria-expanded="false" aria-hidden="false" data-result-set="medical">
     <summary>Review medication situation<span class="badge--default">3</span></summary>
     <div class="accordion-panel">
       {% include medication.html %}
     </div>
   </details>
 
-  <details data-label="accordion-example" aria-expanded="true">
+  <details aria-expanded="false" aria-hidden="false" data-result-set="outandabout">
     <summary>Help getting out and about<span class="badge--default">4</span></summary>
     <div class="accordion-panel">
       {% include outandabout.html %}
     </div>
   </details>
 
+  <details aria-expanded="false" aria-hidden="false" data-result-set="support">
+    <summary>Support for carers<span class="badge--default">2</span></summary>
+    <div class="accordion-panel">
+      {% include carer.html %}
+    </div>
+  </details>
+
 <hr/>
   <h3>Also explore</h3>
 
-  <details data-label="accordion-example" aria-expanded="true">
+  <details aria-expanded="false" aria-hidden="false" data-result-set="finance">
     <summary>Review finances<span class="badge--default">8</span></summary>
     <div class="accordion-panel">
       {% include finances.html %}
     </div>
   </details>
 
-  <details data-label="accordion-example" aria-expanded="true">
+  <details aria-expanded="false" aria-hidden="false" data-result-set="consent">
     <summary>Organising consent<span class="badge--default">5</span></summary>
     <div class="accordion-panel">
       {% include consent.html %}
@@ -117,24 +124,31 @@ permalink: /results/
       </div>
     </div>
   </details> -->
-
-
-
-
-
-
-
-
-
-
       </hr>
       <form class="list-horizontal" action="" method="post">
         <h4>Email another involved person/s</h4>
         <p>Complete the below if you would like to send a link to this guided results page. We will not store any personal information.</p>
-        <input type="text" name="name" placeholder="Your name" />
-        <input type=text name="recipient" placeholder="Their name" />
-        <input type="email" name="email" placeholder="Their email"/>
-        <textarea name="message" placeholder="Message"> </textarea>
+
+        <p>
+          <label for="name">Your name</label>
+          <input type="text" id="name" name="name" />
+        </p>
+
+        <p>
+          <label for="recipient">Their name</label>
+          <input type=text id="recipient" name="recipient" />
+        </p>
+
+        <p>
+          <label for="email">Their email</label>
+          <input type="email" id="email" name="email"/>
+        </p>
+
+        <p>
+          <label for="message">Message</label>
+          <textarea name="message" id="message" placeholder="Message"> </textarea>
+        </p>
+
         <button type="submit">Send  <i class="fa fa-chevron-right" aria-hidden="true"></i></button>
       </form>
 

@@ -72,8 +72,12 @@ details .badge--default {
 details summary {
   padding: 0.7em;
   font-size: 19px;
+  padding-right: 2.8em;
   @include media($tablet) {
     font-size: 22px;
+  }
+  &::before {
+    background-image: none, url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTc5MiIgaGVpZ2h0PSIxNzkyIiB2aWV3Qm94PSIwIDAgMTc5MiAxNzkyIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Ik0xNjgzIDgwOGwtNzQyIDc0MXEtMTkgMTktNDUgMTl0LTQ1LTE5bC03NDItNzQxcS0xOS0xOS0xOS00NS41dDE5LTQ1LjVsMTY2LTE2NXExOS0xOSA0NS0xOXQ0NSAxOWw1MzEgNTMxIDUzMS01MzFxMTktMTkgNDUtMTl0NDUgMTlsMTY2IDE2NXExOSAxOSAxOSA0NS41dC0xOSA0NS41eiIgZmlsbD0iIzIyNGE2MSIvPjwvc3ZnPgo="), linear-gradient(transparent, transparent);
   }
   text-decoration: underline;
 }
@@ -189,6 +193,29 @@ details + details {
 //     padding-bottom: 0;
 //   }
 // }
+.accordion-panel {
+  .link {
+    position: relative;
+    display: inline-block;
+    margin-left: 1.5em;
+    margin-top: 0.6em;
+    &:before {
+      position: absolute;
+      display: block;
+      padding-right: 1em;
+      font: normal normal normal 18px/1 FontAwesome;
+      border-bottom: none;
+      left: -1.1em;
+      top: 0.3em;
+      content: "\f054";
+    }
+    &.phone::before {
+      content: "\f095";
+      font-size: 22px;
+      top: .2em;
+    }
+  }
+}
 .list-horizontal {
   border-top: solid 1px $light-grey;
   padding: $base-spacing 0;
