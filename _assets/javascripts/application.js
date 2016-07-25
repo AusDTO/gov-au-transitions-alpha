@@ -145,14 +145,48 @@
         form.action = "/q5/";
       }
 
+    },
+
+    calculateResultsPanels: function () {
+      var query = this.getQueryString(),
+          panel,
+          blurb = document.getElementById("result-blurb");
+
+      // this conditon ensures that the live value is always an array
+      if (query["live"] && typeof query["live"] === 'string') {
+        query["live"] = [query["live"]];
+      }
+      if (query["live"]
+          && query["live"].indexOf("home") === -1
+          && query["live"].indexOf("family") === -1
+          && query["live"].indexOf("dontknow") === -1) {
+        panel = document.querySelectorAll("[data-result-set='athome']");
+        panel[0].style.display = "none";
+        panel[0].setAttribute("aria-hidden", true);
+        blurb.innerHTML = "Based on your situation, here is your guide to information and services in your area. Explore these options to know how to help your older person decide on alternative living arrangements.";
+      }
+      if (query["live"]
+          && query["live"].indexOf("nursinghome") === -1
+          && query["live"].indexOf("retirementvillage") === -1
+          && query["live"].indexOf("lowsupport") === -1
+          && query["live"].indexOf("dontknow") === -1) {
+        panel = document.querySelectorAll("[data-result-set='altliving']");
+        panel[0].style.display = "none";
+        panel[0].setAttribute("aria-hidden", true);
+        blurb.innerHTML = "Based on your situation, here is your guide to information and services in your area. Explore these options to know how to help your older person be supported to stay in their home.";
+      }
     }
   };
 
   var alfa = new AlfaLoader();
   alfa.loadFormVarsFromUrl();
   document.addEventListener("DOMContentLoaded", function () {
-    alfa.enableAccordions();
+    var resultsWrap = document.querySelectorAll(".results-wrapper");
+    //alfa.enableAccordions();
     alfa.addBusinessLogic();
+    if (resultsWrap.length) {
+      alfa.calculateResultsPanels();
+    }
   });
   window.initAutocomplete = function () {
     if (alfa) {

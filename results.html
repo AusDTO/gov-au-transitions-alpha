@@ -8,37 +8,37 @@ permalink: /results/
 <section class="results-wrapper form-wrapper">
   <h2>Your guided results</h2>
 
-  <p class="abstract">Based on your situation, here is your guide to information and services in your area. Explore these options to know how to help your older person be supported to stay in their home.</p>
+  <p class="abstract" id="result-blurb">Based on your situation, here is your guide to information and services in your area.</p>
 
-  <details  aria-expanded="false">
+  <details  aria-expanded="false" aria-hidden="false" data-result-set="altliving">
     <summary>Alternative living options<span class="badge--default">6</span></summary>
     <div class="accordion-panel">
       {% include alternate.html %}
     </div>
   </details>
 
-  <details data-label="accordion-example" aria-expanded="false">
+  <details aria-expanded="false" aria-hidden="false" data-result-set="athome">
     <summary>In-home support<span class="badge--default">5</span></summary>
     <div class="accordion-panel">
       {% include homehelp.html %}
     </div>
   </details>
 
-  <details data-label="accordion-example" aria-expanded="false">
+  <details aria-expanded="false" aria-hidden="false" data-result-set="medical">
     <summary>Review medication situation<span class="badge--default">3</span></summary>
     <div class="accordion-panel">
       {% include medication.html %}
     </div>
   </details>
 
-  <details data-label="accordion-example" aria-expanded="false">
+  <details aria-expanded="false" aria-hidden="false" data-result-set="outandabout">
     <summary>Help getting out and about<span class="badge--default">4</span></summary>
     <div class="accordion-panel">
       {% include outandabout.html %}
     </div>
   </details>
 
-  <details data-label="accordion-example" aria-expanded="false">
+  <details aria-expanded="false" aria-hidden="false" data-result-set="support">
     <summary>Support for carers<span class="badge--default">2</span></summary>
     <div class="accordion-panel">
       {% include carer.html %}
@@ -50,14 +50,14 @@ permalink: /results/
 
   <p>Here is a list of common services that you may like to consider.</p>
 
-  <details data-label="accordion-example" aria-expanded="false">
+  <details aria-expanded="false" aria-hidden="false" data-result-set="finance">
     <summary>Review finances<span class="badge--default">8</span></summary>
     <div class="accordion-panel">
       {% include finances.html %}
     </div>
   </details>
 
-  <details data-label="accordion-example" aria-expanded="false">
+  <details aria-expanded="false" aria-hidden="false" data-result-set="consent">
     <summary>Organising consent<span class="badge--default">5</span></summary>
     <div class="accordion-panel">
       {% include consent.html %}
