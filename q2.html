@@ -8,21 +8,28 @@ permalink: /q2/
 <section class="form-wrapper">
   <div class="question-header">
     <a href="#" class="fa-chevron-left">Back</a>
-    <div><strong>Question </strong><span class="badge--default">2/6</span></div>
+    <div>Question 2/6</div>
   </div>
-  <h3>Where do they want to live?</h3>
+  <h3>Where might it be most appropriate for them to live?</h3>
 
   <form id="transition" data-current-question="q2" method="get" action="/q3/">
     <fieldset id="live">
-      <legend>There are many options available including support at home. Select as many as apply.</legend>
+      <legend>Think about their wishes, as well as any conditions or needs that would make that possible. </br> You can choose more than 1 option.</legend>
       <input id="home" name="live" type="checkbox" value="home">
-      <label for="home">Own home with support</label>
+      <label for="home">Own home (with modifications and/or support)</label>
+
       <input id="family" name="live" type="checkbox" value="family">
-      <label for="family">Family or friend’s home</label>
-      <input id="nursinghome" name="live" type="checkbox" value="nursinghome">
-      <label for="nursinghome">Nursing home</label>
+      <label for="family">Family or friend’s home (with modifications and/or support)</label>
+
       <input id="retirementvillage" name="live" type="checkbox" value="retirementvillage">
-      <label for="retirementvillage">Retirement village</label>
+      <label for="retirementvillage">Retirement village (low care)</label>
+
+      <input id="lowsupport" name="live" type="checkbox" value="lowsupport">
+      <label for="lowsupport">Transition village (low support with increasing care options)</label>
+
+      <input id="nursinghome" name="live" type="checkbox" value="nursinghome">
+      <label for="nursinghome">Nursing home (high care)</label>
+
       <input id="dontknow" name="live" type="checkbox" value="dontknow">
       <label for="dontknow">I don't know</label>
     </fieldset>

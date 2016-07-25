@@ -8,14 +8,29 @@ permalink: /q5/
 <section class="form-wrapper">
   <div class="question-header">
     <a href="#" class="fa-chevron-left">Back</a>
-    <div><strong>Question </strong><span class="badge--default">4/6</span></div>
+    <div>Question 4/6</div>
   </div>
 
-  <h3>What are you concerned about?</h3>
+  <h3>What are your concerns about them?</h3>
   <form id="transition" method="get" action="/q6/">
+    <legend>Ageing has many challenges and things can change quickly. There are services and information that might help. Select any concerns you have about them.</legend>
+
     <fieldset>
-      <legend>As we age things change. Select any health concerns that may apply to the complexity of their needs.</legend>
+      <h4>Physical wellbeing</h4>
+        <input id="eating" name="noticed" type="checkbox" value="eating">
+        <label for="eating">Not eating properly or well</label>
+        <input id="weight" name="noticed" type="checkbox" value="weight">
+        <label for="weight">Sudden loss of weight</label>
+        <input id="unstable" name="noticed" type="checkbox" value="unstable">
+        <label for="unstable">Unstable on their feet</label>
+        <input id="toilet" name="noticed" type="checkbox" value="toilet">
+        <label for="toilet">Toileting issues (incontinence)</label>
+        <input id="hygine" name="noticed" type="checkbox" value="hygine">
+        <label for="hygine">General personal hygiene</label>
+        <input id="driving" name="noticed" type="checkbox" value="driving">
+        <label for="driving">Trouble driving</label>
     </fieldset>
+
     <fieldset>
       <h4>Emotional / mental wellbeing</h4>
       <input id="confusion" name="noticed" type="checkbox" value="confusion">
@@ -32,20 +47,12 @@ permalink: /q5/
       <label for="alcohol">Alcohol abuse</label>
       <input id="drug" name="noticed" type="checkbox" value="drug">
       <label for="drug">Drug abuse</label>
-      </fieldset>
-      <fieldset>
-        <h4>Physical wellbeing</h4>
-      <input id="toilet" name="noticed" type="checkbox" value="toilet">
-      <label for="toilet">Toileting issues</label>
-      <input id="weight" name="noticed" type="checkbox" value="weight">
-      <label for="weight">Sudden loss of weight</label>
-      <input id="eating" name="noticed" type="checkbox" value="eating">
-      <label for="eating">Not eating properly or well</label>
-      <input id="hygine" name="noticed" type="checkbox" value="hygine">
-      <label for="hygine">General personal hygiene</label>
-      <input id="driving" name="noticed" type="checkbox" value="driving">
-      <label for="driving">Trouble driving</label>
+      <input id="mistreatment" name="noticed" type="checkbox" value="mistreatment">
+      <label for="mistreatment">Mistreatment by family or friends</label>
     </fieldset>
+
+
+
     <button type="submit">Next <i class="fa fa-chevron-right" aria-hidden="true"></i></button>
   </form>
 </section>
