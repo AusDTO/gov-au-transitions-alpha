@@ -220,6 +220,10 @@ details + details {
   @extend .accordion-panel;
   background-color: $lighter-aqua;
 }
+.landing-wrapper {
+  @extend .form-wrapper;
+  margin: 3em 0;
+}
 .list-horizontal {
   border-top: solid 1px $light-grey;
   padding: $base-spacing 0;
