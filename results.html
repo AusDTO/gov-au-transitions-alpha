@@ -10,31 +10,38 @@ permalink: /results/
 
   <p class="abstract">Based on your answers, here is a checklist of services in your area.<br/> Explore them to help your older person stay in the home.</p>
 
-  <details data-label="accordion-example" aria-expanded="true">
+  <details  aria-expanded="false">
     <summary>Alternative living options<span class="badge--default">6</span></summary>
     <div class="accordion-panel">
       {% include alternate.html %}
     </div>
   </details>
 
-  <details data-label="accordion-example" aria-expanded="true">
+  <details data-label="accordion-example" aria-expanded="false">
     <summary>In-home support<span class="badge--default">5</span></summary>
     <div class="accordion-panel">
       {% include homehelp.html %}
     </div>
   </details>
 
-  <details data-label="accordion-example" aria-expanded="true">
+  <details data-label="accordion-example" aria-expanded="false">
     <summary>Review medication situation<span class="badge--default">3</span></summary>
     <div class="accordion-panel">
       {% include medication.html %}
     </div>
   </details>
 
-  <details data-label="accordion-example" aria-expanded="true">
+  <details data-label="accordion-example" aria-expanded="false">
     <summary>Help getting out and about<span class="badge--default">4</span></summary>
     <div class="accordion-panel">
       {% include outandabout.html %}
+    </div>
+  </details>
+
+  <details data-label="accordion-example" aria-expanded="false">
+    <summary>Support for carers<span class="badge--default">2</span></summary>
+    <div class="accordion-panel">
+      {% include carer.html %}
     </div>
   </details>
 
@@ -43,14 +50,14 @@ permalink: /results/
 
   <p>Here is a list of common services that you may like to consider.</p>
 
-  <details data-label="accordion-example" aria-expanded="true">
+  <details data-label="accordion-example" aria-expanded="false">
     <summary>Review finances<span class="badge--default">8</span></summary>
     <div class="accordion-panel">
       {% include finances.html %}
     </div>
   </details>
 
-  <details data-label="accordion-example" aria-expanded="true">
+  <details data-label="accordion-example" aria-expanded="false">
     <summary>Organising consent<span class="badge--default">5</span></summary>
     <div class="accordion-panel">
       {% include consent.html %}
@@ -119,24 +126,31 @@ permalink: /results/
       </div>
     </div>
   </details> -->
-
-
-
-
-
-
-
-
-
-
       </hr>
       <form class="list-horizontal" action="" method="post">
         <h4>Email a friend</h4>
         <p>Complete the below if you would like to send a link to this guided results page. We will not store any personal information.</p>
-        <input type="text" name="name" placeholder="Your name" />
-        <input type=text name="recipient" placeholder="Their name" />
-        <input type="email" name="email" placeholder="Their email"/>
-        <textarea name="message" placeholder="Message"> </textarea>
+
+        <p>
+          <label for="name">Your name</label>
+          <input type="text" id="name" name="name" />
+        </p>
+
+        <p>
+          <label for="recipient">Their name</label>
+          <input type=text id="recipient" name="recipient" />
+        </p>
+
+        <p>
+          <label for="email">Their email</label>
+          <input type="email" id="email" name="email"/>
+        </p>
+
+        <p>
+          <label for="message">Message</label>
+          <textarea name="message" id="message" placeholder="Message"> </textarea>
+        </p>
+
         <button type="submit">Send  <i class="fa fa-chevron-right" aria-hidden="true"></i></button>
       </form>
 
