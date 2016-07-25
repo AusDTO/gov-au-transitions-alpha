@@ -216,6 +216,10 @@ details + details {
     }
   }
 }
+.topic-links {
+  @extend .accordion-panel;
+  background-color: $lighter-aqua;
+}
 .list-horizontal {
   border-top: solid 1px $light-grey;
   padding: $base-spacing 0;
