@@ -64,22 +64,24 @@ header[role=banner] .hero .tagline {
 #transition legend {
   margin-bottom: $base-spacing;
 }
-details .badge--default {
-  float: right;
-  background-color: $dark-aqua;
-  margin-top: 0.3em;
-}
-details summary {
-  padding: 0.7em;
-  font-size: 19px;
-  padding-right: 2.8em;
-  @include media($tablet) {
-    font-size: 22px;
+details {
+  // .badge--default {
+  //   float: right;
+  //   background-color: $dark-aqua;
+  //   margin-top: 0.3em;
+  // }
+  summary {
+    padding: 0.7em;
+    font-size: 19px;
+    padding-right: 2.8em;
+    @include media($tablet) {
+      font-size: 22px;
+    }
+    &::before {
+      background-image: none, url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTc5MiIgaGVpZ2h0PSIxNzkyIiB2aWV3Qm94PSIwIDAgMTc5MiAxNzkyIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Ik0xNjgzIDgwOGwtNzQyIDc0MXEtMTkgMTktNDUgMTl0LTQ1LTE5bC03NDItNzQxcS0xOS0xOS0xOS00NS41dDE5LTQ1LjVsMTY2LTE2NXExOS0xOSA0NS0xOXQ0NSAxOWw1MzEgNTMxIDUzMS01MzFxMTktMTkgNDUtMTl0NDUgMTlsMTY2IDE2NXExOSAxOSAxOSA0NS41dC0xOSA0NS41eiIgZmlsbD0iIzIyNGE2MSIvPjwvc3ZnPgo="), linear-gradient(transparent, transparent);
+    }
+    text-decoration: underline;
   }
-  &::before {
-    background-image: none, url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTc5MiIgaGVpZ2h0PSIxNzkyIiB2aWV3Qm94PSIwIDAgMTc5MiAxNzkyIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Ik0xNjgzIDgwOGwtNzQyIDc0MXEtMTkgMTktNDUgMTl0LTQ1LTE5bC03NDItNzQxcS0xOS0xOS0xOS00NS41dDE5LTQ1LjVsMTY2LTE2NXExOS0xOSA0NS0xOXQ0NSAxOWw1MzEgNTMxIDUzMS01MzFxMTktMTkgNDUtMTl0NDUgMTlsMTY2IDE2NXExOSAxOSAxOSA0NS41dC0xOSA0NS41eiIgZmlsbD0iIzIyNGE2MSIvPjwvc3ZnPgo="), linear-gradient(transparent, transparent);
-  }
-  text-decoration: underline;
 }
 details + details {
   margin-top: 1.6em;
