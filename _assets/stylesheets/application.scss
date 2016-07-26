@@ -225,6 +225,14 @@ details + details {
 .landing-wrapper {
   @extend .form-wrapper;
   margin: 3em 0;
+  p > i {
+    font-size: 26px;
+    vertical-align: middle;
+    padding-right: 0.5em;
+  }
+  [role='button'] {
+    margin-top: $medium-spacing;
+  }
 }
 .list-horizontal {
   border-top: solid 1px $light-grey;
@@ -252,6 +260,9 @@ main.hero-gradient {
 }
 .asside-content {
   @extend main;
+  @include media($tablet) {
+    padding: 0;
+  }
 }
 .topics-wrapper {
   @include outer-container;
@@ -259,6 +270,7 @@ main.hero-gradient {
 .related-topics {
   border-left: 1px solid $grey;
   padding-left: $small-spacing;
+  margin-top: 1.5em;
   @include media(min-width 768px max-width (1200px - 1)) {
     & {
       @include span-columns(6 of 12);
