@@ -35,7 +35,7 @@ export const QuestionFlow = {
       question: "Which area/s are they considering moving to?",
       legend: "This helps us to suggest local services.",
       name: "newlocation",
-      type: "location",
+      type: "locationaddmore",
       legend: "postcode, town or village",
       values: []
     },
