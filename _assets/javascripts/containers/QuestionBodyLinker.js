@@ -20,8 +20,11 @@ const mapDispatchToProps = (dispatch) => {
       dispatch(moveNext())
     },
     onChange: (value) => {
-      console.log(value)
-      dispatch(onSelect(value))
+      if (typeof value !== "string") {
+        dispatch(onSelect(value.label))
+      } else {
+        dispatch(onSelect(value))
+      }
     }
   }
 }

@@ -32,7 +32,7 @@ function transitionApp(state = initialState, action) {
       let type = QuestionFlow.questions[state.currentQuestion].type
       let result
 
-      if (type === 'radio') {
+      if (type === 'radio' || type === 'location') {
         result = [action.value]
       } else if (type === 'checkbox') {
         let index = state.currentAnswers.indexOf(action.value)
@@ -41,8 +41,14 @@ function transitionApp(state = initialState, action) {
         } else {
           result = state.currentAnswers.concat(action.value)
         }
-      } else {
-        alert("changed")
+      } else if (type === 'locationaddmore') {
+        let index = state.currentAnswers.indexOf('addmore')
+        if (index > -1) {
+          result = removeAtIndex(state.currentAnswers, index).concat(action.value)
+        } else {
+          result = state.currentAnswers.concat(action.value)
+        }
+      } else  {
         result = [action.value]
       }
       return Object.assign({}, state, {

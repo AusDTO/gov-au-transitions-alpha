@@ -1,6 +1,11 @@
 import React, { PropTypes } from 'react'
+import Geosuggest from 'react-geosuggest'
 
+const addMore = () => {
+  console.log("add more has been clicked");
+}
 const getFieldset = (type, values, name, selectedValues, onChange) => {
+
   switch (type) {
     case "radio":
     case "checkbox":
@@ -28,8 +33,56 @@ const getFieldset = (type, values, name, selectedValues, onChange) => {
             onChange.bind(null, e.target.value)
           }}/>
       )]
+    case "location":
+      return [(
+        <Geosuggest
+          key={name}
+          country='au'
+          initialValue={selectedValues[0]}
+          types={['(regions)']}
+          placeholder="Please enter a suburb, town or postcode"
+          onSuggestSelect={onChange}
+          />
+      )]
+    case "locationaddmore":
+      if (selectedValues.length) {
+
+        let inputs = selectedValues.map(value => {
+          let val
+          if (value === 'addmore') {
+            val = ""
+            value += selectedValues.length
+          } else {
+            val = value
+          }
+          return (
+          <Geosuggest
+            key={value}
+            country='au'
+            initialValue={val}
+            types={['(regions)']}
+            placeholder="Please enter a suburb, town or postcode"
+            onSuggestSelect={onChange}
+            />
+        )})
+        inputs.push((
+          <a key="addmorelink" href="#" className="addmore" onClick={onChange.bind(null, 'addmore')}>Add more</a>
+        ))
+        return inputs
+      } else {
+        return [(
+          <Geosuggest
+            key={name}
+            country='au'
+            initialValue=""
+            types={['(regions)']}
+            placeholder="Please enter a suburb, town or postcode"
+            onSuggestSelect={onChange}
+            />
+        )]
+      }
     default:
-      return [(<span>{name}</span>)]
+      return [(<span key={name}>{name}</span>)]
   }
 }
 
