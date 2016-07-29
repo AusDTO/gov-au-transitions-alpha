@@ -41,10 +41,9 @@ export const QuestionFlow = {
     },
     {
       question: "Do any of these apply?",
-      legend: "This helps us to suggest things like subsidised services and the right forms.",
       name: "entitlement",
       type: "checkbox",
-      legend: "Please put a suburb or postcode.",
+      legend: "This helps us to suggest things like subsidised services and the right forms.",
       values: [
         {value: "pensioner", label: "Age pensioner"},
         {value: "disability", label: "Disability pensioner"},
