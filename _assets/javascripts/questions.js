@@ -1,43 +1,55 @@
 export const QuestionFlow = {
   questions: [
     {
-      question: "How old is the person?",
-      name: "age",
-      type: "radio",
-      legend: "We need their age group in order to determine what applies to them",
-      values: [
-        {value: "65", label: "65 years or older"},
-        {value: "50", label: "50 years or older (and an Aboriginal or Torres Strait Islander)"},
-        {value: "noage", label: "None of these"}
-      ]
-    },
-    {
-      question: "Where might it be most appropriate for them to live?",
+      question: "What living options do they want to look into?",
       name: "live",
       type: "checkbox",
-      legend: "Think about their wishes, as well as any conditions or needs that would make that possible. You can choose more than 1 option.",
+      legend: "Select as many as apply",
       values: [
-        {value: "ownhome", label: "Own home (with modifications and/or support)"},
-        {value: "family", label: "Family or friend’s home (with modifications and/or support)"},
-        {value: "retirementvillage", label: "Retirement village (low care)"},
-        {value: "transitionvillage", label: "Transition village (low support with increasing care options)"},
-        {value: "nursinghome", label: "Nursing home (high care)"},
+        {value: "ownhome", label: "Own home"},
+        {value: "family", label: "Family or friend’s home"},
+        {value: "retirementvillage", label: "Retirement village"},
+        {value: "nursinghome", label: "Nursing home"},
         {value: "nolive", label: "I don't know"}
       ]
     },
     {
-      question: "What is your name?",
-      name: "name",
-      type: "text",
-      legend: "Please type your name below.",
+      question: "What do you think they need help with?",
+      name: "help",
+      type: "checkbox",
+      legend: "Select as many as apply",
+      values: [
+        {value: "home", label: "Managing at home"},
+        {value: "meds", label: "Managing medication"},
+        {value: "outandabout", label: "Getting out and about"}
+      ]
+    },
+    {
+      question: "Where do they live?",
+      name: "location",
+      type: "location",
+      legend: "This helps us to suggest local services.",
       values: []
     },
     {
-      question: "Where do you live?",
-      name: "location",
+      question: "Which area/s are they considering moving to?",
+      legend: "This helps us to suggest local services.",
+      name: "newlocation",
       type: "location",
-      legend: "Please put a suburb or postcode.",
+      legend: "postcode, town or village",
       values: []
+    },
+    {
+      question: "Do any of these apply?",
+      name: "entitlement",
+      type: "checkbox",
+      legend: "This helps us to suggest things like subsidised services and the right forms.",
+      values: [
+        {value: "pensioner", label: "Age pensioner"},
+        {value: "disability", label: "Disability pensioner"},
+        {value: "veteran", label: "Veteran/war widow or widower"},
+        {value: "aboriginal", label: "Aboriginal or Torres Strait Islander peoples"},
+      ]
     }
   ]
 }
