@@ -27,15 +27,17 @@ export const QuestionFlow = {
     },
     {
       question: "What is your name?",
-      name: "live",
-      type: "radio",
-      legend: "Think about their wishes, as well as any conditions or needs that would make that possible. You can choose more than 1 option.",
-      values: [
-        {value: "1", label: "Own home (with modifications and/or support)"},
-        {value: "2", label: "Family or friend’s home (with modifications and/or support)"},
-
-        {value: "6", label: "I don't know"}
-      ]
+      name: "name",
+      type: "text",
+      legend: "Please type your name below.",
+      values: []
+    },
+    {
+      question: "Where do you live?",
+      name: "location",
+      type: "location",
+      legend: "Please put a suburb or postcode.",
+      values: []
     }
   ]
 }

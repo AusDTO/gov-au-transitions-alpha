@@ -1,19 +1,39 @@
 import React, { PropTypes } from 'react'
 
+const getFieldset = (type, values, name, selectedValues, onChange) => {
+  switch (type) {
+    case "radio":
+    case "checkbox":
+      return values.map(field => (
+        <span key={field.value}>
+          <input name={name}
+                type={type}
+                id={field.value}
+                value={field.value}
+                checked={selectedValues.indexOf(field.value) > -1 ? true : false}
+                onChange={onChange.bind(null, field.value)} />
+          <label htmlFor={field.value}>{field.label}</label>
+        </span>
+      ))
+    case "text":
+      let input
+      return [(
+        <input type="text"
+          key={name}
+          name={name}
+          id={name}
+          value={selectedValues[0]}
+          ref={node => {input = node}}
+          onChange={e => {
+            onChange.bind(null, e.target.value)
+          }}/>
+      )]
+    default:
+      return [(<span>{name}</span>)]
+  }
+}
+
 const QuestionBody = ({questionId, name, legend, type, allValues, selectedValues, onSubmit, onChange}) => {
-  let changer = e => {alert('hello')}
-  // let fieldset = allValues.map(field => (
-  //   <span key={field.value}>
-  //     <input name={name}
-  //           type={type}
-  //           value={field.value}
-  //           checked={selectedValues.indexOf(field.value) !== -1 ? true : false}
-  //           onChange={changer} />
-  //     <label htmlFor={field.value}>{field.label}</label>
-  //   </span>
-  // ))
-
-
   return (
     <form data-current-question={questionId}
         method="get"
@@ -24,19 +44,7 @@ const QuestionBody = ({questionId, name, legend, type, allValues, selectedValues
         }}>
       <fieldset>
         <legend>{legend}</legend>
-        {allValues.map(field => {
-          let value = field.value;
-          return (
-          <span key={field.value}>
-            <input name={name}
-                  type={type}
-                  value={field.value}
-                  checked={ false }
-                  onChange={onChange.bind(this, value)} />
-            <label htmlFor={field.value}>{field.label}</label>
-          </span>
-        )
-        })}
+        {getFieldset(type, allValues, name, selectedValues, onChange)}
       </fieldset>
       <button type="submit">Next  <i className="fa fa-chevron-right" aria-hidden="true"></i></button>
     </form>

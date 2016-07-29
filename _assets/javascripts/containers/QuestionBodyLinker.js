@@ -21,7 +21,7 @@ const mapDispatchToProps = (dispatch) => {
     },
     onChange: (value) => {
       console.log(value)
-      dispatch(onSelect([value]))
+      dispatch(onSelect(value))
     }
   }
 }

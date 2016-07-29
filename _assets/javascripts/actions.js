@@ -11,9 +11,9 @@ export function moveBack() {
   return { type: MOVE_BACK }
 }
 
-export function onSelect(values) {
+export function onSelect(value) {
   return {
     type: ON_SELECT,
-    values
+    value
   }
 }

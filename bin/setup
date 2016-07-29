@@ -14,5 +14,6 @@ bundle update
 # Set up JS dependencies via Bower.
 npm install
 npm start
+node ./node_modules/webpack/bin/webpack
 bower --version > /dev/null || npm install -g bower
 bower install
