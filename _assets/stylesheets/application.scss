@@ -89,6 +89,9 @@ details + details {
 .results-wrapper hr {
   margin-top: 2.2em;
 }
+.results-wrapper {
+  display: none !important;
+}
 // .accordion {
 //   $base-border-color: $non-white !default;
 //   // $base-line-height: 1.5em !default;
