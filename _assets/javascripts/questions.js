@@ -51,5 +51,11 @@ export const QuestionFlow = {
         {value: "aboriginal", label: "Aboriginal or Torres Strait Islander peoples"},
       ]
     }
+  ],
+  results: [
+    {
+      id: "",
+      rules: ""
+    }
   ]
 }
