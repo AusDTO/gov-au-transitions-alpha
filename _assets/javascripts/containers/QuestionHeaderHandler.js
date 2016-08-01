@@ -5,14 +5,14 @@ import { moveBack } from '../actions'
 
 const getQuestion = (index, questions) => {
   return {
-    title: QuestionFlow.questions[index].question,
+    title: index >= questions.length ? "" : questions[index].question,
     index: index + 1,
-    total: QuestionFlow.questions.length
+    total: questions.length
   }
 }
 
 const mapStateToProps = (state) => {
-  return getQuestion(state.currentQuestion, QuestionFlow)
+  return getQuestion(state.currentQuestion, QuestionFlow.questions)
 }
 
 const mapDispatchToProps = (dispatch) => {

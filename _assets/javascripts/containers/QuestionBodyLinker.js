@@ -3,15 +3,29 @@ import { QuestionFlow } from '../questions'
 import QuestionBody from '../components/QuestionBody'
 import { moveNext, onSelect } from '../actions'
 
-const mapStateToProps = (state) => {
-  return {
-    questionId: "q" + state.currentQuestion,
-    name: QuestionFlow.questions[state.currentQuestion].name,
-    legend: QuestionFlow.questions[state.currentQuestion].legend,
-    type: QuestionFlow.questions[state.currentQuestion].type,
-    allValues: QuestionFlow.questions[state.currentQuestion].values,
-    selectedValues: state.currentAnswers
+const getQuestion = (index, questions, answers) => {
+  if (index >= questions.length) {
+    return {
+      questionId: "q" + index,
+      name: "",
+      legend: "",
+      type: "",
+      allValues: [],
+      selectedValues: []
+    }
   }
+  return {
+    questionId: "q" + index,
+    name: questions[index].name,
+    legend: questions[index].legend,
+    type: questions[index].type,
+    allValues: questions[index].values,
+    selectedValues: answers
+  }
+}
+
+const mapStateToProps = (state) => {
+  return getQuestion(state.currentQuestion, QuestionFlow.questions, state.currentAnswers)
 }
 
 const mapDispatchToProps = (dispatch) => {

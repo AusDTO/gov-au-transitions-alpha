@@ -87,6 +87,9 @@ const getFieldset = (type, values, name, selectedValues, onChange) => {
 }
 
 const QuestionBody = ({questionId, name, legend, type, allValues, selectedValues, onSubmit, onChange}) => {
+  if (type === "") {
+    return <div></div>
+  }
   return (
     <form data-current-question={questionId}
         method="get"
