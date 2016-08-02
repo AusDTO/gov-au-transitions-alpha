@@ -54,8 +54,16 @@ export const QuestionFlow = {
   ],
   results: [
     {
-      id: "",
-      rules: ""
+      id: "[data-result-set='altliving']",
+      rules: "retirementvillage,nursinghome,nolive"
+    },
+    {
+      id: "#retirement-village",
+      rules: "retirementvillage"
+    },
+    {
+      id: "#retirementvillage-costs",
+      rules: "retirementvillage+pensioner,veteran"
     }
   ]
 }
