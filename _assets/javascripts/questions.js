@@ -1,7 +1,7 @@
 export const QuestionFlow = {
   questions: [
     {
-      question: "What living options do they want to look into?",
+      question: "What living options are they interested in?",
       name: "live",
       type: "checkbox",
       legend: "Select as many as apply",
@@ -16,6 +16,7 @@ export const QuestionFlow = {
     {
       question: "What do you think they need help with?",
       name: "help",
+      condition: "ownhome,family",
       type: "checkbox",
       legend: "Select as many as apply",
       values: [
@@ -27,6 +28,7 @@ export const QuestionFlow = {
     {
       question: "Where do they live?",
       name: "location",
+      condition: "ownhome,family",
       type: "location",
       legend: "This helps us to suggest local services.",
       values: []
@@ -35,6 +37,7 @@ export const QuestionFlow = {
       question: "Which area/s are they considering moving to?",
       legend: "This helps us to suggest local services.",
       name: "newlocation",
+      condition: "retirementvillage,nursinghome,nolive",
       type: "locationaddmore",
       legend: "postcode, town or village",
       values: []
@@ -57,13 +60,27 @@ export const QuestionFlow = {
       id: "[data-result-set='altliving']",
       rules: "retirementvillage,nursinghome,nolive"
     },
+    // {
+    //   id: "#retirement-village",
+    //   rules: "retirementvillage"
+    // },
+    // {
+    //   id: "#retirementvillage-costs",
+    //   rules: "retirementvillage+pensioner,veteran"
+    // },
     {
-      id: "#retirement-village",
-      rules: "retirementvillage"
+      id: "[data-result-set='athome']",
+      rules: "ownhome,family"
     },
     {
-      id: "#retirementvillage-costs",
-      rules: "retirementvillage+pensioner,veteran"
+      id: "[data-result-set='medical']",
+      rules: "meds"
+    },
+    {
+      id: "[data-result-set='outandabout']",
+      rules: "outandabout"
     }
+
+
   ]
 }
