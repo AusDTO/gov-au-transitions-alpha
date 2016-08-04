@@ -106,7 +106,8 @@ function transitionApp(state = initialState, action) {
         result = [action.value]
       }
       return Object.assign({}, state, {
-        currentAnswers: result
+        currentAnswers: result,
+        previousAnswers: state.previousAnswers.slice(0, state.currentQuestion)
       })
     default:
       return state

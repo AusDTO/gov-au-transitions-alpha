@@ -5,6 +5,7 @@ import { createStore } from 'redux'
 import transitionApp from './reducers'
 import QuestionLinker from './containers/QuestionLinker'
 import { QuestionFlow } from './questions'
+import { moveBack } from './actions'
 
 let store = createStore(transitionApp)
 
@@ -58,11 +59,21 @@ const getResultsPanels = (state) => {
   }
 }
 
+const onClick = (e) => {
+  store.dispatch(moveBack())
+  e.preventDefault()
+  document.getElementById('js-results-holder').style.display = "none"
+}
+
 store.subscribe(() => {
   var currState = store.getState();
 
+
   if (currState.currentQuestion >= QuestionFlow.questions.length) {
+    document.getElementById('resultsback').addEventListener('click', onClick.bind(this))
     getResultsPanels(currState)
     document.getElementById('js-results-holder').style.display = "block"
+  } else {
+    document.getElementById('resultsback').addEventListener('click', onClick.bind(this))
   }
 })
