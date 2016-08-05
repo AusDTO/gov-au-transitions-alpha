@@ -11,7 +11,8 @@ const getQuestion = (index, questions, answers) => {
       legend: "",
       type: "",
       allValues: [],
-      selectedValues: []
+      selectedValues: [],
+      glossary: []
     }
   }
   return {
@@ -20,7 +21,8 @@ const getQuestion = (index, questions, answers) => {
     legend: questions[index].legend,
     type: questions[index].type,
     allValues: questions[index].values,
-    selectedValues: answers
+    selectedValues: answers,
+    glossary: questions[index].glossary
   }
 }
 

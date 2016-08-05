@@ -11,6 +11,13 @@ export const QuestionFlow = {
         {value: "retirementvillage", label: "Retirement village"},
         {value: "nursinghome", label: "Nursing home"},
         {value: "nolive", label: "I don't know"}
+      ],
+      glossary: [
+        {term: "Own home", description: "The house that you currently live in."},
+        {term: "Family or friend’s home", description: "A family of firend house that the person may move to."},
+        {term: "Retirement village", description: "A retirement village is going to be defined later."},
+        {term: "Nursing home", description: "A nursing home is going to be defined later."},
+        {term: "I don't know", description: "I dont know is when you don't know where the person is going to live."}
       ]
     },
     {

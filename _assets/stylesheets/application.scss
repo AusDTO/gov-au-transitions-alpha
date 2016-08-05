@@ -391,3 +391,16 @@ form fieldset {
 .geosuggest-item--active:focus {
   background: #ccc;
 }
+
+.glossary-content {
+  display: none;
+  padding: $base-spacing;
+  max-height: 0;
+  overflow: hidden;
+  background-color: #def4f9;
+  &[aria-expanded="true"] {
+    display: block;
+    max-height: 1000px;
+    transition: max-height 5s linear;
+  }
+}

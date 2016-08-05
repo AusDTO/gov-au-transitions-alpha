@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react'
 import Geosuggest from 'react-geosuggest'
+import Glossary from './Glossary'
 
 const addMore = () => {
   console.log("add more has been clicked");
@@ -86,7 +87,27 @@ const getFieldset = (type, values, name, selectedValues, onChange) => {
   }
 }
 
-const QuestionBody = ({questionId, name, legend, type, allValues, selectedValues, onSubmit, onChange}) => {
+// const getGlossary = (list = []) => {
+//   if (list.length === 0) {
+//     return <div></div>
+//   }
+//   let dlList = list.map(dlItem => (
+//     <dl key={dlItem.term}>
+//       <dt>{dlItem.term}</dt>
+//       <dd>{dlItem.description}</dd>
+//     </dl>
+//   ))
+//   return (
+//     <div>
+//       <a href="#">View definitions </a>
+//       <div>
+//         {dlList}
+//       </div>
+//     </div>
+//   )
+// }
+
+const QuestionBody = ({questionId, name, legend, type, allValues, selectedValues, glossary, onSubmit, onChange}) => {
   if (type === "") {
     return <div></div>
   }
@@ -102,6 +123,7 @@ const QuestionBody = ({questionId, name, legend, type, allValues, selectedValues
         <legend>{legend}</legend>
         {getFieldset(type, allValues, name, selectedValues, onChange)}
       </fieldset>
+      <Glossary list={glossary} />
       <button type="submit">Next  <i className="fa fa-chevron-right" aria-hidden="true"></i></button>
     </form>
   )
