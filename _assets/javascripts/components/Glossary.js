@@ -15,7 +15,7 @@ class Glossary extends Component {
   }
 
   render() {
-    if (this.props.list.length === 0) {
+    if (!this.props.list || this.props.list.length === 0) {
       return <div></div>
     }
     let dlList = this.props.list.map(dlItem => (

@@ -58,7 +58,29 @@ export const QuestionFlow = {
         {value: "pensioner", label: "Age pensioner"},
         {value: "disability", label: "Disability pensioner"},
         {value: "veteran", label: "Veteran/war widow or widower"},
-        {value: "aboriginal", label: "Aboriginal or Torres Strait Islander peoples"},
+        {value: "aboriginal", label: "Aboriginal or Torres Strait Islander peoples"}
+      ]
+    },
+    {
+      question: "What medical conditions do you know they have?",
+      name: "medicalconditions",
+      type: "autocomplete",
+      legend: "This helps us point you to the correct area in order to get help in that area.",
+      values: [
+        {value: "arthritis", label: "Arthritis"},
+        {value: "heartdisease", label: "Heart Disease"},
+        {value: "cancer", label: "Cancer"},
+        {value: "respiratorydisease", label: "Respiratory Disease"},
+        {value: "alzheimers", label: "Alzheimer’s Disease"},
+        {value: "osteoporosis", label: "Osteoporosis"},
+        {value: "diabetes", label: "Diabetes"},
+        {value: "influenza", label: "Influenza and Pneumonia"},
+        {value: "falls", label: "Falls"},
+        {value: "substanceabuse", label: "Substance Abuse"},
+        {value: "obesity", label: "Obesity"},
+        {value: "depression", label: "Depression"},
+        {value: "sight", label: "Sight problems"},
+        {value: "hearing", label: "Hearing problems"}
       ]
     }
   ],

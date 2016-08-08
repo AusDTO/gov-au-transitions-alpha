@@ -37,7 +37,7 @@ const mapDispatchToProps = (dispatch) => {
     },
     onChange: (value) => {
       if (typeof value !== "string") {
-        dispatch(onSelect(value.label))
+        dispatch(onSelect(value))
       } else {
         dispatch(onSelect(value))
       }

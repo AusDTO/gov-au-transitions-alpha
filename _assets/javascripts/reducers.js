@@ -1,20 +1,13 @@
 import { combineReducers } from 'redux'
 import { MOVE_NEXT, MOVE_BACK, ON_SELECT } from './actions'
 import { QuestionFlow } from './questions'
+import { removeAtIndex, replaceAtIndex } from './helpers'
 
 // The initial state that the questions are in.
 const initialState = {
   currentQuestion: 0,
   currentAnswers: [],
   previousAnswers: []
-}
-
-function removeAtIndex(list, index) {
-  return list.slice(0, index).concat(list.slice(index + 1))
-}
-
-function replaceAtIndex(list, index, value) {
-  return list.slice(0, index).concat(value).concat(list.slice(index + 1))
 }
 
 const flattenAnswers = (previousAnswers) => {
@@ -68,7 +61,7 @@ function transitionApp(state = initialState, action) {
   // set of previously answered questions.
   switch (action.type) {
     case MOVE_NEXT:
-      let answers = replaceAtIndex(state.previousAnswers, state.currentQuestion, [state.currentAnswers])
+      let answers = replaceAtIndex(state.previousAnswers, state.currentQuestion, state.currentAnswers)
       let next = determineNextQuestion(state.currentQuestion, answers)
       return Object.assign({}, state, {
         currentQuestion: next,
@@ -96,12 +89,7 @@ function transitionApp(state = initialState, action) {
           result = state.currentAnswers.concat(action.value)
         }
       } else if (type === 'locationaddmore') {
-        let index = state.currentAnswers.indexOf('addmore')
-        if (index > -1) {
-          result = removeAtIndex(state.currentAnswers, index).concat(action.value)
-        } else {
-          result = state.currentAnswers.concat(action.value)
-        }
+        result = action.value
       } else  {
         result = [action.value]
       }
