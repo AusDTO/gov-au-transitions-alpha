@@ -1,7 +1,70 @@
 export const QuestionFlow = {
   questions: [
     {
-      question: "What living options are they interested in?",
+      question: "Are you looking for yourself or someone else?",
+      name: "looking",
+      type: "radio",
+      //legend: "Select as many as apply",
+      values: [
+        {value: "myself", label: "Myself"},
+        {value: "someoneelse", label: "Someone else"}
+      ]
+    },
+    {
+      question: "How old are they?",
+      name: "age",
+      type: "radio",
+      //legend: "Select as many as apply",
+      values: [
+        {value: "under50", label: "Under 50"},
+        {value: "50to64", label: "50 to 64"},
+        {value: "65to79", label: "65 to 79"},
+        {value: "80to95", label: "80 to 95"},
+        {value: "95", label: "95 plus"}
+      ]
+    },
+    {
+      question: "What language are they most comfortable using?",
+      name: "language",
+      type: "checkbox",
+      legend: "This helps us point you to the correct area in order to get help in that area.",
+      values: [
+        {value: "english", label: "English"},
+        {value: "simplifiedchinese", label: "Simplified Chinese (Mandarin)"},
+        {value: "spanish", label: "Spanish"},
+        {value: "italian", label: "Italian"},
+        {value: "greek", label: "Greek"},
+        {value: "vietnamese", label: "Vietnamese"},
+        {value: "arabic", label: "Arabic"},
+        {value: "croatian", label: "Croatian"},
+        {value: "dutch", label: "Dutch"},
+        {value: "german", label: "German"},
+        {value: "hindi", label: "Hindi"},
+        {value: "korean", label: "Korean"},
+        {value: "macedonian", label: "Macedonian"},
+        {value: "maltese", label: "Maltese"},
+        {value: "polish", label: "Polish"},
+        {value: "russian", label: "Russian"},
+        {value: "serbian", label: "Serbian"},
+        {value: "traditionalchinese", label: "Traditional Chinese"},
+        {value: "cantonses", label: "Cantonese"},
+        {value: "other", label: "Other"}
+      ]
+    },
+    {
+      question: "What is their cultural background?",
+      name: "culture",
+      //condition: "ownhome,family",
+      type: "autocomplete",
+      legend: "Select as many as apply",
+      values: [
+        {value: "culture1", label: "Managing at home"},
+        {value: "culture2", label: "Managing medication"},
+        {value: "culture3", label: "Getting out and about"}
+      ]
+    },
+    {
+      question: "Where are they looking to live?",
       name: "live",
       type: "checkbox",
       legend: "Select as many as apply",
@@ -21,18 +84,6 @@ export const QuestionFlow = {
       ]
     },
     {
-      question: "What do you think they need help with?",
-      name: "help",
-      condition: "ownhome,family",
-      type: "checkbox",
-      legend: "Select as many as apply",
-      values: [
-        {value: "home", label: "Managing at home"},
-        {value: "meds", label: "Managing medication"},
-        {value: "outandabout", label: "Getting out and about"}
-      ]
-    },
-    {
       question: "Where do they live?",
       name: "location",
       condition: "ownhome,family",
@@ -41,30 +92,19 @@ export const QuestionFlow = {
       values: []
     },
     {
-      question: "Which area/s are they considering moving to?",
-      legend: "This helps us to suggest local services.",
+      question: "Where are they considering living?",
+      //legend: "This helps us to suggest local services.",
       name: "newlocation",
-      condition: "retirementvillage,nursinghome,nolive",
+      condition: "retirementvillage,nursinghome",
       type: "locationaddmore",
       legend: "postcode, town or village",
       values: []
     },
     {
-      question: "Do any of these apply?",
-      name: "entitlement",
-      type: "checkbox",
-      legend: "This helps us to suggest things like subsidised services and the right forms.",
-      values: [
-        {value: "pensioner", label: "Age pensioner"},
-        {value: "disability", label: "Disability pensioner"},
-        {value: "veteran", label: "Veteran/war widow or widower"},
-        {value: "aboriginal", label: "Aboriginal or Torres Strait Islander peoples"}
-      ]
-    },
-    {
-      question: "What medical conditions do you know they have?",
+      question: "Do they have any of the following conditions?",
       name: "medicalconditions",
       type: "autocomplete",
+      //condition: "ownhome,family",
       legend: "This helps us point you to the correct area in order to get help in that area.",
       values: [
         {value: "arthritis", label: "Arthritis"},
@@ -80,7 +120,47 @@ export const QuestionFlow = {
         {value: "obesity", label: "Obesity"},
         {value: "depression", label: "Depression"},
         {value: "sight", label: "Sight problems"},
-        {value: "hearing", label: "Hearing problems"}
+        {value: "hearing", label: "Hearing problems"},
+        {value: "noneofthese", label: "None of these"}
+      ]
+    },
+    {
+      question: "Have you considered getting services at home?",
+      //legend: "This helps us to suggest local services.",
+      name: "homeservices",
+      condition: "nursinghome+noneofthese",
+      type: "radio",
+      legend: "Please select one of these",
+      values: [
+        {value: "yes", label: "Yes"},
+        {value: "no", label: "No"}
+      ]
+    },
+    {
+      question: "What do they need help with?",
+      name: "help",
+      condition: "ownhome,family,retirementvillage,no",
+      type: "checkbox",
+      legend: "Select as many as apply",
+      values: [
+        {value: "meals", label: "Meals"},
+        {value: "hygiene", label: "Hygiene"},
+        {value: "medications", label: "Managing medications"},
+        {value: "home", label: "Home maintenance"},
+        {value: "socialconnections", label: "Social connections"},
+        {value: "exercise", label: "Exercise"},
+        {value: "transport", label: "Transport"}
+      ]
+    },
+    {
+      question: "Are they recieving a pension?",
+      name: "pension",
+      type: "checkbox",
+      legend: "This helps us to suggest things like subsidised services and the right forms.",
+      values: [
+        {value: "pension", label: "Age pension"},
+        {value: "disability", label: "Disability pension"},
+        {value: "veteran", label: "Veteran/war widow or widower"}
       ]
     }
   ],

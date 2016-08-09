@@ -27,8 +27,21 @@ function determineQuestionCanShow(index, answers) {
   }
 
   for (let i = 0; i < rules.length; i += 1) {
-    if (answers.indexOf(rules[i]) !== -1) {
-      return true
+    if (rules[i].indexOf('+') > -1) {
+      let andRules = rules[i].split('+')
+      let result = true
+      for (let j = 0; j < andRules.length; j += 1) {
+        if (answers.indexOf(andRules[i]) === -1) {
+          result = false
+        }
+      }
+      if (result) {
+        return true
+      }
+    } else {
+      if (answers.indexOf(rules[i]) !== -1) {
+        return true
+      }
     }
   }
   return false
@@ -88,7 +101,7 @@ function transitionApp(state = initialState, action) {
         } else {
           result = state.currentAnswers.concat(action.value)
         }
-      } else if (type === 'locationaddmore') {
+      } else if (type === 'locationaddmore' || type === 'autocomplete') {
         result = action.value
       } else  {
         result = [action.value]
