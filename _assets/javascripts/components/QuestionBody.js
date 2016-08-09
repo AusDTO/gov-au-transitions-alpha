@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react'
 import Geosuggest from 'react-geosuggest'
 import Glossary from './Glossary'
 import Autocomplete from '../lib/Autocomplete'
-import { replaceAtIndex, styles } from '../helpers'
+import { replaceAtIndex, styles, autocompleteMatchStateToTerm, getLabelFromValue } from '../helpers'
 
 // const addMore = () => {
 //   console.log("add more has been clicked");
@@ -79,11 +79,12 @@ const getFieldset = (type, values, name, selectedValues, onChange) => {
         return (
           <Autocomplete
             key={id}
-            value={selectedValues[index] ? selectedValues[index] : ""}
+            value={selectedValues[index] ? getLabelFromValue(values, selectedValues[index]) : ""}
             inputProps={{name: id, id: id}}
             items={values}
             getItemValue={(item) => item.value}
-            //shouldItemRender={matchStateToTerm}
+            wrapperStyle={styles.wrapperStyle}
+            shouldItemRender={autocompleteMatchStateToTerm}
             //sortItems={sortStates}
             onChange={(event, value) => onChange(replaceAtIndex(currVals, index, value))}
             onSelect={(value) => onChange(replaceAtIndex(currVals, index, value))}

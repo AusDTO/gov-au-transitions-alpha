@@ -337,6 +337,7 @@ let Autocomplete = React.createClass({
           role="combobox"
           aria-autocomplete="list"
           autoComplete="off"
+          type="text"
           ref="input"
           onFocus={this.handleInputFocus}
           onBlur={this.handleInputBlur}

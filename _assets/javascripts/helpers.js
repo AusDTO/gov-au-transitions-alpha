@@ -21,7 +21,34 @@ export let styles = {
     cursor: 'default'
   },
 
+  wrapperStyle: {
+    display: "block"
+  },
+
   menu: {
     border: 'solid 1px #ccc'
   }
+}
+
+export function autocompleteMatchStateToTerm(state, value) {
+  return (
+    state.value.toLowerCase().indexOf(value.toLowerCase()) !== -1 ||
+    state.label.toLowerCase().indexOf(value.toLowerCase()) !== -1
+  )
+}
+
+// export function sortStates(a, b, value) {
+//   return (
+//     a.name.toLowerCase().indexOf(value.toLowerCase()) >
+//     b.name.toLowerCase().indexOf(value.toLowerCase()) ? 1 : -1
+//   )
+// }
+
+export function getLabelFromValue(values, value) {
+  for (let i = 0; i < values.length; i += 1) {
+    if (values[i].value === value) {
+      return values[i].label
+    }
+  }
+  return value
 }
