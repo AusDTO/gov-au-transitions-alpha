@@ -5,147 +5,12 @@ agency: ""
 agencySub: Helping older Australians
 permalink: /results/
 ---
-<section id="questions">
-</section>
-<section id="js-results-holder" class="results-wrapper form-wrapper">
-  <div class="question-header">
-    <a href="#" id="resultsback" class="fa-chevron-left">Back</a>
-  </div>
-  <h2>Your guided results</h2>
+<div id="questions">
+</div>
+<div id="results-holder" class="results-wrapper form-wrapper">
+</div>
 
-  <p class="abstract" id="result-blurb">Based on your situation, here is your guide to information and services in your area.</p>
-
-  <details aria-expanded="false" aria-hidden="false" data-result-set="altliving">
-    <summary>Alternative living options</summary>
-    <div class="accordion-panel">
-      {% include alternate.html %}
-    </div>
-  </details>
-
-  <details aria-expanded="false" aria-hidden="false" data-result-set="athome">
-    <summary>Explore in-home support</summary>
-    <div class="accordion-panel">
-      {% include homehelp.html %}
-    </div>
-    <div class="topic-links">
-        <h4>Topics</h4>
-          <a href="#" class="link"><strong>Getting assessed for home help</strong></a></br>
-          <a href="#" class="link"><strong>Choosing a provider</strong></a></br>
-          <a href="#" class="link"><strong>Making the home safe</strong></a></br>
-          <a href="#" class="link"><strong>Personal alarms</strong></a></br>
-    </div>
-  </details>
-
-  <details aria-expanded="false" aria-hidden="false" data-result-set="medical">
-    <summary>Review medication situation</summary>
-    <div class="accordion-panel">
-      {% include medication.html %}
-    </div>
-    <div class="topic-links">
-        <h4>Topics</h4>
-          <a href="#" class="link"><strong>Managing medicines</strong></a></br>
-    </div>
-  </details>
-
-  <details aria-expanded="false" aria-hidden="false" data-result-set="outandabout">
-    <summary>Help getting out and about</summary>
-    <div class="accordion-panel">
-      {% include outandabout.html %}
-    </div>
-  </details>
-
-
-<hr/>
-  <h3>Also explore</h3>
-
-  <details aria-expanded="false" aria-hidden="false" data-result-set="finance">
-    <summary>Review finances</summary>
-    <div class="accordion-panel">
-      {% include finances.html %}
-    </div>
-  </details>
-
-  <details aria-expanded="false" aria-hidden="false" data-result-set="consent">
-    <summary>Organising consent</summary>
-    <div class="accordion-panel">
-      {% include consent.html %}
-    </div>
-    <div class="topic-links">
-        <h4>Topics</h4>
-          <a href="#" class="link"><strong>Organising consent</strong></a></br>
-    </div>
-  </details>
-
-  <details aria-expanded="false" aria-hidden="false" data-result-set="support">
-    <summary>Support for carers</summary>
-    <div class="accordion-panel">
-      {% include carer.html %}
-    </div>
-  </details>
-
-  <!-- <details data-label="accordion-example" aria-expanded="true">
-    <summary>Seek help with health concerns <span class="badge--default">3 items</span></summary>
-    <div class="accordion-panel">
-      <p>
-        Based on what you told us about your older person’s health concerns, here are information, forms and contacts to help you support them.
-      </p>
-      <div class="module">
-        <h5>Dementia</h5>
-        <p>
-          Call Alzheimer’s Australia: National Dementia hotline for questions about dementia.</br>
-          9am and 5pm Monday to Friday</br>
-          <a href="tel:1800 100 500"  class="link phone"><strong>1800 100 500</strong></a></br>
-          <a href="#" class="link"><strong>My Aged Care dementia</strong></a></br>
-          What to do and who to go to for help in the short and long term.</br>
-          <a href="#" class="link"><strong>Alzheimers Australia</strong></a></br>
-          About dementia and memory loss</br>
-          <a href="#" class="link"><strong>Health Direct</strong></a></br>
-          Caring for someone with dementia
-        </p>
-      </div>
-      <div class="module">
-        <h5>Continence</h5>
-        <p>
-          Financial support may be available to help people with permanent and severe incontinence. To apply for subsidies complete both national and state forms and take them to your local GP to be completed.
-        </p>
-        <h6 class="results-heading">South Australia Continence Resource Centre</h6>
-        <p>
-          Call for free services and information on continence management, local continence services, continence funding schemes and continence products. An interpreter is available.
-        </br>
-          Monday to Friday 9am to 5pm </br>
-          <a href="tel: 1300 885 886"  class="link phone"><strong>8266 5260 or 1300 885 886</strong></a>
-        </p>
-          <h6>Continence Foundation of Australia helpline</h6>
-        <p>
-          Calls are free  Monday to Friday 8am to 8pm</br>
-          <a href="tel: 1800 330 0666"  class="link phone"><strong>1800 330 0666</strong></a></br>
-
-          <a href="#" class="link"><strong>Continence Foundation of Australia</strong></a></br>
-          Find help to get what you need to manage incontinence</br>
-          <a href="#" class="link"><strong>Continence Aids Payment Scheme application</strong></a></br>
-          National form and guidelines</br>
-        </p>
-      </div>
-      <div class="module">
-        <h5>Find an after-hours local GP</h5>
-        <p>
-          Financial support may be available to help people with permanent and severe incontinence. To apply for subsidies complete both national and state forms and take them to your local GP to be completed.
-        </p>
-        <h6 class="results-heading">Access to a GP at night, on weekends and public holidays</h6>
-        <p>
-          Health Direct After Hours helpline</br>
-          Major cities:</br>
-          Monday to Friday 11pm to 7:30am, Saturday from 6pm, Sunday and public holidays all day</br>
-          Outside major cities:</br>
-          Monday to Friday 6pm to 7:30am, Saturday from midday, Sunday and public holidays all day</br>
-          <a href="tel: 1800 022 222"  class="link phone"><strong>1800 022 222</strong></a></br>
-          <a href="#" class="link"><strong>National Health Service Directory - find a general practitioner</strong></a></br>
-          <a href="#" class="link"><strong>Health Direct - search for a GP and pharmacist and their opening hours </strong></a></br>
-        </p>
-      </div>
-    </div>
-  </details> -->
-      </hr>
+      <!-- </hr>
       <form class="list-horizontal" action="" method="post">
         <h4>Email another involved person/s</h4>
         <p>Complete the below if you would like to send a link to this guided results page. We will not store any personal information.</p>
@@ -173,8 +38,4 @@ permalink: /results/
         <button type="submit">Send  <i class="fa fa-chevron-right" aria-hidden="true"></i></button>
       </form>
       <hr />
-      <button>Print this page <i class="fa fa-chevron-right" aria-hidden="true"></i></button>
-
-
-
-</section>
+      <button>Print this page <i class="fa fa-chevron-right" aria-hidden="true"></i></button> -->

@@ -166,30 +166,60 @@ export const QuestionFlow = {
   ],
   results: [
     {
-      id: "[data-result-set='altliving']",
-      rules: "retirementvillage,nursinghome,nolive"
-    },
-    // {
-    //   id: "#retirement-village",
-    //   rules: "retirementvillage"
-    // },
-    // {
-    //   id: "#retirementvillage-costs",
-    //   rules: "retirementvillage+pensioner,veteran"
-    // },
-    {
-      id: "[data-result-set='athome']",
-      rules: "ownhome,family"
-    },
-    {
-      id: "[data-result-set='medical']",
-      rules: "meds"
+      title: "Getting home help",
+      id: "homehelp",
+      condition: "retirementvillage,nursinghome,nolive",
+      abstract: "Below are some next steps and information to assist you to get the types of in home help you need.",
+      list: [
+        {
+          title: "What's in your area",
+          type: "result"
+        },
+        {
+          title: "Related information",
+          type: "result"
+        }
+      ]
     },
     {
-      id: "[data-result-set='outandabout']",
-      rules: "outandabout"
+      title: "Getting out and about",
+      id: "outandabout",
+      condition: "",
+      abstract: "Below are some local results next steps and information to assist you to get the types of help with transport that you need",
+      list: [
+        {
+          title: "What's in your area",
+          type: "result"
+        },
+        {
+          title: "Next steps",
+          type: "steps"
+        },
+        {
+          title: "Related information",
+          type: "information"
+        }
+      ]
+    },
+    {
+      title: "Help with health and wellbeing",
+      id: "healthwellbeing",
+      condition: "",
+      abstract: "Below are some local results next steps and information to assist you to get the types of help with health and wellbeing you need.",
+      list: [
+        {
+          title: "Local results",
+          type: "result"
+        },
+        {
+          title: "Next steps",
+          type: "steps"
+        },
+        {
+          title: "Related information",
+          type: "information"
+        }
+      ]
     }
-
-
   ]
 }
