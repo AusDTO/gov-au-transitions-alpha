@@ -208,7 +208,9 @@ main.hero-gradient {
 form fieldset {
   margin: 0;
 }
-
+.results-wrapper {
+  clear: both;
+}
 /**
  * The geosuggest module
  */
@@ -287,10 +289,14 @@ form fieldset {
     transition: max-height 5s linear;
   }
 }
-.result-list, .steps-list, .info-list {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
+.result-list, .steps-list, .information-list {
+  padding: 0.8em;
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding-left: $small-spacing;
+    margin-top: $small-spacing;
+  }
   .number {
     font-size: 2em;
     padding-right: 0.5em;
@@ -300,4 +306,28 @@ form fieldset {
       font-weight: 700;
     }
   }
+}
+.steps-list {
+  padding: 0;
+  ul {
+    padding-left: 0;
+  }
+  li {
+    border-bottom: solid 0.8em #def4f9;
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+  p {
+    padding-left: 3.5em;
+  }
+  label {
+    font-weight: 700;
+  }
+}
+.result-list {
+  background-color: #def4f9;
+}
+.accordion-button {
+  border-bottom: none !important;
 }

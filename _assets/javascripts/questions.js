@@ -185,23 +185,67 @@ export const QuestionFlow = {
           items: [
             {
               label: "Get assessed for transport assistance - My Aged Care",
-              abstract: "My Aged Care will advise on any transport assistance for regular appointments."
+              abstract: "My Aged Care will advise on any transport assistance for regular appointments.",
+              type: "subsidy",
+              actions: [
+                {
+                  label: "Learn more about assesments",
+                  link: "",
+                  type: "info"
+                },
+                {
+                  label: "1800 200 422",
+                  link: "1800 200 422",
+                  type: "link",
+                  prefix: "Call:"
+                }
+              ]
             },
             {
               label: "Apply for a SA seniors card",
-              abstract: "An SA seniors card provides discounts on public transport fares."
+              abstract: "An SA seniors card provides discounts on public transport fares.",
+              actions: [
+                {
+                  label: "Apply for a seniors card",
+                  link: "",
+                  type: "button"
+                }
+              ]
             },
             {
               label: "Apply for a senioprs metrocard",
-              abstract: "You can travel free on trains, busses and trans in metropolitan Adelaide from 9:01am to 3:00pm and 7:01pm to 7:00am weekdays. At other times the concession is around 50% of the normal fare."
+              abstract: "You can travel free on trains, busses and trans in metropolitan Adelaide from 9:01am to 3:00pm and 7:01pm to 7:00am weekdays. At other times the concession is around 50% of the normal fare.",
+              actions: [
+                {
+                  label: "Apply for a seniors metrocard",
+                  link: "",
+                  type: "button"
+                }
+              ]
             },
             {
               label: "Apply for a disability parking permit",
-              abstract: "Carers and people with age related disabilities can apply for a disability parking permit."
+              abstract: "Carers and people with age related disabilities can apply for a disability parking permit.",
+              actions: [
+                {
+                  label: "Apply for a parking permit",
+                  link: "",
+                  type: "link",
+                  prefix: "Form: "
+                }
+              ]
             },
             {
               label: "Get your driving ability assessed",
-              abstract: "Ask your GP to confirm your fitness to hold a driver's licence."
+              abstract: "Ask your GP to confirm your fitness to hold a driver's licence.",
+              actions: [
+                {
+                  label: "5 GP's in your area",
+                  link: "",
+                  type: "link",
+                  prefix: "Service finder: "
+                }
+              ]
             }
           ]
         },

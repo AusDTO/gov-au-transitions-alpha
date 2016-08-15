@@ -15,12 +15,13 @@ class Accordion extends Component {
   }
 
   render() {
+    let theClassName = "accordion-panel " + this.props.className
     return (
       <section aria-expanded={this.state.open}>
         <a className="accordion-button" onClick={this.handleClick}>
           {this.props.summary}
         </a>
-        <div className="accordion-panel">
+        <div className={theClassName}>
             {this.props.children}
         </div>
       </section>
