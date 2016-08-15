@@ -16,12 +16,14 @@ class Accordion extends Component {
 
   render() {
     return (
-      <details aria-expanded={this.state.open}>
-        <summary onClick={this.handleClick}>{this.props.summary}</summary>
+      <section aria-expanded={this.state.open}>
+        <a className="accordion-button" onClick={this.handleClick}>
+          {this.props.summary}
+        </a>
         <div className="accordion-panel">
             {this.props.children}
         </div>
-      </details>
+      </section>
     )
   }
 }

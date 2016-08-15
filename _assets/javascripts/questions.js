@@ -173,11 +173,13 @@ export const QuestionFlow = {
       list: [
         {
           title: "What's in your area",
-          type: "result"
+          type: "result",
+          items: []
         },
         {
           title: "Related information",
-          type: "result"
+          type: "information",
+          items: []
         }
       ]
     },
@@ -188,16 +190,69 @@ export const QuestionFlow = {
       abstract: "Below are some local results next steps and information to assist you to get the types of help with transport that you need",
       list: [
         {
-          title: "What's in your area",
-          type: "result"
+          title: "Services in your area",
+          type: "result",
+          items: [
+            {
+              label: "Community Health Focus Bus for the Elderly",
+              link: "",
+              number: 1
+            },
+            {
+              label: "Local bus routes",
+              link: "",
+              number: 5
+            },
+            {
+              label: "Local taxi companies",
+              link: "",
+              number: 2
+            }
+          ]
         },
         {
           title: "Next steps",
-          type: "steps"
+          type: "steps",
+          items: [
+            {
+              label: "Get assessed for transport assistance - My Aged Care",
+              abstract: "My Aged Care will advise on any transport assistance for regular appointments."
+            },
+            {
+              label: "Apply for a SA seniors card",
+              abstract: "An SA seniors card provides discounts on public transport fares."
+            },
+            {
+              label: "Apply for a senioprs metrocard",
+              abstract: "You can travel free on trains, busses and trans in metropolitan Adelaide from 9:01am to 3:00pm and 7:01pm to 7:00am weekdays. At other times the concession is around 50% of the normal fare."
+            },
+            {
+              label: "Apply for a disability parking permit",
+              abstract: "Carers and people with age related disabilities can apply for a disability parking permit."
+            },
+            {
+              label: "Get your driving ability assessed",
+              abstract: "Ask your GP to confirm your fitness to hold a driver's licence."
+            }
+          ]
         },
         {
           title: "Related information",
-          type: "information"
+          type: "information",
+          items: [
+            {
+              label: "SA Gov:Medical fitness to drive",
+              link: ""
+            },
+            {
+              label: "Australian Human Rights Commision: Your rights in retirement to transport",
+              link: ""
+            },
+            {
+              label: "SA Gov: Motorised wheelchairs",
+              link: ""
+            }
+          ]
         }
       ]
     },
@@ -209,7 +264,8 @@ export const QuestionFlow = {
       list: [
         {
           title: "Local results",
-          type: "result"
+          type: "result",
+          items: []
         },
         {
           title: "Next steps",
@@ -217,7 +273,8 @@ export const QuestionFlow = {
         },
         {
           title: "Related information",
-          type: "information"
+          type: "information",
+          items: []
         }
       ]
     }

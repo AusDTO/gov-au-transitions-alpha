@@ -64,138 +64,25 @@ header[role=banner] .hero .tagline {
 #transition legend {
   margin-bottom: $base-spacing;
 }
-details {
-  // .badge--default {
-  //   float: right;
-  //   background-color: $dark-aqua;
-  //   margin-top: 0.3em;
-  // }
-  summary {
-    padding: 0.7em;
-    font-size: 19px;
-    padding-right: 2.8em;
-    @include media($tablet) {
-      font-size: 22px;
-    }
-    &::before {
-      background-image: none, url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTc5MiIgaGVpZ2h0PSIxNzkyIiB2aWV3Qm94PSIwIDAgMTc5MiAxNzkyIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Ik0xNjgzIDgwOGwtNzQyIDc0MXEtMTkgMTktNDUgMTl0LTQ1LTE5bC03NDItNzQxcS0xOS0xOS0xOS00NS41dDE5LTQ1LjVsMTY2LTE2NXExOS0xOSA0NS0xOXQ0NSAxOWw1MzEgNTMxIDUzMS01MzFxMTktMTkgNDUtMTl0NDUgMTlsMTY2IDE2NXExOSAxOSAxOSA0NS41dC0xOSA0NS41eiIgZmlsbD0iIzIyNGE2MSIvPjwvc3ZnPgo="), linear-gradient(transparent, transparent);
-    }
-    text-decoration: underline;
+/* Changes to the default accordion styles */
+.accordion-button {
+  padding: 0.7em;
+  font-size: 19px;
+  padding-right: 2.8em;
+  @include media($tablet) {
+    font-size: 22px;
   }
+  text-decoration: underline;
 }
+
 details + details {
   margin-top: 1.6em;
 }
 .results-wrapper hr {
   margin-top: 2.2em;
 }
-// .accordion {
-//   $base-border-color: $non-white !default;
-//   // $base-line-height: 1.5em !default;
-//   // $base-spacing: 1.5em !default;
-//   $dark-gray: #333 !default;
-//   $base-font-color: $dark-gray !default;
-//   $accordion-menu-border-color: $base-border-color;
-//   $accordion-menu-color: $base-font-color !default;
-//   $accordion-menu-border: 4px solid $white;
-//   $accordion-menu-background: $non-white;
-//   $accordion-menu-hover: lighten($accordion-menu-background, 2%);
-//   $accordion-menu-sub-background: darken($accordion-menu-background, 5%);
-//   $accordion-menu-sub-inset: darken($accordion-menu-sub-background, 6%);
-//   $accordion-menu-sub-hover: lighten($accordion-menu-sub-background, 2%);
-//   $accordion-menu-list-padding: $small-spacing $base-spacing;
-//
-//   background-color: $accordion-menu-background;
-//   border: none;
-//   margin: 0 0 $base-spacing 0;
-//   padding: 0;
-//
-//   ul {
-//     margin: 0;
-//     padding: 0;
-//   }
-//
-//   li {
-//     border-bottom: $accordion-menu-border;
-//     list-style: none;
-//     margin: 0;
-//     padding: 0;
-//
-//     > a {
-//       color: $accordion-menu-color;
-//       display: block;
-//       padding: $accordion-menu-list-padding;
-//       text-decoration: none;
-//       border: none;
-//       font-weight: bold;
-//       position: relative;
-//       padding-right: 45px;
-//
-//       .badge--default {
-//         float: right;
-//       }
-//       &:after {
-//         content: "\f078";
-//         font: normal normal normal 14px/1 FontAwesome;
-//         position: absolute;
-//         top: 17px;
-//         right: 20px;
-//       }
-//     }
-//     &.is-expanded > a:after {
-//       content: "\f077";
-//     }
-//     &:last-child {
-//       border: 0;
-//     }
-//
-//     &:focus,
-//     &:hover {
-//       background-color: $accordion-menu-hover;
-//     }
-//   }
-//
-//   .submenu {
-//     display: none;
-//     > p {
-//       padding: $accordion-menu-list-padding;
-//     }
-//     .module {
-//       padding: $accordion-menu-list-padding;
-//       border-top: 4px solid $white;
-//     }
-//     .results-heading {
-//       margin-bottom: $small-spacing;
-//     }
-//     .link {
-//       position: relative;
-//       display: inline-block;
-//       margin-left: 1.5em;
-//       margin-top: 0.6em;
-//       &:before {
-//         position: absolute;
-//         display: block;
-//         padding-right: 1em;
-//         font: normal normal normal 18px/1 FontAwesome;
-//         border-bottom: none;
-//         left: -1.1em;
-//         top: 0.3em;
-//         content: "\f054";
-//       }
-//       &.phone::before {
-//         content: "\f095";
-//         font-size: 22px;
-//         top: .2em;
-//       }
-//     }
-//   }
-//
-//   .is-expanded {
-//     display: block;
-//     padding-bottom: 0;
-//   }
-// }
 .accordion-panel {
+  margin-bottom: $base-spacing;
   .link {
     position: relative;
     display: inline-block;
@@ -398,5 +285,19 @@ form fieldset {
     display: block;
     max-height: 1000px;
     transition: max-height 5s linear;
+  }
+}
+.result-list, .steps-list, .info-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  .number {
+    font-size: 2em;
+    padding-right: 0.5em;
+    & + a {
+      line-height: 2em;
+      vertical-align: bottom;
+      font-weight: 700;
+    }
   }
 }
