@@ -1,16 +1,6 @@
 export const QuestionFlow = {
   questions: [
     {
-      question: "Are you looking for yourself or someone else?",
-      name: "looking",
-      type: "radio",
-      //legend: "Select as many as apply",
-      values: [
-        {value: "myself", label: "Myself"},
-        {value: "someoneelse", label: "Someone else"}
-      ]
-    },
-    {
       question: "How old are they?",
       name: "age",
       type: "radio",
@@ -24,145 +14,124 @@ export const QuestionFlow = {
       ]
     },
     {
-      question: "What language are they most comfortable using?",
-      name: "language",
+      question: "Are they recieving a pension?",
+      name: "pension",
       type: "checkbox",
-      legend: "This helps us point you to the correct area in order to get help in that area.",
+      //legend: "This helps us to suggest things like subsidised services and the right forms.",
       values: [
-        {value: "english", label: "English"},
-        {value: "simplifiedchinese", label: "Simplified Chinese (Mandarin)"},
-        {value: "spanish", label: "Spanish"},
-        {value: "italian", label: "Italian"},
-        {value: "greek", label: "Greek"},
-        {value: "vietnamese", label: "Vietnamese"},
-        {value: "arabic", label: "Arabic"},
-        {value: "croatian", label: "Croatian"},
-        {value: "dutch", label: "Dutch"},
-        {value: "german", label: "German"},
-        {value: "hindi", label: "Hindi"},
-        {value: "korean", label: "Korean"},
-        {value: "macedonian", label: "Macedonian"},
-        {value: "maltese", label: "Maltese"},
-        {value: "polish", label: "Polish"},
-        {value: "russian", label: "Russian"},
-        {value: "serbian", label: "Serbian"},
-        {value: "traditionalchinese", label: "Traditional Chinese"},
-        {value: "cantonses", label: "Cantonese"},
+        {value: "pension", label: "Age pension"},
+        {value: "disability", label: "Disability pension"},
+        {value: "veteran", label: "Veteran/war widow or widower"},
+        {value: "Don’t know", label: "Don’t know"},
         {value: "other", label: "Other"}
       ]
     },
     {
-      question: "What is their cultural background?",
-      name: "culture",
-      //condition: "ownhome,family",
-      type: "autocomplete",
-      legend: "Select as many as apply",
+      question: "What best describes your situation?",
+      name: "situation",
+      type: "radio",
+      //legend: "Select as many as apply",
       values: [
-        {value: "culture1", label: "Managing at home"},
-        {value: "culture2", label: "Managing medication"},
-        {value: "culture3", label: "Getting out and about"}
+        {value: "future", label: "I’m thinking about the future"},
+        {value: "notmanaging", label: "I’m starting not to manage"},
+        {value: "needhelp", label: "I know that I need some help"},
+        {value: "Crisis", label: "I’m in a crisis"}
       ]
     },
     {
-      question: "Where are they looking to live?",
+      question: "Are there any physical issues that you’re concerned about?",
+      name: "physical",
+      //condition: "ownhome,family",
+      type: "autocomplete",
+      legend: "E.g. arthritis",
+      values: [
+        {value: "arthritis", label: "Arthritis"},
+        {value: "osteoporosis", label: "Osteoporosis"},
+        {value: "diabetes", label: "Diabetes"},
+        {value: "frailty", label: "Frailty"},
+        {value: "Heart", label: "Heart Disease"},
+        {value: "Incontinence", label: "Incontinence"},
+        {value: "respiratory", label: "Respiratory Disease"},
+        {value: "influenza", label: "Influenza and Pneumonia"},
+        {value: "obesity", label: "Obesity"},
+        {value: "sight", label: "Sight problems"},
+        {value: "Hearing", label: "Hearing problems"},
+      ]
+    },
+    {
+      question: "Are there any mental or emotional issues that you’re concerned about?",
+      name: "emotional",
+      type: "checkbox",
+      values: [
+        {value: "loneliness", label: "Loneliness"},
+        {value: "confusion", label: "Confusion"},
+        {value: "forgetful", label: "Forgetfulness"},
+        {value: "Anxiety", label: "Anxiety"},
+        {value: "Depression", label: "Depression"},
+        {value: "dementia", label: "Dementia"},
+        {value: "noissues", label: "No issues"},
+      ]
+    },
+    {
+      question: "What do you want to look at?",
       name: "live",
       type: "checkbox",
-      legend: "Select as many as apply",
       values: [
-        {value: "ownhome", label: "Own home"},
-        {value: "family", label: "Family or friend’s home"},
-        {value: "retirementvillage", label: "Retirement village"},
-        {value: "nursinghome", label: "Nursing home"},
-        {value: "nolive", label: "I don't know"}
-      ],
-      glossary: [
-        {term: "Own home", description: "The house that you currently live in."},
-        {term: "Family or friend’s home", description: "A family of firend house that the person may move to."},
-        {term: "Retirement village", description: "A retirement village is going to be defined later."},
-        {term: "Nursing home", description: "A nursing home is going to be defined later."},
-        {term: "I don't know", description: "I dont know is when you don't know where the person is going to live."}
+        {value: "ownhome", label: "Staying at home"},
+        {value: "moving", label: "Moving to a more appropriate set up"},
+        {value: "outandabout", label: "Getting out and about"},
+      ]
+    },
+    {
+      question: "What kind of assistance do you think is required?",
+      name: "assistance",
+      condition: "ownhome,outandabout",
+      type: "checkbox",
+      values: [
+        {value: "gettingaround", label: "Getting around the house"},
+        {value: "Eating", label: "Eating well"},
+        {value: "maintenance", label: "Home maintenance"},
+        {value: "transport", label: "Transport"},
+        {value: "exercise", label: "Exercise"},
+        {value: "social", label: "Social connections"},
+        {value: "hygiene", label: "Personal hygiene"},
+        {value: "medications", label: "Managing medications"},
+        {value: "affairs", label: "Managing home affairs"},
+        {value: "supervision", label: "Supervision"},
+        {value: "noassistance", label: "None"},
       ]
     },
     {
       question: "Where do they live?",
       name: "location",
-      condition: "ownhome,family",
+      condition: "ownhome,outandabout",
       type: "location",
-      legend: "This helps us to suggest local services.",
+      legend: "This helps us to suggest local services",
       values: []
+    },
+    {
+      question: "Which options are you interested in learning about?",
+      name: "learning",
+      condition: "moving",
+      type: "checkbox",
+      values: [
+        {value: "gettingaround", label: "Living near__________"},
+        {value: "singlestorey", label: "Single storey accommodation"},
+        {value: "support", label: "Supervision and support"},
+        {value: "Nursingcare", label: "Nursing care"},
+        {value: "independent", label: "Staying independent at home"},
+        {value: "maintaininghome", label: "Help in maintaining a home"},
+        {value: "community", label: "Living in a community"},
+      ]
     },
     {
       question: "Where are they considering living?",
-      //legend: "This helps us to suggest local services.",
-      name: "newlocation",
-      condition: "retirementvillage,nursinghome",
-      type: "locationaddmore",
-      legend: "postcode, town or village",
+      name: "location",
+      condition: "moving",
+      type: "location",
       values: []
     },
-    {
-      question: "Do they have any of the following conditions?",
-      name: "medicalconditions",
-      type: "autocomplete",
-      //condition: "ownhome,family",
-      legend: "This helps us point you to the correct area in order to get help in that area.",
-      values: [
-        {value: "arthritis", label: "Arthritis"},
-        {value: "heartdisease", label: "Heart Disease"},
-        {value: "cancer", label: "Cancer"},
-        {value: "respiratorydisease", label: "Respiratory Disease"},
-        {value: "alzheimers", label: "Alzheimer’s Disease"},
-        {value: "osteoporosis", label: "Osteoporosis"},
-        {value: "diabetes", label: "Diabetes"},
-        {value: "influenza", label: "Influenza and Pneumonia"},
-        {value: "falls", label: "Falls"},
-        {value: "substanceabuse", label: "Substance Abuse"},
-        {value: "obesity", label: "Obesity"},
-        {value: "depression", label: "Depression"},
-        {value: "sight", label: "Sight problems"},
-        {value: "hearing", label: "Hearing problems"},
-        {value: "noneofthese", label: "None of these"}
-      ]
-    },
-    {
-      question: "Have you considered getting services at home?",
-      //legend: "This helps us to suggest local services.",
-      name: "homeservices",
-      condition: "nursinghome+noneofthese",
-      type: "radio",
-      legend: "Please select one of these",
-      values: [
-        {value: "yes", label: "Yes"},
-        {value: "no", label: "No"}
-      ]
-    },
-    {
-      question: "What do they need help with?",
-      name: "help",
-      condition: "ownhome,family,retirementvillage,no",
-      type: "checkbox",
-      legend: "Select as many as apply",
-      values: [
-        {value: "meals", label: "Meals"},
-        {value: "hygiene", label: "Hygiene"},
-        {value: "medications", label: "Managing medications"},
-        {value: "home", label: "Home maintenance"},
-        {value: "socialconnections", label: "Social connections"},
-        {value: "exercise", label: "Exercise"},
-        {value: "transport", label: "Transport"}
-      ]
-    },
-    {
-      question: "Are they recieving a pension?",
-      name: "pension",
-      type: "checkbox",
-      legend: "This helps us to suggest things like subsidised services and the right forms.",
-      values: [
-        {value: "pension", label: "Age pension"},
-        {value: "disability", label: "Disability pension"},
-        {value: "veteran", label: "Veteran/war widow or widower"}
-      ]
-    }
+
   ],
   results: [
     {
