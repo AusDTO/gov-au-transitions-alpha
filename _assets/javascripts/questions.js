@@ -227,7 +227,7 @@ export const QuestionFlow = {
     {
       title: "Considering an aged care home",
       id: "moving",
-      condition: "",
+      //condition: "",
       abstract: "When you need help with day-to-day tasks or health care, you’re not able to look after yourself as well as you used to, and you would like some company.",
       list: [
         {
@@ -253,7 +253,7 @@ export const QuestionFlow = {
     {
       title: "Help with health and wellbeing",
       id: "healthwellbeing",
-      condition: "",
+      //condition: "",
       abstract: "Below are some local results next steps and information to assist you to get the types of help with health and wellbeing you need.",
       list: [
         {

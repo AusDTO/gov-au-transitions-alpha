@@ -40,7 +40,7 @@ const getAccordionContent = items => {
               checked={false} />
             <label htmlFor={name}>{item.label}</label>
             <p>{item.abstract}</p>
-            <p><ul>{getStepActions(item.actions)}</ul></p>
+            <ul className="step-actions">{getStepActions(item.actions)}</ul>
           </li>)
       })}</ul></form>)
       return (<div>Step type set</div>)
