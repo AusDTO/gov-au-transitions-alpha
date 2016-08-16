@@ -50,7 +50,7 @@ export const QuestionFlow = {
         {value: "diabetes", label: "Diabetes"},
         {value: "frailty", label: "Frailty"},
         {value: "Heart", label: "Heart Disease"},
-        {value: "Incontinence", label: "Incontinence"},
+        {value: "incontinence", label: "Incontinence"},
         {value: "respiratory", label: "Respiratory Disease"},
         {value: "influenza", label: "Influenza and Pneumonia"},
         {value: "obesity", label: "Obesity"},
@@ -89,7 +89,7 @@ export const QuestionFlow = {
       type: "checkbox",
       values: [
         {value: "gettingaround", label: "Getting around the house"},
-        {value: "Eating", label: "Eating well"},
+        {value: "eating", label: "Eating well"},
         {value: "maintenance", label: "Home maintenance"},
         {value: "transport", label: "Transport"},
         {value: "exercise", label: "Exercise"},
@@ -137,7 +137,7 @@ export const QuestionFlow = {
     {
       title: "Help to stay at home",
       id: "stay",
-      condition: "",
+      condition: "ownhome",
       abstract: "Explore a home care package to get coordinated services for day-to-day activities, personal care, transport for shopping or appointments and nursing and health care.",
       list: [
         {
@@ -225,8 +225,8 @@ export const QuestionFlow = {
       ]
     },
     {
-      title: "Considering an aged care home (nursing home)",
-      id: "moveing",
+      title: "Considering an aged care home",
+      id: "moving",
       condition: "",
       abstract: "When you need help with day-to-day tasks or health care, you’re not able to look after yourself as well as you used to, and you would like some company.",
       list: [
@@ -284,6 +284,7 @@ export const QuestionFlow = {
             {
               label: "Help with meals and nutrition",
               abstract: "You can get free or subsidised meal delivery, help with preparing and eating and shopping services in your local area.",
+              condition: "eating",
               type: "subsidy",
               actions: [
                 {
@@ -297,6 +298,7 @@ export const QuestionFlow = {
             {
               label: "Managing your medicines",
               abstract: "If you are having difficulty remembering to take your prescribed medicines, your pharmacist can use a sealed weekly Webster pack to help you manage.",
+              condition: "medications",
               actions: [
                 {
                   label: "Managing medicines",
@@ -314,6 +316,7 @@ export const QuestionFlow = {
               label: "State help with continence services",
               abstract: "Ask about the form to apply for discounted products and services and take it to your doctor. South Australia Continence Resource Centre. Monday to Friday 9am to 5pm.",
               type: "subsidy",
+              condition: "incontinence",
               actions: [
                 {
                   label: "8266 5260",
@@ -332,6 +335,7 @@ export const QuestionFlow = {
             {
               label: "National help with continence service",
               abstract: "Download the form to apply for discounted products and services and take it to your doctor.",
+              condition: "incontinence",
               type: "subsidy",
               actions: [
                 {
@@ -345,6 +349,7 @@ export const QuestionFlow = {
             {
               label: "Get advice about incontinence",
               abstract: "Contact the Continence Foundation of Australia helpline, Monday to Friday, 8am to 8pm",
+              condition: "incontinence",
               actions: [
                 {
                   label: "1800 330 0666",
@@ -357,6 +362,7 @@ export const QuestionFlow = {
             {
               label: "Get advice on dementia",
               abstract: "Contact Alzheimer’s Australia: National Dementia hotline, Monday to Friday, 9am to 5pm",
+              condition: "dementia",
               actions: [
                 {
                   label: "1800 100 500",
@@ -374,15 +380,18 @@ export const QuestionFlow = {
           items: [
             {
               label: "Continence Foundation of Australia",
-              link: "http://www.continence.org.au/pages/get-help.html"
+              link: "http://www.continence.org.au/pages/get-help.html",
+              condition: "incontinence",
             },
             {
               label: "Learn more about Dementia",
-              link: "https://sa.fightdementia.org.au/"
+              link: "https://sa.fightdementia.org.au/",
+              condition: "incontinence",
             },
             {
               label: "How to care for someone with dementia",
-              link: "http://www.healthdirect.gov.au/caring-for-someone-with-dementia"
+              link: "http://www.healthdirect.gov.au/caring-for-someone-with-dementia",
+              condition: "dementia",
             }
           ]
         }
