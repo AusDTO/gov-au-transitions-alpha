@@ -5,12 +5,20 @@ import ResultsContentsLinker from '../containers/ResultsContentsLinker'
 const Results = ({show}) => {
   if (show) {
     return (
-      <section>
-        <h1 className="display">Your results</h1>
-        <div className="abstract"><p>Based on your answers, here is your guide to services,<br/>information and next steps to getting support.</p></div>
-        <ResultsContentsLinker />
-        <ResultSetLinker />
-      </section>
+      <div>
+        <div className="hero-med corporate">
+          <div className="wrapper">
+            <h1>Your results</h1>
+            <p>Based on your answers, here is your guide to services,<br/>information and next steps to getting support.</p>
+          </div>
+        </div>
+        <main role="main">
+          <section className="transition-main content-main">
+            <ResultsContentsLinker />
+            <ResultSetLinker />
+          </section>
+        </main>
+      </div>
     )
   } else {
     return (<div />)

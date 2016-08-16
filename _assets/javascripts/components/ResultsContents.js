@@ -6,7 +6,7 @@ const ResultsContents = ({resultSets}) => {
     <ul>
       {resultSets.map(set => {
       return (
-        <li><a href="javascript:void(0)">{set.title}</a></li>
+        <li key={set.id}><a href={"#" + set.id}>{set.title}</a></li>
       )
       })}
     </ul>

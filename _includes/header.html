@@ -3,25 +3,31 @@
   <a href="#nav">Skip to section navigation</a> -->
 </div>
 <header role="banner">
+    <section class="prerelease-govau--header">
+      <div class="wrapper">
+        <div class="govau--logo">
+          <img src="http://gov-au-ui-kit.apps.staging.digital.gov.au/latest/img/icons/logo-govau-full-2x.png" alt="gov.au crest logo" width="270">
 
-  <section class="govau--header">
-    <div class="wrapper">
-      <div class="govau--logo">
-          <a class="logo" href="/" title="GOV.AU homepage">
-            <img src="{% asset_path govau_crest-white.svg %}" alt="Gov au logo">
-            <!--{{ site.title }} <span class="element-invisible">homepage</span></a>-->
-            <span class="badge--alpha">prototype</span>
-          </a>
-      </div>
-    </div>
-  </section>
+          <div id="test" class="brandbar default"><!--ID is temp for example-->
+            <div class="b1"></div>
+            <div class="b2"></div>
+          </div>
+        </div>
 
-</header>
-<nav class="breadcrumbs" aria-label="breadcrumb">
-	<div class="wrapper">
-		<ul>
-			<li><a href="/">Home</a></li>
-			<li>{{ page.agencySub }}</li>
-		</ul>
-	</div>
-</nav>
+        <div class="feedback" tabindex="1">
+          <a href="#content" class="button--feedback">Give feedback</a>
+        </div>
+
+      </div><!--wrapper-->
+
+      <nav class="breadcrumbs--inverted" aria-label="breadcrumb">
+        <div class="wrapper">
+          <ul>
+              <li><a href="#content">Home</a></li>
+              <li class="current">Departments</li>
+          </ul>
+        </div>
+      </nav>
+
+    </section>
+  </header>

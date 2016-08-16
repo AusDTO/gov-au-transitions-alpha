@@ -3,10 +3,12 @@ import QuestionHeaderHandler from '../containers/QuestionHeaderHandler'
 import QuestionBodyLinker from '../containers/QuestionBodyLinker'
 
 const Question = () => (
-  <section className='form-wrapper content-main'>
-    <QuestionHeaderHandler />
-    <QuestionBodyLinker />
-  </section>
+  <main role="main">
+    <section className="transition-main content-main">
+      <QuestionHeaderHandler />
+      <QuestionBodyLinker />
+    </section>
+  </main>
 )
 
 export default Question
