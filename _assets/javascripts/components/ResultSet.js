@@ -3,7 +3,17 @@ import Accordion from './Accordion'
 
 const getStepActions = actions => {
   return actions.map(action => {
-    return (<a key={action.label.split(" ").join("_")}>{action.label}</a>)
+    return (
+      <li key={action.label.split(" ").join("_")}
+          className={action.type === "secondary" ? "secondary" : "link"}>
+        {action.prefix ? action.prefix : ""} <a
+          role={action.type === "button" ? "button" : ""}
+          rel={action.type === "external" ? "external" : ""}
+          href={action.link}>
+            {action.label}
+          </a>
+      </li>
+    )
   })
 }
 
@@ -19,7 +29,7 @@ const getAccordionContent = items => {
         )
       })}</ul>)
     case "steps":
-      return (<form><ul>{items.items.map(item => {
+      return (<form><ul className="module-list">{items.items.map(item => {
         let name = item.label.split(" ").join("_")
         return (
           <li key={name}>
@@ -30,7 +40,7 @@ const getAccordionContent = items => {
               checked={false} />
             <label htmlFor={name}>{item.label}</label>
             <p>{item.abstract}</p>
-            <p>{getStepActions(item.actions)}</p>
+            <p><ul>{getStepActions(item.actions)}</ul></p>
           </li>)
       })}</ul></form>)
       return (<div>Step type set</div>)

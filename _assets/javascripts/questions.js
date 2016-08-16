@@ -222,11 +222,11 @@ export const QuestionFlow = {
                 {
                   label: "Learn more about assesments",
                   link: "",
-                  type: "info"
+                  type: "secondary"
                 },
                 {
                   label: "1800 200 422",
-                  link: "1800 200 422",
+                  link: "tel:1800200422",
                   type: "link",
                   prefix: "Call:"
                 }
@@ -261,7 +261,7 @@ export const QuestionFlow = {
                 {
                   label: "Apply for a parking permit",
                   link: "",
-                  type: "link",
+                  type: "external",
                   prefix: "Form: "
                 }
               ]
@@ -273,7 +273,7 @@ export const QuestionFlow = {
                 {
                   label: "5 GP's in your area",
                   link: "",
-                  type: "link",
+                  type: "external",
                   prefix: "Service finder: "
                 }
               ]
