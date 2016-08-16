@@ -1,7 +1,7 @@
 export const QuestionFlow = {
   questions: [
     {
-      question: "How old are they?",
+      question: "How old are you?",
       name: "age",
       type: "radio",
       //legend: "Select as many as apply",
@@ -14,7 +14,7 @@ export const QuestionFlow = {
       ]
     },
     {
-      question: "Are they recieving a pension?",
+      question: "Are you recieving a pension?",
       name: "pension",
       type: "checkbox",
       //legend: "This helps us to suggest things like subsidised services and the right forms.",
@@ -56,6 +56,7 @@ export const QuestionFlow = {
         {value: "obesity", label: "Obesity"},
         {value: "sight", label: "Sight problems"},
         {value: "Hearing", label: "Hearing problems"},
+        {value: "none", label: "None of the above"},
       ]
     },
     {
@@ -102,11 +103,18 @@ export const QuestionFlow = {
       ]
     },
     {
-      question: "Where do they live?",
+      question: "Where do you live?",
       name: "location",
       condition: "ownhome,outandabout",
       type: "location",
       legend: "This helps us to suggest local services",
+      values: []
+    },
+    {
+      question: "Where are you considering living?",
+      name: "location",
+      condition: "moving",
+      type: "location",
       values: []
     },
     {
@@ -115,7 +123,6 @@ export const QuestionFlow = {
       condition: "moving",
       type: "checkbox",
       values: [
-        {value: "gettingaround", label: "Living near__________"},
         {value: "singlestorey", label: "Single storey accommodation"},
         {value: "support", label: "Supervision and support"},
         {value: "Nursingcare", label: "Nursing care"},
@@ -123,14 +130,8 @@ export const QuestionFlow = {
         {value: "maintaininghome", label: "Help in maintaining a home"},
         {value: "community", label: "Living in a community"},
       ]
-    },
-    {
-      question: "Where are they considering living?",
-      name: "location",
-      condition: "moving",
-      type: "location",
-      values: []
-    },
+    }
+
 
   ],
   results: [
@@ -138,7 +139,7 @@ export const QuestionFlow = {
       title: "Help to stay at home",
       id: "stay",
       condition: "ownhome",
-      abstract: "Explore a home care package to get coordinated services for day-to-day activities, personal care, transport for shopping or appointments and nursing and health care.",
+      abstract: "Explore support that will help you to stay at home–whether that is in your current home, at a family or friend’s home, or in a retirement village.",
       list: [
         {
           title: "Services in your area",
@@ -162,7 +163,7 @@ export const QuestionFlow = {
           items: [
             {
               label: "Getting in-home help",
-              abstract: "Call My Aged Care to arrange for an up-to-date assessment in your home. Have your Medicare card ready or your My Aged Care profile ID if you already have one. Call Monday to Friday, 8am to 5pm.",
+              abstract: "Call My Aged Care to arrange for an assessment in your home. This will help to know your support needs for day-to-day activities, personal care, transport for shopping or appointments and nursing and health care. Have your Medicare card ready. Call Monday to Friday, 8am to 5pm.",
               type: "subsidy",
               actions: [
                 {
@@ -180,13 +181,8 @@ export const QuestionFlow = {
             },
             {
               label: "Estimate home care package fees",
-              abstract: "Your provider may ask you to pay: a basic daily fee of up to 17.5% of the single basic age pension, an income-tested care fee if your income is over a certain amount.",
+              abstract: "Your provider may ask you to pay a basic daily fee of up to 17.5% of the single basic age pension. You will also need to contribute an income-tested care fee if your income is over a certain amount.",
               actions: [
-                {
-                  label: "Compare basic home support and home care packages",
-                  link: "",
-                  type: "secondary"
-                },
                 {
                   label: "Estimate home care package fees",
                   link: "http://www.myagedcare.gov.au/fee-estimator/home-care/form",
@@ -196,7 +192,7 @@ export const QuestionFlow = {
             },
             {
               label: "Home modifications",
-              abstract: "Modifications to your home such as rails and ramps may help you to be more safe supported as you move around. You can organise this yourself locally or through your your service provider who will assess your situation.",
+              abstract: "Modifications to your home, such as rails and ramps may help to give you more support as you move around. You can organise this yourself locally or through your your service provider who will assess your situation.",
               actions: [
                 {
                   label: "Home maintenance and modifications",
@@ -291,25 +287,20 @@ export const QuestionFlow = {
                   label: "Senior services guide",
                   link: "http://www.seniorservicesguide.com.au/list/Meals/australia/sa/city+of+onkaparinga+lg/morphett+vale",
                   type: "link",
-                  prefix: "Find services:"
+                  prefix: ""
                 }
               ]
             },
             {
               label: "Managing your medicines",
-              abstract: "If you are having difficulty remembering to take your prescribed medicines, your pharmacist can use a sealed weekly Webster pack to help you manage.",
+              abstract: "If you are having difficulty remembering to take your prescribed medicines, ask your  pharmacist for a sealed weekly Webster pack to help you manage.",
               condition: "medications",
               actions: [
                 {
                   label: "Managing medicines",
                   link: "",
-                  type: "secondary"
+                  type: "link"
                 },
-                {
-                  label: "Create a medicines eList",
-                  link: "http://www.nps.org.au/topics/how-to-be-medicinewise/managing-your-medicines/medicines-list/medicines-elist",
-                  type: "button",
-                }
               ]
             },
             {
@@ -333,7 +324,7 @@ export const QuestionFlow = {
               ]
             },
             {
-              label: "National help with continence service",
+              label: "National help with continence services",
               abstract: "Download the form to apply for discounted products and services and take it to your doctor.",
               condition: "incontinence",
               type: "subsidy",
