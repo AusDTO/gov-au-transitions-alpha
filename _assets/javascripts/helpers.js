@@ -89,7 +89,19 @@ const checkAnswersBasedOnRule = (results, rule) => {
 }
 
 const getListModules = (list, answers) => {
-
+  let results = []
+  for (let i = 0; i < list.length; i += 1) {
+    let items = []
+    for (let j = 0; j < list[i].items.length; j += 1) {
+      if (!list[i].items[j].condition || checkAnswersBasedOnRule(answers, list[i].items[j].condition)) {
+        items = items.concat(list[i].items[j])
+      }
+    }
+    results = results.concat(Object.assign({}, list[i], {
+      items: items
+    }))
+  }
+  return results
 }
 
 export function getResultsList(state) {
@@ -97,7 +109,10 @@ export function getResultsList(state) {
   let results = [];
   for (let i = 0; i < QuestionFlow.results.length; i += 1) {
     if (!QuestionFlow.results[i].condition || checkAnswersBasedOnRule(answers, QuestionFlow.results[i].condition)) {
-      results = results.concat(QuestionFlow.results[i])
+      results = results.concat(Object.assign({}, QuestionFlow.results[i], {
+        list: getListModules(QuestionFlow.results[i].list, answers)
+      }))
+
     }
   }
   return results
