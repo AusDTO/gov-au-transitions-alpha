@@ -143,6 +143,7 @@ main.hero-gradient {
   button, a[role="button"] {
     background: transparent;
     border: 1px solid $white;
+    color: white;
   }
 }
 .asside-content {
@@ -204,9 +205,6 @@ main.hero-gradient {
       font-size: 0.875rem;
     }
   }
-}
-form fieldset {
-  margin: 0;
 }
 .results-wrapper {
   clear: both;

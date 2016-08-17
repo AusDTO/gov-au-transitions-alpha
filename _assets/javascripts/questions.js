@@ -112,7 +112,7 @@ export const QuestionFlow = {
     },
     {
       question: "Where are you considering living?",
-      name: "location",
+      name: "locationaddmore",
       condition: "moving",
       type: "location",
       values: []
