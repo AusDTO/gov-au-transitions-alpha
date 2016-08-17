@@ -377,7 +377,7 @@ export const QuestionFlow = {
             {
               label: "Learn more about Dementia",
               link: "https://sa.fightdementia.org.au/",
-              condition: "incontinence",
+              condition: "dementia",
             },
             {
               label: "How to care for someone with dementia",

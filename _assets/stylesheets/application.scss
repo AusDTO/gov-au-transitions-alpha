@@ -49,6 +49,7 @@ header[role=banner] .hero .tagline {
   display: inline-block;
   margin-left: 1.5em;
   margin-top: $small-spacing;
+  z-index: -1;
   &:before {
     position: absolute;
     display: block;
@@ -286,6 +287,9 @@ main.hero-gradient {
     max-height: 1000px;
     transition: max-height 5s linear;
   }
+}
+.form-autocomplete input[type="text"] {
+  margin-bottom: 0.3em;
 }
 .result-list, .steps-list, .information-list {
   padding: 0.8em;

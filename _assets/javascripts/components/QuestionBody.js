@@ -98,6 +98,16 @@ const getFieldset = (type, values, name, selectedValues, onChange) => {
         )
       })
 
+      if (currVals[currVals.length - 1] !== "") {
+        autocompletes.push((
+          <a key="addmoreautocomplete"
+            href="#" className="addmore"
+            onClick={(e) => {
+              onChange(currVals.concat(""))
+              e.preventDefault()
+            }}>Add more</a>
+        ))
+      }
       return autocompletes
     default:
       return [(<span key={name}>{name}</span>)]
@@ -109,7 +119,7 @@ const QuestionBody = ({questionId, name, legend, type, allValues, selectedValues
     return <div></div>
   }
   return (
-    <form data-current-question={questionId}
+    <form data-current-question={questionId} className={"form-" + type}
         method="get"
         action={"/" + questionId + "/"}
         onSubmit={e => {
