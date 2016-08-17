@@ -44,7 +44,7 @@ const getFieldset = (type, values, name, selectedValues, onChange) => {
           initialValue={selectedValues[0]}
           types={['(regions)']}
           placeholder="Please enter a suburb, town or postcode"
-          onSuggestSelect={onChange}
+          onSuggestSelect={val => onChange(val.label)}
           />
       )]
     case "locationaddmore":
