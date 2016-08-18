@@ -55,6 +55,17 @@ export function getLabelFromValue(values, value) {
   return value
 }
 
+const getBadgeContent = (items, checked) => {
+  let len = items.length
+  let minus = 0
+  for (let i = 0; i < len; i += 1) {
+    if (checked.indexOf(items[i].label.split(" ").join("_")) > -1) {
+      minus += 1
+    }
+  }
+  return len - minus
+}
+
 const getPreviousAnswersAsArray = (previousAnswers) => {
   let result = [];
   for (let i = 0; i < previousAnswers.length; i += 1) {
@@ -88,7 +99,7 @@ const checkAnswersBasedOnRule = (results, rule) => {
   return false
 }
 
-const getListModules = (list, answers) => {
+const getListModules = (list, answers, checked) => {
   let results = []
   for (let i = 0; i < list.length; i += 1) {
     let items = []
@@ -98,7 +109,8 @@ const getListModules = (list, answers) => {
       }
     }
     results = results.concat(Object.assign({}, list[i], {
-      items: items
+      items: items,
+      badge: getBadgeContent(items, checked)
     }))
   }
   return results
@@ -110,7 +122,7 @@ export function getResultsList(state) {
   for (let i = 0; i < QuestionFlow.results.length; i += 1) {
     if (!QuestionFlow.results[i].condition || checkAnswersBasedOnRule(answers, QuestionFlow.results[i].condition)) {
       results = results.concat(Object.assign({}, QuestionFlow.results[i], {
-        list: getListModules(QuestionFlow.results[i].list, answers)
+        list: getListModules(QuestionFlow.results[i].list, answers, state.resultSteps)
       }))
 
     }
