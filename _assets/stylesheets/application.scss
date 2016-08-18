@@ -213,10 +213,12 @@ main.hero-gradient {
  * The geosuggest module
  */
 .geosuggest {
-
   position: relative;
-
   text-align: left;
+  margin-bottom: $small-spacing;
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 .geosuggest__input {
   width: 100%;
@@ -288,7 +290,7 @@ main.hero-gradient {
   }
 }
 .form-autocomplete input[type="text"] {
-  margin-bottom: 0.3em;
+  margin-bottom: $small-spacing;
 }
 .result-list, .steps-list, .information-list {
   padding: 0.8em;

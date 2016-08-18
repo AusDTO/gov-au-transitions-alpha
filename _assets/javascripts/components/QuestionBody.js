@@ -67,7 +67,10 @@ const getFieldset = (type, values, name, selectedValues, onChange) => {
         locations.push((
           <a key="addmorelink"
             href="#" className="addmore"
-            onClick={() => onChange(locationVals.concat(""))}>Add more</a>
+            onClick={(e) => {
+              onChange(locationVals.concat(""))
+              e.preventDefault()
+            }}>Add more</a>
         ))
       }
 
