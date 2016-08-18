@@ -85,7 +85,6 @@ const ResultSet = ({resultSets, resultSteps, onChange}) => {
       })}
     </div>
   )
-
 }
 
 export default ResultSet
