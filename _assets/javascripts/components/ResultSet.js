@@ -9,7 +9,7 @@ const getStepActions = actions => {
         {action.prefix ? action.prefix : ""} <a
           role={action.type === "button" ? "button" : ""}
           rel={action.type === "external" ? "external" : ""}
-          href={action.link}>
+          href={action.link} target="_blank">
             {action.label}
           </a>
       </li>
@@ -24,7 +24,7 @@ const getAccordionContent = (items, checked, onChange) => {
         return (
           <li key={item.label.split(" ").join("_")}>
             <span className="number">{item.number}</span>
-            <a rel="external" href={item.link}>{item.label}</a>
+            <a rel="external" href={item.link} target="_blank">{item.label}</a>
           </li>
         )
       })}</ul>)
@@ -51,7 +51,7 @@ const getAccordionContent = (items, checked, onChange) => {
       return (<ul>{items.items.map(item => {
         return (
           <li key={item.label.split(" ").join("_")}>
-            <a rel="external" href={item.link}>{item.label}</a>
+            <a rel="external" href={item.link} target="_blank">{item.label}</a>
           </li>
           )
       })}</ul>)
