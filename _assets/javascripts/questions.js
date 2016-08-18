@@ -281,7 +281,7 @@ export const QuestionFlow = {
               label: "Help with meals and nutrition",
               abstract: "You can get free or subsidised meal delivery, help with preparing and eating and shopping services in your local area.",
               condition: "eating",
-              type: "subsidy",
+              type: "funded",
               actions: [
                 {
                   label: "Senior services guide",

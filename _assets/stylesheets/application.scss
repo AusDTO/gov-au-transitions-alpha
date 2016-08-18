@@ -326,6 +326,8 @@ main.hero-gradient {
   }
   p, .step-actions {
     padding-left: 3.5em;
+    margin-bottom: 1.2em;
+    margin-right: 1.2em;
   }
   label {
     font-weight: 700;
@@ -336,4 +338,10 @@ main.hero-gradient {
 }
 .accordion-button {
   border-bottom: none !important;
+}
+.info-badge {
+  padding: 2px 0.4em;
+  border: 1px solid #717171;
+  border-radius: 2px;
+  color: #717171;
 }

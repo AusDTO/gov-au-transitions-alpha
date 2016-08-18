@@ -42,6 +42,7 @@ const getAccordionContent = (items, checked, onChange) => {
             <label htmlFor={name}>{item.label}</label>
             <p>{item.abstract}</p>
             <ul className="step-actions">{getStepActions(item.actions)}</ul>
+            {item.type === "funded" ? (<div className="step-actions"><span className="info-badge">Goverment funded</span></div>) : ""}
           </li>)
       })}</ul></form>)
       return (<div>Step type set</div>)
