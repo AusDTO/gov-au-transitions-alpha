@@ -334,6 +334,8 @@ main.hero-gradient {
   }
 }
 .result-list {
+  margin-right: 1.3em;
+  vertical-align: middle;
   background-color: #def4f9;
 }
 .accordion-button {
@@ -344,4 +346,8 @@ main.hero-gradient {
   border: 1px solid #717171;
   border-radius: 2px;
   color: #717171;
+}
+.badge--default {
+  margin-right: 1.3em;
+  vertical-align: middle;
 }

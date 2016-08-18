@@ -1,6 +1,22 @@
 import React from 'react'
 import Accordion from './Accordion'
 
+// @TODO this should be moved to the parent container element
+const getBadgeContent = (items, checked) => {
+  if (items.type === "steps") {
+    let len = items.items.length
+    let minus = 0
+    for (let i = 0; i < len; i += 1) {
+      if (checked.indexOf(items.items[i].label.split(" ").join("_")) > -1) {
+        minus += 1
+      }
+    }
+    return len - minus
+  } else {
+    return ""
+  }
+}
+
 const getStepActions = actions => {
   return actions.map(action => {
     return (
@@ -62,7 +78,8 @@ const getAccordions = (list, checked, onChange) => {
   return list.map(items =>  (
       <Accordion key={items.title.split(" ").join("_")}
         className={items.type + "-list"}
-        summary={items.title}>
+        summary={items.title}
+        badge={getBadgeContent(items, checked)}>
         {items.items && items.items.length ?
           getAccordionContent(items, checked, onChange) :
           (<div>No Results found</div>)}

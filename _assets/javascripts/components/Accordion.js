@@ -19,6 +19,7 @@ class Accordion extends Component {
     return (
       <section aria-expanded={this.state.open}>
         <a className="accordion-button" onClick={this.handleClick}>
+          {this.props.badge && this.props.badge !== "" ? (<span className="badge--default">{this.props.badge}</span>) : ""}
           {this.props.summary}
         </a>
         <div className={theClassName}>
