@@ -2,15 +2,21 @@ import { connect } from 'react-redux'
 
 import ResultSet from '../components/ResultSet'
 import { getResultsList } from '../helpers'
+import { resultCheck } from '../actions'
 
 const mapStateToProps = (state) => {
   return {
-    resultSets: getResultsList(state)
+    resultSets: getResultsList(state),
+    resultSteps: state.resultSteps
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
-  return {}
+  return {
+    onChange: (value) => {
+      dispatch(resultCheck(value))
+    }
+  }
 }
 
 const ResultSetLinker = connect(

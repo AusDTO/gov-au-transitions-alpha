@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux'
-import { MOVE_NEXT, MOVE_BACK, ON_SELECT } from './actions'
+import { MOVE_NEXT, MOVE_BACK, ON_SELECT, RESULT_CHECK } from './actions'
 import { QuestionFlow } from './questions'
 import { removeAtIndex, replaceAtIndex } from './helpers'
 
@@ -7,7 +7,8 @@ import { removeAtIndex, replaceAtIndex } from './helpers'
 const initialState = {
   currentQuestion: 0,
   currentAnswers: [],
-  previousAnswers: []
+  previousAnswers: [],
+  resultSteps: []
 }
 
 const flattenAnswers = (previousAnswers) => {
@@ -68,6 +69,15 @@ const determinePrevQuestion = (current, answers) => {
   return prev
 }
 
+const getResultSteps = (step, currentSteps) => {
+  let index = currentSteps.indexOf(step)
+  if (index > -1) {
+    return removeAtIndex(currentSteps, index)
+  } else {
+    return currentSteps.concat(step)
+  }
+}
+
 function transitionApp(state = initialState, action) {
   //@TODO here need to check that the current question has been andswered and
   // validated and that the current set of answered questions get moved to the
@@ -109,6 +119,10 @@ function transitionApp(state = initialState, action) {
       return Object.assign({}, state, {
         currentAnswers: result,
         previousAnswers: state.previousAnswers.slice(0, state.currentQuestion)
+      })
+    case RESULT_CHECK:
+      return Object.assign({}, state, {
+        resultSteps: getResultSteps(action.step, state.resultSteps)
       })
     default:
       return state

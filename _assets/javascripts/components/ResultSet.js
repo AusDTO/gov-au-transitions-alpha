@@ -17,7 +17,7 @@ const getStepActions = actions => {
   })
 }
 
-const getAccordionContent = items => {
+const getAccordionContent = (items, checked, onChange) => {
   switch (items.type) {
     case "result":
       return (<ul>{items.items.map(item => {
@@ -37,7 +37,8 @@ const getAccordionContent = items => {
               id={name}
               type="checkbox"
               value="true"
-              checked={false} />
+              checked={checked.indexOf(name) > -1 ? true : false}
+              onChange={onChange.bind(null, name)} />
             <label htmlFor={name}>{item.label}</label>
             <p>{item.abstract}</p>
             <ul className="step-actions">{getStepActions(item.actions)}</ul>
@@ -56,19 +57,19 @@ const getAccordionContent = items => {
       })}</ul>)
   }
 }
-const getAccordions = list => {
+const getAccordions = (list, checked, onChange) => {
   return list.map(items =>  (
       <Accordion key={items.title.split(" ").join("_")}
         className={items.type + "-list"}
         summary={items.title}>
         {items.items && items.items.length ?
-          getAccordionContent(items) :
+          getAccordionContent(items, checked, onChange) :
           (<div>No Results found</div>)}
       </Accordion>
   ))
 }
 
-const ResultSet = ({resultSets}) => {
+const ResultSet = ({resultSets, resultSteps, onChange}) => {
   return (
     <div>
       {resultSets.map(set => {
@@ -76,7 +77,7 @@ const ResultSet = ({resultSets}) => {
         <div key={set.id} id={set.id}>
           <h3>{set.title}</h3>
           <p>{set.abstract}</p>
-          {getAccordions(set.list)}
+          {getAccordions(set.list, resultSteps, onChange)}
         </div>
       )
       })}

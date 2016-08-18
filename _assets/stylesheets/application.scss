@@ -49,7 +49,6 @@ header[role=banner] .hero .tagline {
   display: inline-block;
   margin-left: 1.5em;
   margin-top: $small-spacing;
-  z-index: -1;
   &:before {
     position: absolute;
     display: block;
