@@ -1,6 +1,7 @@
 import React from 'react'
 import ResultSetLinker from '../containers/ResultSetLinker'
 import ResultsContentsLinker from '../containers/ResultsContentsLinker'
+import AsideNav from './AsideNav'
 
 const Results = ({show}) => {
   if (show) {
@@ -13,6 +14,7 @@ const Results = ({show}) => {
           </div>
         </div>
         <main role="main">
+          <AsideNav results={true}/>
           <section className="transition-main content-main">
             <ResultsContentsLinker />
             <ResultSetLinker />

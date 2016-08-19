@@ -5,7 +5,7 @@ import AsideNav from './AsideNav'
 
 const Question = () => (
   <main role="main">
-    <AsideNav />
+    <AsideNav results={false}/>
     <section className="transition-main content-main">
       <QuestionHeaderHandler />
       <QuestionBodyLinker />
