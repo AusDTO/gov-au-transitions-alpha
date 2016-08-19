@@ -158,6 +158,20 @@ export const QuestionFlow = {
           ]
         },
         {
+          title: "Related information",
+          type: "information",
+          items: [
+            {
+              label: "Home maintenance and modifications",
+              link: "http://www.myagedcare.gov.au/help-home/home-maintenance-and-modifications"
+            },
+            {
+              label: "Getting out and about",
+              link: ""
+            }
+          ]
+        },
+        {
           title: "Next steps",
           type: "steps",
           items: [
@@ -203,20 +217,6 @@ export const QuestionFlow = {
               ]
             },
           ]
-        },
-        {
-          title: "Related information",
-          type: "information",
-          items: [
-            {
-              label: "Home maintenance and modifications",
-              link: "http://www.myagedcare.gov.au/help-home/home-maintenance-and-modifications"
-            },
-            {
-              label: "Getting out and about",
-              link: ""
-            }
-          ]
         }
       ]
     },
@@ -233,14 +233,14 @@ export const QuestionFlow = {
           ]
         },
         {
-          title: "Next steps",
-          type: "steps",
+          title: "Related information",
+          type: "information",
           items: [
           ]
         },
         {
-          title: "Related information",
-          type: "information",
+          title: "Next steps",
+          type: "steps",
           items: [
           ]
         }
@@ -270,6 +270,27 @@ export const QuestionFlow = {
               label: "In-home meal services",
               link: "http://www.myagedcare.gov.au/service-finder?tab=help-at-home&location=MORPHETT%20VALE%20%20SA,%205162&service=Meals&subtype=At%20Home",
               number: 28
+            }
+          ]
+        },
+        {
+          title: "Related information",
+          type: "information",
+          items: [
+            {
+              label: "Continence Foundation of Australia",
+              link: "http://www.continence.org.au/pages/get-help.html",
+              condition: "incontinence",
+            },
+            {
+              label: "Learn more about Dementia",
+              link: "https://sa.fightdementia.org.au/",
+              condition: "dementia",
+            },
+            {
+              label: "How to care for someone with dementia",
+              link: "http://www.healthdirect.gov.au/caring-for-someone-with-dementia",
+              condition: "dementia",
             }
           ]
         },
@@ -363,27 +384,6 @@ export const QuestionFlow = {
                 },
               ]
             },
-          ]
-        },
-        {
-          title: "Related information",
-          type: "information",
-          items: [
-            {
-              label: "Continence Foundation of Australia",
-              link: "http://www.continence.org.au/pages/get-help.html",
-              condition: "incontinence",
-            },
-            {
-              label: "Learn more about Dementia",
-              link: "https://sa.fightdementia.org.au/",
-              condition: "dementia",
-            },
-            {
-              label: "How to care for someone with dementia",
-              link: "http://www.healthdirect.gov.au/caring-for-someone-with-dementia",
-              condition: "dementia",
-            }
           ]
         }
       ]
