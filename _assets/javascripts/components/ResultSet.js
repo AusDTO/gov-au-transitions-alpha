@@ -76,7 +76,7 @@ const ResultSet = ({resultSets, resultSteps, onChange}) => {
     <div>
       {resultSets.map(set => {
       return (
-        <div key={set.id} id={set.id}>
+        <div key={set.id} id={set.id} className="results-set">
           <h3>{set.title}</h3>
           <p>{set.abstract}</p>
           {getAccordions(set.list, resultSteps, onChange)}
