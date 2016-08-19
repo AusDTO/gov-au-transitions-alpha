@@ -1,6 +1,16 @@
 export const QuestionFlow = {
   questions: [
     {
+      question: "Are you looking for yourself or someone else?",
+      name: "yourselforsomeone",
+      type: "radio",
+      //legend: "Select as many as apply",
+      values: [
+        {value: "myself", label: "Myself"},
+        {value: "someoneelse", label: "Someone else"}
+      ]
+    },
+    {
       question: "How old are you?",
       name: "age",
       type: "radio",
@@ -81,31 +91,89 @@ export const QuestionFlow = {
         {value: "ownhome", label: "Staying at home"},
         {value: "moving", label: "Moving to a more appropriate set up"},
         {value: "outandabout", label: "Getting out and about"},
+        {value: "notsure", label: "I’m not sure"},
       ]
     },
     {
-      question: "What kind of assistance do you think is required?",
-      name: "assistance",
-      condition: "ownhome,outandabout",
+      question: "Which options are you interested in learning about?",
+      name: "learning",
+      condition: "moving,notsure",
       type: "checkbox",
       values: [
-        {value: "gettingaround", label: "Getting around the house"},
+        {value: "singlestorey", label: "Single storey accommodation"},
+        {value: "support", label: "Supervision and support"},
+        {value: "nursingcare", label: "Nursing care"},
+        {value: "independent", label: "Keeping independence"},
+        {value: "community", label: "Living in a community"},
+        {value: "culturemove", label: "Cultural connections"},
+      ]
+    },
+    {
+      question: "What assistance is required at home?",
+      name: "assistance",
+      condition: "ownhome,outandabout,notsure,singlestorey,support,independent,community,culturemove",
+      type: "checkbox",
+      values: [
         {value: "eating", label: "Eating well"},
         {value: "maintenance", label: "Home maintenance"},
+        {value: "housework", label: "Housework"},
         {value: "transport", label: "Transport"},
-        {value: "exercise", label: "Exercise"},
+        {value: "stayingfit", label: "Staying fit"},
         {value: "social", label: "Social connections"},
         {value: "hygiene", label: "Personal hygiene"},
         {value: "medications", label: "Managing medications"},
-        {value: "affairs", label: "Managing home affairs"},
         {value: "supervision", label: "Supervision"},
+        {value: "modifications", label: "home modifications"},
+        {value: "culturehome", label: "Cultural connections"},
         {value: "noassistance", label: "None"},
+      ]
+    },
+    {
+      question: "What is your background?",
+      name: "background",
+      condition: "culturehome,culturemove",
+      type: "autocomplete",
+      //legend: "This helps us to suggest services with specific language skills",
+      values: [
+        {value: "language1", label: "Albanian"},
+        {value: "language2", label: "Arabic"},
+        {value: "language3", label: "Aboriginal and Torres Strait Islander"},
+        {value: "language3", label: "Basque"},
+        {value: "language4", label: "Bengali"},
+        {value: "language5", label: "Croatian"},
+        {value: "language6", label: " Czechs"},
+        {value: "language7", label: "Danish"},
+        {value: "language8", label: "Russian"},
+        {value: "language9", label: "Japanese"},
+        {value: "language10", label: "English"},
+        {value: "language11", label: "German"},
+        {value: "language12", label: "French"},
+      ]
+    },
+    {
+      question: "What language do you speak?",
+      name: "language",
+      condition: "culturehome,culturemove",
+      type: "autocomplete",
+      //legend: "This helps us to suggest local services with langua",
+      values: [
+        {value: "language1", label: "Mandarin"},
+        {value: "language2", label: "Spanish"},
+        {value: "language3", label: "English"},
+        {value: "language4", label: "Hindi/Urdu"},
+        {value: "language5", label: "Arabic"},
+        {value: "language6", label: " Portuguese"},
+        {value: "language7", label: "Bengali"},
+        {value: "language8", label: "Russian"},
+        {value: "language9", label: "Japanese"},
+        {value: "language10", label: "Punjabi"},
+        {value: "language11", label: "Croatian"},
       ]
     },
     {
       question: "Where do you live?",
       name: "location",
-      condition: "ownhome,outandabout",
+      condition: "ownhome,outandabout,notsure",
       type: "location",
       legend: "This helps us to suggest local services",
       values: []
@@ -113,24 +181,10 @@ export const QuestionFlow = {
     {
       question: "Where are you considering living?",
       name: "locationaddmore",
-      condition: "moving",
+      condition: "moving,notsure",
       type: "locationaddmore",
       values: []
-    },
-    {
-      question: "Which options are you interested in learning about?",
-      name: "learning",
-      condition: "moving",
-      type: "checkbox",
-      values: [
-        {value: "singlestorey", label: "Single storey accommodation"},
-        {value: "support", label: "Supervision and support"},
-        {value: "Nursingcare", label: "Nursing care"},
-        {value: "independent", label: "Staying independent at home"},
-        {value: "maintaininghome", label: "Help in maintaining a home"},
-        {value: "community", label: "Living in a community"},
-      ]
-    }
+      }
 
 
   ],
@@ -222,8 +276,8 @@ export const QuestionFlow = {
     },
     {
       title: "Considering an aged care home",
-      id: "moving",
-      //condition: "",
+      id: "movingresults",
+      condition: "moving",
       abstract: "When you need help with day-to-day tasks or health care, you’re not able to look after yourself as well as you used to, and you would like some company.",
       list: [
         {
