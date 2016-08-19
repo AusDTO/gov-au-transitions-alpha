@@ -2,14 +2,11 @@ import React from 'react'
 
 const Question = () => (
   <aside className="sidebar" id="nav">
-    <button aria-controls="local-nav" className="local-nav-toggle">Menu</button>
+    <button aria-controls="local-nav" className="local-nav-toggle">Your Answers</button>
     <nav className="local-nav" aria-label="main navigation" id="null" aria-expanded="false">
-      <ul>
-        <li>
-          <a href="index.html" className="is-active">Getting started</a>
-          this is some stuff
-        </li>
-      </ul>
+      <div className="your-answers">Your Answers</div>
+      <button>Send to MyAgedCare</button><br />
+      <a href="">Why send my results to my aged care?</a>
     </nav>
   </aside>
 )

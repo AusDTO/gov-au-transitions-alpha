@@ -350,3 +350,19 @@ main.hero-gradient {
   margin-right: 1.3em;
   vertical-align: middle;
 }
+.sidebar {
+  @include link-colours($non-black, $light-aqua, $non-black);
+  @include button-colours($button-bg-colour, $button-bg-colour--hover, $button-bg-colour--active, $button-text-colour);
+  .your-answers {
+    border-bottom: 1px solid #5bcbe3;
+    padding: $small-spacing 0;
+    margin: 0 0 $base-spacing 0;
+    position: relative;
+    &:after {
+      content: $fa-var-chevron-down;
+      font-family: FontAwesome;
+      position: absolute;
+      right: 0.8em;
+    }
+  }
+}
