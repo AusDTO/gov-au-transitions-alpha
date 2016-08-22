@@ -10,7 +10,7 @@ const Results = ({show}) => {
         <div className="hero-med corporate">
           <div className="wrapper">
             <h1>Your results</h1>
-            <p>Based on your answers, here is your guide to services,<br/>information and next steps to getting support.</p>
+            <p>Based on your answers, here is your guide to support services, information and next steps.</p>
           </div>
         </div>
         <main role="main">

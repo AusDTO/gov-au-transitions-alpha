@@ -8,7 +8,7 @@ const Question = ({results}) => (
       {results ? (
         <span>
           <button>Send to MyAgedCare</button><br />
-          <a href="">Why send my results to my aged care?</a>
+          <a>Why send my results to my aged care?</a>
         </span>
       ) : ""}
     </nav>

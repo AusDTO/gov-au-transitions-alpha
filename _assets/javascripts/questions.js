@@ -24,7 +24,7 @@ export const QuestionFlow = {
       ]
     },
     {
-      question: "Are you recieving a pension?",
+      question: "Are you receiving a pension?",
       name: "pension",
       type: "checkbox",
       //legend: "This helps us to suggest things like subsidised services and the right forms.",
@@ -49,11 +49,11 @@ export const QuestionFlow = {
       ]
     },
     {
-      question: "Are there any physical issues that you’re concerned about?",
+      question: "Are there any physical issues you’re concerned about?",
       name: "physical",
       //condition: "ownhome,family",
       type: "autocompleteaddmore",
-      legend: "E.g. arthritis",
+      legend: "For example arthritis – Select all that apply",
       values: [
         {value: "arthritis", label: "Arthritis"},
         {value: "osteoporosis", label: "Osteoporosis"},
@@ -70,9 +70,10 @@ export const QuestionFlow = {
       ]
     },
     {
-      question: "Are there any mental or emotional issues that you’re concerned about?",
+      question: "Are there any mental or emotional issues you’re concerned about?",
       name: "emotional",
       type: "checkbox",
+      legend: "Select all that apply",
       values: [
         {value: "loneliness", label: "Loneliness"},
         {value: "confusion", label: "Confusion"},
@@ -84,9 +85,10 @@ export const QuestionFlow = {
       ]
     },
     {
-      question: "What do you want to look at?",
+      question: "What options do you want to know about?",
       name: "live",
       type: "checkbox",
+      legend: "Select all that apply",
       values: [
         {value: "ownhome", label: "Staying at home"},
         {value: "moving", label: "Moving to a more appropriate set up"},
@@ -99,6 +101,7 @@ export const QuestionFlow = {
       name: "learning",
       condition: "moving,notsure",
       type: "checkbox",
+      legend: "Select all that apply",
       values: [
         {value: "singlestorey", label: "Single storey accommodation"},
         {value: "support", label: "Supervision and support"},
@@ -109,17 +112,17 @@ export const QuestionFlow = {
       ]
     },
     {
-      question: "What assistance is required at home?",
+      question: "What help is needed at home?",
       name: "assistance",
       condition: "ownhome,outandabout,notsure,singlestorey,support,independent,community,culturemove",
       type: "checkbox",
+      legend: "Select all that apply",
       values: [
-        {value: "eating", label: "Eating well"},
+        {value: "eating", label: "Cooking and eating"},
         {value: "maintenance", label: "Home maintenance"},
         {value: "housework", label: "Housework"},
         {value: "transport", label: "Transport"},
         {value: "stayingfit", label: "Staying fit"},
-        {value: "social", label: "Social connections"},
         {value: "hygiene", label: "Personal hygiene"},
         {value: "medications", label: "Managing medications"},
         {value: "supervision", label: "Supervision"},
@@ -684,17 +687,17 @@ export const QuestionFlow = {
               number: 43
             },
             {
-              label: "Residential respite low care Services",
+              label: "Residential respite low care services",
               link: "http://www.myagedcare.gov.au/service-finder?tab=aged-care-homes&view=list&location=MORPHETT%20VALE%20%20SA,5162&service=Residential%20Respite%20Low%20Care",
               number: 46
             },
             {
-              label: "Residential respite high care Services",
+              label: "Residential respite high care services",
               link: "http://www.myagedcare.gov.au/service-finder?tab=aged-care-homes&view=list&location=MORPHETT%20VALE%20%20SA,5162&service=Residential%20Respite%20Low%20Care",
               number: 43
             },
             {
-              label: "Multi-Purpose Residential Services",
+              label: "Multi-purpose residential service",
               link: "http://www.myagedcare.gov.au/service-finder?tab=aged-care-homes&view=list&location=MORPHETT%20VALE%20%20SA,5162&service=Residential%20Respite%20Low%20Care",
               number: 1
             },
