@@ -74,6 +74,10 @@ const getPreviousAnswersAsArray = (previousAnswers) => {
   return result
 }
 
+/**
+ * returns the results that complete the conditions that the current answers
+ * match.
+**/
 const checkAnswersBasedOnRule = (results, rule) => {
   let orRules = rule.split(',')
 
@@ -99,6 +103,26 @@ const checkAnswersBasedOnRule = (results, rule) => {
   return false
 }
 
+/**
+ * Removes the results that contain no list items after they have been check by
+ * the condtions.
+**/
+const removeEmptyResults = results => {
+  let tempResults = results.filter(value => value.list.length > 0)
+  let res = []
+
+  for (let i = 0; i < tempResults.length; i += 1) {
+    res = res.concat(Object.assign({}, tempResults[i], {
+      list: tempResults[i].list.filter(item => item.items.length > 0)
+    }))
+  }
+  return res
+}
+
+/**
+ * Returns the list of results based on the condtion passed with respect to the
+ * questions answered.
+**/
 const getListModules = (list, answers, checked) => {
   let results = []
   for (let i = 0; i < list.length; i += 1) {
@@ -127,5 +151,5 @@ export function getResultsList(state) {
 
     }
   }
-  return results
+  return removeEmptyResults(results)
 }
