@@ -76,6 +76,7 @@ const getFieldset = (type, values, name, selectedValues, onChange) => {
 
       return locations
     case "autocomplete":
+    case "autocompleteaddmore":
       let currVals = selectedValues.length > 0 ? selectedValues : [""]
       let autocompletes = currVals.map((value, index) => {
         let id = name + index
@@ -101,7 +102,7 @@ const getFieldset = (type, values, name, selectedValues, onChange) => {
         )
       })
 
-      if (currVals[currVals.length - 1] !== "") {
+      if (currVals[currVals.length - 1] !== "" && type === 'autocompleteaddmore') {
         autocompletes.push((
           <a key="addmoreautocomplete"
             href="#" className="addmore"
