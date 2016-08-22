@@ -24,7 +24,9 @@ const getAccordionContent = (items, checked, onChange) => {
         return (
           <li key={item.label.split(" ").join("_")}>
             <span className="number">{item.number}</span>
+            <span>
             <a rel="external" href={item.link} target="_blank">{item.label}</a>
+            </span>
           </li>
         )
       })}</ul>)
