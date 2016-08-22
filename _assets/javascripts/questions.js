@@ -190,124 +190,13 @@ export const QuestionFlow = {
   ],
   results: [
     {
-      title: "Help to stay at home",
-      id: "stay",
+      title: "Health and wellbeing",
+      id: "healthwellbeingresult",
       condition: "ownhome",
-      abstract: "Explore support that will help you to stay at home–whether that is in your current home, at a family or friend’s home, or in a retirement village.",
+      abstract: "Explore local services, information and contacts to get the help and advice you need.",
       list: [
         {
-          title: "Services in your area",
-          type: "result",
-          items: [
-            {
-              label: "Home care package providers",
-              link: "http://www.myagedcare.gov.au/service-finder?tab=home-care-package-providers&location=MORPHETT%20VALE%20%20SA,5162&service=hcp-level-1234",
-              number: 51
-            },
-            {
-              label: "Home modification providers",
-              link: "http://www.myagedcare.gov.au/service-finder?tab=help-at-home&location=MORPHETT%20VALE%20%20SA,%205162&service=Home%20modifications",
-              number: 6
-            }
-          ]
-        },
-        {
-          title: "Related information",
-          type: "information",
-          items: [
-            {
-              label: "Home maintenance and modifications",
-              link: "http://www.myagedcare.gov.au/help-home/home-maintenance-and-modifications"
-            },
-            {
-              label: "Getting out and about",
-              link: ""
-            }
-          ]
-        },
-        {
-          title: "Next steps",
-          type: "steps",
-          items: [
-            {
-              label: "Getting in-home help",
-              abstract: "Call My Aged Care to arrange for an assessment in your home. This will help to know your support needs for day-to-day activities, personal care, transport for shopping or appointments and nursing and health care. Have your Medicare card ready. Call Monday to Friday, 8am to 5pm.",
-              type: "subsidy",
-              actions: [
-                {
-                  label: "Being assessed for home help",
-                  link: "",
-                  type: "secondary"
-                },
-                {
-                  label: "1800 200 422",
-                  link: "tel:1800200422",
-                  type: "link",
-                  prefix: "Call:"
-                }
-              ]
-            },
-            {
-              label: "Estimate home care package fees",
-              abstract: "Your provider may ask you to pay a basic daily fee of up to 17.5% of the single basic age pension. You will also need to contribute an income-tested care fee if your income is over a certain amount.",
-              actions: [
-                {
-                  label: "Estimate home care package fees",
-                  link: "http://www.myagedcare.gov.au/fee-estimator/home-care/form",
-                  type: "button"
-                }
-              ]
-            },
-            {
-              label: "Home modifications",
-              abstract: "Modifications to your home, such as rails and ramps may help to give you more support as you move around. You can organise this yourself locally or through your your service provider who will assess your situation.",
-              actions: [
-                {
-                  label: "Home maintenance and modifications",
-                  link: "http://www.myagedcare.gov.au/help-home/home-maintenance-and-modifications",
-                  type: "external",
-                  prefix: "Visit:"
-                }
-              ]
-            },
-          ]
-        }
-      ]
-    },
-    {
-      title: "Considering an aged care home",
-      id: "movingresults",
-      condition: "moving",
-      abstract: "When you need help with day-to-day tasks or health care, you’re not able to look after yourself as well as you used to, and you would like some company.",
-      list: [
-        {
-          title: "Services in your area",
-          type: "result",
-          items: [
-          ]
-        },
-        {
-          title: "Related information",
-          type: "information",
-          items: [
-          ]
-        },
-        {
-          title: "Next steps",
-          type: "steps",
-          items: [
-          ]
-        }
-      ]
-    },
-    {
-      title: "Help with health and wellbeing",
-      id: "healthwellbeing",
-      //condition: "",
-      abstract: "Below are some local results next steps and information to assist you to get the types of help with health and wellbeing you need.",
-      list: [
-        {
-          title: "Services in your area",
+          title: "Local services",
           type: "result",
           items: [
             {
@@ -316,36 +205,31 @@ export const QuestionFlow = {
               number: 5
             },
             {
-              label: "Local general practices",
+              label: "Local doctors",
               link: "http://www.healthdirect.gov.au/australian-health-services/results/morphett_vale,5162/tihcs,aht-11222/general-practice",
               number: 4
             },
-            {
-              label: "In-home meal services",
-              link: "http://www.myagedcare.gov.au/service-finder?tab=help-at-home&location=MORPHETT%20VALE%20%20SA,%205162&service=Meals&subtype=At%20Home",
-              number: 28
-            }
           ]
         },
         {
-          title: "Related information",
+          title: "Further information",
           type: "information",
           items: [
             {
-              label: "Continence Foundation of Australia",
-              link: "http://www.continence.org.au/pages/get-help.html",
-              condition: "incontinence",
-            },
-            {
-              label: "Learn more about Dementia",
-              link: "https://sa.fightdementia.org.au/",
+              label: "Mental health resources for seniors",
+              link: "http://www.mindhealthconnect.org.au/older-person-mental-health",
               condition: "dementia",
             },
             {
-              label: "How to care for someone with dementia",
-              link: "http://www.healthdirect.gov.au/caring-for-someone-with-dementia",
+              label: "Learn more about dementia",
+              link: "https://nsw.fightdementia.org.au/national/about-dementia",
               condition: "dementia",
-            }
+            },
+            {
+              label: "Learn what to do about dementia in the short and long term",
+              link: "http://www.myagedcare.gov.au/health-conditions/dementia",
+              condition: "dementia",
+            },
           ]
         },
         {
@@ -353,33 +237,20 @@ export const QuestionFlow = {
           type: "steps",
           items: [
             {
-              label: "Help with meals and nutrition",
-              abstract: "You can get free or subsidised meal delivery, help with preparing and eating and shopping services in your local area.",
-              condition: "eating",
-              type: "funded",
+              label: "Call the dementia hotline for advice",
+              abstract: "Contact Alzheimer’s Australia: National Dementia hotline, 9am to 5pm Monday to Friday",
+              condition: "dementia",
               actions: [
                 {
-                  label: "Senior services guide",
-                  link: "http://www.seniorservicesguide.com.au/list/Meals/australia/sa/city+of+onkaparinga+lg/morphett+vale",
+                  label: "1800 100 500",
+                  link: "tel:1800100500",
                   type: "link",
-                  prefix: ""
+                  prefix: "Call:"
                 }
               ]
             },
             {
-              label: "Managing your medicines",
-              abstract: "If you are having difficulty remembering to take your prescribed medicines, ask your  pharmacist for a sealed weekly Webster pack to help you manage.",
-              condition: "medications",
-              actions: [
-                {
-                  label: "Managing medicines",
-                  link: "",
-                  type: "link"
-                },
-              ]
-            },
-            {
-              label: "State help with continence services",
+              label: "Apply for support with continence products and services (state)",
               abstract: "Ask about the form to apply for discounted products and services and take it to your doctor. South Australia Continence Resource Centre. Monday to Friday 9am to 5pm.",
               type: "subsidy",
               condition: "incontinence",
@@ -399,7 +270,7 @@ export const QuestionFlow = {
               ]
             },
             {
-              label: "National help with continence services",
+              label: "Apply for support with continence products and services (national)",
               abstract: "Download the form to apply for discounted products and services and take it to your doctor.",
               condition: "incontinence",
               type: "subsidy",
@@ -425,17 +296,259 @@ export const QuestionFlow = {
                 },
               ]
             },
+          ]
+        }
+      ]
+    },
+    {
+      title: "Getting out and about",
+      id: "outandaboutresult",
+      condition: "transport,outandabout",
+      abstract: "Know about alternatives for getting around–when ageing, medical conditions and taking medicines impact on the ability to drive.",
+      list: [
+        {
+          title: "Local services",
+          type: "result",
+          items: [
             {
-              label: "Get advice on dementia",
-              abstract: "Contact Alzheimer’s Australia: National Dementia hotline, Monday to Friday, 9am to 5pm",
-              condition: "dementia",
+              label: "Local bus routes",
+              link: "https://www.adelaidemetro.com.au/routes/248",
+              number: 4
+            },
+          ]
+        },
+        {
+          title: "Further information",
+          type: "information",
+          items: [
+            {
+              label: "South Australia: Disability Parking Permits",
+              link: "https://www.sa.gov.au/topics/transport-travel-and-motoring/public-transport-and-travel/getting-around-with-a-disability/disability-parking-permit",
+              condition: "transport,outandabout",
+            },
+            {
+              label: "South Australia: Vision impaired travel pass",
+              link: "https://www.sa.gov.au/topics/transport-travel-and-motoring/public-transport-and-travel/getting-around-with-a-disability/vision-impaired-travel-pass",
+              condition: "transport,outandabout",
+            },
+            {
+              label: "South Australia: Public transport companion card",
+              link: "https://www.sa.gov.au/topics/transport-travel-and-motoring/public-transport-and-travel/getting-around-with-a-disability/companion-cards",
+              condition: "transport,outandabout",
+            },
+            {
+              label: "South Australia: Motorised wheelchairs",
+              link: "https://www.sa.gov.au/topics/transport-travel-and-motoring/public-transport-and-travel/getting-around-with-a-disability/motorised-wheelchairs",
+              condition: "transport",
+            },
+            {
+              label: "Australian Human Rights Commission: Your rights in retirement to transport",
+              link: "http://www.humanrights.gov.au/publications/your-rights-retirement/11-your-right-transport",
+              condition: "transport,outandabout",
+            },
+          ]
+        },
+        {
+          title: "Next steps",
+          type: "steps",
+          items: [
+            {
+              label: "Review your driving ability",
+              abstract: "Ask your doctor to confirm your fitness to hold a driver’s licence.",
+              condition: "transport,outandabout",
+              //type: "subsidy",
               actions: [
                 {
-                  label: "1800 100 500",
-                  link: "tel:1800 100 500",
+                  label: "South Australia: Medical fitness to drive",
+                  link: "http://www.sa.gov.au/topics/transport-travel-and-motoring/motoring/drivers-and-licences/medical-fitness-to-drive",
+                  type: "link",
+                  prefix: "Visit:"
+                },
+              ]
+            },
+            {
+              label: "Help with travel to appointments",
+              abstract: "Call My Aged Care to be assessed. If you qualify, you will either be picked up by a transport service or able to use vouchers or subsidies, such as for taxi services. Monday to Friday 8am to 8pm, Saturdays 10am to 2pm",
+              type: "subsidy",
+              condition: "transport,outandabout",
+              actions: [
+                {
+                  label: "1800 200 422",
+                  link: "tel:1800200422",
                   type: "link",
                   prefix: "Call:"
                 },
+              ]
+            },
+            {
+              label: "Call the public transport concessions hotline",
+              abstract: "Find out about reduced public transport fares.",
+              condition: "transport,outandabout",
+              actions: [
+                {
+                  label: "1800 307 758",
+                  link: "tel:1800307758",
+                  type: "link",
+                  prefix: "Call:"
+                },
+                {
+                  label: "8226 6789",
+                  link: "tel:8226 6789",
+                  type: "link",
+                  prefix: "Text Telephone Service (TTY):"
+                },
+                {
+                  label: "131 450",
+                  link: "tel:131450",
+                  type: "link",
+                  prefix: "Translating and Interpreting Service (TIS National):"
+                },
+                {
+                  label: "TransportConcessionCardSA@sa.gov.au",
+                  link: "mailto:TransportConcessionCardSA@sa.gov.au",
+                  type: "link",
+                  prefix: "Email:"
+                },
+              ]
+            },
+            {
+              label: "Apply for concessions on public transport",
+              abstract: "If you hold an approved concession card, receive a Centrelink payment or hold a Seniors Card you can receive a concession on public transport fares.",
+              condition: "transport,outandabout",
+              actions: [
+                {
+                  label: "Use the concessions finder",
+                  link: "http://www.dcsi.sa.gov.au/concessions",
+                  type: "link",
+                  prefix: ""
+                },
+                {
+                  label: "South Australia: Apply for a public transport concession",
+                  link: "https://www.sa.gov.au/topics/employment-money-taxes/financial-support/concessions-and-benefits/concessions/transport-concessions",
+                  type: "link",
+                  prefix: "Apply:"
+                }
+              ]
+            },
+            {
+              label: "Use your Seniors Card as a Seniors Metrocard",
+              abstract: "You can travel free on trains, buses and trams in metropolitan Adelaide from 9:01am to 3:00pm and 7:01pm to 7:00am weekdays. At other times the concession is around 50% of the normal fare.",
+              //type: "subsidy",
+              condition: "transport,outandabout",
+              actions: [
+                {
+                  label: "Seniors Metrocard",
+                  link: "http://www.sa.gov.au/topics/seniors/seniors-card/the-new-seniors-metrocard",
+                  type: "link",
+                  prefix: "Visit:"
+                },
+              ]
+            },
+            {
+              label: "Apply to use subsidised taxis",
+              abstract: "If you have difficulty accessing public transport you can apply for reduced taxi fares. ",
+              //type: "subsidy",
+              condition: "transport,outandabout",
+              actions: [
+                {
+                  label: "South Australia: Apply for taxi fare subsidies",
+                  link: "https://www.sa.gov.au/topics/transport-travel-and-motoring/public-transport-and-travel/getting-around-with-a-disability/taxi-fare-subsidy-scheme",
+                  type: "link",
+                  prefix: "Apply:"
+                },
+              ]
+            },
+          ]
+        }
+      ]
+    },
+    {
+      title: "Help at home",
+      id: "homeresults",
+      condition: "ownhome,notsure",
+      abstract: "Explore local services and support that will help you to stay at home–whether that is your current home, a family or friend’s home, or a retirement village.",
+      list: [
+        {
+          title: "Local services",
+          type: "result",
+
+          items: [
+            {
+              label: "Home care package providers",
+              link: "http://www.myagedcare.gov.au/service-finder?tab=home-care-package-providers&location=ELIZABETH%20BAY%20%20NSW,2011&service=hcp-level-34",
+              number: 33
+            },
+            {
+              label: "Home modifications providers",
+              link: "http://www.myagedcare.gov.au/service-finder?tab=help-at-home&location=MORPHETT%20VALE%20%20SA,%205162&service=Home%20modifications",
+              number: 6
+            },
+            {
+              label: "Mobility aids providers",
+              link: "http://www.myagedcare.gov.au/service-finder?tab=help-at-home&location=MORPHETT%20VALE%20%20SA,%205162&service=Goods,%20equipment%20and%20assistive%20technology&subtype=Support%20and%20mobility%20aids",
+              number: 13
+            }
+          ]
+        },
+        {
+          title: "Related information",
+          type: "information",
+          items: [
+
+          ]
+        },
+        {
+          title: "Next steps",
+          type: "steps",
+          items: [
+            {
+              label: "Getting in-home help",
+              abstract: "Call My Aged Care to arrange for an assessment in your home. This will help to know your support needs for day-to-day activities, personal care, transport for shopping or appointments and nursing and health care. Have your Medicare card ready. Call Monday to Friday, 8am to 5pm.",
+              type: "subsidy",
+              condition: "ownhome,notsure",
+              actions: [
+                {
+                  label: "Being assessed for home help",
+                  link: "",
+                  type: "secondary"
+                },
+                {
+                  label: "1800 200 422",
+                  link: "tel:1800200422",
+                  type: "link",
+                  prefix: "Call:"
+                }
+              ]
+            },
+            {
+              label: "Types of home help",
+              abstract: "There are two kinds of in-home help that is subsidised by the government—basic home support and a package of services that is coordinated by an advisor or case manager.",
+              type: "subsidy",
+              condition: "ownhome,notsure",
+              actions: [
+                {
+                  label: "Compare basic home support and home care packages",
+                  link: "",
+                  type: "link"
+                },
+                {
+                  label: "Choosing a home care service provider",
+                  link: "",
+                  type: "link",
+                  prefix: ""
+                }
+              ]
+            },
+            {
+              label: "Estimate home care package fees",
+              abstract: "Your provider may ask you to pay a basic daily fee of up to 17.5% of the single basic age pension. You will also need to contribute an income-tested care fee if your income is over a certain amount.",
+              condition: "ownhome,notsure",
+              actions: [
+                {
+                  label: "Estimate home care package fees",
+                  link: "http://www.myagedcare.gov.au/fee-estimator/home-care/form",
+                  type: "button"
+                }
               ]
             },
           ]
