@@ -52,7 +52,7 @@ export const QuestionFlow = {
       question: "Are there any physical issues that you’re concerned about?",
       name: "physical",
       //condition: "ownhome,family",
-      type: "autocomplete",
+      type: "autocompleteaddmore",
       legend: "E.g. arthritis",
       values: [
         {value: "arthritis", label: "Arthritis"},
@@ -154,7 +154,7 @@ export const QuestionFlow = {
       question: "What language do you speak?",
       name: "language",
       condition: "culturehome,culturemove",
-      type: "autocomplete",
+      type: "autocompleteaddmore",
       //legend: "This helps us to suggest local services with langua",
       values: [
         {value: "language1", label: "Mandarin"},
