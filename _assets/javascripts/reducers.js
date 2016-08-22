@@ -111,7 +111,7 @@ function transitionApp(state = initialState, action) {
         } else {
           result = state.currentAnswers.concat(action.value)
         }
-      } else if (type === 'locationaddmore' || type === 'autocomplete') {
+      } else if (['locationaddmore', 'autocomplete', 'autocompleteaddmore'].indexOf(type) !== -1) {
         result = action.value
       } else  {
         result = [action.value]
