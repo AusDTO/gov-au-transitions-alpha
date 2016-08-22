@@ -21,8 +21,9 @@ const Results = ({show}) => {
             <button>Print all results  <i className="fa fa-chevron-right" aria-hidden="true"></i></button>
             <h2>Also explore</h2>
             <ul>
-              <li><a href="">Consider concent needs</a></li>
-              <li><a href="">Support for carers</a></li>
+              <li><a href="">Managing your medicines</a></li>
+              <li><a href="">Financial planning, seminars and advice</a></li>
+              <li><a href="">Organising consents such as powers of attorney</a></li>
             </ul>
             <hr />
             <form className="list-horizontal" action="" method="post">
