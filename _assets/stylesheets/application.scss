@@ -72,7 +72,6 @@ header[role=banner] .hero .tagline {
   @include media($tablet) {
     font-size: 22px;
   }
-  text-decoration: underline;
 }
 
 details + details {
@@ -80,34 +79,6 @@ details + details {
 }
 .results-wrapper hr {
   margin-top: 2.2em;
-}
-.accordion-panel {
-  margin-bottom: $base-spacing;
-  // .link {
-  //   position: relative;
-  //   display: inline-block;
-  //   margin-left: 1.5em;
-  //   margin-top: 0.6em;
-  //   &:before {
-  //     position: absolute;
-  //     display: block;
-  //     padding-right: 1em;
-  //     font: normal normal normal 18px/1 FontAwesome;
-  //     border-bottom: none;
-  //     left: -1.1em;
-  //     top: 0.3em;
-  //     content: "\f054";
-  //   }
-  //   &.phone::before {
-  //     content: "\f095";
-  //     font-size: 22px;
-  //     top: .2em;
-  //   }
-  // }
-}
-.topic-links {
-  @extend .accordion-panel;
-  background-color: $lighter-aqua;
 }
 .landing-wrapper {
   @extend .form-wrapper;
@@ -337,7 +308,7 @@ main.hero-gradient {
   vertical-align: middle;
   background-color: #def4f9;
 }
-.accordion-button {
+.accordion-button, [aria-expanded='false'] .accordion-panel {
   border-bottom: none !important;
 }
 .info-badge {
@@ -374,4 +345,6 @@ main.hero-gradient {
 }
 .results-set {
   border-bottom: 1px solid #bbb;
+  margin-bottom: $base-spacing;
+  padding-bottom: $base-spacing;
 }

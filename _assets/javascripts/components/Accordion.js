@@ -17,7 +17,7 @@ class Accordion extends Component {
   render() {
     let theClassName = "accordion-panel " + this.props.className
     return (
-      <section aria-expanded={this.state.open}>
+      <section aria-expanded={this.state.open} className="accordion">
         <a className="accordion-button" onClick={this.handleClick}>
           {this.props.badge && this.props.badge !== "" ? (<span className="badge--default">{this.props.badge}</span>) : ""}
           <span className="accordion-content">{this.props.summary}</span>
