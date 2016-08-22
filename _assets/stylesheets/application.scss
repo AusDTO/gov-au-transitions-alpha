@@ -274,11 +274,20 @@ main.hero-gradient {
   .number {
     font-size: 2em;
     padding-right: 0.5em;
+    font-weight: 700;
+    display: table-cell;
     & + a {
       line-height: 2em;
       vertical-align: bottom;
       font-weight: 700;
+      display: table-cell;
     }
+  }
+}
+.result-list ul {
+  display: table;
+  & > li {
+    display: table-row;
   }
 }
 .steps-list {
@@ -299,6 +308,9 @@ main.hero-gradient {
     padding-left: 3.5em;
     margin-bottom: 1.2em;
     margin-right: 1.2em;
+    [role='button'] {
+      margin: 0;
+    }
   }
   label {
     font-weight: 700;
