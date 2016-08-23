@@ -756,8 +756,7 @@ export const QuestionFlow = {
                 {
                   label: "Schedule of residential care fees and charges",
                   link: "https://agedcare.health.gov.au/funding/aged-care-fees-and-charges/schedule-of-fees-and-charges-for-pre-1-july-2014-residents-from-1-july-2016",
-                  type: "secondary",
-                  prefix: "moving,notsure"
+                  type: "secondary"
                 },
               ]
             },
@@ -769,8 +768,7 @@ export const QuestionFlow = {
                 {
                   label: "Complete an income and assets assessment",
                   link: "https://www.humanservices.gov.au/customer/services/aged-care-means-test-assessments",
-                  type: "link",
-                  prefix: "moving,notsure"
+                  type: "link"
                 },
               ]
             },
