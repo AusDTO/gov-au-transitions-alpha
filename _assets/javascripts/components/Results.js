@@ -10,7 +10,7 @@ const Results = ({show}) => {
         <div className="hero-med corporate">
           <div className="wrapper">
             <h1>Your results</h1>
-            <p>Based on your answers, here is your guide to services,<br/>information and next steps to getting support.</p>
+            <p>Based on your answers, here is your guide to support services, information and next steps.</p>
           </div>
         </div>
         <main role="main">
@@ -21,8 +21,9 @@ const Results = ({show}) => {
             <button>Print all results  <i className="fa fa-chevron-right" aria-hidden="true"></i></button>
             <h2>Also explore</h2>
             <ul>
-              <li><a href="">Consider concent needs</a></li>
-              <li><a href="">Support for carers</a></li>
+              <li><a href="">Managing your medicines</a></li>
+              <li><a href="">Financial planning, seminars and advice</a></li>
+              <li><a href="">Organising consents such as powers of attorney</a></li>
             </ul>
             <hr />
             <form className="list-horizontal" action="" method="post">

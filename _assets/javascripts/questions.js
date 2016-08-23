@@ -24,7 +24,7 @@ export const QuestionFlow = {
       ]
     },
     {
-      question: "Are you recieving a pension?",
+      question: "Are you receiving a pension?",
       name: "pension",
       type: "checkbox",
       //legend: "This helps us to suggest things like subsidised services and the right forms.",
@@ -49,11 +49,11 @@ export const QuestionFlow = {
       ]
     },
     {
-      question: "Are there any physical issues that you’re concerned about?",
+      question: "Are there any physical issues you’re concerned about?",
       name: "physical",
       //condition: "ownhome,family",
       type: "autocompleteaddmore",
-      legend: "E.g. arthritis",
+      legend: "For example arthritis – Select all that apply",
       values: [
         {value: "arthritis", label: "Arthritis"},
         {value: "osteoporosis", label: "Osteoporosis"},
@@ -70,23 +70,25 @@ export const QuestionFlow = {
       ]
     },
     {
-      question: "Are there any mental or emotional issues that you’re concerned about?",
+      question: "Are there any mental or emotional issues you’re concerned about?",
       name: "emotional",
       type: "checkbox",
+      legend: "Select all that apply",
       values: [
         {value: "loneliness", label: "Loneliness"},
         {value: "confusion", label: "Confusion"},
         {value: "forgetful", label: "Forgetfulness"},
         {value: "Anxiety", label: "Anxiety"},
-        {value: "Depression", label: "Depression"},
+        {value: "depression", label: "Depression"},
         {value: "dementia", label: "Dementia"},
         {value: "noissues", label: "No issues"},
       ]
     },
     {
-      question: "What do you want to look at?",
+      question: "What options do you want to know about?",
       name: "live",
       type: "checkbox",
+      legend: "Select all that apply",
       values: [
         {value: "ownhome", label: "Staying at home"},
         {value: "moving", label: "Moving to a more appropriate set up"},
@@ -99,6 +101,7 @@ export const QuestionFlow = {
       name: "learning",
       condition: "moving,notsure",
       type: "checkbox",
+      legend: "Select all that apply",
       values: [
         {value: "singlestorey", label: "Single storey accommodation"},
         {value: "support", label: "Supervision and support"},
@@ -109,17 +112,17 @@ export const QuestionFlow = {
       ]
     },
     {
-      question: "What assistance is required at home?",
+      question: "What help is needed at home?",
       name: "assistance",
       condition: "ownhome,outandabout,notsure,singlestorey,support,independent,community,culturemove",
       type: "checkbox",
+      legend: "Select all that apply",
       values: [
-        {value: "eating", label: "Eating well"},
+        {value: "eating", label: "Cooking and eating"},
         {value: "maintenance", label: "Home maintenance"},
         {value: "housework", label: "Housework"},
         {value: "transport", label: "Transport"},
         {value: "stayingfit", label: "Staying fit"},
-        {value: "social", label: "Social connections"},
         {value: "hygiene", label: "Personal hygiene"},
         {value: "medications", label: "Managing medications"},
         {value: "supervision", label: "Supervision"},
@@ -135,19 +138,19 @@ export const QuestionFlow = {
       type: "autocomplete",
       //legend: "This helps us to suggest services with specific language skills",
       values: [
-        {value: "language1", label: "Albanian"},
-        {value: "language2", label: "Arabic"},
-        {value: "language3", label: "Aboriginal and Torres Strait Islander"},
-        {value: "language3", label: "Basque"},
-        {value: "language4", label: "Bengali"},
-        {value: "language5", label: "Croatian"},
-        {value: "language6", label: " Czechs"},
-        {value: "language7", label: "Danish"},
-        {value: "language8", label: "Russian"},
-        {value: "language9", label: "Japanese"},
-        {value: "language10", label: "English"},
-        {value: "language11", label: "German"},
-        {value: "language12", label: "French"},
+        {value: "background1", label: "Albanian"},
+        {value: "background2", label: "Arabic"},
+        {value: "background3", label: "Aboriginal and Torres Strait Islander"},
+        {value: "background3", label: "Basque"},
+        {value: "background4", label: "Bengali"},
+        {value: "croatianbkg", label: "Croatian"},
+        {value: "background6", label: " Czechs"},
+        {value: "background7", label: "Danish"},
+        {value: "background8", label: "Russian"},
+        {value: "background9", label: "Japanese"},
+        {value: "background10", label: "English"},
+        {value: "background11", label: "German"},
+        {value: "background12", label: "French"},
       ]
     },
     {
@@ -167,7 +170,7 @@ export const QuestionFlow = {
         {value: "language8", label: "Russian"},
         {value: "language9", label: "Japanese"},
         {value: "language10", label: "Punjabi"},
-        {value: "language11", label: "Croatian"},
+        {value: "croatianlang", label: "Croatian"},
       ]
     },
     {
@@ -192,13 +195,19 @@ export const QuestionFlow = {
     {
       title: "Health and wellbeing",
       id: "healthwellbeingresult",
-      condition: "ownhome",
+      condition: "ownhome,moving,notsure",
       abstract: "Explore local services, information and contacts to get the help and advice you need.",
       list: [
         {
           title: "Local services",
           type: "result",
           items: [
+            {
+              label: "Dementia services in your area",
+              link: "",
+              number: 3,
+              condition: "dementia"
+            },
             {
               label: "Local pharmacies",
               link: "http://www.healthdirect.gov.au/australian-health-services/results/morphett_vale,5162/tihcs,aht-12243/pharmacy",
@@ -230,12 +239,105 @@ export const QuestionFlow = {
               link: "http://www.myagedcare.gov.au/health-conditions/dementia",
               condition: "dementia",
             },
+            {
+              label: "How to care for someone with dementia",
+              link: "http://www.healthdirect.gov.au/caring-for-someone-with-dementia",
+              condition: "dementia",
+            },
+            {
+              label: "Mental health resources for seniors",
+              link: "http://www.mindhealthconnect.org.au/older-person-mental-health",
+              condition: "depression",
+            },
+            {
+              label: "Depression in older people",
+              link: "https://www.beyondblue.org.au/who-does-it-affect/older-people",
+              condition: "depression",
+            },
           ]
         },
         {
           title: "Next steps",
           type: "steps",
           items: [
+            {
+              label: "Croatian community support",
+              abstract: "Get support from Croatian-speaking carers who provide transport and outings, social support and domestic assistance through this not-for-profit organisation.",
+              condition: "croatianbkg,croatianlang",
+              actions: [
+                {
+                  label: "Croatian Club Adelaide: care for the aged",
+                  link: "http://www.croatianclubadelaide.com/croatian-care-for-the-aged",
+                  type: "link",
+                  prefix: "Visit:",
+                }
+              ]
+            },
+            {
+              label: "What to do in an emergency",
+              abstract: "Call Lifeline 24/7",
+              condition: "depression",
+              actions: [
+                {
+                  label: "13 11 14",
+                  link: "tel:131114",
+                  type: "link",
+                  prefix: "Call:"
+                }
+              ]
+            },
+            {
+              label: "Free professional support for depression",
+              abstract: "You can see a free psychiatrist, psychologist or social worker or other health professional by appointment.",
+              condition: "depression",
+              actions: [
+                {
+                  label: "Find mental health services for older people in South Australia",
+                  link: "http://www.sahealth.sa.gov.au/wps/wcm/connect/public+content/sa+health+internet/health+services/mental+health+services/older+persons+mental+health+services",
+                  type: "link",
+                  prefix: "",
+                }
+              ]
+            },
+            {
+              label: "Counselling through Medicare",
+              abstract: "You can see a free psychiatrist, psychologist or social worker or other health professional by appointment.",
+              type: "funded",
+              condition: "depression",
+              actions: [
+                {
+                  label: "Apply for a Medicare card",
+                  link: "https://www.humanservices.gov.au/sites/default/files/documents/3101-1306en.pdf",
+                  type: "link",
+                  prefix: "Form:"
+                },
+                {
+                  label: "Learn about applying for a Medicare card",
+                  link: "https://www.humanservices.gov.au/customer/subjects/medicare-services",
+                  type: "secondary",
+                  prefix: ""
+                },
+                {
+                  label: "A sample mental health plan",
+                  link: "http://www.health.gov.au/internet/main/publishing.nsf/content/mental-ba-gpsamp",
+                  type: "secondary",
+                  prefix: ""
+                },
+              ]
+            },
+            {
+              label: "Get advice on depression",
+              abstract: "Call BeyondBlue for support and advice 24/7.",
+              condition: "depression",
+              actions: [
+                {
+                  label: "1300 22 4636",
+                  link: "tel:1300224636",
+                  type: "link",
+                  prefix: "Call:",
+                }
+              ]
+            },
             {
               label: "Call the dementia hotline for advice",
               abstract: "Contact Alzheimer’s Australia: National Dementia hotline, 9am to 5pm Monday to Friday",
@@ -252,7 +354,7 @@ export const QuestionFlow = {
             {
               label: "Apply for support with continence products and services (state)",
               abstract: "Ask about the form to apply for discounted products and services and take it to your doctor. South Australia Continence Resource Centre. Monday to Friday 9am to 5pm.",
-              type: "subsidy",
+              type: "funded",
               condition: "incontinence",
               actions: [
                 {
@@ -273,7 +375,7 @@ export const QuestionFlow = {
               label: "Apply for support with continence products and services (national)",
               abstract: "Download the form to apply for discounted products and services and take it to your doctor.",
               condition: "incontinence",
-              type: "subsidy",
+              type: "funded",
               actions: [
                 {
                   label: "Continence Aids Payment Scheme application",
@@ -356,7 +458,7 @@ export const QuestionFlow = {
               label: "Review your driving ability",
               abstract: "Ask your doctor to confirm your fitness to hold a driver’s licence.",
               condition: "transport,outandabout",
-              //type: "subsidy",
+              //type: "funded",
               actions: [
                 {
                   label: "South Australia: Medical fitness to drive",
@@ -369,7 +471,7 @@ export const QuestionFlow = {
             {
               label: "Help with travel to appointments",
               abstract: "Call My Aged Care to be assessed. If you qualify, you will either be picked up by a transport service or able to use vouchers or subsidies, such as for taxi services. Monday to Friday 8am to 8pm, Saturdays 10am to 2pm",
-              type: "subsidy",
+              type: "funded",
               condition: "transport,outandabout",
               actions: [
                 {
@@ -433,7 +535,7 @@ export const QuestionFlow = {
             {
               label: "Use your Seniors Card as a Seniors Metrocard",
               abstract: "You can travel free on trains, buses and trams in metropolitan Adelaide from 9:01am to 3:00pm and 7:01pm to 7:00am weekdays. At other times the concession is around 50% of the normal fare.",
-              //type: "subsidy",
+              //type: "funded",
               condition: "transport,outandabout",
               actions: [
                 {
@@ -447,7 +549,7 @@ export const QuestionFlow = {
             {
               label: "Apply to use subsidised taxis",
               abstract: "If you have difficulty accessing public transport you can apply for reduced taxi fares. ",
-              //type: "subsidy",
+              //type: "funded",
               condition: "transport,outandabout",
               actions: [
                 {
@@ -491,10 +593,24 @@ export const QuestionFlow = {
           ]
         },
         {
-          title: "Related information",
+          title: "Further information",
           type: "information",
           items: [
-
+            {
+              label: "Find a local home and community service provider",
+              link: "http://www.sahealth.sa.gov.au/wps/wcm/connect/public+content/sa+health+internet/health+services/hospitals+and+health+services+-+country+south+australia",
+              condition: "ownhome,notsure",
+            },
+            {
+              label: "Choosing a home care service provider",
+              link: "",
+              condition: "ownhome,notsure",
+            },
+            {
+              label: "Australian Croatian aged care community service providers",
+              link: "http://www.accs.asn.au/index.php/96-aged-care-providers",
+              condition: "croatianbkg,croatianlang",
+            },
           ]
         },
         {
@@ -504,7 +620,7 @@ export const QuestionFlow = {
             {
               label: "Getting in-home help",
               abstract: "Call My Aged Care to arrange for an assessment in your home. This will help to know your support needs for day-to-day activities, personal care, transport for shopping or appointments and nursing and health care. Have your Medicare card ready. Call Monday to Friday, 8am to 5pm.",
-              type: "subsidy",
+              type: "funded",
               condition: "ownhome,notsure",
               actions: [
                 {
@@ -523,7 +639,7 @@ export const QuestionFlow = {
             {
               label: "Types of home help",
               abstract: "There are two kinds of in-home help that is subsidised by the government—basic home support and a package of services that is coordinated by an advisor or case manager.",
-              type: "subsidy",
+              type: "funded",
               condition: "ownhome,notsure",
               actions: [
                 {
@@ -554,6 +670,114 @@ export const QuestionFlow = {
           ]
         }
       ]
-    }
+    },
+    {
+      title: "Aged care homes",
+      id: "agedcarresult",
+      condition: "moving,notsure",
+      abstract: "Consider aged care when you need help with day-to-day tasks or health care, or when you’re not able to look after yourself as well as you used to.",
+      list: [
+        {
+          title: "Local services",
+          type: "result",
+          items: [
+            {
+              label: "Permanent facilities",
+              link: "http://www.myagedcare.gov.au/service-finder?tab=aged-care-homes&view=list&location=MORPHETT%20VALE%20%20SA,5162&service=Residential%20Permanent",
+              number: 43
+            },
+            {
+              label: "Residential respite low care services",
+              link: "http://www.myagedcare.gov.au/service-finder?tab=aged-care-homes&view=list&location=MORPHETT%20VALE%20%20SA,5162&service=Residential%20Respite%20Low%20Care",
+              number: 46
+            },
+            {
+              label: "Residential respite high care services",
+              link: "http://www.myagedcare.gov.au/service-finder?tab=aged-care-homes&view=list&location=MORPHETT%20VALE%20%20SA,5162&service=Residential%20Respite%20Low%20Care",
+              number: 43
+            },
+            {
+              label: "Multi-purpose residential service",
+              link: "http://www.myagedcare.gov.au/service-finder?tab=aged-care-homes&view=list&location=MORPHETT%20VALE%20%20SA,5162&service=Residential%20Respite%20Low%20Care",
+              number: 1
+            },
+          ]
+        },
+        {
+          title: "Further information",
+          type: "information",
+          items: [
+            {
+              label: "Australian Croatian Community Services",
+              link: "http://www.croatianclubadelaide.com/croatian-care-for-the-aged",
+              condition: "croatianbkg,croatianlang",
+            },
+            {
+              label: "Choosing an aged care home",
+              link: "",
+              condition: "moving,notsure",
+            },
+          ]
+        },
+        {
+          title: "Next steps",
+          type: "steps",
+          items: [
+            {
+              label: "Being assessed",
+              abstract: "Firstly have your needs assessed by the Aged Care Assessment Team (ACAT). They will come to your home and if you are eligible, send you a letter of approval for a place in aged care. To arrange for an assessment call My Aged Care. Have your Medicare card ready or your My Aged Care profile ID if you already have one. Call Monday to Friday 8am to 8pm, or Saturday 10am to 2pm.",
+              condition: "moving,notsure",
+              actions: [
+                {
+                  label: "1800 200 422",
+                  link: "tel:1800200422",
+                  type: "link",
+                  prefix: "Call:"
+                },
+                {
+                  label: "About ACAT assessments",
+                  link: "",
+                  type: "secondary",
+                  prefix: ""
+                },
+              ]
+            },
+            {
+              label: "Estimate costs of residential care",
+              abstract: "You will need to contribute to the costs of your residential care in the aged care home. Costs include the basic fee, daily fee and any additional means-tested contribution.",
+              condition: "moving,notsure",
+              actions: [
+                {
+                  label: "Estimate residential care fees",
+                  link: "http://www.myagedcare.gov.au/fee-estimator/residential-care/form",
+                  type: "button",
+                  prefix: ""
+                },
+                {
+                  label: "Schedule of residential care fees and charges",
+                  link: "https://agedcare.health.gov.au/funding/aged-care-fees-and-charges/schedule-of-fees-and-charges-for-pre-1-july-2014-residents-from-1-july-2016",
+                  type: "secondary",
+                  prefix: "moving,notsure"
+                },
+              ]
+            },
+            {
+              label: "Complete an income and assets assessment",
+              abstract: "You will be asked to complete the means-test assessment to know if you can access subsidised care",
+              condition: "moving,notsure",
+              actions: [
+                {
+                  label: "Complete an income and assets assessment",
+                  link: "https://www.humanservices.gov.au/customer/services/aged-care-means-test-assessments",
+                  type: "link",
+                  prefix: "moving,notsure"
+                },
+              ]
+            },
+          ]
+        }
+      ]
+    },
+
   ]
 }
