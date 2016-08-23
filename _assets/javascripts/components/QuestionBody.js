@@ -1,9 +1,12 @@
 import React, { PropTypes } from 'react'
 import Geosuggest from 'react-geosuggest'
+import Glossary from './Glossary'
+import Autocomplete from '../lib/Autocomplete'
+import { replaceAtIndex, styles, autocompleteMatchStateToTerm, getLabelFromValue } from '../helpers'
 
-const addMore = () => {
-  console.log("add more has been clicked");
-}
+// const addMore = () => {
+//   console.log("add more has been clicked");
+// }
 const getFieldset = (type, values, name, selectedValues, onChange) => {
 
   switch (type) {
@@ -41,57 +44,86 @@ const getFieldset = (type, values, name, selectedValues, onChange) => {
           initialValue={selectedValues[0]}
           types={['(regions)']}
           placeholder="Please enter a suburb, town or postcode"
-          onSuggestSelect={onChange}
+          onSuggestSelect={val => onChange(val.label)}
           />
       )]
     case "locationaddmore":
-      if (selectedValues.length) {
+      let locationVals = selectedValues.length > 0 ? selectedValues : [""]
+      let locations = locationVals.map((value, index) => {
+        let id = name + index
+        return (
+          <Geosuggest
+            key={id}
+            country='au'
+            initialValue={value}
+            types={['(regions)']}
+            placeholder="Please enter a suburb, town or postcode"
+            onSuggestSelect={(value) => onChange(replaceAtIndex(locationVals, index, value.label))}
+            />
+        )
+      })
 
-        let inputs = selectedValues.map(value => {
-          let val
-          if (value === 'addmore') {
-            val = ""
-            value += selectedValues.length
-          } else {
-            val = value
-          }
-          return (
-          <Geosuggest
-            key={value}
-            country='au'
-            initialValue={val}
-            types={['(regions)']}
-            placeholder="Please enter a suburb, town or postcode"
-            onSuggestSelect={onChange}
-            />
-        )})
-        inputs.push((
-          <a key="addmorelink" href="#" className="addmore" onClick={onChange.bind(null, 'addmore')}>Add more</a>
+      if (locationVals[locationVals.length - 1] !== "") {
+        locations.push((
+          <a key="addmorelink"
+            href="#" className="addmore"
+            onClick={(e) => {
+              onChange(locationVals.concat(""))
+              e.preventDefault()
+            }}>Add more</a>
         ))
-        return inputs
-      } else {
-        return [(
-          <Geosuggest
-            key={name}
-            country='au'
-            initialValue=""
-            types={['(regions)']}
-            placeholder="Please enter a suburb, town or postcode"
-            onSuggestSelect={onChange}
-            />
-        )]
       }
+
+      return locations
+    case "autocomplete":
+    case "autocompleteaddmore":
+      let currVals = selectedValues.length > 0 ? selectedValues : [""]
+      let autocompletes = currVals.map((value, index) => {
+        let id = name + index
+        return (
+          <Autocomplete
+            key={id}
+            value={selectedValues[index] ? getLabelFromValue(values, selectedValues[index]) : ""}
+            inputProps={{name: id, id: id}}
+            items={values}
+            getItemValue={(item) => item.value}
+            wrapperStyle={styles.wrapperStyle}
+            shouldItemRender={autocompleteMatchStateToTerm}
+            //sortItems={sortStates}
+            onChange={(event, value) => onChange(replaceAtIndex(currVals, index, value))}
+            onSelect={(value) => onChange(replaceAtIndex(currVals, index, value))}
+            renderItem={(item, isHighlighted) => (
+              <div
+                style={isHighlighted ? styles.highlightedItem : styles.item}
+                key={item.value}
+              >{item.label}</div>
+            )}
+          />
+        )
+      })
+
+      if (currVals[currVals.length - 1] !== "" && type === 'autocompleteaddmore') {
+        autocompletes.push((
+          <a key="addmoreautocomplete"
+            href="#" className="addmore"
+            onClick={(e) => {
+              onChange(currVals.concat(""))
+              e.preventDefault()
+            }}>Add more</a>
+        ))
+      }
+      return autocompletes
     default:
       return [(<span key={name}>{name}</span>)]
   }
 }
 
-const QuestionBody = ({questionId, name, legend, type, allValues, selectedValues, onSubmit, onChange}) => {
+const QuestionBody = ({questionId, name, legend, type, allValues, selectedValues, glossary, onSubmit, onChange}) => {
   if (type === "") {
     return <div></div>
   }
   return (
-    <form data-current-question={questionId}
+    <form data-current-question={questionId} className={"form-" + type}
         method="get"
         action={"/" + questionId + "/"}
         onSubmit={e => {
@@ -102,6 +134,7 @@ const QuestionBody = ({questionId, name, legend, type, allValues, selectedValues
         <legend>{legend}</legend>
         {getFieldset(type, allValues, name, selectedValues, onChange)}
       </fieldset>
+      <Glossary list={glossary} />
       <button type="submit">Next  <i className="fa fa-chevron-right" aria-hidden="true"></i></button>
     </form>
   )

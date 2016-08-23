@@ -1,20 +1,14 @@
 import { combineReducers } from 'redux'
-import { MOVE_NEXT, MOVE_BACK, ON_SELECT } from './actions'
+import { MOVE_NEXT, MOVE_BACK, ON_SELECT, RESULT_CHECK } from './actions'
 import { QuestionFlow } from './questions'
+import { removeAtIndex, replaceAtIndex } from './helpers'
 
 // The initial state that the questions are in.
 const initialState = {
   currentQuestion: 0,
   currentAnswers: [],
-  previousAnswers: []
-}
-
-function removeAtIndex(list, index) {
-  return list.slice(0, index).concat(list.slice(index + 1))
-}
-
-function replaceAtIndex(list, index, value) {
-  return list.slice(0, index).concat(value).concat(list.slice(index + 1))
+  previousAnswers: [],
+  resultSteps: []
 }
 
 const flattenAnswers = (previousAnswers) => {
@@ -34,8 +28,21 @@ function determineQuestionCanShow(index, answers) {
   }
 
   for (let i = 0; i < rules.length; i += 1) {
-    if (answers.indexOf(rules[i]) !== -1) {
-      return true
+    if (rules[i].indexOf('+') > -1) {
+      let andRules = rules[i].split('+')
+      let result = true
+      for (let j = 0; j < andRules.length; j += 1) {
+        if (answers.indexOf(andRules[i]) === -1) {
+          result = false
+        }
+      }
+      if (result) {
+        return true
+      }
+    } else {
+      if (answers.indexOf(rules[i]) !== -1) {
+        return true
+      }
     }
   }
   return false
@@ -62,13 +69,22 @@ const determinePrevQuestion = (current, answers) => {
   return prev
 }
 
+const getResultSteps = (step, currentSteps) => {
+  let index = currentSteps.indexOf(step)
+  if (index > -1) {
+    return removeAtIndex(currentSteps, index)
+  } else {
+    return currentSteps.concat(step)
+  }
+}
+
 function transitionApp(state = initialState, action) {
   //@TODO here need to check that the current question has been andswered and
   // validated and that the current set of answered questions get moved to the
   // set of previously answered questions.
   switch (action.type) {
     case MOVE_NEXT:
-      let answers = replaceAtIndex(state.previousAnswers, state.currentQuestion, [state.currentAnswers])
+      let answers = replaceAtIndex(state.previousAnswers, state.currentQuestion, state.currentAnswers)
       let next = determineNextQuestion(state.currentQuestion, answers)
       return Object.assign({}, state, {
         currentQuestion: next,
@@ -95,19 +111,18 @@ function transitionApp(state = initialState, action) {
         } else {
           result = state.currentAnswers.concat(action.value)
         }
-      } else if (type === 'locationaddmore') {
-        let index = state.currentAnswers.indexOf('addmore')
-        if (index > -1) {
-          result = removeAtIndex(state.currentAnswers, index).concat(action.value)
-        } else {
-          result = state.currentAnswers.concat(action.value)
-        }
+      } else if (['locationaddmore', 'autocomplete', 'autocompleteaddmore'].indexOf(type) !== -1) {
+        result = action.value
       } else  {
         result = [action.value]
       }
       return Object.assign({}, state, {
         currentAnswers: result,
         previousAnswers: state.previousAnswers.slice(0, state.currentQuestion)
+      })
+    case RESULT_CHECK:
+      return Object.assign({}, state, {
+        resultSteps: getResultSteps(action.step, state.resultSteps)
       })
     default:
       return state

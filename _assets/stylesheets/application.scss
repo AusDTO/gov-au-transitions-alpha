@@ -64,166 +64,21 @@ header[role=banner] .hero .tagline {
 #transition legend {
   margin-bottom: $base-spacing;
 }
-details {
-  // .badge--default {
-  //   float: right;
-  //   background-color: $dark-aqua;
-  //   margin-top: 0.3em;
-  // }
-  summary {
-    padding: 0.7em;
-    font-size: 19px;
-    padding-right: 2.8em;
-    @include media($tablet) {
-      font-size: 22px;
-    }
-    &::before {
-      background-image: none, url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTc5MiIgaGVpZ2h0PSIxNzkyIiB2aWV3Qm94PSIwIDAgMTc5MiAxNzkyIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Ik0xNjgzIDgwOGwtNzQyIDc0MXEtMTkgMTktNDUgMTl0LTQ1LTE5bC03NDItNzQxcS0xOS0xOS0xOS00NS41dDE5LTQ1LjVsMTY2LTE2NXExOS0xOSA0NS0xOXQ0NSAxOWw1MzEgNTMxIDUzMS01MzFxMTktMTkgNDUtMTl0NDUgMTlsMTY2IDE2NXExOSAxOSAxOSA0NS41dC0xOSA0NS41eiIgZmlsbD0iIzIyNGE2MSIvPjwvc3ZnPgo="), linear-gradient(transparent, transparent);
-    }
-    text-decoration: underline;
+/* Changes to the default accordion styles */
+.accordion-button {
+  padding: 0.7em;
+  font-size: 19px;
+  padding-right: 2.8em;
+  @include media($tablet) {
+    font-size: 22px;
   }
 }
+
 details + details {
   margin-top: 1.6em;
 }
 .results-wrapper hr {
   margin-top: 2.2em;
-}
-main .results-wrapper {
-  display: none;
-}
-// .accordion {
-//   $base-border-color: $non-white !default;
-//   // $base-line-height: 1.5em !default;
-//   // $base-spacing: 1.5em !default;
-//   $dark-gray: #333 !default;
-//   $base-font-color: $dark-gray !default;
-//   $accordion-menu-border-color: $base-border-color;
-//   $accordion-menu-color: $base-font-color !default;
-//   $accordion-menu-border: 4px solid $white;
-//   $accordion-menu-background: $non-white;
-//   $accordion-menu-hover: lighten($accordion-menu-background, 2%);
-//   $accordion-menu-sub-background: darken($accordion-menu-background, 5%);
-//   $accordion-menu-sub-inset: darken($accordion-menu-sub-background, 6%);
-//   $accordion-menu-sub-hover: lighten($accordion-menu-sub-background, 2%);
-//   $accordion-menu-list-padding: $small-spacing $base-spacing;
-//
-//   background-color: $accordion-menu-background;
-//   border: none;
-//   margin: 0 0 $base-spacing 0;
-//   padding: 0;
-//
-//   ul {
-//     margin: 0;
-//     padding: 0;
-//   }
-//
-//   li {
-//     border-bottom: $accordion-menu-border;
-//     list-style: none;
-//     margin: 0;
-//     padding: 0;
-//
-//     > a {
-//       color: $accordion-menu-color;
-//       display: block;
-//       padding: $accordion-menu-list-padding;
-//       text-decoration: none;
-//       border: none;
-//       font-weight: bold;
-//       position: relative;
-//       padding-right: 45px;
-//
-//       .badge--default {
-//         float: right;
-//       }
-//       &:after {
-//         content: "\f078";
-//         font: normal normal normal 14px/1 FontAwesome;
-//         position: absolute;
-//         top: 17px;
-//         right: 20px;
-//       }
-//     }
-//     &.is-expanded > a:after {
-//       content: "\f077";
-//     }
-//     &:last-child {
-//       border: 0;
-//     }
-//
-//     &:focus,
-//     &:hover {
-//       background-color: $accordion-menu-hover;
-//     }
-//   }
-//
-//   .submenu {
-//     display: none;
-//     > p {
-//       padding: $accordion-menu-list-padding;
-//     }
-//     .module {
-//       padding: $accordion-menu-list-padding;
-//       border-top: 4px solid $white;
-//     }
-//     .results-heading {
-//       margin-bottom: $small-spacing;
-//     }
-//     .link {
-//       position: relative;
-//       display: inline-block;
-//       margin-left: 1.5em;
-//       margin-top: 0.6em;
-//       &:before {
-//         position: absolute;
-//         display: block;
-//         padding-right: 1em;
-//         font: normal normal normal 18px/1 FontAwesome;
-//         border-bottom: none;
-//         left: -1.1em;
-//         top: 0.3em;
-//         content: "\f054";
-//       }
-//       &.phone::before {
-//         content: "\f095";
-//         font-size: 22px;
-//         top: .2em;
-//       }
-//     }
-//   }
-//
-//   .is-expanded {
-//     display: block;
-//     padding-bottom: 0;
-//   }
-// }
-.accordion-panel {
-  .link {
-    position: relative;
-    display: inline-block;
-    margin-left: 1.5em;
-    margin-top: 0.6em;
-    &:before {
-      position: absolute;
-      display: block;
-      padding-right: 1em;
-      font: normal normal normal 18px/1 FontAwesome;
-      border-bottom: none;
-      left: -1.1em;
-      top: 0.3em;
-      content: "\f054";
-    }
-    &.phone::before {
-      content: "\f095";
-      font-size: 22px;
-      top: .2em;
-    }
-  }
-}
-.topic-links {
-  @extend .accordion-panel;
-  background-color: $lighter-aqua;
 }
 .landing-wrapper {
   @extend .form-wrapper;
@@ -259,6 +114,7 @@ main.hero-gradient {
   button, a[role="button"] {
     background: transparent;
     border: 1px solid $white;
+    color: white;
   }
 }
 .asside-content {
@@ -321,23 +177,23 @@ main.hero-gradient {
     }
   }
 }
-form fieldset {
-  margin: 0;
+.results-wrapper {
+  clear: both;
 }
-
 /**
  * The geosuggest module
  */
 .geosuggest {
-
   position: relative;
-
   text-align: left;
+  margin-bottom: $small-spacing;
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 .geosuggest__input {
   width: 100%;
   border: 2px solid transparent;
-  box-shadow: 0 0 1px #3d464d;
   padding: .5em 1em;
   -webkit-transition: border 0.2s, box-shadow 0.2s;
           transition: border 0.2s, box-shadow 0.2s;
@@ -390,4 +246,117 @@ form fieldset {
 .geosuggest-item--active:hover,
 .geosuggest-item--active:focus {
   background: #ccc;
+}
+
+.glossary-content {
+  display: none;
+  padding: $base-spacing;
+  max-height: 0;
+  overflow: hidden;
+  background-color: #def4f9;
+  &[aria-expanded="true"] {
+    display: block;
+    max-height: 1000px;
+    transition: max-height 5s linear;
+  }
+}
+.form-autocomplete input[type="text"] {
+  margin-bottom: $small-spacing;
+}
+.result-list, .steps-list, .information-list {
+  padding: 0.8em;
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding-left: $small-spacing;
+    margin-top: $small-spacing;
+  }
+  .number {
+    font-size: 2em;
+    padding-right: 0.5em;
+    font-weight: 700;
+    display: table-cell;
+    & + span {
+      line-height: 2em;
+      vertical-align: bottom;
+      font-weight: 700;
+      display: table-cell;
+    }
+  }
+}
+.result-list ul {
+  display: table;
+  & > li {
+    display: table-row;
+  }
+}
+.steps-list {
+  padding: 0;
+  ul {
+    padding-left: 0;
+  }
+  .module-list > li {
+    border-bottom: solid 0.8em #def4f9;
+    &:last-child {
+      border-bottom: none;
+    }
+    .link {
+      font-weight: 700;
+    }
+  }
+  p, .step-actions {
+    padding-left: 3.5em;
+    margin-bottom: 1.2em;
+    margin-right: 1.2em;
+    [role='button'] {
+      margin: 0;
+    }
+  }
+  label {
+    font-weight: 700;
+  }
+}
+.result-list {
+  vertical-align: middle;
+  background-color: #def4f9;
+}
+.accordion-button, [aria-expanded='false'] .accordion-panel {
+  border-bottom: none !important;
+}
+.info-badge {
+  padding: 2px 0.4em;
+  border: 1px solid #717171;
+  border-radius: 2px;
+  color: #717171;
+}
+.badge--default {
+  margin-right: 1.3em;
+  vertical-align: middle;
+}
+.sidebar {
+  @include link-colours($non-black, $light-aqua, $non-black);
+  @include button-colours($button-bg-colour, $button-bg-colour--hover, $button-bg-colour--active, $button-text-colour);
+  .your-answers {
+    border-bottom: 1px solid #5bcbe3;
+    padding: $small-spacing 0;
+    margin: 0 0 $base-spacing 0;
+    position: relative;
+    &:after {
+      content: $fa-var-chevron-down;
+      font-family: FontAwesome;
+      position: absolute;
+      right: 0.8em;
+    }
+  }
+}
+#results-holder .index-links {
+  margin-top: 0;
+}
+.accordion-button .accordion-content {
+  border-bottom: solid 1px #5bcbe3;
+}
+.results-set {
+  border-bottom: 1px solid #bbb;
+  margin-bottom: $base-spacing;
+  padding-bottom: $base-spacing;
 }

@@ -12,7 +12,7 @@ const QuestionHeader = ({title, onClick, index, total}) => {
         e.preventDefault()
         onClick()
       }}>Back</a>
-      <div>Question {index}/{total}</div>
+      {/*<div>Question {index}/{total}</div>*/}
       <h3>{title}</h3>
     </div>
   )
