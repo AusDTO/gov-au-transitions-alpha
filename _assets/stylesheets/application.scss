@@ -360,3 +360,17 @@ main.hero-gradient {
   margin-bottom: $base-spacing;
   padding-bottom: $base-spacing;
 }
+.secondary-title {
+  border-bottom: 4px solid $light-aqua;
+}
+.secondary-links {
+  padding-left: 0;
+  padding-bottom: $base-spacing;
+  margin-bottom: 0;
+  border-bottom: 1px solid $light-grey;
+  li {
+    list-style-type: none;
+    font-size: 20px;
+    font-weight: 700;
+  }
+}
