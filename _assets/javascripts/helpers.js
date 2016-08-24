@@ -1,10 +1,10 @@
 import { QuestionFlow } from './questions'
 
-export function removeAtIndex(list, index) {
+export function removeAtIndex (list, index) {
   return list.slice(0, index).concat(list.slice(index + 1))
 }
 
-export function replaceAtIndex(list, index, value) {
+export function replaceAtIndex (list, index, value) {
   let val = {}
   val[index] = value
   return Object.assign([], list, val)
@@ -23,15 +23,100 @@ export function replaceAtIndex(list, index, value) {
  * or
  * question: 'How are you?
  * '
- * @param question {string|object} The object or string that represents the question. 
+ * @param question {string|object} The object or string that represents the question.
  * @param language {string} Current set language
  */
-export function getQuestionTitle(question, language) {
+export function getQuestionTitle (question, language) {
   if (typeof question === 'string') {
-    return question;
+    return question
   }
 
-  return question[language];
+  return question[language]
+}
+
+/**
+ * Flatten a shallow array (depth of 1 only).
+ * TODO Make recursive, only when use case arises.
+ * @param {array} Array to flatten
+ * @return {array} Flattened array
+ */
+export const flattenArray = (array) => {
+  let result = []
+  for (let i = 0; i < array.length; i += 1) {
+    result = result.concat(array[i])
+  }
+  return result
+}
+
+/**
+ * Loops through the question set, trying to determine the next available question
+ * based on 'conditions' - @see determineQuestionCanShow
+ * @param {integer} current Index of current question
+ * @param {array} answers Set of current answers
+ * @returns {integer} Index of next question
+ */
+export const determineNextQuestion = (current, answers) => {
+  let next = current + 1
+  let flatAnswers = flattenArray(answers)
+
+  while (next < QuestionFlow.questions.length &&
+          !determineQuestionCanShow(next, flatAnswers)) {
+    next += 1
+  }
+  return next
+}
+
+/**
+* Loops through the question set, trying to determine the previous question
+* based on 'conditions' - @see determineQuestionCanShow
+* @param {integer} current Index of current question
+* @param {array} answers Set of current answers
+* @returns {integer} Index of previous question
+ */
+export const determinePrevQuestion = (current, answers) => {
+  let prev = current - 1
+  let flatAnswers = flattenArray(answers)
+
+  while (prev > 0 && !determineQuestionCanShow(prev, flatAnswers)) {
+    prev -= 1
+  }
+  return prev
+}
+
+/**
+ * Loop through the current answer set to see if the conditions of the
+ * current question have been met.
+ * @param {integer} index Index of the current question to query
+ * @param {array} answers Set of previous answers
+ * @return {boolean}  Whether to display question at index
+ */
+export const determineQuestionCanShow = (index, answers) => {
+  let rules = QuestionFlow.questions[index].condition
+    ? QuestionFlow.questions[index].condition.split(',') : []
+
+  if (!rules.length) {
+    return true
+  }
+
+  for (let i = 0; i < rules.length; i += 1) {
+    if (rules[i].indexOf('+') > -1) {
+      let andRules = rules[i].split('+')
+      let result = true
+      for (let j = 0; j < andRules.length; j += 1) {
+        if (answers.indexOf(andRules[i]) === -1) {
+          result = false
+        }
+      }
+      if (result) {
+        return true
+      }
+    } else {
+      if (answers.indexOf(rules[i]) !== -1) {
+        return true
+      }
+    }
+  }
+  return false
 }
 
 export let styles = {
@@ -48,7 +133,7 @@ export let styles = {
   },
 
   wrapperStyle: {
-    display: "block"
+    display: 'block'
   },
 
   menu: {
@@ -56,7 +141,7 @@ export let styles = {
   }
 }
 
-export function autocompleteMatchStateToTerm(state, value) {
+export const autocompleteMatchStateToTerm = (state, value) => {
   return (
     state.value.toLowerCase().indexOf(value.toLowerCase()) !== -1 ||
     state.label.toLowerCase().indexOf(value.toLowerCase()) !== -1
@@ -70,7 +155,7 @@ export function autocompleteMatchStateToTerm(state, value) {
 //   )
 // }
 
-export function getLabelFromValue(values, value) {
+export const getLabelFromValue = (values, value) => {
   for (let i = 0; i < values.length; i += 1) {
     if (values[i].value === value) {
       return values[i].label
@@ -83,7 +168,7 @@ const getBadgeContent = (items, checked) => {
   let len = items.length
   let minus = 0
   for (let i = 0; i < len; i += 1) {
-    if (checked.indexOf(items[i].label.split(" ").join("_")) > -1) {
+    if (checked.indexOf(items[i].label.split(' ').join('_')) > -1) {
       minus += 1
     }
   }
@@ -91,7 +176,7 @@ const getBadgeContent = (items, checked) => {
 }
 
 const getPreviousAnswersAsArray = (previousAnswers) => {
-  let result = [];
+  let result = []
   for (let i = 0; i < previousAnswers.length; i += 1) {
     result = result.concat(previousAnswers[i])
   }
@@ -107,7 +192,7 @@ const checkAnswersBasedOnRule = (results, rule) => {
 
   for (let i = 0; i < orRules.length; i += 1) {
     if (orRules[i].indexOf('+') !== -1) {
-      let andRules = orRules[i].split("+")
+      let andRules = orRules[i].split('+')
       let outcome = true
       for (let j = 0; j < andRules.length; j += 1) {
         if (results.indexOf(andRules[j]) === -1) {
@@ -164,15 +249,23 @@ const getListModules = (list, answers, checked) => {
   return results
 }
 
-export function getResultsList(state) {
+export const getResultSteps = (step, currentSteps) => {
+  let index = currentSteps.indexOf(step)
+  if (index > -1) {
+    return removeAtIndex(currentSteps, index)
+  } else {
+    return currentSteps.concat(step)
+  }
+}
+
+export const getResultsList = (state) => {
   let answers = getPreviousAnswersAsArray(state.previousAnswers)
-  let results = [];
+  let results = []
   for (let i = 0; i < QuestionFlow.results.length; i += 1) {
     if (!QuestionFlow.results[i].condition || checkAnswersBasedOnRule(answers, QuestionFlow.results[i].condition)) {
       results = results.concat(Object.assign({}, QuestionFlow.results[i], {
         list: getListModules(QuestionFlow.results[i].list, answers, state.resultSteps)
       }))
-
     }
   }
   return removeEmptyResults(results)
