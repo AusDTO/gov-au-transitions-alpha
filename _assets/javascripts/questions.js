@@ -28,7 +28,10 @@ export const QuestionFlow = {
       ]
     },
     {
-      question: "Are you receiving a pension?",
+      question: {
+        first: "Are you receiving a pension?",
+        third: "Are they receiving a pension?"
+      },
       name: "pension",
       type: "checkbox",
       //legend: "This helps us to suggest things like subsidised services and the right forms.",
@@ -136,7 +139,10 @@ export const QuestionFlow = {
       ]
     },
     {
-      question: "What is your background?",
+      question: {
+        first: "What is your background?",
+        third: "What is their background?",
+      },
       name: "background",
       condition: "culturehome,culturemove",
       type: "autocomplete",
@@ -158,7 +164,10 @@ export const QuestionFlow = {
       ]
     },
     {
-      question: "What language do you speak?",
+      question: {
+        first: "What language do you speak?",
+        third: "What language do they speak?",
+      },
       name: "language",
       condition: "culturehome,culturemove",
       type: "autocompleteaddmore",
@@ -178,7 +187,10 @@ export const QuestionFlow = {
       ]
     },
     {
-      question: "Where do you live?",
+      question: {
+          first: "Where do you currently live?",
+          third: "Where do they currently live?",
+      },
       name: "location",
       condition: "ownhome,outandabout,notsure",
       type: "location",
@@ -186,14 +198,15 @@ export const QuestionFlow = {
       values: []
     },
     {
-      question: "Where are you considering living?",
+      question: {
+        first: "Where are you considering living?",
+        third: "Where are they considering living?",
+      },
       name: "locationaddmore",
       condition: "moving,notsure",
       type: "locationaddmore",
       values: []
-      }
-
-
+    }
   ],
   results: [
     {
