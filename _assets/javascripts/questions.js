@@ -4,14 +4,18 @@ export const QuestionFlow = {
       question: "Are you looking for yourself or someone else?",
       name: "yourselforsomeone",
       type: "radio",
+      setLanguage: true,
       //legend: "Select as many as apply",
       values: [
-        {value: "myself", label: "Myself"},
-        {value: "someoneelse", label: "Someone else"}
+        {value: "first", label: "Myself"},
+        {value: "third", label: "Someone else"}
       ]
     },
     {
-      question: "How old are you?",
+      question: {
+          first: "How old are you?",
+          third: "How old are they?"
+      },
       name: "age",
       type: "radio",
       //legend: "Select as many as apply",
