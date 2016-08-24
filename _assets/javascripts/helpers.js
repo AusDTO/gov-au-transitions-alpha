@@ -84,6 +84,7 @@ export const determinePrevQuestion = (current, answers) => {
 }
 
 /**
+ * TODO Function too long, split into smaller functions.
  * Loop through the current answer set to see if the conditions of the
  * current question has been met.
  * @param {integer} index Index of the current question to query
@@ -119,6 +120,7 @@ export const determineQuestionCanShow = (index, answers) => {
   return false
 }
 
+// TODO This needs to be removed or find a better way to do this.
 export let styles = {
   item: {
     padding: '2px 6px',
