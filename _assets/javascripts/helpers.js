@@ -85,7 +85,7 @@ export const determinePrevQuestion = (current, answers) => {
 
 /**
  * Loop through the current answer set to see if the conditions of the
- * current question have been met.
+ * current question has been met.
  * @param {integer} index Index of the current question to query
  * @param {array} answers Set of previous answers
  * @return {boolean}  Whether to display question at index
