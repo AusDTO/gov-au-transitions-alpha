@@ -26,8 +26,8 @@ const getQuestion = (index, questions, answers) => {
   }
 }
 
-const mapStateToProps = (state) => {
-  return getQuestion(state.currentQuestion, QuestionFlow.questions, state.currentAnswers)
+const mapStateToProps = ({ answer }) => {
+  return getQuestion(answer.currentQuestion, QuestionFlow.questions, answer.currentAnswers)
 }
 
 const mapDispatchToProps = (dispatch) => {

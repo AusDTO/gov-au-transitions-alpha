@@ -5,16 +5,16 @@ import { moveBack } from '../actions'
 import { getQuestionTitle } from '../helpers'
 
 const getQuestion = (state, questions) => {
-  const { currentQuestion: index, language } = state;
+  const { currentQuestion: index, language } = state
   return {
-    title: index >= questions.length ? "" : getQuestionTitle(questions[index].question, language),
+    title: index >= questions.length ? '' : getQuestionTitle(questions[index].question, language),
     index: index + 1,
     total: questions.length
   }
 }
 
-const mapStateToProps = (state) => {
-  return getQuestion(state, QuestionFlow.questions)
+const mapStateToProps = ({ answer }) => {
+  return getQuestion(answer, QuestionFlow.questions)
 }
 
 const mapDispatchToProps = (dispatch) => {
