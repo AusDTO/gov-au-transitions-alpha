@@ -35,9 +35,7 @@ export default function answer (state = initialState, action) {
       let type = currentQuestion.type
       let result
 
-      if (type === 'radio' || type === 'location') {
-        result = [action.value]
-      } else if (type === 'checkbox') {
+      if (type === 'checkbox') {
         let index = state.currentAnswers.indexOf(action.value)
         if (index > -1) {
           result = removeAtIndex(state.currentAnswers, index)
