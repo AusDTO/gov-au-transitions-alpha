@@ -2,13 +2,12 @@ import React from 'react'
 import { render } from 'react-dom'
 import { Provider } from 'react-redux'
 import { createStore } from 'redux'
-import transitionApp from './reducers'
+import reducers from './reducers/index'
 import QuestionLinker from './containers/QuestionLinker'
 import ResultsCalculator from './containers/ResultsCalculator'
 // import { QuestionFlow } from './questions'
 // import { moveBack } from './actions'
-
-let store = createStore(transitionApp)
+let store = createStore(reducers)
 
 render(
   <Provider store={store}>
