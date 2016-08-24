@@ -99,7 +99,8 @@ function transitionApp(state = initialState, action) {
         previousAnswers: state.previousAnswers
       })
     case ON_SELECT:
-      let type = QuestionFlow.questions[state.currentQuestion].type
+      let question = QuestionFlow.questions[state.currentQuestion];
+      let type = question.type
       let result
 
       if (type === 'radio' || type === 'location') {
@@ -116,10 +117,20 @@ function transitionApp(state = initialState, action) {
       } else  {
         result = [action.value]
       }
+
+      // If current question doesnt have the `setLanguage` flag,
+      // concat an empty object, otherwise set the language to current value.
+      var languageObject = {};
+      if (question.setLanguage) {
+        languageObject = {
+          language: action.value
+        };
+      }
+
       return Object.assign({}, state, {
         currentAnswers: result,
         previousAnswers: state.previousAnswers.slice(0, state.currentQuestion)
-      })
+      }, languageObject)
     case RESULT_CHECK:
       return Object.assign({}, state, {
         resultSteps: getResultSteps(action.step, state.resultSteps)

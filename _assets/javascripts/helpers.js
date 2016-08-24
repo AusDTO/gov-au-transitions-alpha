@@ -10,6 +10,30 @@ export function replaceAtIndex(list, index, value) {
   return Object.assign([], list, val)
 }
 
+/**
+ * Question comes in either a string or object format.
+ * Due to the possibility of 'language' being set.
+ * Helper function to determine how to fetch the correct string.
+ *
+ * e.g.
+ * question: {
+ *  first: 'How old are you?',
+ *  third: 'How old are they?'
+ * }
+ * or
+ * question: 'How are you?
+ * '
+ * @param question {string|object} The object or string that represents the question. 
+ * @param language {string} Current set language
+ */
+export function getQuestionTitle(question, language) {
+  if (typeof question === 'string') {
+    return question;
+  }
+
+  return question[language];
+}
+
 export let styles = {
   item: {
     padding: '2px 6px',
