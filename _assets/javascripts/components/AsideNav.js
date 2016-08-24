@@ -1,11 +1,20 @@
 import React from 'react'
 
-const Question = ({results}) => (
+const AsideNav = ({showResults, questions}) => (
   <aside className="sidebar" id="nav">
     <button aria-controls="local-nav" className="local-nav-toggle">Your Answers</button>
-    <nav className="local-nav" aria-label="main navigation" id="null" aria-expanded="false">
+    <nav className="question-nav" aria-label="main navigation" id="null" aria-expanded="false">
       <div className="your-answers">Your Answers</div>
-      {results ? (
+      {questions.map(question => (
+        <div key={question.index} className="answer-component">
+          <dl>
+            <dt>{question.question}</dt>
+            {question.answers.map(answer => (<dd key={answer.replace(" ", "_")}>{answer}</dd>))}
+          </dl>
+          <a href={"/" + question.index} onClick={(e) => {e.preventDefault();alert("Change the quesiton")}}>Change</a>
+        </div>
+      ))}
+      {showResults ? (
         <span>
           <button>Send to MyAgedCare</button><br />
           <a>Why send my results to my aged care?</a>
@@ -15,4 +24,4 @@ const Question = ({results}) => (
   </aside>
 )
 
-export default Question
+export default AsideNav
