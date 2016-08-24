@@ -13,7 +13,7 @@ import {
   determinePrevQuestion
 } from '../helpers'
 
-export default function stepping (state = initialState, action) {
+export default function answer (state = initialState, action) {
   switch (action.type) {
     case MOVE_NEXT:
       let answers = replaceAtIndex(state.previousAnswers, state.currentQuestion, state.currentAnswers)
