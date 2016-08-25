@@ -3,7 +3,7 @@ import {
   getResultSteps
 } from '../helpers'
 
-export default function currentQuestion (state = [], action) {
+export default function resultSteps (state = [], action) {
   const { type, step } = action
   switch (type) {
     case RESULT_CHECK:
