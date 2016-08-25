@@ -1,7 +1,7 @@
 import React from 'react'
 import QuestionHeaderHandler from '../containers/QuestionHeaderHandler'
 import QuestionBodyLinker from '../containers/QuestionBodyLinker'
-import AsideNav from './AsideNav'
+import AsideNavLink from '../containers/AsideNavLink'
 
 const Question = ({current, total}) => {
   if (current >= total) {
@@ -9,7 +9,7 @@ const Question = ({current, total}) => {
   } else {
     return (
       <main role="main">
-        <AsideNav results={false}/>
+        <AsideNavLink />
         <section className="transition-main content-main">
           <QuestionHeaderHandler />
           <QuestionBodyLinker />

@@ -92,7 +92,7 @@ export const QuestionFlow = {
       ]
     },
     {
-      question: "What options do you want to know about?",
+      question: "What do you want to know about?",
       name: "live",
       type: "checkbox",
       legend: "Select all that apply",
@@ -119,7 +119,7 @@ export const QuestionFlow = {
       ]
     },
     {
-      question: "What help is needed at home?",
+      question: "What help do you think is needed?",
       name: "assistance",
       condition: "ownhome,outandabout,notsure,singlestorey,support,independent,community,culturemove",
       type: "checkbox",
