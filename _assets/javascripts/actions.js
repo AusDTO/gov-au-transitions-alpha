@@ -32,10 +32,11 @@ export function moveBack (currentQuestion, currentAnswers, previousAnswers) {
  * Action when jumping to a specific question. note that is should be less than
  * the current question.
  */
-export function moveTo(index) {
+export function moveTo(index, previousAnswers) {
   return {
     type: MOVE_TO,
-    index
+    index,
+    previousAnswers
   }
 }
 
