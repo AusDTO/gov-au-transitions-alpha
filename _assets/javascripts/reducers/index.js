@@ -1,6 +1,12 @@
 import { combineReducers } from 'redux'
-import answer from './answer'
+import currentQuestion from './currentQuestion'
+import currentAnswers from './currentAnswers'
+import previousAnswers from './previousAnswers'
+import language from './language'
 
 export default combineReducers({
-  answer
+  currentQuestion,
+  currentAnswers,
+  previousAnswers,
+  language
 })
