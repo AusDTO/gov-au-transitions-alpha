@@ -1,6 +1,6 @@
 import React from 'react'
 
-const AsideNav = ({showResults, questions}) => (
+const AsideNav = ({showResults, questions, onEdit}) => (
   <aside className="sidebar" id="nav">
     <button aria-controls="local-nav" className="local-nav-toggle">Your Answers</button>
     <nav className="question-nav" aria-label="main navigation" id="null" aria-expanded="false">
@@ -11,7 +11,10 @@ const AsideNav = ({showResults, questions}) => (
             <dt>{question.question}</dt>
             {question.answers.map(answer => (<dd key={answer.replace(" ", "_")}>{answer}</dd>))}
           </dl>
-          <a href={"/" + question.index} onClick={(e) => {e.preventDefault();alert("Change the quesiton")}}>Change</a>
+          <a href={"/" + question.index} onClick={(e) => {
+            e.preventDefault()
+            onEdit(question.index)
+          }}>Change</a>
         </div>
       ))}
       {showResults ? (
