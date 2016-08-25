@@ -1,4 +1,4 @@
-import { MOVE_NEXT, MOVE_BACK, ON_SELECT } from '../actions'
+import { MOVE_NEXT, MOVE_BACK, ON_SELECT, MOVE_TO } from '../actions'
 import { QuestionFlow } from '../questions'
 import {
   replaceAtIndex,
@@ -8,7 +8,7 @@ import {
 } from '../helpers'
 
 export default function currentAnswers (state = [], action) {
-  const { type, currentQuestion, currentAnswers, previousAnswers, value } = action
+  const { type, currentQuestion, currentAnswers, previousAnswers, value, index } = action
   switch (type) {
     case MOVE_NEXT:
       let answers = replaceAtIndex(previousAnswers, currentQuestion, currentAnswers)
@@ -36,6 +36,8 @@ export default function currentAnswers (state = [], action) {
       }
 
       return result
+    case MOVE_TO:
+      return previousAnswers[index] ? previousAnswers[index] : []
     default:
       return state
   }
