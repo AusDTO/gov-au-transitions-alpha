@@ -380,26 +380,36 @@ main.hero-gradient {
     padding: $small-spacing;
     font-size: rem(14);
     position: relative;
-    padding-right: 2.5em;
-    &::after {
-      content: $fa-var-check-circle;
-      font-family:FontAwesome;
-      color: $success-colour;
-      position: absolute;
-      top: 0.8rem;
-      right: 0.8rem;
-      font-size: 1.5rem;
-      line-height: 1.5rem;
+    // padding-right: 2.5em;
+    // &::after {
+    //   content: $fa-var-check-circle;
+    //   font-family:FontAwesome;
+    //   color: $success-colour;
+    //   position: absolute;
+    //   top: 0.8rem;
+    //   right: 0.8rem;
+    //   font-size: 1.5rem;
+    //   line-height: 1.5rem;
+    // }
+    a {
+      float: right;
+      margin-top: -2.3em;
     }
+  }
+  ul, ol, dl, p, dt {
+    font-size: rem(14);
+    margin-bottom: $small-spacing;
+    font-weight: normal;
   }
   dd {
     margin-bottom: 0;
     margin-left: 0;
     font-size: rem(14);
+    font-weight: 700;
+    margin-bottom: 0;
+    &:last-child {
+      padding-right: 4em;
+    }
+  }
 
-  }
-  ul, ol, dl, p, dt {
-    font-size: rem(14);
-    margin-bottom: $small-spacing;
-  }
 }
