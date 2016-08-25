@@ -42,7 +42,7 @@ export function moveTo(index) {
 /**
  * action when selecting a value of a question.
  */
-export function onSelect(value) {
+export function onSelect(value, currentQuestion, currentAnswers, previousAnswers) {
   return {
     type: ON_SELECT,
     value,
