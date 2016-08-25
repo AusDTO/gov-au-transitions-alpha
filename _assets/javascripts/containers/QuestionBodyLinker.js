@@ -3,44 +3,44 @@ import { QuestionFlow } from '../questions'
 import QuestionBody from '../components/QuestionBody'
 import { moveNext, onSelect } from '../actions'
 
-const getQuestion = (index, questions, answers) => {
+const getQuestion = (index, questions, answers, previousAnswers) => {
   if (index >= questions.length) {
     return {
+      index: 0,
       questionId: "q" + index,
       name: "",
       legend: "",
       type: "",
       allValues: [],
       selectedValues: [],
-      glossary: []
+      glossary: [],
+      previousAnswers: []
     }
   }
   return {
+    index,
     questionId: "q" + index,
     name: questions[index].name,
     legend: questions[index].legend,
     type: questions[index].type,
     allValues: questions[index].values,
     selectedValues: answers,
-    glossary: questions[index].glossary
+    glossary: questions[index].glossary,
+    previousAnswers
   }
 }
 
-const mapStateToProps = ({ answer }) => {
-  return getQuestion(answer.currentQuestion, QuestionFlow.questions, answer.currentAnswers)
+const mapStateToProps = ({ currentQuestion, currentAnswers, previousAnswers }) => {
+  return getQuestion(currentQuestion, QuestionFlow.questions, currentAnswers, previousAnswers)
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onSubmit: () => {
-      dispatch(moveNext())
+    onSubmit: (index, currentAnswers, previousAnswers) => {
+      dispatch(moveNext(index, currentAnswers, previousAnswers))
     },
-    onChange: (value) => {
-      if (typeof value !== "string") {
-        dispatch(onSelect(value))
-      } else {
-        dispatch(onSelect(value))
-      }
+    onChange: (value, index, currentAnswers, previousAnswers) => {
+      dispatch(onSelect(value, index, currentAnswers, previousAnswers))
     }
   }
 }

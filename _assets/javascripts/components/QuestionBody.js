@@ -7,8 +7,7 @@ import { replaceAtIndex, styles, autocompleteMatchStateToTerm, getLabelFromValue
 // const addMore = () => {
 //   console.log("add more has been clicked");
 // }
-const getFieldset = (type, values, name, selectedValues, onChange) => {
-
+const getFieldset = (type, values, name, questionIndex, selectedValues, previousAnswers, onChange) => {
   switch (type) {
     case "radio":
     case "checkbox":
@@ -19,7 +18,7 @@ const getFieldset = (type, values, name, selectedValues, onChange) => {
                 id={field.value}
                 value={field.value}
                 checked={selectedValues.indexOf(field.value) > -1 ? true : false}
-                onChange={onChange.bind(null, field.value)} />
+                onChange={onChange.bind(null, field.value, questionIndex, selectedValues, previousAnswers)} />
           <label htmlFor={field.value}>{field.label}</label>
         </span>
       ))
@@ -33,7 +32,7 @@ const getFieldset = (type, values, name, selectedValues, onChange) => {
           value={selectedValues[0]}
           ref={node => {input = node}}
           onChange={e => {
-            onChange.bind(null, e.target.value)
+            onChange.bind(null, e.target.value, questionIndex, selectedValues, previousAnswers)
           }}/>
       )]
     case "location":
@@ -44,7 +43,7 @@ const getFieldset = (type, values, name, selectedValues, onChange) => {
           initialValue={selectedValues[0]}
           types={['(regions)']}
           placeholder="Please enter a suburb, town or postcode"
-          onSuggestSelect={val => onChange(val.label)}
+          onSuggestSelect={val => onChange(val.label, questionIndex, selectedValues, previousAnswers)}
           />
       )]
     case "locationaddmore":
@@ -58,7 +57,7 @@ const getFieldset = (type, values, name, selectedValues, onChange) => {
             initialValue={value}
             types={['(regions)']}
             placeholder="Please enter a suburb, town or postcode"
-            onSuggestSelect={(value) => onChange(replaceAtIndex(locationVals, index, value.label))}
+            onSuggestSelect={(value) => onChange(replaceAtIndex(locationVals, index, value.label), questionIndex, selectedValues, previousAnswers)}
             />
         )
       })
@@ -68,7 +67,7 @@ const getFieldset = (type, values, name, selectedValues, onChange) => {
           <a key="addmorelink"
             href="#" className="addmore"
             onClick={(e) => {
-              onChange(locationVals.concat(""))
+              onChange(locationVals.concat(""), questionIndex, selectedValues, previousAnswers)
               e.preventDefault()
             }}>Add more</a>
         ))
@@ -90,7 +89,7 @@ const getFieldset = (type, values, name, selectedValues, onChange) => {
             wrapperStyle={styles.wrapperStyle}
             shouldItemRender={autocompleteMatchStateToTerm}
             //sortItems={sortStates}
-            onChange={(event, value) => onChange(replaceAtIndex(currVals, index, value))}
+            onChange={(event, value) => onChange(replaceAtIndex(currVals, index, value), questionIndex, selectedValues, previousAnswers)}
             onSelect={(value) => onChange(replaceAtIndex(currVals, index, value))}
             renderItem={(item, isHighlighted) => (
               <div
@@ -107,7 +106,7 @@ const getFieldset = (type, values, name, selectedValues, onChange) => {
           <a key="addmoreautocomplete"
             href="#" className="addmore"
             onClick={(e) => {
-              onChange(currVals.concat(""))
+              onChange(currVals.concat(""), questionIndex, selectedValues, previousAnswers)
               e.preventDefault()
             }}>Add more</a>
         ))
@@ -118,7 +117,7 @@ const getFieldset = (type, values, name, selectedValues, onChange) => {
   }
 }
 
-const QuestionBody = ({questionId, name, legend, type, allValues, selectedValues, glossary, onSubmit, onChange}) => {
+const QuestionBody = ({index, questionId, name, legend, type, allValues, selectedValues, glossary, previousAnswers, onSubmit, onChange}) => {
   if (type === "") {
     return <div></div>
   }
@@ -128,11 +127,11 @@ const QuestionBody = ({questionId, name, legend, type, allValues, selectedValues
         action={"/" + questionId + "/"}
         onSubmit={e => {
           e.preventDefault()
-          onSubmit()
+          onSubmit(index, selectedValues, previousAnswers)
         }}>
       <fieldset>
         <legend>{legend}</legend>
-        {getFieldset(type, allValues, name, selectedValues, onChange)}
+        {getFieldset(type, allValues, name, index, selectedValues, previousAnswers, onChange)}
       </fieldset>
       <Glossary list={glossary} />
       <button type="submit">Next  <i className="fa fa-chevron-right" aria-hidden="true"></i></button>
