@@ -1,6 +1,7 @@
 import { connect } from 'react-redux'
 import { QuestionFlow } from '../questions'
 import AsideNav from '../components/AsideNav'
+import { getQuestionTitle } from '../helpers'
 
 const mapPrevAnswersToLabels = (prevAnswers, questions, type) => {
   if (type !== "radio" && type !== "checkbox" && type !== "autocompleteaddmore"
@@ -16,10 +17,10 @@ const mapPrevAnswersToLabels = (prevAnswers, questions, type) => {
   })
 }
 
-const getAnsweredQuestions = (answers = []) => {
+const getAnsweredQuestions = (answers = [], language) => {
   return answers.map((value, index) => {
     return {
-      question: QuestionFlow.questions[index].question,
+      question: getQuestionTitle(QuestionFlow.questions[index].question, language),
       answers: mapPrevAnswersToLabels(value, QuestionFlow.questions[index].values, QuestionFlow.questions[index].type),
       index: index
     }
@@ -27,9 +28,10 @@ const getAnsweredQuestions = (answers = []) => {
 }
 
 const mapStateToProps = (state) => {
+  const { language } = state
   return {
     showResults: state.currentQuestion >= QuestionFlow.questions.length,
-    questions: getAnsweredQuestions(state.previousAnswers)
+    questions: getAnsweredQuestions(state.previousAnswers, language)
   }
 }
 
