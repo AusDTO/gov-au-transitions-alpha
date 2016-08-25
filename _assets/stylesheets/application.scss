@@ -339,7 +339,6 @@ main.hero-gradient {
   .your-answers {
     border-bottom: 1px solid #5bcbe3;
     padding: $small-spacing 0;
-    margin: 0 0 $base-spacing 0;
     position: relative;
     &:after {
       content: $fa-var-chevron-down;
@@ -372,5 +371,35 @@ main.hero-gradient {
     list-style-type: none;
     font-size: 20px;
     font-weight: 700;
+  }
+}
+.question-nav {
+  .answer-component {
+    margin-bottom: 2px;
+    background-color: $non-white;
+    padding: $small-spacing;
+    font-size: rem(14);
+    position: relative;
+    padding-right: 2.5em;
+    &::after {
+      content: $fa-var-check-circle;
+      font-family:FontAwesome;
+      color: $success-colour;
+      position: absolute;
+      top: 0.8rem;
+      right: 0.8rem;
+      font-size: 1.5rem;
+      line-height: 1.5rem;
+    }
+  }
+  dd {
+    margin-bottom: 0;
+    margin-left: 0;
+    font-size: rem(14);
+
+  }
+  ul, ol, dl, p, dt {
+    font-size: rem(14);
+    margin-bottom: $small-spacing;
   }
 }

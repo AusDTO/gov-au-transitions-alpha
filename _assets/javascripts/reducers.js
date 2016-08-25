@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux'
-import { MOVE_NEXT, MOVE_BACK, ON_SELECT, RESULT_CHECK } from './actions'
+import { MOVE_NEXT, MOVE_BACK, ON_SELECT, RESULT_CHECK, MOVE_TO } from './actions'
 import { QuestionFlow } from './questions'
 import { removeAtIndex, replaceAtIndex } from './helpers'
 
@@ -134,6 +134,11 @@ function transitionApp(state = initialState, action) {
     case RESULT_CHECK:
       return Object.assign({}, state, {
         resultSteps: getResultSteps(action.step, state.resultSteps)
+      })
+    case MOVE_TO:
+      return Object.assign({}, state, {
+        currentQuestion: action.index,
+        currentAnswers: state.previousAnswers[action.index] ? state.previousAnswers[action.index] : [],
       })
     default:
       return state
