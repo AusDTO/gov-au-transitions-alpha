@@ -46,15 +46,14 @@ const mapStateToProps = (state) => {
   const { language, previousAnswers } = state
   return {
     showResults: state.currentQuestion >= QuestionFlow.questions.length,
-    questions: getAnsweredQuestions(previousAnswers, language),
-    previousAnswers
+    questions: getAnsweredQuestions(previousAnswers, language)
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onEdit: (index, previousAnswers) => {
-      dispatch(moveTo(index, previousAnswers))
+    onEdit: (index) => {
+      dispatch(moveTo(index))
     }
   }
 }
