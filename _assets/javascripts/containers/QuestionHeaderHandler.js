@@ -5,14 +5,11 @@ import { moveBack } from '../actions'
 import { getQuestionTitle } from '../helpers'
 
 const getQuestion = (state, questions) => {
-  const { currentQuestion: index, language, currentAnswers, previousAnswers } = state
+  const { currentQuestion: index, language } = state
   return {
     title: index >= questions.length ? '' : getQuestionTitle(questions[index].question, language),
     index: index + 1,
-    total: questions.length,
-    currentAnswers,
-    previousAnswers,
-    currentQuestion: index
+    total: questions.length
   }
 }
 
@@ -22,8 +19,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onClick: (currentQuestion, currentAnswers, previousAnswers) => {
-      dispatch(moveBack(currentQuestion, currentAnswers, previousAnswers))
+    onClick: () => {
+      dispatch(moveBack())
     }
   }
 }

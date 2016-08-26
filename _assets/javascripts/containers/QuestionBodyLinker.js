@@ -22,11 +22,11 @@ const getQuestion = (index, questions, answers) => {
     type: questions[index].type,
     allValues: questions[index].values,
     selectedValues: answers,
-    glossary: questions[index].glossary,
+    glossary: questions[index].glossary
   }
 }
 
-const mapStateToProps = ({ currentQuestion, currentAnswers, previousAnswers }) => {
+const mapStateToProps = ({ currentQuestion, currentAnswers }) => {
   return getQuestion(currentQuestion, QuestionFlow.questions, currentAnswers)
 }
 

@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react'
 
-const QuestionHeader = ({title, onClick, index, total, currentQuestion, currentAnswers, previousAnswers}) => {
+const QuestionHeader = ({title, onClick, index, total}) => {
   if (index > total) {
     return <div></div>
   }
@@ -10,7 +10,7 @@ const QuestionHeader = ({title, onClick, index, total, currentQuestion, currentA
       className="fa-chevron-left"
       onClick={e => {
         e.preventDefault()
-        onClick(currentQuestion, currentAnswers, previousAnswers)
+        onClick()
       }}>Back</a>
       {/*<div>Question {index}/{total}</div>*/}
       <h3>{title}</h3>
