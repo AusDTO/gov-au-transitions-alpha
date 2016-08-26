@@ -3,22 +3,19 @@ import { QuestionFlow } from '../questions'
 import QuestionBody from '../components/QuestionBody'
 import { moveNext, onSelect } from '../actions'
 
-const getQuestion = (index, questions, answers, previousAnswers) => {
+const getQuestion = (index, questions, answers) => {
   if (index >= questions.length) {
     return {
-      index: 0,
       questionId: "q" + index,
       name: "",
       legend: "",
       type: "",
       allValues: [],
       selectedValues: [],
-      glossary: [],
-      previousAnswers: []
+      glossary: []
     }
   }
   return {
-    index,
     questionId: "q" + index,
     name: questions[index].name,
     legend: questions[index].legend,
@@ -26,21 +23,20 @@ const getQuestion = (index, questions, answers, previousAnswers) => {
     allValues: questions[index].values,
     selectedValues: answers,
     glossary: questions[index].glossary,
-    previousAnswers
   }
 }
 
 const mapStateToProps = ({ currentQuestion, currentAnswers, previousAnswers }) => {
-  return getQuestion(currentQuestion, QuestionFlow.questions, currentAnswers, previousAnswers)
+  return getQuestion(currentQuestion, QuestionFlow.questions, currentAnswers)
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onSubmit: (index, currentAnswers, previousAnswers) => {
-      dispatch(moveNext(index, currentAnswers, previousAnswers))
+    onSubmit: () => {
+      dispatch(moveNext())
     },
-    onChange: (value, index, currentAnswers, previousAnswers) => {
-      dispatch(onSelect(value, index, currentAnswers, previousAnswers))
+    onChange: (value) => {
+      dispatch(onSelect(value))
     }
   }
 }
