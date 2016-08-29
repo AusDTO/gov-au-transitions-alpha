@@ -26,8 +26,8 @@ const getQuestion = (index, questions, answers) => {
   }
 }
 
-const mapStateToProps = (state) => {
-  return getQuestion(state.currentQuestion, QuestionFlow.questions, state.currentAnswers)
+const mapStateToProps = ({ currentQuestion, currentAnswers }) => {
+  return getQuestion(currentQuestion, QuestionFlow.questions, currentAnswers)
 }
 
 const mapDispatchToProps = (dispatch) => {
@@ -36,11 +36,7 @@ const mapDispatchToProps = (dispatch) => {
       dispatch(moveNext())
     },
     onChange: (value) => {
-      if (typeof value !== "string") {
-        dispatch(onSelect(value))
-      } else {
-        dispatch(onSelect(value))
-      }
+      dispatch(onSelect(value))
     }
   }
 }
