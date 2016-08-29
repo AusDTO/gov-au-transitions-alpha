@@ -8,7 +8,6 @@ import { replaceAtIndex, styles, autocompleteMatchStateToTerm, getLabelFromValue
 //   console.log("add more has been clicked");
 // }
 const getFieldset = (type, values, name, selectedValues, onChange) => {
-
   switch (type) {
     case "radio":
     case "checkbox":
@@ -122,6 +121,7 @@ const QuestionBody = ({questionId, name, legend, type, allValues, selectedValues
   if (type === "") {
     return <div></div>
   }
+
   return (
     <form data-current-question={questionId} className={"form-" + type}
         method="get"

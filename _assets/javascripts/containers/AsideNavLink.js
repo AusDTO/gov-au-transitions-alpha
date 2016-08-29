@@ -43,10 +43,10 @@ const getAnsweredQuestions = (answers = [], language) => {
 }
 
 const mapStateToProps = (state) => {
-  const { language } = state
+  const { language, previousAnswers } = state
   return {
     showResults: state.currentQuestion >= QuestionFlow.questions.length,
-    questions: getAnsweredQuestions(state.previousAnswers, language)
+    questions: getAnsweredQuestions(previousAnswers, language)
   }
 }
 
