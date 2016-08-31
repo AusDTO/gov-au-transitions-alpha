@@ -4,7 +4,8 @@ import Results from '../components/Results'
 
 const mapStateToProps = (state) => {
   return {
-    show: state.currentQuestion >= QuestionFlow.questions.length
+    //show: state.currentQuestion >= QuestionFlow.questions.length
+    show: true
   }
 }
 
