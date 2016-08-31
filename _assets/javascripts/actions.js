@@ -14,7 +14,6 @@ export const moveNext = () => {
   return (dispatch, getState) => {
     const { currentQuestion, currentAnswers, previousAnswers } = getState()
     dispatch(next(currentQuestion, currentAnswers, previousAnswers))
-    console.log(getPath(getState().currentQuestion));
     return dispatch(push({
         pathname: getPath(getState().currentQuestion)
       }))
