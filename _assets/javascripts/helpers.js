@@ -272,3 +272,37 @@ export const getResultsList = (state) => {
   }
   return removeEmptyResults(results)
 }
+
+/**
+ * When passed an id will return the index that the id exists in the questions
+ * array
+ * @param {string} id The id that we want the index for
+ * @type {number}
+ */
+export const getIndexFromId = id => {
+  let len = QuestionFlow.questions.length
+  for (let i = 0; i < len; i += 1) {
+    if (QuestionFlow.questions[i].name === id) {
+      return i
+    }
+  }
+}
+
+/**
+ * Returns the id from an index passed in the questions array
+ * @param  {number} index the index of the question in the questions array
+ * @return {string}       the id that correspons to the index passed
+ */
+export const getIdFromIndex = index => {
+  return QuestionFlow.questions[index].name
+}
+
+export const getPath = index => {
+  if (index < 0) {
+    return "/"
+  } else if (index >= QuestionFlow.questions.length) {
+    return "/results"
+  } else {
+    return '/question/' + getIdFromIndex(index)
+  }
+}
