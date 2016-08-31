@@ -1,3 +1,6 @@
+import  { push } from 'redux-router';
+import { getPath } from './helpers'
+
 export const MOVE_NEXT = 'MOVE_NEXT'
 export const MOVE_BACK = 'MOVE_BACK'
 export const ON_SELECT = 'ON_SELECT'
@@ -10,7 +13,11 @@ export const MOVE_TO = 'MOVE_TO'
 export const moveNext = () => {
   return (dispatch, getState) => {
     const { currentQuestion, currentAnswers, previousAnswers } = getState()
-    return dispatch(next(currentQuestion, currentAnswers, previousAnswers))
+    dispatch(next(currentQuestion, currentAnswers, previousAnswers))
+    console.log(getPath(getState().currentQuestion));
+    return dispatch(push({
+        pathname: getPath(getState().currentQuestion)
+      }))
   }
 }
 
@@ -20,7 +27,8 @@ export const moveNext = () => {
 export const moveBack = () => {
   return (dispatch, getState) => {
     const { currentQuestion, currentAnswers, previousAnswers } = getState()
-    return dispatch(back(currentQuestion, currentAnswers, previousAnswers))
+    dispatch(back(currentQuestion, currentAnswers, previousAnswers))
+    return dispatch(push({pathname: getPath(getState().currentQuestion)}))
   }
 }
 
@@ -41,7 +49,8 @@ export const onSelect = (value) => {
 export const moveTo = (index) => {
   return (dispatch, getState) => {
     const { previousAnswers } = getState()
-    return dispatch(to(index, previousAnswers))
+    dispatch(to(index, previousAnswers))
+    return dispatch(push({pathname: getPath(getState().currentQuestion)}))
   }
 }
 
