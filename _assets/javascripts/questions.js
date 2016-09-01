@@ -28,120 +28,95 @@ export const QuestionFlow = {
       ]
     },
     {
-      question: {
-        first: "Are you receiving a pension?",
-        third: "Are they receiving a pension?"
-      },
-      name: "pension",
-      type: "checkbox",
-      //legend: "This helps us to suggest things like subsidised services and the right forms.",
-      values: [
-        {value: "pension", label: "Age pension"},
-        {value: "disability", label: "Disability pension"},
-        {value: "veteran", label: "Veteran/war widow or widower"},
-        {value: "Don’t know", label: "Don’t know"},
-        {value: "other", label: "Other"}
-      ]
-    },
-    {
-      question: "What best describes your situation?",
+      question: "What best describes your current need?",
       name: "situation",
       type: "radio",
       //legend: "Select as many as apply",
       values: [
-        {value: "future", label: "I’m thinking about the future"},
-        {value: "notmanaging", label: "I’m starting not to manage"},
-        {value: "needhelp", label: "I know that I need some help"},
-        {value: "Crisis", label: "I’m in a crisis"}
+        {value: "crisis", label: "I need help now"},
+        {value: "future", label: "I’m thinking about the future"}
       ]
     },
     {
-      question: "Are there any physical issues you’re concerned about?",
-      name: "physical",
-      //condition: "ownhome,family",
-      type: "autocompleteaddmore",
-      legend: "For example arthritis – Select all that apply",
-      values: [
-        {value: "arthritis", label: "Arthritis"},
-        {value: "osteoporosis", label: "Osteoporosis"},
-        {value: "diabetes", label: "Diabetes"},
-        {value: "frailty", label: "Frailty"},
-        {value: "Heart", label: "Heart Disease"},
-        {value: "incontinence", label: "Incontinence"},
-        {value: "respiratory", label: "Respiratory Disease"},
-        {value: "influenza", label: "Influenza and Pneumonia"},
-        {value: "obesity", label: "Obesity"},
-        {value: "sight", label: "Sight problems"},
-        {value: "Hearing", label: "Hearing problems"},
-        {value: "none", label: "None of the above"},
-      ]
-    },
-    {
-      question: "Are there any mental or emotional issues you’re concerned about?",
-      name: "emotional",
-      type: "checkbox",
-      legend: "Select all that apply",
-      values: [
-        {value: "loneliness", label: "Loneliness"},
-        {value: "confusion", label: "Confusion"},
-        {value: "forgetful", label: "Forgetfulness"},
-        {value: "Anxiety", label: "Anxiety"},
-        {value: "depression", label: "Depression"},
-        {value: "dementia", label: "Dementia"},
-        {value: "noissues", label: "No issues"},
-      ]
-    },
-    {
-      question: "What do you want to know about?",
-      name: "live",
+      question: "What support are you interested in learning about?",
+      name: "supporttype",
       type: "checkbox",
       legend: "Select all that apply",
       values: [
         {value: "ownhome", label: "Staying at home"},
         {value: "moving", label: "Moving to a more appropriate set up"},
-        {value: "outandabout", label: "Getting out and about"},
-        {value: "notsure", label: "I’m not sure"},
+        {value: "transport", label: "Getting transport"},
+        {value: "health", label: "Health conditions"},
+        {value: "social", label: "Social support and activities"},
+        {value: "notsure", label: "I’m not sure"}
       ]
     },
     {
-      question: "Which options are you interested in learning about?",
+      question: "Are you concerned about any of these health conditions?",
+      name: "physical",
+      condition: "health,notsure",
+      type: "checkbox",
+      legend: "Select all that apply",
+      values: [
+        {value: "arthritis", label: "Arthritis"},
+        {value: "dementia", label: "Dementia"},
+        {value: "diabetes", label: "Diabetes"},
+        {value: "respiratory", label: "Respiratory conditions"},
+        {value: "incontinence", label: "Incontinence"},
+        {value: "noconditions", label: "None of these"}
+      ]
+    },
+    {
+      question: "Are you concerned about any of these emotional issues?",
+      name: "emotional",
+      condition: "health,notsure",
+      type: "checkbox",
+      legend: "Select all that apply",
+      values: [
+        {value: "anxiety", label: "Anxiety"},
+        {value: "depression", label: "Depression"},
+        {value: "loneliness", label: "Loneliness"},
+        {value: "noissues", label: "None of these"}
+      ]
+    },
+    {
+      question: {
+          first: "What options are you interested in finding out about?",
+          third: "What options are they interested in finding out about?"
+      },
       name: "learning",
       condition: "moving,notsure",
       type: "checkbox",
       legend: "Select all that apply",
       values: [
-        {value: "singlestorey", label: "Single storey accommodation"},
-        {value: "support", label: "Supervision and support"},
-        {value: "nursingcare", label: "Nursing care"},
-        {value: "independent", label: "Keeping independence"},
-        {value: "community", label: "Living in a community"},
-        {value: "culturemove", label: "Cultural connections"},
+        {value: "retirement", label: "Retirement villages"},
+        {value: "agedcare", label: "Aged care homes"},
+        {value: "independent", label: "Living with family and friends"},
+        {value: "culturemove", label: "Cultural background support"},
       ]
     },
     {
-      question: "What help do you think is needed?",
+      question: "What help is needed in the home?",
       name: "assistance",
-      condition: "ownhome,outandabout,notsure,singlestorey,support,independent,community,culturemove",
+      condition: "ownhome,notsure,retirement,independent,culturemove",
       type: "checkbox",
       legend: "Select all that apply",
       values: [
         {value: "eating", label: "Cooking and eating"},
+        {value: "culturehome", label: "Cultural background support"},
         {value: "maintenance", label: "Home maintenance"},
         {value: "housework", label: "Housework"},
-        {value: "transport", label: "Transport"},
-        {value: "stayingfit", label: "Staying fit"},
+        {value: "medications", label: "Managing medication"},
         {value: "hygiene", label: "Personal hygiene"},
-        {value: "medications", label: "Managing medications"},
-        {value: "supervision", label: "Supervision"},
-        {value: "modifications", label: "home modifications"},
-        {value: "culturehome", label: "Cultural connections"},
+        {value: "stayingfit", label: "Staying fit"},
+        {value: "supervision", label: "Supervision and nursing care"},
         {value: "noassistance", label: "None"},
       ]
     },
     {
       question: {
-        first: "What is your background?",
-        third: "What is their background?",
+        first: "What is your cultural background?",
+        third: "What is their cultural background?",
       },
       name: "background",
       condition: "culturehome,culturemove",
@@ -165,12 +140,12 @@ export const QuestionFlow = {
     },
     {
       question: {
-        first: "What language do you speak?",
-        third: "What language do they speak?",
+        first: "What language do you prefer?",
+        third: "What language do they prefer?",
       },
       name: "language",
       condition: "culturehome,culturemove",
-      type: "autocompleteaddmore",
+      type: "autocomplete",
       //legend: "This helps us to suggest local services with langua",
       values: [
         {value: "language1", label: "Mandarin"},
@@ -188,11 +163,11 @@ export const QuestionFlow = {
     },
     {
       question: {
-          first: "Where do you currently live?",
-          third: "Where do they currently live?",
+          first: "Where do you live?",
+          third: "Where do they live?",
       },
       name: "location",
-      condition: "ownhome,outandabout,notsure",
+      condition: "ownhome,transport,notsure,health,social",
       type: "location",
       legend: "This helps us to suggest local services",
       values: []
@@ -202,9 +177,9 @@ export const QuestionFlow = {
         first: "Where are you considering living?",
         third: "Where are they considering living?",
       },
-      name: "locationaddmore",
+      name: "locationconsidering",
       condition: "moving,notsure",
-      type: "locationaddmore",
+      type: "location",
       values: []
     }
   ],
@@ -212,7 +187,7 @@ export const QuestionFlow = {
     {
       title: "Health and wellbeing",
       id: "healthwellbeingresult",
-      condition: "ownhome,moving,notsure",
+      condition: "health,ownhome,moving,notsure",
       abstract: "Explore local services, information and contacts to get the help and advice you need.",
       list: [
         {
@@ -422,7 +397,7 @@ export const QuestionFlow = {
     {
       title: "Getting out and about",
       id: "outandaboutresult",
-      condition: "transport,outandabout",
+      condition: "transport",
       abstract: "Know about alternatives for getting around–when ageing, medical conditions and taking medicines impact on the ability to drive.",
       list: [
         {
@@ -443,17 +418,17 @@ export const QuestionFlow = {
             {
               label: "South Australia: Disability Parking Permits",
               link: "https://www.sa.gov.au/topics/transport-travel-and-motoring/public-transport-and-travel/getting-around-with-a-disability/disability-parking-permit",
-              condition: "transport,outandabout",
+              condition: "transport",
             },
             {
               label: "South Australia: Vision impaired travel pass",
               link: "https://www.sa.gov.au/topics/transport-travel-and-motoring/public-transport-and-travel/getting-around-with-a-disability/vision-impaired-travel-pass",
-              condition: "transport,outandabout",
+              condition: "transport",
             },
             {
               label: "South Australia: Public transport companion card",
               link: "https://www.sa.gov.au/topics/transport-travel-and-motoring/public-transport-and-travel/getting-around-with-a-disability/companion-cards",
-              condition: "transport,outandabout",
+              condition: "transport",
             },
             {
               label: "South Australia: Motorised wheelchairs",
@@ -463,7 +438,7 @@ export const QuestionFlow = {
             {
               label: "Australian Human Rights Commission: Your rights in retirement to transport",
               link: "http://www.humanrights.gov.au/publications/your-rights-retirement/11-your-right-transport",
-              condition: "transport,outandabout",
+              condition: "transport",
             },
           ]
         },
@@ -474,7 +449,7 @@ export const QuestionFlow = {
             {
               label: "Review your driving ability",
               abstract: "Ask your doctor to confirm your fitness to hold a driver’s licence.",
-              condition: "transport,outandabout",
+              condition: "transport",
               //type: "funded",
               actions: [
                 {
@@ -489,7 +464,7 @@ export const QuestionFlow = {
               label: "Help with travel to appointments",
               abstract: "Call My Aged Care to be assessed. If you qualify, you will either be picked up by a transport service or able to use vouchers or subsidies, such as for taxi services. Monday to Friday 8am to 8pm, Saturdays 10am to 2pm",
               type: "funded",
-              condition: "transport,outandabout",
+              condition: "transport",
               actions: [
                 {
                   label: "1800 200 422",
@@ -502,7 +477,7 @@ export const QuestionFlow = {
             {
               label: "Call the public transport concessions hotline",
               abstract: "Find out about reduced public transport fares.",
-              condition: "transport,outandabout",
+              condition: "transport",
               actions: [
                 {
                   label: "1800 307 758",
@@ -533,7 +508,7 @@ export const QuestionFlow = {
             {
               label: "Apply for concessions on public transport",
               abstract: "If you hold an approved concession card, receive a Centrelink payment or hold a Seniors Card you can receive a concession on public transport fares.",
-              condition: "transport,outandabout",
+              condition: "transport",
               actions: [
                 {
                   label: "Use the concessions finder",
@@ -553,7 +528,7 @@ export const QuestionFlow = {
               label: "Use your Seniors Card as a Seniors Metrocard",
               abstract: "You can travel free on trains, buses and trams in metropolitan Adelaide from 9:01am to 3:00pm and 7:01pm to 7:00am weekdays. At other times the concession is around 50% of the normal fare.",
               //type: "funded",
-              condition: "transport,outandabout",
+              condition: "transport",
               actions: [
                 {
                   label: "Seniors Metrocard",
@@ -567,7 +542,7 @@ export const QuestionFlow = {
               label: "Apply to use subsidised taxis",
               abstract: "If you have difficulty accessing public transport you can apply for reduced taxi fares. ",
               //type: "funded",
-              condition: "transport,outandabout",
+              condition: "transport",
               actions: [
                 {
                   label: "South Australia: Apply for taxi fare subsidies",
