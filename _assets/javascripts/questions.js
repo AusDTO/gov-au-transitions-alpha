@@ -214,6 +214,7 @@ export const QuestionFlow = {
       id: "healthwellbeingresult",
       condition: "ownhome,moving,notsure",
       abstract: "Explore local services, information and contacts to get the help and advice you need.",
+      categorysnippet: "Get the help and adivce you need to stay in your home, a family or friend's home, or a retirement village.",
       list: [
         {
           title: "Local services",

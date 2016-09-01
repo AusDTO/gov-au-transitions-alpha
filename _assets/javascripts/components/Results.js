@@ -7,12 +7,16 @@ const Results = ({show}) => {
   if (show) {
     return (
       <div>
-        <div className="hero-med corporate">
+        <div className="hero-med">
           <div className="wrapper">
-            <h1>Your results</h1>
-            <p>Based on your answers, here is your guide to support services, information and next steps.</p>
+            <h1>Explore your results</h1>
           </div>
         </div>
+
+
+
+
+
         <main role="main">
           <AsideNavLink />
           <section className="transition-main content-main">

@@ -2,7 +2,7 @@ import React from 'react'
 import { render } from 'react-dom'
 import { Provider } from 'react-redux'
 import QuestionLinker from './containers/QuestionLinker'
-import ResultsCalculator from './containers/ResultsCalculator'
+import ResultsLandingConnect from './containers/ResultsLandingConnect'
 import LandingPage from './components/LandingPage'
 //------------------------------------------------------------------------------
 // have a look at the imorts below this line.not all may be reqired.
@@ -38,10 +38,17 @@ const TransitionRouter = () => {
         <Route path="/" component={LandingPage} />
         <Route path="/question" component={QuestionLinker} />
         <Route path="/question/:id" component={QuestionLinker} />
-        <Route path="/results" component={ResultsCalculator} />
+        <Route path="/results" component={ResultsLandingConnect} />
       </ReduxRouter>
     </Provider>
   )
 }
 
 render(<TransitionRouter />, document.getElementById('landing-page'))
+
+store.subscribe(() => {
+  let state = store.getState()
+
+  window.localStorage.setItem('currentAnswers', JSON.stringify(state.previousAnswers));
+  console.log("local storeage has been saved")
+})

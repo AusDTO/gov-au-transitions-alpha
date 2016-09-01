@@ -412,3 +412,9 @@ main.hero-gradient {
     }
   }
 }
+.results-tiles {
+  li {
+    list-style-type: none;
+    padding: $small-spacing;
+  }
+}

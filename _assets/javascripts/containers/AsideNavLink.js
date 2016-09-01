@@ -13,8 +13,8 @@ import { moveTo } from '../actions'
  * @return {Array(string)}             a list of answers labels
  */
 const mapActualAnswersToLabels = (prevAnswers, questions, type) => {
-  if (type !== "radio" && type !== "checkbox" && type !== "autocompleteaddmore"
-        && type !== "autocomplete") {
+  if (type !== "radio" && type !== "checkbox"
+      && type !== "autocompleteaddmore" && type !== "autocomplete") {
     return prevAnswers
   }
   return prevAnswers.map((answer) => {
