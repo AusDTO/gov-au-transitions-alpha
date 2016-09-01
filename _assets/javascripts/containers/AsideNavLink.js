@@ -12,8 +12,8 @@ import { moveTo } from '../actions'
  * @param  {string} type        They type of form quesiton
  * @return {Array(string)}             a list of answers labels
  */
-const mapActualAnswersToLabels = (prevAnswers, questions, type) => {
-  if (type !== "radio" && type !== "checkbox"
+const mapActualAnswersToLabels = (prevAnswers = [], questions, type) => {
+  if (!prevAnswers || type !== "radio" && type !== "checkbox"
       && type !== "autocompleteaddmore" && type !== "autocomplete") {
     return prevAnswers
   }

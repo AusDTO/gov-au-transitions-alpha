@@ -5,7 +5,7 @@ const AsideNav = ({showResults, questions, onEdit}) => (
     <button aria-controls="local-nav" className="local-nav-toggle">Your Answers</button>
     <nav className="question-nav" aria-label="main navigation" id="null" aria-expanded="false">
       <div className="your-answers">Your Answers</div>
-      {questions.map(question => (
+      {questions.filter(v => v && v.answers.length).map(question => (
         <div key={question.index} className="answer-component">
           <dl>
             <dt>{question.question}</dt>
