@@ -5,13 +5,13 @@ const LandingPage = () => {
   return (
     <div>
       <main role="main" className="hero-gradient">
-        <section className="wrapper">
+        <article className="wrapper">
           <div className="landing-wrapper">
             <h2>Helping older Australians</h2>
             <h1>Explore support services that might be right for you</h1>
             <Link to="/question">Get started<i className="fa fa-chevron-right" aria-hidden="true"></i></Link>
           </div>
-        </section>
+        </article>
       </main>
       <aside className="asside-content">
         <section className="wrapper">

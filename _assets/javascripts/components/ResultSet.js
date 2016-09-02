@@ -73,18 +73,12 @@ const getAccordions = (list, checked, onChange) => {
   ))
 }
 
-const ResultSet = ({resultSets, resultSteps, onChange}) => {
+const ResultSet = ({result, resultSteps, onChange}) => {
   return (
-    <div>
-      {resultSets.map(set => {
-      return (
-        <div key={set.id} id={set.id} className="results-set">
-          <h3>{set.title}</h3>
-          <p>{set.abstract}</p>
-          {getAccordions(set.list, resultSteps, onChange)}
-        </div>
-      )
-      })}
+    <div key={result.id} id={result.id} className="results-set">
+      <h3>{result.title}</h3>
+      <p>{result.abstract}</p>
+      {getAccordions(result.list, resultSteps, onChange)}
     </div>
   )
 }

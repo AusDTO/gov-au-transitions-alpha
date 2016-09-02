@@ -13,7 +13,7 @@ const Results = ({show}) => {
         </div>
         <main role='main'>
           <AsideNavLink />
-          <section className='transition-main content-main'>
+          <article className='transition-main content-main'>
             <p className='abstract'>Select next steps and local services from your topics below.</p>
             <ResultsTilesConnect />
             <h2 className="secondary-title">Also explore</h2>
@@ -22,7 +22,7 @@ const Results = ({show}) => {
               <li><a href="">Financial planning, seminars and advice</a></li>
               <li><a href="">Organising consents such as powers of attorney</a></li>
             </ul>
-          </section>
+          </article>
         </main>
       </div>
     )

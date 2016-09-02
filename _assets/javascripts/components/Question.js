@@ -10,10 +10,10 @@ const Question = ({current, total}) => {
     return (
       <main role="main">
         <AsideNavLink />
-        <section className="transition-main content-main">
+        <article className="transition-main content-main">
           <QuestionHeaderHandler />
           <QuestionBodyLinker />
-        </section>
+        </article>
       </main>
     )
   }
