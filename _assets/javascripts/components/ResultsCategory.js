@@ -8,15 +8,15 @@ const ResultsCategory = ({ show, result, resultSteps, onChange }) => {
       <div>
         <div className="hero-sml">
           <div className="wrapper">
-            <h1>Explore your results</h1>
+            <p>Explore your results</p>
           </div>
         </div>
         <main role="main">
           <AsideNavLink />
-          <section className="transition-main content-main">
+          <article className="transition-main content-main">
             <ResultSet result={result} resultSteps={resultSteps}
                         onChange={onChange} />
-          </section>
+          </article>
         </main>
       </div>
     )

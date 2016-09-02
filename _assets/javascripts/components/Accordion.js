@@ -5,7 +5,7 @@ class Accordion extends Component {
     super();
     this.handleClick = this.handleClick.bind(this);
     this.state = {
-      open: false
+      open: true
     }
   }
 
@@ -17,15 +17,14 @@ class Accordion extends Component {
   render() {
     let theClassName = "accordion-panel " + this.props.className
     return (
-      <section aria-expanded={this.state.open} className="accordion">
-        <a className="accordion-button" onClick={this.handleClick}>
-          {this.props.badge && this.props.badge !== "" ? (<span className="badge--default">{this.props.badge}</span>) : ""}
+      <details open={this.state.open} aria-expanded={this.state.open} className="accordion">
+        <summary onClick={this.handleClick}>
           <span className="accordion-content">{this.props.summary}</span>
-        </a>
+        </summary>
         <div className={theClassName}>
             {this.props.children}
         </div>
-      </section>
+      </details>
     )
   }
 }

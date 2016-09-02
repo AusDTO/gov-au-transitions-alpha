@@ -65,14 +65,14 @@ header[role=banner] .hero .tagline {
   margin-bottom: $base-spacing;
 }
 /* Changes to the default accordion styles */
-.accordion-button {
-  padding: 0.7em;
-  font-size: 19px;
-  padding-right: 2.8em;
-  @include media($tablet) {
-    font-size: 22px;
-  }
-}
+// .accordion-button {
+//   padding: 0.7em;
+//   font-size: 19px;
+//   padding-right: 2.8em;
+//   @include media($tablet) {
+//     font-size: 22px;
+//   }
+// }
 
 details + details {
   margin-top: 1.6em;
@@ -320,9 +320,6 @@ main.hero-gradient {
   vertical-align: middle;
   background-color: #def4f9;
 }
-.accordion-button, [aria-expanded='false'] .accordion-panel {
-  border-bottom: none !important;
-}
 .info-badge {
   padding: 2px 0.4em;
   border: 1px solid #717171;
@@ -354,9 +351,6 @@ main.hero-gradient {
 }
 #results-holder .index-links {
   margin-top: 0;
-}
-.accordion-button .accordion-content {
-  border-bottom: solid 1px #5bcbe3;
 }
 .results-set {
   border-bottom: 1px solid #bbb;
