@@ -15,6 +15,8 @@ import { createStore, applyMiddleware, compose } from 'redux'
 import thunk from 'redux-thunk'
 import rootReducer from './reducers/index'
 
+import 'stylesheets/application.scss'
+
 let store = createStore(
   rootReducer,
   compose(
