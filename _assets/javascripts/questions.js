@@ -126,10 +126,10 @@ export const QuestionFlow = {
         {value: "background1", label: "Albanian"},
         {value: "background2", label: "Arabic"},
         {value: "background3", label: "Aboriginal and Torres Strait Islander"},
-        {value: "background3", label: "Basque"},
-        {value: "background4", label: "Bengali"},
+        {value: "background4", label: "Basque"},
+        {value: "background5", label: "Bengali"},
         {value: "croatianbkg", label: "Croatian"},
-        {value: "background6", label: " Czechs"},
+        {value: "background6", label: "Czech"},
         {value: "background7", label: "Danish"},
         {value: "background8", label: "Russian"},
         {value: "background9", label: "Japanese"},
@@ -187,7 +187,7 @@ export const QuestionFlow = {
     {
       title: "Health and wellbeing",
       id: "healthwellbeingresult",
-      condition: "health,ownhome,moving,notsure",
+      condition: "health",
       abstract: "Explore local services, information and contacts to get the help and advice you need.",
       list: [
         {
