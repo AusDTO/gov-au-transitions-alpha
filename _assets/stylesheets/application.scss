@@ -340,12 +340,16 @@ main.hero-gradient {
     border-bottom: 1px solid #5bcbe3;
     padding: $small-spacing 0;
     position: relative;
+    display: block;
     &:after {
       content: $fa-var-chevron-down;
       font-family: FontAwesome;
       position: absolute;
       right: 0.8em;
     }
+  }
+  [aria-expanded="false"] {
+    display: none;
   }
 }
 #results-holder .index-links {
@@ -380,17 +384,6 @@ main.hero-gradient {
     padding: $small-spacing;
     font-size: rem(14);
     position: relative;
-    // padding-right: 2.5em;
-    // &::after {
-    //   content: $fa-var-check-circle;
-    //   font-family:FontAwesome;
-    //   color: $success-colour;
-    //   position: absolute;
-    //   top: 0.8rem;
-    //   right: 0.8rem;
-    //   font-size: 1.5rem;
-    //   line-height: 1.5rem;
-    // }
     a {
       float: right;
       margin-top: -2.3em;
@@ -409,6 +402,49 @@ main.hero-gradient {
     margin-bottom: 0;
     &:last-child {
       padding-right: 4em;
+    }
+  }
+}
+.results-tiles {
+  ul {
+    padding-left: 0;
+    margin-bottom: 0;
+  }
+  li {
+    list-style-type: none;
+    padding: $base-spacing;
+    background-color: $lighter-aqua;
+    margin-bottom: 1.2em;
+    h3 {
+      margin-top: 0;
+      margin-bottom: $small-spacing;
+    }
+    .number {
+      font-size: 2em;
+      padding-right: 0.5em;
+      font-weight: 700;
+      display: table-cell;
+      & + span {
+        line-height: 2em;
+        vertical-align: bottom;
+        font-weight: 700;
+        display: table-cell;
+      }
+    }
+  }
+}
+@include media($tablet) {
+  .results-tiles {
+
+    & > ul {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction:row;
+      @include outer-container;
+      & > li {
+        @include span-columns(6 of 12);
+        @include omega(2n);
+      }
     }
   }
 }

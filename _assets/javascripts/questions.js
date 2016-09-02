@@ -189,6 +189,7 @@ export const QuestionFlow = {
       id: "healthwellbeingresult",
       condition: "health",
       abstract: "Explore local services, information and contacts to get the help and advice you need.",
+      categorysnippet: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet leo diam. Aliquam luctus porttitor diam, et tristique lacus venenatis et.",
       list: [
         {
           title: "Local services",
@@ -399,6 +400,7 @@ export const QuestionFlow = {
       id: "outandaboutresult",
       condition: "transport",
       abstract: "Know about alternatives for getting around–when ageing, medical conditions and taking medicines impact on the ability to drive.",
+      categorysnippet: "Lorem ipsum dolor sit amet,  porttitor diam, et tristique lacus venenatis et.",
       list: [
         {
           title: "Local services",
@@ -561,6 +563,7 @@ export const QuestionFlow = {
       id: "homeresults",
       condition: "ownhome,notsure",
       abstract: "Explore local services and support that will help you to stay at home–whether that is your current home, a family or friend’s home, or a retirement village.",
+      categorysnippet: "Sed sit amet leo diam. Aliquam luctus porttitor diam, et tristique lacus venenatis et.",
       list: [
         {
           title: "Local services",
@@ -668,6 +671,7 @@ export const QuestionFlow = {
       id: "agedcarresult",
       condition: "moving,notsure",
       abstract: "Consider aged care when you need help with day-to-day tasks or health care, or when you’re not able to look after yourself as well as you used to.",
+      categorysnippet: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet leo diam.",
       list: [
         {
           title: "Local services",

@@ -1,10 +1,11 @@
 import { connect } from 'react-redux'
 import { QuestionFlow } from '../questions'
-import Results from '../components/Results'
+import ResultsLanding from '../components/ResultsLanding'
 
 const mapStateToProps = (state) => {
   return {
-    show: state.currentQuestion >= QuestionFlow.questions.length
+    //show: state.currentQuestion >= QuestionFlow.questions.length
+    show: true
   }
 }
 
@@ -13,9 +14,9 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-const ResultsCalculator = connect(
+const ResultsLandingConnect = connect(
   mapStateToProps,
   mapDispatchToProps
-)(Results)
+)(ResultsLanding)
 
-export default ResultsCalculator
+export default ResultsLandingConnect

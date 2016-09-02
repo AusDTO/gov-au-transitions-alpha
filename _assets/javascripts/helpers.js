@@ -286,6 +286,7 @@ export const getIndexFromId = id => {
       return i
     }
   }
+  return 0
 }
 
 /**

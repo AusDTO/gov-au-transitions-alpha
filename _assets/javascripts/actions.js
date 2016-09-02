@@ -1,5 +1,5 @@
 import  { push } from 'redux-router';
-import { getPath } from './helpers'
+import { getPath, getIndexFromId } from './helpers'
 
 export const MOVE_NEXT = 'MOVE_NEXT'
 export const MOVE_BACK = 'MOVE_BACK'
@@ -12,7 +12,8 @@ export const MOVE_TO = 'MOVE_TO'
  */
 export const moveNext = () => {
   return (dispatch, getState) => {
-    const { currentQuestion, currentAnswers, previousAnswers } = getState()
+    const { currentAnswers, previousAnswers, router } = getState()
+    const currentQuestion = getIndexFromId(router.params.id)
     dispatch(next(currentQuestion, currentAnswers, previousAnswers))
     return dispatch(push({
         pathname: getPath(getState().currentQuestion)
@@ -25,7 +26,8 @@ export const moveNext = () => {
  */
 export const moveBack = () => {
   return (dispatch, getState) => {
-    const { currentQuestion, currentAnswers, previousAnswers } = getState()
+    const { currentAnswers, previousAnswers, router } = getState()
+    const currentQuestion = getIndexFromId(router.params.id)
     dispatch(back(currentQuestion, currentAnswers, previousAnswers))
     return dispatch(push({pathname: getPath(getState().currentQuestion)}))
   }
@@ -36,7 +38,8 @@ export const moveBack = () => {
  */
 export const onSelect = (value) => {
   return (dispatch, getState) => {
-    const { currentQuestion, currentAnswers, previousAnswers } = getState()
+    const { currentAnswers, previousAnswers, router } = getState()
+    const currentQuestion = getIndexFromId(router.params.id)
     return dispatch(select(value, currentQuestion, currentAnswers, previousAnswers))
   }
 }

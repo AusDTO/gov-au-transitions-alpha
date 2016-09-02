@@ -1,7 +1,9 @@
 import { ON_SELECT } from '../actions'
 import { QuestionFlow } from '../questions'
 
-export default function language (state = '', action) {
+const lang = localStorage.getItem('language') || ''
+
+export default function language (state = lang, action) {
   const { type, currentQuestion, value } = action
   switch (type) {
     case ON_SELECT:

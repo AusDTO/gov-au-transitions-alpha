@@ -2,11 +2,13 @@ import React, { PropTypes } from 'react'
 import Geosuggest from 'react-geosuggest'
 import Glossary from './Glossary'
 import Autocomplete from '../lib/Autocomplete'
-import { replaceAtIndex, styles, autocompleteMatchStateToTerm, getLabelFromValue } from '../helpers'
+import {
+  replaceAtIndex,
+  styles,
+  autocompleteMatchStateToTerm,
+  getLabelFromValue
+} from '../helpers'
 
-// const addMore = () => {
-//   console.log("add more has been clicked");
-// }
 const getFieldset = (type, values, name, selectedValues, onChange) => {
   switch (type) {
     case "radio":
