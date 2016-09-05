@@ -236,7 +236,7 @@ export const QuestionFlow = {
                 {
                   label: "View the My Aged Care website: Estimate home care package fees",
                   link: "http://www.myagedcare.gov.au/fee-estimator/home-care/form",
-                  type: "Link",
+                  type: "external",
                   prefix: ""
                 },
                 {
