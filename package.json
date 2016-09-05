@@ -8,7 +8,10 @@
   },
   "scripts": {
     "test": "test",
-    "start": "webpack"
+    "start": "webpack",
+    "build": "webpack",
+    "build:watch": "webpack -w",
+    "poststart": "mkdir -p _site/assets/stylesheets/fonts; cp _assets/fonts/* _site/assets/stylesheets/fonts"
   },
   "repository": {
     "type": "git",
@@ -26,6 +29,7 @@
   "dependencies": {
     "babel-polyfill": "^6.9.1",
     "dom-scroll-into-view": "^1.2.0",
+    "font-awesome": "^4.6.3",
     "react": "^15.2.1",
     "react-dom": "^15.2.1",
     "react-geosuggest": "^1.24.1",
@@ -45,10 +49,12 @@
     "css-loader": "^0.24.0",
     "download-file": "^0.1.5",
     "extract-text-webpack-plugin": "^1.0.1",
+    "file-loader": "^0.9.0",
     "gov-au-ui-kit": "git+https://github.com/nathf/gov-au-ui-kit.git#feature/node-install-issues",
     "node-sass": "^3.8.0",
     "redux-devtools": "^3.3.1",
     "sass-loader": "^4.0.1",
+    "url-loader": "^0.5.7",
     "webpack": "^1.13.1"
   }
 }

@@ -7,3 +7,5 @@
 /node_modules/*
 /_assets/stylesheets/vendor/*
 /_assets/javascripts/bin/*
+/_assets/stylesheets/*.css
+*.map

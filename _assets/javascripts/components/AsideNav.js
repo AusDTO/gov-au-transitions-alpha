@@ -37,10 +37,10 @@ class AsideNav extends Component {
           </div>
         </div>
           {this.props.showResults ? (
-            <span>
-              <button>Send to MyAgedCare</button><br />
-              <a>Why send my results to my aged care?</a>
-            </span>
+            <div className="actions">
+              <a role="button" href="#">Email my results <i className="fa fa-chevron-right" aria-hidden="true" /></a>
+              <a role="button" href="#">Print my results <i className="fa fa-chevron-right" aria-hidden="true" /></a>
+            </div>
           ) : ""}
       </aside>
     )

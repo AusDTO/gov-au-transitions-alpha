@@ -3,17 +3,21 @@ const path = require('path')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 const PLUGINS = [
-  new ExtractTextPlugin('../../../_site/assets/stylesheets/application.css?[contenthash]', {
+  new ExtractTextPlugin('stylesheets/application.css', {
     disable: false,
     allChunks: true
   })
 ]
 
 module.exports = {
-    entry: './_assets/javascripts/app.js',
+    context: path.join(__dirname),
+    entry: {
+      'javascripts/bin/app.bundle.js' : './_assets/javascripts/app.js',
+      'stylesheets/application.css': './_assets/stylesheets/_application.scss'
+    },
     output: {
-        path: './_assets/javascripts/bin',
-        filename: 'app.bundle.js'
+        path: './_assets/',
+        filename: '[name]'
     },
     resolve: {
       root: [
@@ -35,6 +39,14 @@ module.exports = {
         {
           test: /\.scss$/,
           loader: ExtractTextPlugin.extract('css!sass')
+        },
+        {
+          test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+          loader: 'url-loader?limit=10000&mimetype=application/font-woff&name=fonts/[name].[ext]'
+        },
+        {
+          test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+          loader: 'file-loader?name=fonts/[name].[ext]'
         }]
     }
 };
