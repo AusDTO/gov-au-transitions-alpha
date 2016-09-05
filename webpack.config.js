@@ -1,19 +1,12 @@
 var webpack = require('webpack')
 const path = require('path')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
-const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 const PLUGINS = [
   new ExtractTextPlugin('stylesheets/application.css', {
     disable: false,
     allChunks: true
-  }),
-  new CopyWebpackPlugin([
-    {
-      from: path.join(__dirname, '_assets/fonts'), 
-      to: path.join(__dirname, '_site/assets/stylesheets/fonts')
-    }
-  ])
+  })
 ]
 
 module.exports = {
