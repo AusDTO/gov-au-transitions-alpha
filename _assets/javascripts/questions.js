@@ -169,7 +169,7 @@ export const QuestionFlow = {
       name: "location",
       condition: "ownhome,transport,notsure,health,social",
       type: "location",
-      legend: "This helps us to suggest local services",
+      legend: "This helps us to suggest local services. Please enter a suburb, town or postcode.",
       values: []
     },
     {
@@ -180,6 +180,7 @@ export const QuestionFlow = {
       name: "locationconsidering",
       condition: "moving+health,notsure",
       type: "location",
+      legend: "Please enter a suburb, town or postcode.",
       values: []
     }
   ],
@@ -192,7 +193,7 @@ export const QuestionFlow = {
       categorysnippet: "Get the help and advice you need to stay in your home, a family or friend’s home, or a retirement village.",
       list: [
         {
-          title: "Next steps",
+          title: "Possible next steps",
           type: "steps",
           items: [
             {
@@ -235,9 +236,14 @@ export const QuestionFlow = {
                 {
                   label: "View the My Aged Care website: Estimate home care package fees",
                   link: "http://www.myagedcare.gov.au/fee-estimator/home-care/form",
-                  type: "Link",
+                  type: "external",
                   prefix: ""
-                }
+                },
+                {
+                  label: "Choosing a home care service provider",
+                  link: "",
+                  type: "link"
+                },
               ]
             },
           ]
@@ -270,17 +276,13 @@ export const QuestionFlow = {
           type: "information",
           items: [
             {
-              label: "View SA health Website: Find a local home and community service provider",
+              label: "View SA Health website: Find a local home and community service provider",
               link: "http://www.sahealth.sa.gov.au/wps/wcm/connect/public+content/sa+health+internet/health+services/hospitals+and+health+services+-+country+south+australia",
               condition: "ownhome,notsure",
+              external: true
             },
             {
-              label: "Choosing a home care service provider",
-              link: "",
-              condition: "ownhome,notsure",
-            },
-            {
-              label: "Australian Croatian aged care community service providers",
+              label: "View Australian Croatian Community Services website: Aged care providers",
               link: "http://www.accs.asn.au/index.php/96-aged-care-providers",
               condition: "croatianbkg,croatianlang",
             },
@@ -291,12 +293,12 @@ export const QuestionFlow = {
     {
       title: "Moving to an aged care home",
       id: "agedcarresult",
-      condition: "moving,notsure",
+      condition: "agedcare,notsure",
       abstract: "Consider aged care as a next step when you’re not able to look after yourself as well as you used to.",
       categorysnippet: "Consider an aged care home as a next step when you’re not able to look after yourself as well as you used to.",
       list: [
         {
-          title: "Next steps",
+          title: "Possible next steps",
           type: "steps",
           items: [
             {
@@ -381,19 +383,9 @@ export const QuestionFlow = {
           type: "information",
           items: [
             {
-              label: "Australian Croatian Community Services",
+              label: "View the Australian Croatian Community Services website: aged care providers",
               link: "http://www.croatianclubadelaide.com/croatian-care-for-the-aged",
               condition: "croatianbkg,croatianlang",
-            },
-            {
-              label: "Financial planning, seminars and advice",
-              link: "",
-              condition: "moving,notsure",
-            },
-            {
-              label: "Organising consents such as powers of attorney",
-              link: "",
-              condition: "moving,notsure",
             },
           ]
         },
@@ -407,7 +399,7 @@ export const QuestionFlow = {
       categorysnippet: "In a retirement village unit you can apply for the government-subsidised services you need to stay independent in your home.",
       list: [
         {
-          title: "Next steps",
+          title: "Possible next steps",
           type: "steps",
           items: [
             {
@@ -447,7 +439,7 @@ export const QuestionFlow = {
       categorysnippet: "Steps you might like to consider and information on how to get the types of support you need.",
       list: [
         {
-          title: "Next steps",
+          title: "Possible next steps",
           type: "steps",
           items: [
             {
@@ -488,7 +480,7 @@ export const QuestionFlow = {
       categorysnippet: "Follow these next steps to get the support, advice and local services you need.",
       list: [
         {
-          title: "Next steps",
+          title: "Possible next steps",
           type: "steps",
           items: [
             {
@@ -794,7 +786,7 @@ export const QuestionFlow = {
       categorysnippet: "Know how to apply for local subsidised transport and taxis and concessions on public transport.",
       list: [
         {
-          title: "Next steps",
+          title: "Possible next steps",
           type: "steps",
           items: [
             {
