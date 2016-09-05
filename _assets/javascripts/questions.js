@@ -193,7 +193,7 @@ export const QuestionFlow = {
       categorysnippet: "Get the help and advice you need to stay in your home, a family or friend’s home, or a retirement village.",
       list: [
         {
-          title: "Next steps",
+          title: "Possible next steps",
           type: "steps",
           items: [
             {
@@ -298,7 +298,7 @@ export const QuestionFlow = {
       categorysnippet: "Consider an aged care home as a next step when you’re not able to look after yourself as well as you used to.",
       list: [
         {
-          title: "Next steps",
+          title: "Possible next steps",
           type: "steps",
           items: [
             {
@@ -399,7 +399,7 @@ export const QuestionFlow = {
       categorysnippet: "In a retirement village unit you can apply for the government-subsidised services you need to stay independent in your home.",
       list: [
         {
-          title: "Next steps",
+          title: "Possible next steps",
           type: "steps",
           items: [
             {
@@ -439,7 +439,7 @@ export const QuestionFlow = {
       categorysnippet: "Steps you might like to consider and information on how to get the types of support you need.",
       list: [
         {
-          title: "Next steps",
+          title: "Possible next steps",
           type: "steps",
           items: [
             {
@@ -480,7 +480,7 @@ export const QuestionFlow = {
       categorysnippet: "Follow these next steps to get the support, advice and local services you need.",
       list: [
         {
-          title: "Next steps",
+          title: "Possible next steps",
           type: "steps",
           items: [
             {
@@ -786,7 +786,7 @@ export const QuestionFlow = {
       categorysnippet: "Know how to apply for local subsidised transport and taxis and concessions on public transport.",
       list: [
         {
-          title: "Next steps",
+          title: "Possible next steps",
           type: "steps",
           items: [
             {
