@@ -4,10 +4,11 @@ assets:
     - _assets/images
     - _assets/javascripts
     - _assets/stylesheets
-    - _assets/fonts
     - _vendor/
 
 baseurl: /
+
+keep_files: ['assets/stylesheets/fonts']
 
 exclude:
   - .bowerrc
