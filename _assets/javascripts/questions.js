@@ -292,7 +292,7 @@ export const QuestionFlow = {
       title: "Moving to an aged care home",
       id: "agedcarresult",
       condition: "moving,notsure",
-      abstract: "Consider aged care when you need help with day-to-day tasks or health care, or when you’re not able to look after yourself as well as you used to.",
+      abstract: "Consider aged care as a next step when you’re not able to look after yourself as well as you used to.",
       categorysnippet: "Consider an aged care home as a next step when you’re not able to look after yourself as well as you used to.",
       list: [
         {
@@ -300,8 +300,8 @@ export const QuestionFlow = {
           type: "steps",
           items: [
             {
-              label: "Being assessed",
-              abstract: "Firstly have your needs assessed by the Aged Care Assessment Team (ACAT). They will come to your home and if you are eligible, send you a letter of approval for a place in aged care. To arrange for an assessment call My Aged Care. Have your Medicare card ready or your My Aged Care profile ID if you already have one. Call Monday to Friday 8am to 8pm, or Saturday 10am to 2pm.",
+              label: "Being assessed for care",
+              abstract: "First have your needs assessed to receive care. To arrange for this call My Aged Care. If you are eligible you will then receive a letter of approval for a place in an aged care home. Call Monday to Friday 8am to 8pm, or Saturday 10am to 2pm, AEST.",
               condition: "moving,notsure",
               actions: [
                 {
@@ -311,7 +311,13 @@ export const QuestionFlow = {
                   prefix: "Call:"
                 },
                 {
-                  label: "About ACAT assessments",
+                  label: "About assessments for aged care",
+                  link: "",
+                  type: "secondary",
+                  prefix: ""
+                },
+                {
+                  label: "Choosing an aged care home",
                   link: "",
                   type: "secondary",
                   prefix: ""
@@ -320,29 +326,23 @@ export const QuestionFlow = {
             },
             {
               label: "Estimate costs of residential care",
-              abstract: "You will need to contribute to the costs of your residential care in the aged care home. Costs include the basic fee, daily fee and any additional means-tested contribution.",
+              abstract: "Estimate what you will need to contribute to the costs of your place in an aged care home.",
               condition: "moving,notsure",
               actions: [
                 {
-                  label: "Estimate residential care fees",
+                  label: "View My Aged Care website: Estimate residential care fees",
                   link: "http://www.myagedcare.gov.au/fee-estimator/residential-care/form",
-                  type: "button",
-                  prefix: ""
-                },
-                {
-                  label: "Schedule of residential care fees and charges",
-                  link: "https://agedcare.health.gov.au/funding/aged-care-fees-and-charges/schedule-of-fees-and-charges-for-pre-1-july-2014-residents-from-1-july-2016",
-                  type: "secondary"
+                  type: "link"
                 },
               ]
             },
             {
-              label: "Complete an income and assets assessment",
-              abstract: "You will be asked to complete the means-test assessment to know if you can access subsidised care",
+              label: "Complete a means test",
+              abstract: "You will also need to complete a means test of your income and assets to find out if you can get subsidised care.",
               condition: "moving,notsure",
               actions: [
                 {
-                  label: "Complete an income and assets assessment",
+                  label: "View the Department of Human Services website: Complete an income and assets assessment	",
                   link: "https://www.humanservices.gov.au/customer/services/aged-care-means-test-assessments",
                   type: "link"
                 },
@@ -355,22 +355,22 @@ export const QuestionFlow = {
           type: "result",
           items: [
             {
-              label: "Permanent facilities",
+              label: "Permanent facilities - My Aged Care",
               link: "http://www.myagedcare.gov.au/service-finder?tab=aged-care-homes&view=list&location=MORPHETT%20VALE%20%20SA,5162&service=Residential%20Permanent",
               number: 43
             },
             {
-              label: "Residential respite low care services",
+              label: "Residential respite low care services - My Aged Care",
               link: "http://www.myagedcare.gov.au/service-finder?tab=aged-care-homes&view=list&location=MORPHETT%20VALE%20%20SA,5162&service=Residential%20Respite%20Low%20Care",
               number: 46
             },
             {
-              label: "Residential respite high care services",
+              label: "Residential respite high care services - My Aged Care",
               link: "http://www.myagedcare.gov.au/service-finder?tab=aged-care-homes&view=list&location=MORPHETT%20VALE%20%20SA,5162&service=Residential%20Respite%20Low%20Care",
               number: 43
             },
             {
-              label: "Multi-purpose residential service",
+              label: "Multi-purpose residential service - My Aged Care",
               link: "http://www.myagedcare.gov.au/service-finder?tab=aged-care-homes&view=list&location=MORPHETT%20VALE%20%20SA,5162&service=Residential%20Respite%20Low%20Care",
               number: 1
             },
@@ -386,7 +386,12 @@ export const QuestionFlow = {
               condition: "croatianbkg,croatianlang",
             },
             {
-              label: "Choosing an aged care home",
+              label: "Financial planning, seminars and advice",
+              link: "",
+              condition: "moving,notsure",
+            },
+            {
+              label: "Organising consents such as powers of attorney",
               link: "",
               condition: "moving,notsure",
             },
@@ -394,6 +399,87 @@ export const QuestionFlow = {
         },
       ]
     },
+    {
+      title: "Moving to a retirement village",
+      id: "retirementresult",
+      condition: "retirement",
+      abstract: "In a retirement village unit you can apply for the government-subsidised services you need to stay independent in your home.",
+      categorysnippet: "In a retirement village unit you can apply for the government-subsidised services you need to stay independent in your home.",
+      list: [
+        {
+          title: "Next steps",
+          type: "steps",
+          items: [
+            {
+              label: "Being assessed for care",
+              abstract: "First have your needs assessed to receive care. To arrange for this call My Aged Care. If you are eligible you will then receive a letter of approval for a place in an aged care home. Call Monday to Friday 8am to 8pm, or Saturday 10am to 2pm, AEST.",
+              condition: "moving,notsure",
+              actions: [
+                {
+                  label: "1800 200 422",
+                  link: "tel:1800200422",
+                  type: "link",
+                  prefix: "Call:"
+                }
+              ]
+            },
+          ]
+        },
+        {
+          title: "Local services",
+          type: "result",
+          items: [
+          ]
+        },
+        {
+          title: "Further information",
+          type: "information",
+          items: [
+          ]
+        },
+      ]
+    },
+    {
+      title: "Moving in with family or friends",
+      id: "friendsresult",
+      condition: "independent",
+      abstract: "Steps you might like to consider and information on how to get the types of support you need.",
+      categorysnippet: "Steps you might like to consider and information on how to get the types of support you need.",
+      list: [
+        {
+          title: "Next steps",
+          type: "steps",
+          items: [
+            {
+              label: "Being assessed for care",
+              abstract: "First have your needs assessed to receive care. To arrange for this call My Aged Care. If you are eligible you will then receive a letter of approval for a place in an aged care home. Call Monday to Friday 8am to 8pm, or Saturday 10am to 2pm, AEST.",
+              condition: "moving,notsure",
+              actions: [
+                {
+                  label: "1800 200 422",
+                  link: "tel:1800200422",
+                  type: "link",
+                  prefix: "Call:"
+                }
+              ]
+            },
+          ]
+        },
+        {
+          title: "Local services",
+          type: "result",
+          items: [
+          ]
+        },
+        {
+          title: "Further information",
+          type: "information",
+          items: [
+          ]
+        },
+      ]
+    },
+
     {
       title: "Support for health and wellbeing",
       id: "healthwellbeingresult",
@@ -411,7 +497,7 @@ export const QuestionFlow = {
               condition: "croatianbkg,croatianlang",
               actions: [
                 {
-                  label: "Croatian Club Adelaide: care for the aged",
+                  label: "View the Croatian Club Adelaide website: care for the aged",
                   link: "http://www.croatianclubadelaide.com/croatian-care-for-the-aged",
                   type: "link",
                   prefix: "Visit:",
@@ -419,25 +505,36 @@ export const QuestionFlow = {
               ]
             },
             {
-              label: "What to do in an emergency",
-              abstract: "Call Lifeline 24/7",
-              condition: "depression",
+              label: "Help for arthritis",
+              abstract: "Find products to make living with arthritis easier",
+              condition: "arthritis",
               actions: [
                 {
-                  label: "13 11 14",
-                  link: "tel:131114",
+                  label: "08 8379 5711",
+                  link: "tel:0883795711",
                   type: "link",
                   prefix: "Call:"
+                },
+                {
+                  label: "1800 011 041",
+                  link: "tel:1800011041",
+                  type: "link",
+                  prefix: "Country SA Freecall:"
+                },
+                {
+                  label: "Visit the Arthritis South Australia website: Arthritis SA shop",
+                  link: "https://www.arthritissa.org.au/shop/retail",
+                  type: "link",
                 }
               ]
             },
             {
-              label: "Free professional support for depression",
+              label: "Access free professional support for older people",
               abstract: "You can see a free psychiatrist, psychologist or social worker or other health professional by appointment.",
               condition: "depression",
               actions: [
                 {
-                  label: "Find mental health services for older people in South Australia",
+                  label: "View the South Australia Government Health website: Mental health services for older people in South Australia",
                   link: "http://www.sahealth.sa.gov.au/wps/wcm/connect/public+content/sa+health+internet/health+services/mental+health+services/older+persons+mental+health+services",
                   type: "link",
                   prefix: "",
@@ -446,26 +543,20 @@ export const QuestionFlow = {
             },
             {
               label: "Counselling through Medicare",
-              abstract: "You can see a free psychiatrist, psychologist or social worker or other health professional by appointment.",
+              abstract: "To get subsidised medication and 10 counselling sessions for depression you will need to have a Medicare care and a mental health plan in place with your doctor.",
               type: "funded",
               condition: "depression",
               actions: [
                 {
-                  label: "Apply for a Medicare card",
-                  link: "https://www.humanservices.gov.au/sites/default/files/documents/3101-1306en.pdf",
+                  label: "View the Department of Human Services website: Apply for a Medicare card",
+                  link: "https://www.humanservices.gov.au/customer/services/medicare/medicare-card",
                   type: "link",
-                  prefix: "Form:"
-                },
-                {
-                  label: "Learn about applying for a Medicare card",
-                  link: "https://www.humanservices.gov.au/customer/subjects/medicare-services",
-                  type: "secondary",
                   prefix: ""
                 },
                 {
-                  label: "A sample mental health plan",
+                  label: "View the Department of Health Services website: A sample mental health plan",
                   link: "http://www.health.gov.au/internet/main/publishing.nsf/content/mental-ba-gpsamp",
-                  type: "secondary",
+                  type: "link",
                   prefix: ""
                 },
               ]
@@ -478,6 +569,25 @@ export const QuestionFlow = {
                 {
                   label: "1300 22 4636",
                   link: "tel:1300224636",
+                  type: "link",
+                  prefix: "Call:",
+                },
+                {
+                  label: "View the BeyondBlue website",
+                  link: "https://www.beyondblue.org.au",
+                  type: "link",
+                  prefix: "",
+                },
+              ]
+            },
+            {
+              label: "What to do in an emergency",
+              abstract: "Call Lifeline for help in a crisis 24/7",
+              condition: "depression, dementia",
+              actions: [
+                {
+                  label: "13 11 14",
+                  link: "tel:13 11 14",
                   type: "link",
                   prefix: "Call:",
                 }
@@ -493,6 +603,12 @@ export const QuestionFlow = {
                   link: "tel:1800100500",
                   type: "link",
                   prefix: "Call:"
+                },
+                {
+                  label: "View the Alzheimer’s Australia, fight dementia website",
+                  link: "https://www.fightdementia.org.au/",
+                  type: "link",
+                  prefix: ""
                 }
               ]
             },
@@ -523,7 +639,7 @@ export const QuestionFlow = {
               type: "funded",
               actions: [
                 {
-                  label: "Continence Aids Payment Scheme application",
+                  label: "View the Australian Government Department of Health website: Continence Aids Payment Scheme application",
                   link: "http://www.bladderbowel.gov.au/caps/application.htm",
                   type: "link",
                   prefix: "Form:"
@@ -538,6 +654,46 @@ export const QuestionFlow = {
                 {
                   label: "1800 330 0666",
                   link: "tel:18003300666",
+                  type: "link",
+                  prefix: "Call:"
+                },
+              ]
+            },
+            {
+              label: "Call the National Diabetes Support Services helpline",
+              abstract: "",
+              condition: "diabetes",
+              actions: [
+                {
+                  label: "1300 136 588",
+                  link: "tel:1300136588",
+                  type: "link",
+                  prefix: "Call:"
+                },
+              ]
+            },
+            {
+              label: "Register for National Diabetes Support Services",
+              abstract: "You can receive free support services including discounts on glucose and urine test strips, insulin needles and syringes.",
+              condition: "diabetes",
+              type: "funded",
+              actions: [
+                {
+                  label: "View the National Diabetes Support Services website: register",
+                  link: "https://www.ndss.com.au/registration",
+                  type: "link",
+                  prefix: ""
+                },
+              ]
+            },
+            {
+              label: "Find a community visitor",
+              abstract: "Connect with a volunteer companion matched to your interests, hobbies and background. Available to people receiving a home care package. Talk to your service provider or call the Community Visitors Program.",
+              condition: "diabetes",
+              actions: [
+                {
+                  label: "08 8372 5191",
+                  link: "tel:0883725191",
                   type: "link",
                   prefix: "Call:"
                 },
@@ -572,34 +728,59 @@ export const QuestionFlow = {
           type: "information",
           items: [
             {
-              label: "Mental health resources for seniors",
-              link: "http://www.mindhealthconnect.org.au/older-person-mental-health",
-              condition: "dementia",
+              label: "View the HealthDirect website: Learn more about arthritis",
+              link: "http://www.healthdirect.gov.au/arthritis",
+              condition: "arthritis",
             },
             {
-              label: "Learn more about dementia",
+              label: "View the South Australia Alzheimer’s Australia website: Learn about dementia",
               link: "https://nsw.fightdementia.org.au/national/about-dementia",
               condition: "dementia",
             },
             {
-              label: "Learn what to do about dementia in the short and long term",
+              label: "View the My Aged Care website: What to do about dementia in the short and long term",
               link: "http://www.myagedcare.gov.au/health-conditions/dementia",
               condition: "dementia",
             },
             {
-              label: "How to care for someone with dementia",
+              label: "View the HealthDirect website: How to care for someone with dementia",
               link: "http://www.healthdirect.gov.au/caring-for-someone-with-dementia",
               condition: "dementia",
             },
             {
-              label: "Mental health resources for seniors",
+              label: "View the HealthDirect website: Mental health resources for seniors",
               link: "http://www.mindhealthconnect.org.au/older-person-mental-health",
+              condition: "dementia, depression",
+            },
+            {
+              label: "View the SA Health website: Mental health services in South Australia",
+              link: "http://www.sahealth.sa.gov.au/wps/wcm/connect/Public+Content/SA+Health+Internet/Health+services/Mental+health+services/",
               condition: "depression",
             },
             {
-              label: "Depression in older people",
+              label: "View the BeyondBlue website: Depression in older people",
               link: "https://www.beyondblue.org.au/who-does-it-affect/older-people",
               condition: "depression",
+            },
+            {
+              label: "View the BeyondBlue website: Learn about depression",
+              link: "https://www.beyondblue.org.au/who-does-it-affect/older-people",
+              condition: "depression",
+            },
+            {
+              label: "View the BeyondBlue: Find a health professional",
+              link: "https://www.beyondblue.org.au/get-support/find-a-professional",
+              condition: "depression",
+            },
+            {
+              label: "View the Diabetes Australia website: learn more about diabetes",
+              link: "https://www.diabetesaustralia.com.au/what-is-diabetes",
+              condition: "diabetes",
+            },
+            {
+              label: "View the HealthDirect website: Learn more about loneliness and isolation",
+              link: "http://www.mindhealthconnect.org.au/loneliness-isolation-mental-health",
+              condition: "loneliness",
             },
           ]
         }
@@ -609,7 +790,7 @@ export const QuestionFlow = {
       title: "Getting transport",
       id: "transportresult",
       condition: "transport",
-      abstract: "Know about alternatives for getting around–when ageing, medical conditions and taking medicines impact on the ability to drive.",
+      abstract: "Know how to apply for local subsidised transport and taxis and concessions on public transport.",
       categorysnippet: "Know how to apply for local subsidised transport and taxis and concessions on public transport.",
       list: [
         {
@@ -623,10 +804,10 @@ export const QuestionFlow = {
               //type: "funded",
               actions: [
                 {
-                  label: "South Australia: Medical fitness to drive",
+                  label: "View the South Australia Government website: Medical fitness to drive",
                   link: "http://www.sa.gov.au/topics/transport-travel-and-motoring/motoring/drivers-and-licences/medical-fitness-to-drive",
                   type: "link",
-                  prefix: "Visit:"
+                  prefix: ""
                 },
               ]
             },
@@ -681,16 +862,16 @@ export const QuestionFlow = {
               condition: "transport",
               actions: [
                 {
-                  label: "Use the concessions finder",
+                  label: "View the South Australia Government website: Use the concessions finder",
                   link: "http://www.dcsi.sa.gov.au/concessions",
                   type: "link",
                   prefix: ""
                 },
                 {
-                  label: "South Australia: Apply for a public transport concession",
+                  label: "View the South Australia Government website: Apply for a public transport concession",
                   link: "https://www.sa.gov.au/topics/employment-money-taxes/financial-support/concessions-and-benefits/concessions/transport-concessions",
                   type: "link",
-                  prefix: "Apply:"
+                  prefix: ""
                 }
               ]
             },
@@ -701,10 +882,10 @@ export const QuestionFlow = {
               condition: "transport",
               actions: [
                 {
-                  label: "Seniors Metrocard",
+                  label: "View the South Australia Government website: Seniors Metrocard",
                   link: "http://www.sa.gov.au/topics/seniors/seniors-card/the-new-seniors-metrocard",
                   type: "link",
-                  prefix: "Visit:"
+                  prefix: ""
                 },
               ]
             },
@@ -715,10 +896,10 @@ export const QuestionFlow = {
               condition: "transport",
               actions: [
                 {
-                  label: "South Australia: Apply for taxi fare subsidies",
+                  label: "View the South Australia Government website: Apply for taxi fare subsidies",
                   link: "https://www.sa.gov.au/topics/transport-travel-and-motoring/public-transport-and-travel/getting-around-with-a-disability/taxi-fare-subsidy-scheme",
                   type: "link",
-                  prefix: "Apply:"
+                  prefix: ""
                 },
               ]
             },
@@ -740,27 +921,27 @@ export const QuestionFlow = {
           type: "information",
           items: [
             {
-              label: "South Australia: Disability Parking Permits",
+              label: "View the South Australia Government website: Disability Parking Permits",
               link: "https://www.sa.gov.au/topics/transport-travel-and-motoring/public-transport-and-travel/getting-around-with-a-disability/disability-parking-permit",
               condition: "transport",
             },
             {
-              label: "South Australia: Vision impaired travel pass",
+              label: "View the South Australia Government website: Vision impaired travel pass",
               link: "https://www.sa.gov.au/topics/transport-travel-and-motoring/public-transport-and-travel/getting-around-with-a-disability/vision-impaired-travel-pass",
               condition: "transport",
             },
             {
-              label: "South Australia: Public transport companion card",
+              label: "View the South Australia Government website: Public transport companion card",
               link: "https://www.sa.gov.au/topics/transport-travel-and-motoring/public-transport-and-travel/getting-around-with-a-disability/companion-cards",
               condition: "transport",
             },
             {
-              label: "South Australia: Motorised wheelchairs",
+              label: "View the South Australia Government website: Motorised wheelchairs",
               link: "https://www.sa.gov.au/topics/transport-travel-and-motoring/public-transport-and-travel/getting-around-with-a-disability/motorised-wheelchairs",
               condition: "transport",
             },
             {
-              label: "Australian Human Rights Commission: Your rights in retirement to transport",
+              label: "View the Australian Human Rights Commission website: Your rights in retirement to transport",
               link: "http://www.humanrights.gov.au/publications/your-rights-retirement/11-your-right-transport",
               condition: "transport",
             },

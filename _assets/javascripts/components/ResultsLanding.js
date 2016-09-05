@@ -19,8 +19,8 @@ const Results = ({show}) => {
             <h2 className="secondary-title">Also explore</h2>
             <ul className="secondary-links">
               <li><a href="">Managing your medicines</a></li>
-              <li><a href="">Financial planning, seminars and advice</a></li>
               <li><a href="">Organising consents such as powers of attorney</a></li>
+              <li><a href="">Support for carers</a></li>
             </ul>
           </article>
         </main>
