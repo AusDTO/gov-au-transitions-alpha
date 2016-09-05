@@ -1,6 +1,7 @@
 $gov-ui-kit-image-base-url: 'https://gov-au-ui-kit.apps.staging.digital.gov.au/latest/img/';
 @import "~gov-au-ui-kit";
-@import "scss/font-awesome";
+$fa-font-path: "~font-awesome/fonts";
+@import "~font-awesome/scss/font-awesome";
 
 .footer-logo {
   width: 207px;
@@ -441,5 +442,11 @@ main.hero-gradient {
         @include omega(2n);
       }
     }
+  }
+}
+
+aside {
+  .actions {
+    @include pad(default 0 0);
   }
 }
