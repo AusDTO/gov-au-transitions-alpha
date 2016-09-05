@@ -273,6 +273,7 @@ export const QuestionFlow = {
               label: "View SA health Website: Find a local home and community service provider",
               link: "http://www.sahealth.sa.gov.au/wps/wcm/connect/public+content/sa+health+internet/health+services/hospitals+and+health+services+-+country+south+australia",
               condition: "ownhome,notsure",
+              external: true
             },
             {
               label: "Choosing a home care service provider",

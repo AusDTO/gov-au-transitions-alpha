@@ -2,6 +2,7 @@ import { connect } from 'react-redux'
 import { QuestionFlow } from '../questions'
 import ResultsCategory from '../components/ResultsCategory'
 import { getResultsList } from '../helpers'
+import { resultCheck } from '../actions'
 
 const getResultCatFromId = (id, results) => {
   for (let i = 0; i < results.length; i += 1) {
