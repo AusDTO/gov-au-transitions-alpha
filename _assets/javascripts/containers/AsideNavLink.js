@@ -34,7 +34,6 @@ const mapActualAnswersToLabels = (prevAnswers = [], questions, type) => {
  */
 const getAnsweredQuestions = (answers = [], language) => {
   return answers.map((value, index) => {
-    console.log("THe index is: " + index)
     return {
       question: getQuestionTitle(QuestionFlow.questions[index].question, language),
       answers: mapActualAnswersToLabels(value, QuestionFlow.questions[index].values, QuestionFlow.questions[index].type),

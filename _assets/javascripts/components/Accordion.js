@@ -17,21 +17,36 @@ class Accordion extends Component {
   render() {
     let theClassName = "accordion-panel " + this.props.className
     return (
-      <details open={this.state.open} aria-expanded={this.state.open} className="accordion">
-        <summary onClick={this.handleClick}>
+      <section open={this.state.open} aria-expanded={this.state.open} className="accordion">
+        <div className='accordion-button'>
           <span className="accordion-content">{this.props.summary}</span>
-        </summary>
+          <span className='accordion-controlls'>
+            <input name={this.props.inputName}
+              id={this.props.inputName}
+              type="checkbox"
+              value="true"
+              checked={this.props.inputChecked}
+              onChange={this.props.inputOnChange.bind(null, this.props.inputName)}
+               />
+               <label htmlFor={this.props.inputName}>{this.props.inputLabel}</label>
+            <a href='#' className='accordion-hide' onClick={this.handleClick}>{this.state.open ? 'Hide' : 'Show'}</a>
+          </span>
+        </div>
         <div className={theClassName}>
             {this.props.children}
         </div>
-      </details>
+      </section>
     )
   }
 }
 
 Accordion.propTypes = {
   summary: PropTypes.string.isRequired,
-  children: PropTypes.element.isRequired
+  inputName: PropTypes.string,
+  inputLabel: PropTypes.string,
+  inputChecked: PropTypes.bool,
+  inputOnChange: PropTypes.func,
+  children: PropTypes.any.isRequired
 }
 
 export default Accordion

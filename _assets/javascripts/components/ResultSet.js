@@ -89,7 +89,7 @@ const getInformationResults = items => (
       <ul>
         {items.items.map(item => (
           <li key={item.label.split(" ").join("_")}>
-            <a rel="external" href={item.link} target="_blank">{item.label}</a>
+            <a rel={item.external ? "external" : ""} href={item.link} target="_blank">{item.label}</a>
           </li>
         )
         )}
@@ -99,14 +99,19 @@ const getInformationResults = items => (
 )
 
 const getStepResults = (items, checked, onChange) => (
-  <div key={items.title.replace(' ', '_')}>
+  <div key={items.title.split(' ').join('_')}>
     <h3><span className='number'>{items.badge}</span>{items.title}</h3>
     <div className={items.type + "-list"}>
     {items.items.map(item => {
-      let name = item.label.replace(' ', '_')
+      let name = item.label.split(' ').join('_')
       return (
         <Accordion key={name}
-          summary={item.label}>
+          summary={item.label}
+          inputName={name}
+          inputLabel="To do"
+          inputOnChange={onChange}
+          inputChecked={checked.indexOf(name) > -1 ? true : false}
+          >
           <p>{item.abstract}</p>
           <ul className="step-actions">{getStepActions(item.actions)}</ul>
           {item.type === "funded" ? (<div className="step-actions"><span className="info-badge">Goverment funded</span></div>) : ""}
