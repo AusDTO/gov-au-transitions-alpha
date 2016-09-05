@@ -18,6 +18,9 @@ header[role=banner] .hero .tagline {
   .transition-main {
     padding: 0 $base-spacing;
   }
+  .show-for-mobile {
+    display: none;
+  }
 }
 @include media($desktop) {
   .transition-main {
@@ -333,7 +336,18 @@ main.hero-gradient {
   margin-right: 1.3em;
   vertical-align: middle;
 }
-.sidebar {
+
+@include media(max-width 480px 4) {
+  .show-for-mobile {
+    display: block;
+  }
+
+  .hide-for-mobile {
+    display: none;
+  }
+
+}
+.sidebar--answers {
   @include link-colours($non-black, $light-aqua, $non-black);
   @include button-colours($button-bg-colour, $button-bg-colour--hover, $button-bg-colour--active, $button-text-colour);
   .your-answers {

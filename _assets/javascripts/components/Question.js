@@ -9,7 +9,7 @@ const Question = ({current, total}) => {
   } else {
     return (
       <main role="main">
-        <AsideNavLink />
+        <AsideNavLink className="sidebar" />
         <article className="transition-main content-main">
           <QuestionHeaderHandler />
           <QuestionBodyLinker />

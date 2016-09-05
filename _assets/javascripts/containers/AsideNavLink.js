@@ -43,13 +43,14 @@ const getAnsweredQuestions = (answers = [], language) => {
   })
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
   const { language, previousAnswers, router } = state
   let show = router.location && router.location.pathname.indexOf('results') > -1
   return {
     showResults: show,
     questions: getAnsweredQuestions(previousAnswers, language),
-    resultSets: show ? getResultsList(state) : null
+    resultSets: show ? getResultsList(state) : null,
+    ...ownProps
   }
 }
 
