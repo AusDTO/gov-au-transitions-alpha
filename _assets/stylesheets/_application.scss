@@ -1,8 +1,7 @@
-$fa-font-path: "/assets/fonts";
-@import "~font-awesome/scss/font-awesome";
-
 $gov-ui-kit-image-base-url: 'https://gov-au-ui-kit.apps.staging.digital.gov.au/latest/img/';
 @import "~gov-au-ui-kit";
+$fa-font-path: "~font-awesome/fonts";
+@import "~font-awesome/scss/font-awesome";
 
 .footer-logo {
   width: 207px;
