@@ -4,21 +4,14 @@ class AsideNav extends Component {
   constructor() {
     super();
     this.handleClick = this.handleClick.bind(this);
-    this.toggleResults = this.toggleResults.bind(this);
     this.state = {
-      open: false,
-      resultsOpen: false
+      open: false
     }
   }
 
   handleClick(e) {
     e.preventDefault();
     this.setState({open: !this.state.open})
-  }
-
-  toggleResults(e) {
-    e.preventDefault()
-    this.setState({ resultsOpen: !this.state.resultsOpen })
   }
 
   render() {
