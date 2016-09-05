@@ -26,6 +26,7 @@
   "dependencies": {
     "babel-polyfill": "^6.9.1",
     "dom-scroll-into-view": "^1.2.0",
+    "font-awesome": "^4.6.3",
     "react": "^15.2.1",
     "react-dom": "^15.2.1",
     "react-geosuggest": "^1.24.1",
