@@ -169,7 +169,7 @@ export const QuestionFlow = {
       name: "location",
       condition: "ownhome,transport,notsure,health,social",
       type: "location",
-      legend: "This helps us to suggest local services",
+      legend: "This helps us to suggest local services. Please enter a suburb, town or postcode.",
       values: []
     },
     {
@@ -180,6 +180,7 @@ export const QuestionFlow = {
       name: "locationconsidering",
       condition: "moving+health,notsure",
       type: "location",
+      legend: "Please enter a suburb, town or postcode.",
       values: []
     }
   ],
@@ -237,7 +238,12 @@ export const QuestionFlow = {
                   link: "http://www.myagedcare.gov.au/fee-estimator/home-care/form",
                   type: "Link",
                   prefix: ""
-                }
+                },
+                {
+                  label: "Choosing a home care service provider",
+                  link: "",
+                  type: "link"
+                },
               ]
             },
           ]
@@ -270,17 +276,12 @@ export const QuestionFlow = {
           type: "information",
           items: [
             {
-              label: "View SA health Website: Find a local home and community service provider",
+              label: "View SA Health website: Find a local home and community service provider",
               link: "http://www.sahealth.sa.gov.au/wps/wcm/connect/public+content/sa+health+internet/health+services/hospitals+and+health+services+-+country+south+australia",
               condition: "ownhome,notsure",
             },
             {
-              label: "Choosing a home care service provider",
-              link: "",
-              condition: "ownhome,notsure",
-            },
-            {
-              label: "Australian Croatian aged care community service providers",
+              label: "View Australian Croatian Community Services website: Aged care providers",
               link: "http://www.accs.asn.au/index.php/96-aged-care-providers",
               condition: "croatianbkg,croatianlang",
             },
@@ -291,7 +292,7 @@ export const QuestionFlow = {
     {
       title: "Moving to an aged care home",
       id: "agedcarresult",
-      condition: "moving,notsure",
+      condition: "agedcare,notsure",
       abstract: "Consider aged care as a next step when you’re not able to look after yourself as well as you used to.",
       categorysnippet: "Consider an aged care home as a next step when you’re not able to look after yourself as well as you used to.",
       list: [
@@ -381,19 +382,9 @@ export const QuestionFlow = {
           type: "information",
           items: [
             {
-              label: "Australian Croatian Community Services",
+              label: "View the Australian Croatian Community Services website: aged care providers",
               link: "http://www.croatianclubadelaide.com/croatian-care-for-the-aged",
               condition: "croatianbkg,croatianlang",
-            },
-            {
-              label: "Financial planning, seminars and advice",
-              link: "",
-              condition: "moving,notsure",
-            },
-            {
-              label: "Organising consents such as powers of attorney",
-              link: "",
-              condition: "moving,notsure",
             },
           ]
         },
