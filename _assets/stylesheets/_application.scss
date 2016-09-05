@@ -18,12 +18,20 @@ header[role=banner] .hero .tagline {
   .transition-main {
     padding: 0 $base-spacing;
   }
+  .show-for-mobile {
+    display: none;
+  }
 }
 @include media($desktop) {
   .transition-main {
     padding: 0;
   }
-}
+  .question-wrapper .content-main {
+    @include span-columns(7 of 12);
+    @include omega(2n);
+  }
+
+};
 .question-header {
   padding: $base-spacing 0 0 0;
   div {
@@ -84,7 +92,8 @@ details + details {
 }
 .landing-wrapper {
   @extend .form-wrapper;
-  margin: 3em 0;
+  padding: 3em 0;
+  color: $white;
   p > i {
     font-size: 26px;
     vertical-align: middle;
@@ -328,7 +337,18 @@ main.hero-gradient {
   margin-right: 1.3em;
   vertical-align: middle;
 }
-.sidebar {
+
+@include media(max-width 480px 4) {
+  .show-for-mobile {
+    display: block;
+  }
+
+  .hide-for-mobile {
+    display: none;
+  }
+
+}
+.sidebar--answers {
   @include link-colours($non-black, $light-aqua, $non-black);
   @include button-colours($button-bg-colour, $button-bg-colour--hover, $button-bg-colour--active, $button-text-colour);
   .your-answers {
@@ -370,6 +390,7 @@ main.hero-gradient {
   }
 }
 .question-nav {
+  margin: 1.6em 0 0;
   .answer-component {
     margin-bottom: 2px;
     background-color: $non-white;
@@ -504,5 +525,14 @@ main.hero-gradient {
 aside {
   .actions {
     @include pad(default 0 0);
+  }
+}
+
+.real-list {
+  li {
+    border-left: 1px solid #bbbbbb;
+    border-top: 0;
+    margin: 1.6em 0;
+    padding: 0.4em 1.6em;
   }
 }

@@ -1,11 +1,16 @@
 import { connect } from 'react-redux'
 import { QuestionFlow } from '../questions'
 import ResultsLanding from '../components/ResultsLanding'
+import { getResultsList } from '../helpers'
 
 const mapStateToProps = (state) => {
+  const { router } = state
+  let show = router.location && router.location.pathname.indexOf('results') > -1
   return {
     //show: state.currentQuestion >= QuestionFlow.questions.length
-    show: true
+    show: true,
+    showResults: show,
+    resultSets: show ? getResultsList(state) : null
   }
 }
 
