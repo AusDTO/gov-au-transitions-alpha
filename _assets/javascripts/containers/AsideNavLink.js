@@ -1,7 +1,7 @@
 import { connect } from 'react-redux'
 import { QuestionFlow } from '../questions'
 import AsideNav from '../components/AsideNav'
-import { getQuestionTitle, getResultsList } from '../helpers'
+import { getQuestionTitle } from '../helpers'
 import { moveTo } from '../actions'
 
 /**
@@ -49,7 +49,6 @@ const mapStateToProps = (state, ownProps) => {
   return {
     showResults: show,
     questions: getAnsweredQuestions(previousAnswers, language),
-    resultSets: show ? getResultsList(state) : null,
     ...ownProps
   }
 }
