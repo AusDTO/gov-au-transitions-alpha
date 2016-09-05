@@ -26,6 +26,11 @@ header[role=banner] .hero .tagline {
   .transition-main {
     padding: 0;
   }
+  .question-wrapper .content-main {
+    @include span-columns(7 of 12);
+    @include omega(2n);
+  }
+
 };
 .question-header {
   padding: $base-spacing 0 0 0;
