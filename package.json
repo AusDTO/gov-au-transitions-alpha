@@ -8,7 +8,10 @@
   },
   "scripts": {
     "test": "test",
-    "start": "webpack"
+    "start": "webpack",
+    "build": "webpack",
+    "build:watch": "webpack -w",
+    "poststart": "mkdir -p _site/assets/stylesheets/fonts; cp _assets/fonts/* _site/assets/stylesheets/fonts"
   },
   "repository": {
     "type": "git",
