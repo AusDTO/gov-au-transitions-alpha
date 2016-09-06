@@ -98,7 +98,7 @@ export const QuestionFlow = {
     {
       question: "What help is needed in the home?",
       name: "assistance",
-      condition: "ownhome,notsure,retirement,independent,culturemove",
+      condition: "ownhome,notsure,retirement,independent",
       type: "checkbox",
       legend: "Select all that apply",
       values: [
@@ -167,7 +167,7 @@ export const QuestionFlow = {
           third: "Where do they live?",
       },
       name: "location",
-      condition: "ownhome,transport,notsure,health,social",
+      condition: "ownhome,transport!moving,notsure,health!moving,social!moving",
       type: "location",
       legend: "This helps us to suggest local services. Please enter a suburb, town or postcode.",
       values: []
