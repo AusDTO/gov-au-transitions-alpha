@@ -17,49 +17,49 @@ const getStepActions = actions => {
   })
 }
 
-const getAccordionContent = (items, checked, onChange) => {
-  switch (items.type) {
-    case "result":
-      return (<ul>{items.items.map(item => {
-        return (
-          <li key={item.label.split(" ").join("_")}>
-            <span className="number">{item.number}</span>
-            <span>
-            <a rel="external" href={item.link} target="_blank">{item.label}</a>
-            </span>
-          </li>
-        )
-      })}</ul>)
-    case "steps":
-      return (<form><ul className="module-list">{items.items.map(item => {
-        let name = item.label.split(" ").join("_")
-        return (
-          <li key={name}>
-            <input name={name}
-              id={name}
-              type="checkbox"
-              value="true"
-              checked={checked.indexOf(name) > -1 ? true : false}
-              onChange={onChange.bind(null, name)} />
-            <label htmlFor={name}>{item.label}</label>
-            <p>{item.abstract}</p>
-            <ul className="step-actions">{getStepActions(item.actions)}</ul>
-            {item.type === "funded" ? (<div className="step-actions"><span className="info-badge">Goverment funded</span></div>) : ""}
-          </li>)
-      })}</ul></form>)
-      return (<div>Step type set</div>)
-      break;
-    case "information":
-    default:
-      return (<ul>{items.items.map(item => {
-        return (
-          <li key={item.label.split(" ").join("_")}>
-            <a rel="external" href={item.link} target="_blank">{item.label}</a>
-          </li>
-          )
-      })}</ul>)
-  }
-}
+// const getAccordionContent = (items, checked, onChange) => {
+//   switch (items.type) {
+//     case "result":
+//       return (<ul>{items.items.map(item => {
+//         return (
+//           <li key={item.label.split(" ").join("_")}>
+//             <span className="number">{item.number}</span>
+//             <span>
+//             <a rel="external" href={item.link} target="_blank">{item.label}</a>
+//             </span>
+//           </li>
+//         )
+//       })}</ul>)
+//     case "steps":
+//       return (<form><ul className="module-list">{items.items.map(item => {
+//         let name = item.label.split(" ").join("_")
+//         return (
+//           <li key={name}>
+//             <input name={name}
+//               id={name}
+//               type="checkbox"
+//               value="true"
+//               checked={checked.indexOf(name) > -1 ? true : false}
+//               onChange={onChange.bind(null, name)} />
+//             <label htmlFor={name}>{item.label}</label>
+//             <p>{item.abstract}</p>
+//             <ul className="step-actions">{getStepActions(item.actions)}</ul>
+//             {item.type === "funded" ? (<div className="step-actions"><span className="info-badge">Goverment funded</span></div>) : ""}
+//           </li>)
+//       })}</ul></form>)
+//       return (<div>Step type set</div>)
+//       break;
+//     case "information":
+//     default:
+//       return (<ul>{items.items.map(item => {
+//         return (
+//           <li key={item.label.split(" ").join("_")}>
+//             <a rel="external" href={item.link} target="_blank">{item.label}</a>
+//           </li>
+//           )
+//       })}</ul>)
+//   }
+// }
 
 const getLocalResults = items => (
   <div key={items.title.split(" ").join("_")}>
@@ -108,7 +108,7 @@ const getStepResults = (items, checked, onChange) => (
         <Accordion key={name}
           summary={item.label}
           inputName={name}
-          inputLabel="To do"
+          inputLabel={checked.indexOf(name) > -1 ? "Done" : "To do"}
           inputOnChange={onChange}
           inputChecked={checked.indexOf(name) > -1 ? true : false}
           >
