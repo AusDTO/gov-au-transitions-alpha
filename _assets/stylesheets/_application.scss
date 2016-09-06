@@ -296,6 +296,9 @@ fieldset h4 {
     display: table-cell;
   }
 }
+.results-set h3 .number {
+  display: inline;
+}
 .result-list ul {
   display: table;
   & > li {
@@ -537,7 +540,7 @@ fieldset h4 {
 }
 @include media($tablet) {
   .steps-list, .result-list, .information-list {
-    max-width: 38rem;
+    max-width: 44rem;
   }
   .results-tiles {
     max-width: 38rem;
@@ -578,5 +581,19 @@ main > article a[rel~='external'] {
     border-top: 0;
     margin: 1.6em 0;
     padding: 0.4em 1.6em;
+  }
+}
+.content-main {
+  @include media($desktop) {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    p,
+    li,
+    dl {
+      max-width: 44rem;
+    }
   }
 }
