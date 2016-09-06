@@ -98,7 +98,7 @@ export const QuestionFlow = {
     {
       question: "What help is needed in the home?",
       name: "assistance",
-      condition: "ownhome,notsure,retirement,independent,culturemove",
+      condition: "ownhome,notsure,retirement,independent",
       type: "checkbox",
       legend: "Select all that apply",
       values: [
@@ -167,7 +167,7 @@ export const QuestionFlow = {
           third: "Where do they live?",
       },
       name: "location",
-      condition: "ownhome,transport,notsure,health,social",
+      condition: "ownhome,transport!moving,notsure,health!moving,social!moving",
       type: "location",
       legend: "This helps us to suggest local services. Please enter a suburb, town or postcode.",
       values: []
@@ -193,7 +193,7 @@ export const QuestionFlow = {
       categorysnippet: "Get the help and advice you need to stay in your home, a family or friend’s home, or a retirement village.",
       list: [
         {
-          title: "Next steps",
+          title: "Possible next steps",
           type: "steps",
           items: [
             {
@@ -236,7 +236,7 @@ export const QuestionFlow = {
                 {
                   label: "View the My Aged Care website: Estimate home care package fees",
                   link: "http://www.myagedcare.gov.au/fee-estimator/home-care/form",
-                  type: "Link",
+                  type: "external",
                   prefix: ""
                 },
                 {
@@ -298,7 +298,7 @@ export const QuestionFlow = {
       categorysnippet: "Consider an aged care home as a next step when you’re not able to look after yourself as well as you used to.",
       list: [
         {
-          title: "Next steps",
+          title: "Possible next steps",
           type: "steps",
           items: [
             {
@@ -399,7 +399,7 @@ export const QuestionFlow = {
       categorysnippet: "In a retirement village unit you can apply for the government-subsidised services you need to stay independent in your home.",
       list: [
         {
-          title: "Next steps",
+          title: "Possible next steps",
           type: "steps",
           items: [
             {
@@ -439,7 +439,7 @@ export const QuestionFlow = {
       categorysnippet: "Steps you might like to consider and information on how to get the types of support you need.",
       list: [
         {
-          title: "Next steps",
+          title: "Possible next steps",
           type: "steps",
           items: [
             {
@@ -480,7 +480,7 @@ export const QuestionFlow = {
       categorysnippet: "Follow these next steps to get the support, advice and local services you need.",
       list: [
         {
-          title: "Next steps",
+          title: "Possible next steps",
           type: "steps",
           items: [
             {
@@ -786,7 +786,7 @@ export const QuestionFlow = {
       categorysnippet: "Know how to apply for local subsidised transport and taxis and concessions on public transport.",
       list: [
         {
-          title: "Next steps",
+          title: "Possible next steps",
           type: "steps",
           items: [
             {

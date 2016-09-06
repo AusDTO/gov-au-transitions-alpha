@@ -8,8 +8,8 @@ const Question = ({current, total}) => {
     return (<div />)
   } else {
     return (
-      <main role="main">
-        <AsideNavLink />
+      <main role="main" className="question-wrapper">
+        <AsideNavLink className="sidebar" />
         <article className="transition-main content-main">
           <QuestionHeaderHandler />
           <QuestionBodyLinker />

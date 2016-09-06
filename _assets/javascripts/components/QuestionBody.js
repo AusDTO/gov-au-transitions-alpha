@@ -44,7 +44,6 @@ const getFieldset = (type, values, name, selectedValues, onChange) => {
           country='au'
           initialValue={selectedValues[0]}
           types={['(regions)']}
-          placeholder="Please enter a suburb, town or postcode"
           onSuggestSelect={val => onChange(val.label)}
           />
       )]
@@ -58,7 +57,6 @@ const getFieldset = (type, values, name, selectedValues, onChange) => {
             country='au'
             initialValue={value}
             types={['(regions)']}
-            placeholder="Please enter a suburb, town or postcode"
             onSuggestSelect={(value) => onChange(replaceAtIndex(locationVals, index, value.label))}
             />
         )

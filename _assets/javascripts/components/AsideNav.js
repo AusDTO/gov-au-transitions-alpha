@@ -1,5 +1,4 @@
 import React, { Component, PropTypes } from 'react'
-import ResultsMenu from './ResultsMenu'
 
 class AsideNav extends Component {
   constructor() {
@@ -17,31 +16,30 @@ class AsideNav extends Component {
 
   render() {
     return (
-      <aside className="sidebar" id="nav">
-        {this.props.showResults ? <ResultsMenu resultSets={this.props.resultSets}/> : ''}
-        <div className="question-nav" aria-label="main navigation">
-          <a className="your-answers" onClick={this.handleClick}>Edit your answers</a>
-          <div aria-expanded={this.state.open}>
-          {this.props.questions.filter(v => v && v.answers.length).map(question => (
-            <div key={question.index} className="answer-component">
-              <dl>
-                <dt>{question.question}</dt>
-                {question.answers.map(answer => (<dd key={answer.replace(" ", "_")}>{answer}</dd>))}
-              </dl>
-              <a href={"/" + question.index} onClick={(e) => {
-                e.preventDefault()
-                this.props.onEdit(question.index)
-              }}>Change</a>
+      <aside className={this.props.className}>
+          <div className={"question-nav sidebar--answers"} aria-label="main navigation">
+            <a className="your-answers" onClick={this.handleClick}>Edit your answers</a>
+            <div aria-expanded={this.state.open}>
+            {this.props.questions.filter(v => v && v.answers.length).map(question => (
+              <div key={question.index} className="answer-component">
+                <dl>
+                  <dt>{question.question}</dt>
+                  {question.answers.map(answer => (<dd key={answer.replace(" ", "_")}>{answer}</dd>))}
+                </dl>
+                <a href={"/" + question.index} onClick={(e) => {
+                  e.preventDefault()
+                  this.props.onEdit(question.index)
+                }}>Change</a>
+              </div>
+            ))}
             </div>
-          ))}
           </div>
-        </div>
-          {this.props.showResults ? (
-            <div className="actions">
-              <a role="button" href="#">Email my results <i className="fa fa-chevron-right" aria-hidden="true" /></a>
-              <a role="button" href="#">Print my results <i className="fa fa-chevron-right" aria-hidden="true" /></a>
-            </div>
-          ) : ""}
+            {this.props.showResults ? (
+              <div className="actions">
+                <a role="button" href="#">Email my results <i className="fa fa-chevron-right" aria-hidden="true" /></a>
+                <a role="button" href="#">Print my results <i className="fa fa-chevron-right" aria-hidden="true" /></a>
+              </div>
+            ) : ""}
       </aside>
     )
   }

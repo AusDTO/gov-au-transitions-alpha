@@ -1,7 +1,7 @@
 import { connect } from 'react-redux'
 import { QuestionFlow } from '../questions'
 import AsideNav from '../components/AsideNav'
-import { getQuestionTitle, getResultsList } from '../helpers'
+import { getQuestionTitle } from '../helpers'
 import { moveTo } from '../actions'
 
 /**
@@ -42,13 +42,13 @@ const getAnsweredQuestions = (answers = [], language) => {
   })
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
   const { language, previousAnswers, router } = state
   let show = router.location && router.location.pathname.indexOf('results') > -1
   return {
     showResults: show,
     questions: getAnsweredQuestions(previousAnswers, language),
-    resultSets: show ? getResultsList(state) : null
+    ...ownProps
   }
 }
 

@@ -111,6 +111,12 @@ export const determineQuestionCanShow = (index, answers) => {
       if (result) {
         return true
       }
+    } else if (rules[i].indexOf('!') !== -1) {
+      const negateRules = rules[i].split('!').slice(1) || []
+      const negateFound = negateRules.filter(negateRule => {
+        return answers.indexOf(negateRule) !== -1
+      })
+      return !negateFound.length
     } else {
       if (answers.indexOf(rules[i]) !== -1) {
         return true

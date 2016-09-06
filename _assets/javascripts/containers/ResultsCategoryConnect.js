@@ -13,11 +13,15 @@ const getResultCatFromId = (id, results) => {
 }
 
 const mapStateToProps = (state) => {
-  let id = state.router.params && state.router.params.id ? state.router.params.id : 0
+  const { router } = state
+  let id = router.params && router.params.id ? router.params.id : 0
+  let show = router.location && router.location.pathname.indexOf('results') > -1
   return {
     show: true,
     result: getResultCatFromId(id, getResultsList(state)),
-    resultSteps: state.resultSteps
+    resultSteps: state.resultSteps,
+    showResults: show,
+    resultSets: show ? getResultsList(state) : null
   }
 }
 
