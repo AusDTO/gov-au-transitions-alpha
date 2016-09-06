@@ -98,7 +98,7 @@ export const QuestionFlow = {
     {
       question: "What help is needed in the home?",
       name: "assistance",
-      condition: "ownhome,notsure,retirement,independent,culturemove",
+      condition: "ownhome,notsure,retirement,independent",
       type: "checkbox",
       legend: "Select all that apply",
       values: [
