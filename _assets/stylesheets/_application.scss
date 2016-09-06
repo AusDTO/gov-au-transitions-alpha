@@ -506,3 +506,16 @@ aside {
     @include pad(default 0 0);
   }
 }
+
+/* underline wrap problem fix */
+/* TODO remove this when the pull request gets merged with the latest version
+of ui kit
+*/
+main > article a[rel~='external'] {
+  display: inline;
+  &:after {
+    top: inherit;
+    right: inherit;
+    display: inline;
+  }
+}
