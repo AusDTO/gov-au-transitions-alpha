@@ -4,16 +4,14 @@ import { Link } from 'react-router';
 const LandingPage = () => {
   return (
     <div>
-      <main role="main" className="hero-gradient">
+      <div className="hero-med corporate">
         <article className="wrapper">
-          <div className="landing-wrapper">
-            <h2>Help for older people</h2>
-            <h1>Answer a few questions about your situation to see what government help you can get, and how to go about it.</h1>
-            <Link to="/question" role="button">Next <i className="fa fa-chevron-right" aria-hidden="true"></i></Link>
-          </div>
+          <h1>Help for older people</h1>
+          <p>Answer a few questions about your situation to see what government help you can get, and how to go about it.</p>
+          <Link to="/question" role="button">Next <i className="fa fa-chevron-right" aria-hidden="true"></i></Link>
         </article>
-      </main>
-      <main>
+      </div>
+      <main role="main">
         <article>
           <h2>Related topics</h2>
             <ul className="list-vertical--fourths real-list">
