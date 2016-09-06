@@ -492,13 +492,12 @@ fieldset h4 {
   float: left;
   clear:both;
   min-height: 74px;
+  padding-right: 108px;
   @include media($tablet) {
     min-height: inherit;
+    padding-right: 189px;
   }
 
-}
-.accordion-content {
-  padding-right: 125px;
 }
 .accordion-controlls input[type='checkbox'] {
     height: 1px;
