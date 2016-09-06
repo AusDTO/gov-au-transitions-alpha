@@ -338,7 +338,7 @@ main.hero-gradient {
   vertical-align: middle;
 }
 
-@include media(max-width 480px 4) {
+@include media(max-width 768px 4) {
   .show-for-mobile {
     display: block;
   }
