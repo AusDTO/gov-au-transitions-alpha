@@ -284,10 +284,13 @@ main.hero-gradient {
   padding-right: 0.5em;
   font-weight: 700;
   color: $navy;
+  text-align: right;
+  display: table-cell;
   & + span {
     line-height: 2em;
     vertical-align: bottom;
     font-weight: 700;
+    display: table-cell;
   }
 }
 .result-list ul {
@@ -435,19 +438,33 @@ main.hero-gradient {
 }
 .accordion-controlls {
   float: right;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 1em;
 }
 .accordion-hide {
   font-weight: normal;
-  padding-right: 40px;
+  padding-right: 0;
+  padding-top: $base-spacing;
   border-bottom: none;
+  position: relative;
+  display: inline-block;
+  @include media($tablet) {
+    padding-right: 40px;
+    padding-top: 0;
+  }
   &:after {
     content: $fa-var-minus-circle;
     font-family: FontAwesome;
     color: $black;
     font-size: 1.6rem;
     position: absolute;
-    right: 14px;
-    top:5px;
+    right: 6px;
+    top: -8px;
+    @include media($tablet) {
+      right: 14px;
+    }
   }
   [aria-expanded="false"] &:after {
     content: $fa-var-plus-circle;
@@ -455,6 +472,18 @@ main.hero-gradient {
 }
 .accordion[aria-expanded="false"] .accordion-button {
   background-color: $non-white;
+}
+.accordion-button {
+  float: left;
+  clear:both;
+  min-height: 74px;
+  @include media($tablet) {
+    min-height: inherit;
+  }
+
+}
+.accordion-content {
+  padding-right: 125px;
 }
 .accordion-controlls input[type='checkbox'] {
     height: 1px;
@@ -466,15 +495,25 @@ main.hero-gradient {
       font-weight: normal;
       margin-right: $small-spacing;
       position: relative;
-      padding-right: 40px;
+      text-align: center;
+      padding-top: $base-spacing;
+      display: inline-block;
+      @include media($tablet) {
+        padding-top: 0;
+        padding-right: 40px;
+        text-align: left;
+      }
       &:after {
         content: $fa-var-circle-o;
         font-family: FontAwesome;
         color: $light-aqua;
         font-size: 1.6rem;
         position: absolute;
-        right: 6px;
+        right: 10px;
         top: -8px;
+        @include media($tablet) {
+          right: 6px;
+        }
       }
     }
     &:checked + label:after {

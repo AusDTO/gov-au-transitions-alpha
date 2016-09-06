@@ -64,7 +64,7 @@ const getAccordionContent = (items, checked, onChange) => {
 const getLocalResults = items => (
   <div key={items.title.split(" ").join("_")}>
     <h3>{items.title}</h3>
-    <div className={"accordion-panel " + items.type + "-list"}>
+    <div className={items.type + "-list"}>
       <ul>
         {items.items.map(item => {
           return (
