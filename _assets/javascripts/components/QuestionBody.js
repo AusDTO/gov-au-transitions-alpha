@@ -2,13 +2,14 @@ import React, { PropTypes } from 'react'
 import Geosuggest from 'react-geosuggest'
 import Glossary from './Glossary'
 import Autocomplete from '../lib/Autocomplete'
-import { replaceAtIndex, styles, autocompleteMatchStateToTerm, getLabelFromValue } from '../helpers'
+import {
+  replaceAtIndex,
+  styles,
+  autocompleteMatchStateToTerm,
+  getLabelFromValue
+} from '../helpers'
 
-// const addMore = () => {
-//   console.log("add more has been clicked");
-// }
 const getFieldset = (type, values, name, selectedValues, onChange) => {
-
   switch (type) {
     case "radio":
     case "checkbox":
@@ -43,7 +44,6 @@ const getFieldset = (type, values, name, selectedValues, onChange) => {
           country='au'
           initialValue={selectedValues[0]}
           types={['(regions)']}
-          placeholder="Please enter a suburb, town or postcode"
           onSuggestSelect={val => onChange(val.label)}
           />
       )]
@@ -57,7 +57,6 @@ const getFieldset = (type, values, name, selectedValues, onChange) => {
             country='au'
             initialValue={value}
             types={['(regions)']}
-            placeholder="Please enter a suburb, town or postcode"
             onSuggestSelect={(value) => onChange(replaceAtIndex(locationVals, index, value.label))}
             />
         )
@@ -122,6 +121,7 @@ const QuestionBody = ({questionId, name, legend, type, allValues, selectedValues
   if (type === "") {
     return <div></div>
   }
+
   return (
     <form data-current-question={questionId} className={"form-" + type}
         method="get"

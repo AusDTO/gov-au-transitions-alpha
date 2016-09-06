@@ -33,7 +33,7 @@
     });
   </script>
 
-  {% stylesheet application %}
+  {% stylesheet application.css %}
 
 </head>
 <body>
@@ -51,11 +51,9 @@
 
   {% include footer.html %}
 
-  {% javascript vendor %}
-  {% javascript application %}
   {% javascript bin/app.bundle %}
 
-  <script src="https://gov-au-ui-kit-staging.apps.staging.digital.gov.au/latest/ui-kit.js"></script>
+  <!-- <script src="https://gov-au-ui-kit-staging.apps.staging.digital.gov.au/latest/ui-kit.js"></script> -->
 
   <!-- <script>
     window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;

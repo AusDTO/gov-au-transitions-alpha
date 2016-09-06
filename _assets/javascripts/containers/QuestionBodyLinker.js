@@ -2,6 +2,7 @@ import { connect } from 'react-redux'
 import { QuestionFlow } from '../questions'
 import QuestionBody from '../components/QuestionBody'
 import { moveNext, onSelect } from '../actions'
+import { getIndexFromId, getIdFromIndex } from '../helpers'
 
 const getQuestion = (index, questions, answers) => {
   if (index >= questions.length) {
@@ -26,8 +27,9 @@ const getQuestion = (index, questions, answers) => {
   }
 }
 
-const mapStateToProps = (state) => {
-  return getQuestion(state.currentQuestion, QuestionFlow.questions, state.currentAnswers)
+const mapStateToProps = ({ router, currentQuestion, currentAnswers }) => {
+  let index = router.params && router.params.id ? getIndexFromId(router.params.id) : 0
+  return getQuestion(index, QuestionFlow.questions, currentAnswers)
 }
 
 const mapDispatchToProps = (dispatch) => {
@@ -36,11 +38,7 @@ const mapDispatchToProps = (dispatch) => {
       dispatch(moveNext())
     },
     onChange: (value) => {
-      if (typeof value !== "string") {
-        dispatch(onSelect(value))
-      } else {
-        dispatch(onSelect(value))
-      }
+      dispatch(onSelect(value))
     }
   }
 }
