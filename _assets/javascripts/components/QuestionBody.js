@@ -41,6 +41,7 @@ const getFieldset = (type, values, name, selectedValues, onChange) => {
       return [(
         <Geosuggest
           key={name}
+          placeholder=''
           country='au'
           initialValue={selectedValues[0]}
           types={['(regions)']}
@@ -54,6 +55,7 @@ const getFieldset = (type, values, name, selectedValues, onChange) => {
         return (
           <Geosuggest
             key={id}
+            placeholder=''
             country='au'
             initialValue={value}
             types={['(regions)']}
