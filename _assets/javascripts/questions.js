@@ -179,6 +179,7 @@ export const QuestionFlow = {
         {
           title: "Possible next steps",
           type: "steps",
+          description: "Stay independent in your home with support for day-to-day activities, personal care, transport and nursing and health care.",
           items: [
             {
               label: "Getting in-home help",
@@ -235,6 +236,7 @@ export const QuestionFlow = {
 
         {
           title: "Local services",
+          description: "Explore these services to see what’s available in your area.",
           type: "result",
 
           items: [
@@ -266,6 +268,11 @@ export const QuestionFlow = {
               external: true
             },
             {
+              label: "Choosing a home care service provider",
+              link: "",
+              condition: "ownhome,notsure",
+            },
+            {
               label: "View Australian Croatian Community Services website: Aged care providers",
               link: "http://www.accs.asn.au/index.php/96-aged-care-providers",
               condition: "croatianbkg,croatianlang",
@@ -284,6 +291,7 @@ export const QuestionFlow = {
         {
           title: "Possible next steps",
           type: "steps",
+          description: "There are a few things you need to know and do to move into an aged care home that is subsidised by the Australian government.",
           items: [
             {
               label: "Being assessed for care",
@@ -339,6 +347,7 @@ export const QuestionFlow = {
         {
           title: "Local services",
           type: "result",
+          description: "Explore these facilities to see what’s available in your area.",
           items: [
             {
               label: "Permanent facilities - My Aged Care",
@@ -557,19 +566,6 @@ export const QuestionFlow = {
               ]
             },
             {
-              label: "Depression: What to do in an emergency",
-              abstract: "Call Lifeline for help in a crisis 24/7",
-              condition: "depression",
-              actions: [
-                {
-                  label: "13 11 14",
-                  link: "tel:13 11 14",
-                  type: "link",
-                  prefix: "Call:",
-                }
-              ]
-            },
-            {
               label: "Dementia: Call the dementia hotline for advice",
               abstract: "Contact Alzheimer’s Australia: National Dementia hotline, 9am to 5pm Monday to Friday",
               condition: "dementia",
@@ -589,8 +585,8 @@ export const QuestionFlow = {
               ]
             },
             {
-              label: "Incontinence: Apply for support with continence products and services (state)",
-              abstract: "Ask about the form to apply for discounted products and services and take it to your doctor. South Australia Continence Resource Centre. Monday to Friday 9am to 5pm.",
+              label: "Incontinence: Apply for continence support",
+              abstract: "Call the Continence Resource Centre for the form to apply for discounted products and services. Complete and take it to your doctor. Monday to Friday 9am to 5pm",
               type: "",
               condition: "incontinence",
               actions: [
@@ -609,8 +605,8 @@ export const QuestionFlow = {
               ]
             },
             {
-              label: "Incontinence: Apply for support with continence products and services (national)",
-              abstract: "Download the form to apply for discounted products and services and take it to your doctor.",
+              label: "Incontinence: Apply for continence products",
+              abstract: "Download the Department of Health form to apply for discounted products and services. Complete and take it to your doctor.",
               condition: "incontinence",
               type: "",
               actions: [
@@ -637,7 +633,7 @@ export const QuestionFlow = {
             },
             {
               label: "Diabetes: Call the National Diabetes Support Services helpline",
-              abstract: "",
+              abstract: "Call for expert advice on how to manage diabetes and support others.",
               condition: "diabetes",
               actions: [
                 {
@@ -802,6 +798,25 @@ export const QuestionFlow = {
               ]
             },
             {
+              label: "Apply for concessions on public transport",
+              abstract: "If you hold an approved concession card, receive a Centrelink payment or hold a Seniors Card you can receive a concession on public transport fares.",
+              condition: "transport",
+              actions: [
+                {
+                  label: "View the South Australia Government website: Use the concessions finder",
+                  link: "http://www.dcsi.sa.gov.au/concessions",
+                  type: "link",
+                  prefix: ""
+                },
+                {
+                  label: "View the South Australia Government website: Apply for a public transport concession",
+                  link: "https://www.sa.gov.au/topics/employment-money-taxes/financial-support/concessions-and-benefits/concessions/transport-concessions",
+                  type: "link",
+                  prefix: ""
+                }
+              ]
+            },
+            {
               label: "Find out about reduced public transport fares",
               abstract: "Call the public transport concessions hotline.",
               condition: "transport",
@@ -830,25 +845,6 @@ export const QuestionFlow = {
                   type: "link",
                   prefix: "Email:"
                 },
-              ]
-            },
-            {
-              label: "Apply for concessions on public transport",
-              abstract: "If you hold an approved concession card, receive a Centrelink payment or hold a Seniors Card you can receive a concession on public transport fares.",
-              condition: "transport",
-              actions: [
-                {
-                  label: "View the South Australia Government website: Use the concessions finder",
-                  link: "http://www.dcsi.sa.gov.au/concessions",
-                  type: "link",
-                  prefix: ""
-                },
-                {
-                  label: "View the South Australia Government website: Apply for a public transport concession",
-                  link: "https://www.sa.gov.au/topics/employment-money-taxes/financial-support/concessions-and-benefits/concessions/transport-concessions",
-                  type: "link",
-                  prefix: ""
-                }
               ]
             },
             {
