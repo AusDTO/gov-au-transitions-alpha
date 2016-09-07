@@ -105,7 +105,10 @@ export const QuestionFlow = {
       name: "background",
       condition: "culturehome,culturemove",
       type: "autocomplete",
-      //legend: "This helps us to suggest services with specific language skills",
+      legend: {
+        first: "This helps us to find the most appropriate services. Please enter the culture you most identify with.",
+        third: "This helps us to find the most appropriate services. Please enter the culture they most identify with.",
+      },
       values: [
         {value: "background1", label: "Albanian"},
         {value: "background2", label: "Arabic"},
@@ -130,7 +133,10 @@ export const QuestionFlow = {
       name: "language",
       condition: "culturehome,culturemove",
       type: "autocomplete",
-      //legend: "This helps us to suggest local services with langua",
+      legend: {
+        first: "Please enter the language you find easiest to understand.",
+        third: "Please enter the language they find easiest to understand.",
+      },
       values: [
         {value: "language1", label: "Mandarin"},
         {value: "language2", label: "Spanish"},

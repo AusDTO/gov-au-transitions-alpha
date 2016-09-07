@@ -3,20 +3,20 @@ import { Link } from 'react-router';
 
 const relatedTopics = [
   {
-    title: 'Choosing a service provider',
-    content: 'How to choose a provider for home help, things to consider and a checklist of questions to ask a them.'
+    title: 'Getting home support',
+    content: 'You can be assessed to receive the support you need in your home. Call My Aged Care to get started.'
   },
   {
-    title: 'Getting assessed for home support',
-    content: 'Assessment for home services is done by a service provider who will come to your home. Call My Aged Care to get started.'
-  },
-  {
-    title: 'Organising consents',
+    title: 'Considering consent needs',
     content: 'There are a few ways to appoint someone legally to make decisions on your behalf, in the short and long term.'
   },
   {
-    title: 'Personal alarms',
-    content: 'They can be used in an emergency to alert a contact such as a neighbour, relative or monitoring service.'
+    title: 'Support for carers',
+    content: 'Carers can apply for government support to care for family members and friends who are frail or aged.'
+  },
+  {
+    title: 'Choosing an aged care home',
+    content: 'Thinking about what you need and the kinds of questions to ask can help you get started.'
   }
 ]
 
