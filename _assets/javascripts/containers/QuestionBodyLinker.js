@@ -2,7 +2,7 @@ import { connect } from 'react-redux'
 import { QuestionFlow } from '../questions'
 import QuestionBody from '../components/QuestionBody'
 import { moveNext, onSelect } from '../actions'
-import { getIndexFromId, getIdFromIndex } from '../helpers'
+import { getIndexFromId, getIdFromIndex, getQuestionLegend } from '../helpers'
 
 const getQuestion = (index, questions, answers) => {
   if (index >= questions.length) {
@@ -19,7 +19,7 @@ const getQuestion = (index, questions, answers) => {
   return {
     questionId: "q" + index,
     name: questions[index].name,
-    legend: questions[index].legend,
+    legend: getQuestionLegend(questions[index].legend),
     type: questions[index].type,
     allValues: questions[index].values,
     selectedValues: answers,

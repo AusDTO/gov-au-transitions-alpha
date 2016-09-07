@@ -31,7 +31,21 @@ export function getQuestionTitle (question, language) {
     return question
   }
 
-  return question[language]
+  return question[language] || question
+}
+
+/**
+ * Legend can be contextual, find appropriate string
+ * @param  {mixed} legend The string or object for the legend
+ * @param  {string} language Current selected language
+ * @return {string}          string, contextual result
+ */
+export const getQuestionLegend = (legend, language) => {
+  if (typeof legend === 'string') {
+    return legend
+  }
+
+  return legend[language] || legend
 }
 
 /**
