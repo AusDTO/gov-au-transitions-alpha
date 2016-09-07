@@ -6,6 +6,7 @@ export const MOVE_BACK = 'MOVE_BACK'
 export const ON_SELECT = 'ON_SELECT'
 export const RESULT_CHECK = 'RESULT_CHECK'
 export const MOVE_TO = 'MOVE_TO'
+export const ROUTER_CHANGE = '@@reduxReactRouter/routerDidChange'
 
 /**
  * action when moving to the next question

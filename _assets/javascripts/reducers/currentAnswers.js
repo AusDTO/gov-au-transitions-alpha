@@ -1,4 +1,4 @@
-import { MOVE_NEXT, MOVE_BACK, ON_SELECT, MOVE_TO } from '../actions'
+import { MOVE_NEXT, MOVE_BACK, ON_SELECT, MOVE_TO, ROUTER_CHANGE } from '../actions'
 import { QuestionFlow } from '../questions'
 import {
   replaceAtIndex,
@@ -8,7 +8,7 @@ import {
 } from '../helpers'
 
 export default function currentAnswers (state = [], action) {
-  const { type, currentQuestion, currentAnswers, previousAnswers, value, index } = action
+  const { type, currentQuestion, currentAnswers, previousAnswers, value, index, payload } = action
   switch (type) {
     case MOVE_NEXT:
       let answers = replaceAtIndex(previousAnswers, currentQuestion, currentAnswers)
@@ -38,6 +38,11 @@ export default function currentAnswers (state = [], action) {
       return result
     case MOVE_TO:
       return previousAnswers[index] ? previousAnswers[index] : []
+    case ROUTER_CHANGE:
+      if (payload.location.pathname === '/') {
+        window.localStorage.removeItem('currentAnswers')
+      }
+      return state
     default:
       return state
   }
