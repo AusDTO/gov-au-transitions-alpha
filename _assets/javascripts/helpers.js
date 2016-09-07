@@ -40,7 +40,7 @@ export function getQuestionTitle (question, language) {
  * @param  {string} language Current selected language
  * @return {string}          string, contextual result
  */
-export const getQuestionLegend = (legend, language) => {
+export const getQuestionLegend = (legend = '', language) => {
   if (typeof legend === 'string') {
     return legend
   }

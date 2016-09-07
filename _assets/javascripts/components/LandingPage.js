@@ -39,8 +39,8 @@ const LandingPage = () => {
         <article>
           <h2>Related topics</h2>
             <ul className="list-vertical--fourths real-list">
-              {relatedTopics.map(({ title, content }) => (
-                <li>
+              {relatedTopics.map(({ title, content }, i) => (
+                <li key={i}>
                   <article>
                     <h3>
                       <a href="/">{title}</a>
