@@ -3,10 +3,6 @@ $gov-ui-kit-image-base-url: 'https://gov-au-ui-kit.apps.staging.digital.gov.au/l
 $fa-font-path: "~font-awesome/fonts";
 @import "~font-awesome/scss/font-awesome";
 
-.footer-logo {
-  width: 207px;
-  height: 100px;
-}
 header[role=banner] .hero.reduced {
   padding: 1.2em 0;
 }
@@ -559,7 +555,7 @@ fieldset h4 {
 
 aside {
   .actions {
-    @include pad(default 0 0);
+    @include pad(em(60) 0 0);
   }
 }
 
@@ -595,5 +591,26 @@ main > article a[rel~='external'] {
     dl {
       max-width: 44rem;
     }
+  }
+}
+
+.emergency-callout {
+  background: #00a1bb;
+
+  p {
+    font-size: rem(24);
+    line-height: 1.6;
+    color: $white;
+    margin: 0;
+    padding: 0.5em 0;
+  }
+
+  a {
+    text-decoration: none;
+    outline: none;
+    border-bottom: solid 1px $white;
+    display: inline-block;
+    position: relative;
+    color: $white;
   }
 }

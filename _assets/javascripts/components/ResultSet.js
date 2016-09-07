@@ -64,6 +64,7 @@ const getStepActions = actions => {
 const getLocalResults = items => (
   <div key={items.title.split(" ").join("_")}>
     <h3>{items.title}</h3>
+    {items.description ? <p>{items.description}</p> : <span /> }
     <div className={items.type + "-list"}>
       <ul>
         {items.items.map(item => {
@@ -85,6 +86,7 @@ const getLocalResults = items => (
 const getInformationResults = items => (
   <div key={items.title.split(" ").join("_")}>
     <h3>{items.title}</h3>
+    {items.description ? <p>{items.description}</p> : <span /> }
     <div className={items.type + "-list"}>
       <ul>
         {items.items.map(item => (
@@ -101,6 +103,7 @@ const getInformationResults = items => (
 const getStepResults = (items, checked, onChange) => (
   <div key={items.title.split(' ').join('_')}>
     <h3><span className='number'>{items.badge}</span>{items.title}</h3>
+    {items.description ? <p>{items.description}</p> : <span /> }
     <div className={items.type + "-list"}>
     {items.items.map(item => {
       let name = item.label.split(' ').join('_')
