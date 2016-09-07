@@ -13,6 +13,7 @@ export default function language (state = lang, action) {
       }
       return state
     case ROUTER_CHANGE:
+      // TODO move localStorage work into middleware
       if (payload.location.pathname === '/') {
         window.localStorage.removeItem('language')
       }

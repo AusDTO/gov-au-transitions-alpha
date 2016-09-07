@@ -39,6 +39,7 @@ export default function currentAnswers (state = [], action) {
     case MOVE_TO:
       return previousAnswers[index] ? previousAnswers[index] : []
     case ROUTER_CHANGE:
+      // TODO move localStorage work into middleware
       if (payload.location.pathname === '/') {
         window.localStorage.removeItem('currentAnswers')
       }
