@@ -105,7 +105,10 @@ export const QuestionFlow = {
       name: "background",
       condition: "culturehome,culturemove",
       type: "autocomplete",
-      //legend: "This helps us to suggest services with specific language skills",
+      legend: {
+        first: "This helps us to find the most appropriate services. Please enter the culture you most identify with.",
+        third: "This helps us to find the most appropriate services. Please enter the culture they most identify with.",
+      },
       values: [
         {value: "background1", label: "Albanian"},
         {value: "background2", label: "Arabic"},
