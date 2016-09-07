@@ -555,7 +555,7 @@ fieldset h4 {
 
 aside {
   .actions {
-    @include pad(default 0 0);
+    @include pad(em(60) 0 0);
   }
 }
 
