@@ -2,10 +2,11 @@ import { connect } from 'react-redux'
 import { QuestionFlow } from '../questions'
 import QuestionHeader from '../components/QuestionHeader'
 import { moveBack } from '../actions'
-import { getQuestionTitle } from '../helpers'
+import { getQuestionTitle, getIndexFromId } from '../helpers'
 
 const getQuestion = (state, questions) => {
-  const { currentQuestion: index, language } = state
+  const { language, router } = state
+  let index = router.params && router.params.id ? getIndexFromId(router.params.id) : 0
   return {
     title: index >= questions.length ? '' : getQuestionTitle(questions[index].question, language),
     index: index + 1,
