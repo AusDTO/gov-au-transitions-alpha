@@ -17,6 +17,12 @@ class AsideNav extends Component {
   render() {
     return (
       <aside className={this.props.className}>
+        {this.props.showResults ? (
+          <div className="actions">
+            <a role="button" href="#">Email my results <i className="fa fa-chevron-right" aria-hidden="true" /></a>
+            <a role="button" href="#">Print my results <i className="fa fa-chevron-right" aria-hidden="true" /></a>
+          </div>
+        ) : ""}
           <div className={"question-nav sidebar--answers"} aria-label="main navigation">
             <a className="your-answers" onClick={this.handleClick}>Edit your answers</a>
             <div aria-expanded={this.state.open}>
@@ -34,12 +40,6 @@ class AsideNav extends Component {
             ))}
             </div>
           </div>
-            {this.props.showResults ? (
-              <div className="actions">
-                <a role="button" href="#">Email my results <i className="fa fa-chevron-right" aria-hidden="true" /></a>
-                <a role="button" href="#">Print my results <i className="fa fa-chevron-right" aria-hidden="true" /></a>
-              </div>
-            ) : ""}
       </aside>
     )
   }

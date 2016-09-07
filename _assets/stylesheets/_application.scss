@@ -378,7 +378,6 @@ fieldset h4 {
   padding-left: 0;
   padding-bottom: $base-spacing;
   margin-bottom: 0;
-  border-bottom: 1px solid $light-grey;
   li {
     list-style-type: none;
     font-size: 20px;
@@ -550,12 +549,6 @@ fieldset h4 {
         @include omega(2n);
       }
     }
-  }
-}
-
-aside {
-  .actions {
-    @include pad(em(60) 0 0);
   }
 }
 
