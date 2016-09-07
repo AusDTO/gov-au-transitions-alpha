@@ -593,3 +593,24 @@ main > article a[rel~='external'] {
     }
   }
 }
+
+.emergency-callout {
+  background: #00a1bb;
+
+  p {
+    font-size: rem(24);
+    line-height: 1.6;
+    color: $white;
+    margin: 0;
+    padding: 0.5em 0;
+  }
+
+  a {
+    text-decoration: none;
+    outline: none;
+    border-bottom: solid 1px $white;
+    display: inline-block;
+    position: relative;
+    color: $white;
+  }
+}

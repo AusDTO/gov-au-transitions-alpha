@@ -11,6 +11,9 @@ const LandingPage = () => {
           <Link to="/question" role="button">Next <i className="fa fa-chevron-right" aria-hidden="true"></i></Link>
         </article>
       </div>
+      <div className="wrapper emergency-callout">
+        <p>If you need urgent medical help call <a href="tel:000000">000</a>.</p>
+      </div>
       <main role="main">
         <article>
           <h2>Related topics</h2>
