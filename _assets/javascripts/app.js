@@ -45,7 +45,9 @@ render(<TransitionRouter />, document.getElementById('landing-page'))
 
 store.subscribe(() => {
   let state = store.getState()
-
-  window.localStorage.setItem('language', state.language);
-  window.localStorage.setItem('currentAnswers', JSON.stringify(state.previousAnswers));
+  // TODO move localStorage work into middleware
+  if (state.router.location.pathname !== '/') {
+    window.localStorage.setItem('language', state.language);
+    window.localStorage.setItem('currentAnswers', JSON.stringify(state.previousAnswers));
+  }
 })
