@@ -7,7 +7,7 @@ const LandingPage = () => {
       <div className="hero-med corporate">
         <article className="wrapper">
           <h1>Help for older people</h1>
-          <p>Answer a few questions about your situation to see what government help you can get, and how to go about it.</p>
+          <p>Answer a few questions to see what government help you can get and how to apply for it.</p>
           <Link to="/question" role="button">Next <i className="fa fa-chevron-right" aria-hidden="true"></i></Link>
         </article>
       </div>

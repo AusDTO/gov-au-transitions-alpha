@@ -12,22 +12,6 @@ export const QuestionFlow = {
       ]
     },
     {
-      question: {
-          first: "How old are you?",
-          third: "How old are they?"
-      },
-      name: "age",
-      type: "radio",
-      //legend: "Select as many as apply",
-      values: [
-        {value: "under50", label: "Under 50"},
-        {value: "50to64", label: "50 to 64"},
-        {value: "65to79", label: "65 to 79"},
-        {value: "80to95", label: "80 to 95"},
-        {value: "95", label: "95 plus"}
-      ]
-    },
-    {
       question: "What best describes your current need?",
       name: "situation",
       type: "radio",
@@ -43,7 +27,7 @@ export const QuestionFlow = {
       type: "checkbox",
       legend: "Select all that apply",
       values: [
-        {value: "ownhome", label: "Staying at home"},
+        {value: "ownhome", label: "Help at home"},
         {value: "moving", label: "Moving to a more appropriate set up"},
         {value: "transport", label: "Getting transport"},
         {value: "health", label: "Health conditions"},
@@ -199,7 +183,7 @@ export const QuestionFlow = {
             {
               label: "Getting in-home help",
               abstract: "Call My Aged Care to arrange an assessment in your home for the support services you need.They will then recommend service providers, or give you a referral code to choose your own. Call Monday to Friday 8am to 8pm, or Saturday 10am to 2pm, AEST.",
-              type: "funded",
+              type: "",
               condition: "ownhome,notsure",
               actions: [
                 {
@@ -218,7 +202,7 @@ export const QuestionFlow = {
             {
               label: "Types of home help",
               abstract: "There are two kinds of in-home help that are subsidised by the government — basic home support and a package of support services coordinated by an advisor or case manager.",
-              type: "funded",
+              type: "",
               condition: "ownhome,notsure",
               actions: [
                 {
@@ -256,7 +240,7 @@ export const QuestionFlow = {
           items: [
             {
               label: "Home care package providers - My Aged Care",
-              link: "http://www.myagedcare.gov.au/service-finder?tab=home-care-package-providers&location=ELIZABETH%20BAY%20%20NSW,2011&service=hcp-level-34",
+              link: "http://www.myagedcare.gov.au/service-finder?tab=home-care-package-providers&location=MORPHETT%20VALE%20%20SA,5162&service=hcp-level-1234",
               number: 33
             },
             {
@@ -477,7 +461,7 @@ export const QuestionFlow = {
       id: "healthwellbeingresult",
       condition: "health",
       abstract: "Explore local services, information and contacts to get the help and advice you need.",
-      categorysnippet: "Follow these next steps to get the support, advice and local services you need.",
+      categorysnippet: "Find out how to get the support, advice and local services you need.",
       list: [
         {
           title: "Possible next steps",
@@ -497,7 +481,7 @@ export const QuestionFlow = {
               ]
             },
             {
-              label: "Help for arthritis",
+              label: "Arthritis: Help for arthritis",
               abstract: "Find products to make living with arthritis easier",
               condition: "arthritis",
               actions: [
@@ -521,7 +505,7 @@ export const QuestionFlow = {
               ]
             },
             {
-              label: "Access free professional support for older people",
+              label: "Depression: Access free professional support for older people",
               abstract: "You can see a free psychiatrist, psychologist or social worker or other health professional by appointment.",
               condition: "depression",
               actions: [
@@ -534,9 +518,9 @@ export const QuestionFlow = {
               ]
             },
             {
-              label: "Counselling through Medicare",
+              label: "Depression: Counselling through Medicare",
               abstract: "To get subsidised medication and 10 counselling sessions for depression you will need to have a Medicare care and a mental health plan in place with your doctor.",
-              type: "funded",
+              type: "",
               condition: "depression",
               actions: [
                 {
@@ -554,7 +538,7 @@ export const QuestionFlow = {
               ]
             },
             {
-              label: "Get advice on depression",
+              label: "Depression: Get advice on depression",
               abstract: "Call BeyondBlue for support and advice 24/7.",
               condition: "depression",
               actions: [
@@ -573,9 +557,9 @@ export const QuestionFlow = {
               ]
             },
             {
-              label: "What to do in an emergency",
+              label: "Depression: What to do in an emergency",
               abstract: "Call Lifeline for help in a crisis 24/7",
-              condition: "depression, dementia",
+              condition: "depression",
               actions: [
                 {
                   label: "13 11 14",
@@ -586,7 +570,7 @@ export const QuestionFlow = {
               ]
             },
             {
-              label: "Call the dementia hotline for advice",
+              label: "Dementia: Call the dementia hotline for advice",
               abstract: "Contact Alzheimer’s Australia: National Dementia hotline, 9am to 5pm Monday to Friday",
               condition: "dementia",
               actions: [
@@ -605,9 +589,9 @@ export const QuestionFlow = {
               ]
             },
             {
-              label: "Apply for support with continence products and services (state)",
+              label: "Incontinence: Apply for support with continence products and services (state)",
               abstract: "Ask about the form to apply for discounted products and services and take it to your doctor. South Australia Continence Resource Centre. Monday to Friday 9am to 5pm.",
-              type: "funded",
+              type: "",
               condition: "incontinence",
               actions: [
                 {
@@ -625,10 +609,10 @@ export const QuestionFlow = {
               ]
             },
             {
-              label: "Apply for support with continence products and services (national)",
+              label: "Incontinence: Apply for support with continence products and services (national)",
               abstract: "Download the form to apply for discounted products and services and take it to your doctor.",
               condition: "incontinence",
-              type: "funded",
+              type: "",
               actions: [
                 {
                   label: "View the Australian Government Department of Health website: Continence Aids Payment Scheme application",
@@ -639,7 +623,7 @@ export const QuestionFlow = {
               ]
             },
             {
-              label: "Get advice about incontinence",
+              label: "Incontinence: Get advice about incontinence",
               abstract: "Contact the Continence Foundation of Australia helpline, Monday to Friday, 8am to 8pm",
               condition: "incontinence",
               actions: [
@@ -652,7 +636,7 @@ export const QuestionFlow = {
               ]
             },
             {
-              label: "Call the National Diabetes Support Services helpline",
+              label: "Diabetes: Call the National Diabetes Support Services helpline",
               abstract: "",
               condition: "diabetes",
               actions: [
@@ -665,10 +649,10 @@ export const QuestionFlow = {
               ]
             },
             {
-              label: "Register for National Diabetes Support Services",
+              label: "Diabetes: Register for National Diabetes Support Services",
               abstract: "You can receive free support services including discounts on glucose and urine test strips, insulin needles and syringes.",
               condition: "diabetes",
-              type: "funded",
+              type: "",
               actions: [
                 {
                   label: "View the National Diabetes Support Services website: register",
@@ -679,9 +663,9 @@ export const QuestionFlow = {
               ]
             },
             {
-              label: "Find a community visitor",
+              label: "Loneliness: Find a community visitor",
               abstract: "Connect with a volunteer companion matched to your interests, hobbies and background. Available to people receiving a home care package. Talk to your service provider or call the Community Visitors Program.",
-              condition: "diabetes",
+              condition: "loneliness",
               actions: [
                 {
                   label: "08 8372 5191",
@@ -793,7 +777,7 @@ export const QuestionFlow = {
               label: "Review your driving ability",
               abstract: "Ask your doctor to confirm your fitness to hold a driver’s licence.",
               condition: "transport",
-              //type: "funded",
+              //type: "",
               actions: [
                 {
                   label: "View the South Australia Government website: Medical fitness to drive",
@@ -806,7 +790,7 @@ export const QuestionFlow = {
             {
               label: "Help with travel to appointments",
               abstract: "Call My Aged Care to be assessed. If you qualify, you will either be picked up by a transport service or able to use vouchers or subsidies, such as for taxi services. Monday to Friday 8am to 8pm, Saturdays 10am to 2pm",
-              type: "funded",
+              type: "",
               condition: "transport",
               actions: [
                 {
@@ -818,8 +802,8 @@ export const QuestionFlow = {
               ]
             },
             {
-              label: "Call the public transport concessions hotline",
-              abstract: "Find out about reduced public transport fares.",
+              label: "Find out about reduced public transport fares",
+              abstract: "Call the public transport concessions hotline.",
               condition: "transport",
               actions: [
                 {
@@ -870,7 +854,7 @@ export const QuestionFlow = {
             {
               label: "Use your Seniors Card as a Seniors Metrocard",
               abstract: "You can travel free on trains, buses and trams in metropolitan Adelaide from 9:01am to 3:00pm and 7:01pm to 7:00am weekdays. At other times the concession is around 50% of the normal fare.",
-              //type: "funded",
+              //type: "",
               condition: "transport",
               actions: [
                 {
@@ -884,7 +868,7 @@ export const QuestionFlow = {
             {
               label: "Apply to use subsidised taxis",
               abstract: "If you have difficulty accessing public transport you can apply for reduced taxi fares. ",
-              //type: "funded",
+              //type: "",
               condition: "transport",
               actions: [
                 {

@@ -23,7 +23,7 @@ const Results = ({ show, showResults, resultSets }) => {
             <AsideNavLink className="hide-for-mobile" />
           </aside>
           <article className='transition-main content-main'>
-            <p className='abstract'>Select next steps and local services from your topics below.</p>
+            <p className='abstract'>Find out how to apply for government support and explore useful services in your area.</p>
             <ResultsTilesConnect />
             <h2 className="secondary-title">Also explore</h2>
             <ul className="secondary-links">
