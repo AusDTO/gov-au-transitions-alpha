@@ -130,7 +130,10 @@ export const QuestionFlow = {
       name: "language",
       condition: "culturehome,culturemove",
       type: "autocomplete",
-      //legend: "This helps us to suggest local services with langua",
+      legend: {
+        first: "Please enter the language you find easiest to understand.",
+        third: "Please enter the language they find easiest to understand.",
+      },
       values: [
         {value: "language1", label: "Mandarin"},
         {value: "language2", label: "Spanish"},
