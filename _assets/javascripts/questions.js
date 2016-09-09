@@ -80,7 +80,7 @@ export const QuestionFlow = {
       ],
       glossary: [
         { term: "Living with family or friends", description: "This is when an older person lives with their family or friends. It includes living in a ‘granny flat’, which is a self-contained unit on the same property." },
-        { term: "Retirement villages", description: "These are complexes of residential units for people who want to live among other retired people." },
+        { term: "Retirement villages", description: "These are complexes of residential units for people who are generally well but who want to live among other retired people." },
         { term: "Aged care homes", description: "These are for people who are no longer able to live in their own home, with family or friends or in a retirement village. They may also be known as nursing homes, residential care, hostels or high or low-care facilities." },
         { term: "Cultural background support", description: "This is support for people who come from a different culture. It means getting services in a language you most easily understand or living with people from a similar culture to you - Chinese or Croatian or example." },
       ],
