@@ -256,8 +256,9 @@ fieldset h4 {
   overflow: hidden;
   background-color: #def4f9;
   &[aria-expanded="true"] {
+    margin-bottom: 60px;
     display: block;
-    max-height: 1000px;
+    max-height: 1600px;
     transition: max-height 5s linear;
   }
 }
