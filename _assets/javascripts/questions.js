@@ -65,19 +65,22 @@ export const QuestionFlow = {
     },
     {
       question: {
-          first: "What options are you interested in finding out about?",
-          third: "What options are they interested in finding out about?"
+          first: "What options would you like to know about for moving to a more appropriate set up?",
+          third: "What options would they like to know about for moving to a more appropriate set up?"
       },
       name: "learning",
       condition: "moving,notsure",
       type: "checkbox",
       legend: "Select all that apply",
       values: [
+        {value: "independent", label: "Living with family and friends"},
         {value: "retirement", label: "Retirement villages"},
         {value: "agedcare", label: "Aged care homes"},
-        {value: "independent", label: "Living with family and friends"},
         {value: "culturemove", label: "Cultural background support"},
-      ]
+      ],
+      glossary: [
+        { term: "Some term", description: "Some desc" }
+      ],
     },
     {
       question: "What help is needed in the home?",
@@ -176,7 +179,7 @@ export const QuestionFlow = {
   ],
   results: [
     {
-      title: "Help to stay at home",
+      title: "Help at home",
       id: "homeresults",
       condition: "ownhome,notsure",
       abstract: "Get the help and advice you need to stay in your home, a family or friend’s home, or a retirement village.",
@@ -274,8 +277,8 @@ export const QuestionFlow = {
               external: true
             },
             {
-              label: "Choosing a home care service provider",
-              link: "",
+              label: "View SA Health website: Find hospitals and health services",
+              link: "http://www.sahealth.sa.gov.au/wps/wcm/connect/public+content/sa+health+internet/health+services/hospitals+and+health+services+-+country+south+australia",
               condition: "ownhome,notsure",
             },
             {
@@ -311,7 +314,7 @@ export const QuestionFlow = {
                   prefix: "Call:"
                 },
                 {
-                  label: "About assessments for aged care",
+                  label: "Being assessed for aged care",
                   link: "",
                   type: "secondary",
                   prefix: ""
@@ -394,8 +397,8 @@ export const QuestionFlow = {
       title: "Moving to a retirement village",
       id: "retirementresult",
       condition: "retirement",
-      abstract: "In a retirement village unit you can apply for the government-subsidised services you need to stay independent in your home.",
-      categorysnippet: "In a retirement village unit you can apply for the government-subsidised services you need to stay independent in your home.",
+      abstract: "In a retirement village you can apply for the government-subsidised services you need to stay independent in your home.",
+      categorysnippet: "In a retirement village you can apply for the government-subsidised services you need to stay independent in your home.",
       list: [
         {
           title: "Possible next steps",
@@ -476,7 +479,7 @@ export const QuestionFlow = {
       id: "healthwellbeingresult",
       condition: "health",
       abstract: "Explore local services, information and contacts to get the help and advice you need.",
-      categorysnippet: "Find out how to get the support, advice and local services you need.",
+      categorysnippet: "Find out about the government support, advice and local services you need.",
       list: [
         {
           title: "Possible next steps",
@@ -791,7 +794,7 @@ export const QuestionFlow = {
             },
             {
               label: "Help with travel to appointments",
-              abstract: "Call My Aged Care to be assessed. If you qualify, you will either be picked up by a transport service or able to use vouchers or subsidies, such as for taxi services. Monday to Friday 8am to 8pm, Saturdays 10am to 2pm",
+              abstract: "Call My Aged Care to be assessed. If you qualify, you could be picked up by a transport service or alternatively get vouchers or subsidies for taxi services.",
               type: "",
               condition: "transport",
               actions: [
@@ -916,11 +919,6 @@ export const QuestionFlow = {
             {
               label: "View the South Australia Government website: Motorised wheelchairs",
               link: "https://www.sa.gov.au/topics/transport-travel-and-motoring/public-transport-and-travel/getting-around-with-a-disability/motorised-wheelchairs",
-              condition: "transport",
-            },
-            {
-              label: "View the Australian Human Rights Commission website: Your rights in retirement to transport",
-              link: "http://www.humanrights.gov.au/publications/your-rights-retirement/11-your-right-transport",
               condition: "transport",
             },
           ]
