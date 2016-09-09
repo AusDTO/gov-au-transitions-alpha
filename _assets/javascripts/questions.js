@@ -28,7 +28,7 @@ export const QuestionFlow = {
       legend: "Select all that apply",
       values: [
         {value: "ownhome", label: "Help at home"},
-        {value: "moving", label: "Moving to a more appropriate set up"},
+        {value: "moving", label: "Moving somewhere else"},
         {value: "transport", label: "Getting transport"},
         {value: "health", label: "Health conditions"},
         {value: "social", label: "Social support and activities"},
@@ -65,8 +65,8 @@ export const QuestionFlow = {
     },
     {
       question: {
-          first: "What options would you like to know about for moving to a more appropriate set up?",
-          third: "What options would they like to know about for moving to a more appropriate set up?"
+          first: "What options would you like to know about for moving somewhere else?",
+          third: "What options would they like to know about for moving somewhere else?"
       },
       name: "learning",
       condition: "moving,notsure",
@@ -79,10 +79,10 @@ export const QuestionFlow = {
         {value: "culturemove", label: "Cultural background support"},
       ],
       glossary: [
-        { term: "Living with family or friends", description: "This is when an older person lives with their family or friends. It includes living in a ‘granny flat’, which is a self-contained unit on the same property.The older person may get government financial help for some services in the same way as living in their own home. Their family or friends may also get payments for providing help." },
-        { term: "Retirement villages", description: "These are complexes of residential units for people who want to live among other retired people. Residents pay the full cost. They may get government financial help for some services in the same way as living in their own home." },
-        { term: "Aged care homes", description: "These are homes for people who are no longer able to live at home, with family or friends or in a retirement village. They provide help with day-to-day tasks, personal care  and nursing care if needed. Places are often subsidised by the Australian government. Aged care homes may also be known as nursing homes, residential care, hostels or high or low-care facilities." },
-        { term: "Cultural background support", description: "This is support for people who come from a different culture. It may mean getting services in a language you most easily understand - Croatian or French for example.  Or it may mean living with a community of people from a similar culture to you - Chinese or Aboriginal and Torres Strait Islander for example." },
+        { term: "Living with family or friends", description: "This is when an older person lives with their family or friends. It includes living in a ‘granny flat’, which is a self-contained unit on the same property." },
+        { term: "Retirement villages", description: "These are complexes of residential units for people who want to live among other retired people." },
+        { term: "Aged care homes", description: "These are for people who are no longer able to live in their own home, with family or friends or in a retirement village. They may also be known as nursing homes, residential care, hostels or high or low-care facilities." },
+        { term: "Cultural background support", description: "This is support for people who come from a different culture. It means getting services in a language you most easily understand or living with people from a similar culture to you - Chinese or Croatian or example." },
       ],
     },
     {
