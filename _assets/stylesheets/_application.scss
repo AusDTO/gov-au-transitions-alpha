@@ -623,7 +623,7 @@ main > article a[rel~='external'] {
     @include padding(0);
     border-top: medium none;
     > li {
-
+      @include padding(1em 0);
       .offset-title {
 
         @include media($tablet) {
