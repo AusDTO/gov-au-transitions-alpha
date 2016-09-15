@@ -15,11 +15,13 @@ const LocationChanger = ({prefix, className, locationShort, locationIndex, onEdi
 }
 
 LocationChanger.defaultProps = {
-  prefix: 'Displaying results for'
+  prefix: 'Displaying results for',
+  className: ''
 }
 
 LocationChanger.propTypes = {
   prefix: PropTypes.string,
+  className: PropTypes.string,
   locationShort: PropTypes.string.isRequired,
   locationIndex: PropTypes.number.isRequired,
   onEdit: PropTypes.func.isRequired
