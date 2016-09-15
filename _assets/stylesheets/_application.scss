@@ -616,6 +616,7 @@ main > article a[rel~='external'] {
     border-bottom: medium none;
   }
   .list-horizontal {
+    @include padding(0);
     border-top: medium none;
     > li {
 
