@@ -1,12 +1,8 @@
-import React from 'react'
+import React, { PropTypes } from 'react'
 
 const LocationChanger = ({prefix, className, locationShort, locationIndex, onEdit}) => {
   if (!locationIndex) {
     return <div />
-  }
-
-  if (!prefix) {
-    prefix = 'Displaying results for'
   }
 
   return (
@@ -16,6 +12,17 @@ const LocationChanger = ({prefix, className, locationShort, locationIndex, onEdi
       }}>Change area</a>
     </h3>
   )
+}
+
+LocationChanger.defaultProps = {
+  prefix: 'Displaying results for'
+}
+
+LocationChanger.propTypes = {
+  prefix: PropTypes.string,
+  locationShort: PropTypes.string.isRequired,
+  locationIndex: PropTypes.number.isRequired,
+  onEdit: PropTypes.func.isRequired
 }
 
 export default LocationChanger
