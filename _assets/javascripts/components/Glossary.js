@@ -25,7 +25,7 @@ class Glossary extends Component {
       </dl>
     ))
     return (
-      <div>
+      <div className="glossary-list">
         <a href="#" onClick={this.handleClick}>View definitions <i className="fa fa-caret-down" aria-hidden="true"></i></a>
         <div className="glossary-content" aria-expanded={this.state.open}>
           {dlList}
