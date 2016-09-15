@@ -25,7 +25,7 @@ export const QuestionFlow = {
       question: "We just want to check. Do you need immediate help?",
       name: "crisis",
       type: "crisis",
-      condition: "crisis",      
+      condition: "crisis",
     },
     {
       question: "What support are you interested in learning about?",
@@ -253,7 +253,7 @@ export const QuestionFlow = {
         },
 
         {
-          title: "Local services",
+          title: "Explore local services in",
           description: "Explore these services to see what’s available in your area.",
           type: "result",
 
@@ -363,7 +363,7 @@ export const QuestionFlow = {
           ]
         },
         {
-          title: "Local services",
+          title: "Explore local services in",
           type: "result",
           description: "Explore these facilities to see what’s available in your area.",
           items: [
@@ -429,7 +429,7 @@ export const QuestionFlow = {
           ]
         },
         {
-          title: "Local services",
+          title: "Explore local services in",
           type: "result",
           items: [
           ]
@@ -469,7 +469,7 @@ export const QuestionFlow = {
           ]
         },
         {
-          title: "Local services",
+          title: "Explore local services in",
           type: "result",
           items: [
           ]
@@ -692,7 +692,7 @@ export const QuestionFlow = {
           ]
         },
         {
-          title: "Local services",
+          title: "Explore local services in",
           type: "result",
           items: [
             {
@@ -896,7 +896,7 @@ export const QuestionFlow = {
           ]
         },
         {
-          title: "Local services",
+          title: "Explore local services in",
           type: "result",
           items: [
             {

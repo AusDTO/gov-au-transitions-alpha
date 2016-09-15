@@ -1,5 +1,6 @@
 import React from 'react'
 import Accordion from './Accordion'
+import LocationChangerLinker from '../containers/LocationChangerLinker'
 
 const getStepActions = actions => {
   return actions.map(action => {
@@ -63,7 +64,7 @@ const getStepActions = actions => {
 
 const getLocalResults = items => (
   <div key={items.title.split(" ").join("_")}>
-    <h3>{items.title}</h3>
+    <LocationChangerLinker prefix={items.title} />
     {items.description ? <p>{items.description}</p> : <span /> }
     <div className={items.type + "-list"}>
       <ul>
@@ -158,10 +159,14 @@ const getSubContent = (list, checked, onChange) => {
 }
 
 const ResultSet = ({result, resultSteps, onChange}) => {
+
   return (
     <div key={result.id} id={result.id} className="results-set">
       <h1>{result.title}</h1>
-      <p className='abstract'>{result.abstract}</p>
+      <div className='abstract area-abstract'>
+        <p>{result.abstract}</p>
+        <LocationChangerLinker className="margin" />
+      </div>
       {getSubContent(result.list, resultSteps, onChange)}
     </div>
   )

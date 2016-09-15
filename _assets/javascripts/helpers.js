@@ -327,3 +327,29 @@ export const getPath = index => {
     return '/question/' + getIdFromIndex(index)
   }
 }
+
+
+export const getLocationAnswer = (answers) => {
+
+    const locationObj = answers.reduce((c, p ,i, a) => {
+      let question = QuestionFlow.questions[i]
+      if (p && question.type === 'location') {
+        return {
+          index: i,
+          answer: p
+        }
+      }
+      return c
+    }, {})
+
+    const flat = flattenArray(locationObj.answer)
+
+    if (flat.length) {
+      const location = flat[0]
+      return {
+        short: location.split(',')[0],
+        long: location,
+        ...locationObj
+      }
+    }
+}

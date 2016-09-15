@@ -706,3 +706,16 @@ main > article a[rel~='external'] {
   }
 
 }
+
+.location-changer {
+
+  &.margin {
+    margin: 0 0 2em;
+  }
+
+  a {
+    font-size: 1.0625rem;
+    margin-left: 1em;
+    font-weight: normal;
+  }
+}

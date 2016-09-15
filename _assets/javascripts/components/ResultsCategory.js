@@ -1,5 +1,5 @@
 import React from 'react'
-import ResultSet from './ResultSet'
+import ResultSetLinker from '../containers/ResultSetLinker'
 import AsideNavLink from '../containers/AsideNavLink'
 import ResultsMenu from './ResultsMenu'
 
@@ -22,8 +22,11 @@ const ResultsCategory = ({ show, result, resultSteps, showResults, resultSets, o
             <AsideNavLink className="hide-for-mobile" />
           </aside>
           <article className="transition-main content-main">
-            <ResultSet result={result} resultSteps={resultSteps}
-                        onChange={onChange} />
+            <ResultSetLinker
+              result={result}
+              resultSteps={resultSteps}
+              onChange={onChange}
+              />
           </article>
         </article>
         <article>

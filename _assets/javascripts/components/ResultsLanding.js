@@ -1,6 +1,7 @@
 import React from 'react'
 import ResultsTilesConnect from '../containers/ResultsTilesConnect'
 import AsideNavLink from '../containers/AsideNavLink'
+import LocationChangerLinker from '../containers/LocationChangerLinker'
 import ResultsMenu from './ResultsMenu'
 
 
@@ -23,7 +24,11 @@ const Results = ({ show, showResults, resultSets }) => {
             <AsideNavLink className="hide-for-mobile" />
           </aside>
           <article className='transition-main content-main'>
-            <p className='abstract'>Find out how to apply for government support and explore useful services in your area.</p>
+            <div className="abstract area-abstract">
+              <p>Find out how to apply for government support and explore useful services in your area.</p>
+              <LocationChangerLinker className="margin" />
+            </div>
+
             <ResultsTilesConnect />
             <h2 className="secondary-title">Also explore</h2>
             <ul className="secondary-links">
