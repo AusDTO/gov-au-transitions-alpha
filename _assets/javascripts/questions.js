@@ -22,6 +22,12 @@ export const QuestionFlow = {
       ]
     },
     {
+      question: "We just want to check. Do you need immediate help?",
+      name: "crisis",
+      type: "crisis",
+      condition: "crisis",      
+    },
+    {
       question: "What support are you interested in learning about?",
       name: "supporttype",
       type: "checkbox",
