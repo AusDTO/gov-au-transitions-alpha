@@ -101,6 +101,7 @@ export const QuestionFlow = {
         {value: "eating", label: "Cooking and eating"},
         {value: "culturehome", label: "Cultural background support"},
         {value: "maintenance", label: "Home maintenance"},
+        {value: "gardening", label: "Gardening"},
         {value: "housework", label: "Housework"},
         {value: "medications", label: "Managing medication"},
         {value: "hygiene", label: "Personal hygiene"},

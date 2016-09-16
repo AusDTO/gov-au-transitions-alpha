@@ -32,9 +32,9 @@ const Results = ({ show, showResults, resultSets }) => {
             <ResultsTilesConnect />
             <h2 className="secondary-title">Also explore</h2>
             <ul className="secondary-links">
-              <li><a href="">Managing your medicines</a></li>
-              <li><a href="">Organising consents such as powers of attorney</a></li>
-              <li><a href="">Support for carers</a></li>
+              <li><a href="">Managing medication</a></li>
+              <li><a href="https://gov-au-beta.apps.platform.digital.gov.au/help-for-older-people/considering-consent-needs">Consider consent needs</a></li>
+              <li><a href="https://gov-au-beta.apps.platform.digital.gov.au/help-for-older-people/support-for-carers">Support for carers</a></li>
             </ul>
           </article>
         </article>
