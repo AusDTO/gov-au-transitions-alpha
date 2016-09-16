@@ -1,6 +1,7 @@
 import React from 'react'
 import ResultSetLinker from '../containers/ResultSetLinker'
 import AsideNavLink from '../containers/AsideNavLink'
+import ResultsTilesConnect from '../containers/ResultsTilesConnect'
 import ResultsMenu from './ResultsMenu'
 
 const ResultsCategory = ({ show, result, resultSteps, showResults, resultSets, onChange }) => {
@@ -31,6 +32,10 @@ const ResultsCategory = ({ show, result, resultSteps, showResults, resultSets, o
         </article>
         <article>
             <AsideNavLink className="show-for-mobile" />
+        </article>
+        <article>
+          <h3>Explore your results</h3>
+          <ResultsTilesConnect type="simple" />
         </article>
       </main>
     </div>

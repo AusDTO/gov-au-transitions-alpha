@@ -367,6 +367,7 @@ fieldset h4 {
   margin-top: 0;
 }
 .results-set {
+  max-width: 44rem;
   border-bottom: 1px solid #bbb;
   margin-bottom: $base-spacing;
   padding-bottom: $base-spacing;
@@ -538,15 +539,24 @@ fieldset h4 {
     max-width: 44rem;
   }
   .results-tiles {
-    max-width: 38rem;
+    max-width: 44rem;
     & > ul {
-      display: flex;
+      display: inline-flex;
       flex-wrap: wrap;
       flex-direction:row;
       @include outer-container;
       & > li {
         @include span-columns(6 of 12);
         @include omega(2n);
+      }
+    }
+    &.results-tiles--simple {
+      h3 {
+        font-size: rem(21);
+        min-height: rem(58);
+      }
+      p:last-child {
+        margin: 0;
       }
     }
   }
@@ -705,6 +715,10 @@ main > article a[rel~='external'] {
     }
   }
 
+}
+
+.area-abstract {
+  max-width: 44rem;
 }
 
 .location-changer {

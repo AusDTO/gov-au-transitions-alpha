@@ -2,9 +2,10 @@ import { connect } from 'react-redux'
 import ResultsCategoryTiles from '../components/ResultsCategoryTiles'
 import { getResultsList } from '../helpers'
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
   return {
-    resultSets: getResultsList(state)
+    resultSets: getResultsList(state),
+    ...ownProps
   }
 }
 

@@ -6,7 +6,7 @@ const LocationChanger = ({prefix, className, locationShort, locationIndex, onEdi
   }
 
   return (
-  <h3 className={"location-changer " + className}>{prefix} {locationShort} <a href="#" onClick={e => {
+    <h3 className={"location-changer " + className}>{prefix} {locationShort} <a href="#" onClick={e => {
         e.preventDefault()
         onEdit(locationIndex)
       }}>Change area</a>
