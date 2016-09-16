@@ -97,6 +97,19 @@ export const determinePrevQuestion = (current, answers) => {
   return prev
 }
 
+function negateValidation(rule, answers) {
+  const parts = rule.split('!')
+  const negateRules = parts.slice(1) || []
+  const negateFound = negateRules.filter(negateRule => {
+    return answers.indexOf(negateRule) !== -1
+  })
+  const goodAnswer = parts.shift()
+  const badRuleFound = negateFound.length ? true : false
+  const goodRuleFound = goodAnswer && answers.indexOf(goodAnswer) !== -1
+
+  return goodRuleFound && !badRuleFound || !badRuleFound
+}
+
 /**
  * TODO Function too long, split into smaller functions.
  * Loop through the current answer set to see if the conditions of the
@@ -126,11 +139,7 @@ export const determineQuestionCanShow = (index, answers) => {
         return true
       }
     } else if (rules[i].indexOf('!') !== -1) {
-      const negateRules = rules[i].split('!').slice(1) || []
-      const negateFound = negateRules.filter(negateRule => {
-        return answers.indexOf(negateRule) !== -1
-      })
-      return !negateFound.length
+      return negateValidation(rules[i], answers)
     } else {
       if (answers.indexOf(rules[i]) !== -1) {
         return true
