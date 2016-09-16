@@ -3,8 +3,10 @@ import ResultsCategoryTiles from '../components/ResultsCategoryTiles'
 import { getResultsList } from '../helpers'
 
 const mapStateToProps = (state, ownProps) => {
+  const { router } = state
   return {
     resultSets: getResultsList(state),
+    currentId: router && router.params && router.params.id,
     ...ownProps
   }
 }

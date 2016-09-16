@@ -1,11 +1,13 @@
 import React, { PropTypes } from "react"
 import { Link } from 'react-router'
 
-const ResultsCategoryTiles = ({resultSets, type}) => {
+const ResultsCategoryTiles = ({resultSets, type, currentId}) => {
   return (
     <nav className={"results-tiles results-tiles--" + type}>
       <ul>
-        {resultSets.map(set => {
+        {resultSets
+          .filter(set => set.id !== currentId)
+          .map(set => {
         return (
           <li key={set.id}>
             <h3><Link to={"/results/" + set.id}>{set.title}</Link></h3>
