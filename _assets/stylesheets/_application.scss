@@ -541,7 +541,7 @@ fieldset h4 {
   .results-tiles {
     max-width: 44rem;
     & > ul {
-      display: inline-flex;
+      display: flex;
       flex-wrap: wrap;
       flex-direction:row;
       @include outer-container;
