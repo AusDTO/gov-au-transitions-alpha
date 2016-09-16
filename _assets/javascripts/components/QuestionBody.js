@@ -117,7 +117,6 @@ const getFieldset = (type, values, name, selectedValues, onChange) => {
     case "crisis":
       return (
       <div className="crisis-callout">
-        <h4>If you need support straight away you can call:</h4>
         <ul className="list-horizontal">
           <li className="offset-item">
             <div className="offset-title">
