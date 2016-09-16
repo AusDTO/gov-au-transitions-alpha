@@ -131,7 +131,7 @@ export const determineQuestionCanShow = (index, answers) => {
       let andRules = rules[i].split('+')
       let result = true
       for (let j = 0; j < andRules.length; j += 1) {
-        if (answers.indexOf(andRules[i]) === -1) {
+        if (answers.indexOf(andRules[j]) === -1) {
           result = false
         }
       }
@@ -139,7 +139,10 @@ export const determineQuestionCanShow = (index, answers) => {
         return true
       }
     } else if (rules[i].indexOf('!') !== -1) {
-      return negateValidation(rules[i], answers)
+      var res = negateValidation(rules[i], answers)
+      if (!res) {
+        return false
+      }
     } else {
       if (answers.indexOf(rules[i]) !== -1) {
         return true

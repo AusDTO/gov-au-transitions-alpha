@@ -169,7 +169,7 @@ export const QuestionFlow = {
           third: "Where do they live?",
       },
       name: "location",
-      condition: "ownhome,transport!moving,notsure,health!moving,social!moving",
+      condition: "ownhome,ownhome+moving,!moving,transport,health,social,notsure",
       type: "location",
       legend: "This helps us to suggest local services. Please enter a suburb, town or postcode.",
       values: []
@@ -180,7 +180,7 @@ export const QuestionFlow = {
         third: "Where are they considering living?",
       },
       name: "locationconsidering",
-      condition: "moving+health,notsure",
+      condition: "!ownhome,moving,!transport!health!social!notsure",
       type: "location",
       legend: "Please enter a suburb, town or postcode.",
       values: []
