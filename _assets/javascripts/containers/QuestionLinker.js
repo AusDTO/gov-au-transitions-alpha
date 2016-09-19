@@ -1,11 +1,13 @@
 import { connect } from 'react-redux'
 import { QuestionFlow } from '../questions'
 import Question from '../components/Question'
+import { getIndexFromId } from '../helpers'
 // import { moveNext, onSelect } from '../actions'
 
-const mapStateToProps = (state) => {
+const mapStateToProps = ({ router }) => {
+  let index = router.params && router.params.id ? getIndexFromId(router.params.id) : 0
   return {
-    current: state.currentQuestion,
+    current: index,
     total: QuestionFlow.questions.length
   }
 }
