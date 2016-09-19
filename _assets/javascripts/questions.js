@@ -201,8 +201,22 @@ export const QuestionFlow = {
           description: "Find out how to stay independent in your home by getting support for day-to-day activities, personal care, transport and nursing and health care.",
           items: [
             {
+              label: "Getting home help",
+              abstract: "You can arrange for an assessor to visit you in your home so they can see your situation and work out the right help for you.They will then decide if the government should pay for some or all of your support services.",
+              type: "",
+              condition: "ownhome,notsure",
+              actions: [
+                {
+                  label: "Being assessed for support",
+                  link: "",
+                  type: "link",
+                  prefix: ""
+                },
+              ]
+            },
+            {
               label: "Arrange for an assessment",
-              abstract: "Call My Aged Care to arrange an assessment in your home for the support services you need.They will then recommend service providers, or give you a referral code to choose your own. Call Monday to Friday 8am to 8pm, or Saturday 10am to 2pm, AEST.",
+              abstract: "If you would like an assessment in your home call My Aged Care.They will then recommend service providers, or give you a referral code to choose your own. Call Monday to Friday 8am to 8pm, or Saturday 10am to 2pm",
               type: "",
               condition: "ownhome,notsure",
               actions: [
@@ -243,11 +257,11 @@ export const QuestionFlow = {
                   type: "external",
                   prefix: ""
                 },
-                {
-                  label: "Choosing a home care service provider",
-                  link: "",
-                  type: "link"
-                },
+                // {
+                //   label: "Choosing a home care service provider",
+                //   link: "",
+                //   type: "link"
+                // },
               ]
             },
           ]
@@ -314,7 +328,7 @@ export const QuestionFlow = {
           items: [
             {
               label: "Getting approval for aged care",
-              abstract: "You will need to be assessed to see if you are eligible for a place in an aged care home. If you are eligible you will then receive a letter of approval. Call My Aged Care to arrange for an assessment. Call Monday to Friday 8am to 8pm, or Saturday 10am to 2pm, AEST.",
+              abstract: "You will need to be assessed to see if you are eligible for a place in an aged care home. If you are eligible you will then receive a letter of approval. Call My Aged Care to arrange for an assessment. Call Monday to Friday 8am to 8pm, or Saturday 10am to 2pm.",
               condition: "moving,notsure",
               actions: [
                 {
