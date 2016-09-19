@@ -198,10 +198,10 @@ export const QuestionFlow = {
         {
           title: "Possible next steps",
           type: "steps",
-          description: "Stay independent in your home with support for day-to-day activities, personal care, transport and nursing and health care.",
+          description: "Find out how to stay independent in your home by getting support for day-to-day activities, personal care, transport and nursing and health care.",
           items: [
             {
-              label: "Getting in-home help",
+              label: "Arrange for an assessment",
               abstract: "Call My Aged Care to arrange an assessment in your home for the support services you need.They will then recommend service providers, or give you a referral code to choose your own. Call Monday to Friday 8am to 8pm, or Saturday 10am to 2pm, AEST.",
               type: "",
               condition: "ownhome,notsure",
@@ -212,11 +212,11 @@ export const QuestionFlow = {
                   type: "link",
                   prefix: "Call:"
                 },
-                {
-                  label: "Being assessed for home help",
-                  link: "",
-                  type: "secondary"
-                }
+                // {
+                //   label: "Being assessed for home help",
+                //   link: "",
+                //   type: "secondary"
+                // }
               ]
             },
             {
@@ -313,8 +313,8 @@ export const QuestionFlow = {
           description: "There are a few things you need to know and do to move into an aged care home that is subsidised by the Australian government.",
           items: [
             {
-              label: "Being assessed for care",
-              abstract: "First have your needs assessed to receive care. To arrange for this call My Aged Care. If you are eligible you will then receive a letter of approval for a place in an aged care home. Call Monday to Friday 8am to 8pm, or Saturday 10am to 2pm, AEST.",
+              label: "Getting approval for aged care",
+              abstract: "You will need to be assessed to see if you are eligible for a place in an aged care home. If you are eligible you will then receive a letter of approval. Call My Aged Care to arrange for an assessment. Call Monday to Friday 8am to 8pm, or Saturday 10am to 2pm, AEST.",
               condition: "moving,notsure",
               actions: [
                 {
@@ -323,18 +323,18 @@ export const QuestionFlow = {
                   type: "link",
                   prefix: "Call:"
                 },
-                {
-                  label: "Being assessed for aged care",
-                  link: "",
-                  type: "secondary",
-                  prefix: ""
-                },
-                {
-                  label: "Choosing an aged care home",
-                  link: "",
-                  type: "secondary",
-                  prefix: ""
-                },
+                // {
+                //   label: "Being assessed for aged care",
+                //   link: "",
+                //   type: "secondary",
+                //   prefix: ""
+                // },
+                // {
+                //   label: "Choosing an aged care home",
+                //   link: "",
+                //   type: "secondary",
+                //   prefix: ""
+                // },
               ]
             },
             {
