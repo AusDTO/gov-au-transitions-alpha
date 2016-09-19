@@ -34,7 +34,7 @@ const ResultsCategory = ({ show, result, resultSteps, showResults, resultSets, o
             <AsideNavLink className="show-for-mobile" />
         </article>
         <article>
-          <h3>Explore your results</h3>
+          {resultSets.length > 1 ? (<h3>Explore your results</h3>) : ''}
           <ResultsTilesConnect type="simple" />
         </article>
       </main>
