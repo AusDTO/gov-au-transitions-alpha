@@ -25,7 +25,7 @@ const generateCrumbs = (router, { results }) => {
   if (pathname.indexOf('/results') === 0) {
     const resultId = router.params && router.params.id
     crumbs.push({
-      label: 'Results',
+      label: 'Explore your results',
       href: resultId && '/results'
     })
 
