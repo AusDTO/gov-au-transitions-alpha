@@ -10,7 +10,7 @@ const getStepActions = actions => {
         {action.prefix ? action.prefix : ""} <a
           role={action.type === "button" ? "button" : ""}
           rel={action.type === "external" ? "external" : ""}
-          href={action.link} target="_blank">
+          href={action.link}>
             {action.label}
           </a>
       </li>
@@ -29,7 +29,7 @@ const getLocalResults = items => (
             <li key={item.label.split(" ").join("_")}>
               <span className="number">{item.number}</span>
               <span>
-              <a rel="external" href={item.link} target="_blank">{item.label}</a>
+              <a rel="external" href={item.link}>{item.label}</a>
               </span>
             </li>
           )
@@ -48,7 +48,7 @@ const getInformationResults = items => (
       <ul>
         {items.items.map(item => (
           <li key={item.label.split(" ").join("_")}>
-            <a rel={item.external ? "external" : ""} href={item.link} target="_blank">{item.label}</a>
+            <a rel={item.external ? "external" : ""} href={item.link}>{item.label}</a>
           </li>
         )
         )}
