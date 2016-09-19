@@ -10,7 +10,7 @@ const generateCrumbs = (router, { results }) => {
   const pathname = router.location.pathname
   let crumbs = [
     {
-      href: '/',
+      href: pathname !== '/' && '/',
       label: 'Help for older people'
     }
   ]

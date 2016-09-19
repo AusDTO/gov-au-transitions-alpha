@@ -3,7 +3,8 @@ import { Link } from 'react-router'
 
 const Breadcrumbs = ({ crumbs = [] }) => (
   <ul>
-    <li><a href="http://gov.au">Home</a></li>
+    {/* this should ideally goto gov.au homepage */}
+    <li><Link to="/">Home</Link></li>
     {crumbs.map((crumb, index) => (
       <li key={index}>
         {crumb.href ? (
