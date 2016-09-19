@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react'
 
 const LocationChanger = ({prefix, className, locationShort, locationIndex, onEdit}) => {
   if (!locationIndex) {
-    return <div />
+    return <h3>Local services</h3>
   }
 
   return (
