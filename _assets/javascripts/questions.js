@@ -425,7 +425,7 @@ export const QuestionFlow = {
               actions: [
                 {
                   label: "Choosing a retirement village",
-                  link: "",
+                  link: "https://gov-au-beta.apps.platform.digital.gov.au/help-for-older-people/choosing-a-retirement-village",
                   type: "link",
                   prefix: ""
                 }
@@ -545,7 +545,7 @@ export const QuestionFlow = {
     {
       title: "Support for health and wellbeing",
       id: "healthwellbeingresult",
-      condition: "health",
+      condition: "health,medications",
       abstract: "Explore local services, information and contacts to get the help and advice you need.",
       categorysnippet: "Find out about the government support, advice and local services you need.",
       list: [
@@ -592,7 +592,7 @@ export const QuestionFlow = {
             },
             {
               label: "Depression: Counselling through Medicare",
-              abstract: "To get subsidised medication and 10 counselling sessions for depression you will need to have a Medicare care and a mental health plan in place with your doctor.",
+              abstract: "To get subsidised medication and 10 counselling sessions for depression you will need to have a Medicare card and a mental health plan in place with your doctor.",
               type: "",
               condition: "depression",
               actions: [
@@ -732,6 +732,19 @@ export const QuestionFlow = {
                   link: "tel:0883725191",
                   type: "link",
                   prefix: "Call:"
+                },
+              ]
+            },
+            {
+              label: "Magaging your medications",
+              abstract: "There are ways of helping you remember to take your medicines at the right time and in the right order. You may also be able to get help with paying for medicines, and arranging a review will help you understand what you are taking and any changes you might need.",
+              condition: "medications",
+              actions: [
+                {
+                  label: "Managing medications",
+                  link: "https://gov-au-beta.apps.platform.digital.gov.au/help-for-older-people/managing-medications",
+                  type: "link",
+                  prefix: ""
                 },
               ]
             },
