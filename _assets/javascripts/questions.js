@@ -208,7 +208,7 @@ export const QuestionFlow = {
               actions: [
                 {
                   label: "Being assessed for support",
-                  link: "",
+                  link: "https://gov-au-beta.apps.platform.digital.gov.au/help-for-older-people/being-assessed-for-support",
                   type: "link",
                   prefix: ""
                 },
@@ -226,42 +226,30 @@ export const QuestionFlow = {
                   type: "link",
                   prefix: "Call:"
                 },
-                // {
-                //   label: "Being assessed for home help",
-                //   link: "",
-                //   type: "secondary"
-                // }
-              ]
-            },
-            {
-              label: "Types of home help",
-              abstract: "There are two kinds of in-home help that are subsidised by the government — basic home support and a package of support services coordinated by an advisor or case manager.",
-              type: "",
-              condition: "ownhome,notsure",
-              actions: [
-                {
-                  label: "Compare basic home support and home care packages",
-                  link: "",
-                  type: "link"
-                },
-              ]
-            },
-            {
-              label: "Estimate home care package fees",
-              abstract: "Your provider may ask you to pay a basic daily fee of up to 17.5% of the single basic age pension. You will also need to contribute an income-tested care fee if your income is over a certain amount.",
-              condition: "ownhome,notsure",
-              actions: [
-                {
-                  label: "View the My Aged Care website: Estimate home care package fees",
-                  link: "http://www.myagedcare.gov.au/fee-estimator/home-care/form",
-                  type: "external",
-                  prefix: ""
-                },
-                // {
-                //   label: "Choosing a home care service provider",
-                //   link: "",
-                //   type: "link"
-                // },
+            // {
+            //   label: "Types of home help",
+            //   abstract: "There are two kinds of in-home help that are subsidised by the government — basic home support and a package of support services coordinated by an advisor or case manager.",
+            //   type: "",
+            //   condition: "ownhome,notsure",
+            //   actions: [
+            //     {
+            //       label: "Compare basic home support and home care packages",
+            //       link: "",
+            //       type: "link"
+            //     },
+            //   ]
+            // },
+            // {
+            //   label: "Estimate home care package fees",
+            //   abstract: "Your provider may ask you to pay a basic daily fee of up to 17.5% of the single basic age pension. You will also need to contribute an income-tested care fee if your income is over a certain amount.",
+            //   condition: "ownhome,notsure",
+            //   actions: [
+            //     {
+            //       label: "View the My Aged Care website: Estimate home care package fees",
+            //       link: "http://www.myagedcare.gov.au/fee-estimator/home-care/form",
+            //       type: "external",
+            //       prefix: ""
+            //     },
               ]
             },
           ]
@@ -271,7 +259,6 @@ export const QuestionFlow = {
           title: "Explore local services in",
           description: "Explore these services to see what’s available in your area.",
           type: "result",
-
           items: [
             {
               label: "Home care package providers - My Aged Care",
@@ -315,7 +302,7 @@ export const QuestionFlow = {
       ]
     },
     {
-      title: "Moving to an aged care home",
+      title:"Moving to an aged care home",
       id: "agedcarresult",
       condition: "agedcare,notsure",
       abstract: "Consider aged care as a next step when you’re not able to look after yourself as well as you used to.",
@@ -327,8 +314,21 @@ export const QuestionFlow = {
           description: "There are a few things you need to know and do to move into an aged care home that is subsidised by the Australian government.",
           items: [
             {
+              label: "Being assessed for aged care",
+              abstract: "If you are looking into subsidised aged care, you will need to be assessed for your eligibility for a place in an aged care home.",
+              condition: "moving,notsure",
+              actions: [
+                {
+                  label: "Being assessed for support",
+                  link: "https://gov-au-beta.apps.platform.digital.gov.au/help-for-older-people/being-assessed-for-support",
+                  type: "link",
+                  prefix: ""
+                },
+              ]
+            },
+            {
               label: "Getting approval for aged care",
-              abstract: "You will need to be assessed to see if you are eligible for a place in an aged care home. If you are eligible you will then receive a letter of approval. Call My Aged Care to arrange for an assessment. Call Monday to Friday 8am to 8pm, or Saturday 10am to 2pm.",
+              abstract: "To start the approval process you will first need to call My Aged Care to register and be assessed. If you are already registered, you may wish to let them know if your needs have changed. They will make arrangements for an assessor to visit you in your home. Call Monday to Friday 8am to 8pm, or Saturday 10am to 2pm.",
               condition: "moving,notsure",
               actions: [
                 {
@@ -337,18 +337,6 @@ export const QuestionFlow = {
                   type: "link",
                   prefix: "Call:"
                 },
-                // {
-                //   label: "Being assessed for aged care",
-                //   link: "",
-                //   type: "secondary",
-                //   prefix: ""
-                // },
-                // {
-                //   label: "Choosing an aged care home",
-                //   link: "",
-                //   type: "secondary",
-                //   prefix: ""
-                // },
               ]
             },
             {
@@ -359,6 +347,18 @@ export const QuestionFlow = {
                 {
                   label: "View My Aged Care website: Estimate residential care fees",
                   link: "http://www.myagedcare.gov.au/fee-estimator/residential-care/form",
+                  type: "link"
+                },
+              ]
+            },
+            {
+              label: "Choosing an aged care home",
+              abstract: "Knowing the kinds of questions to ask and thinking about your needs, can help you get started when looking for an aged care home.",
+              condition: "moving,notsure",
+              actions: [
+                {
+                  label: "Choosing an aged care home",
+                  link: "https://gov-au-beta.apps.platform.digital.gov.au/help-for-older-people/choosing-an-aged-care-home",
                   type: "link"
                 },
               ]
@@ -509,19 +509,19 @@ export const QuestionFlow = {
           title: "Possible next steps",
           type: "steps",
           items: [
-            {
-              label: "Croatian community support",
-              abstract: "Get support from Croatian-speaking carers who provide transport and outings, social support and domestic assistance through this not-for-profit organisation.",
-              condition: "croatianbkg,croatianlang",
-              actions: [
-                {
-                  label: "View the Croatian Club Adelaide website: care for the aged",
-                  link: "http://www.croatianclubadelaide.com/croatian-care-for-the-aged",
-                  type: "link",
-                  prefix: "Visit:",
-                }
-              ]
-            },
+            // {
+            //   label: "Croatian community support",
+            //   abstract: "Get support from Croatian-speaking carers who provide transport and outings, social support and domestic assistance through this not-for-profit organisation.",
+            //   condition: "croatianbkg,croatianlang",
+            //   actions: [
+            //     {
+            //       label: "View the Croatian Club Adelaide website: care for the aged",
+            //       link: "http://www.croatianclubadelaide.com/croatian-care-for-the-aged",
+            //       type: "link",
+            //       prefix: "Visit:",
+            //     }
+            //   ]
+            // },
             {
               label: "Arthritis: Help for arthritis",
               abstract: "Find products to make living with arthritis easier",
@@ -543,19 +543,6 @@ export const QuestionFlow = {
                   label: "Visit the Arthritis South Australia website: Arthritis SA shop",
                   link: "https://www.arthritissa.org.au/shop/retail",
                   type: "link",
-                }
-              ]
-            },
-            {
-              label: "Depression: Access free professional support for older people",
-              abstract: "You can see a free psychiatrist, psychologist or social worker or other health professional by appointment.",
-              condition: "depression",
-              actions: [
-                {
-                  label: "View the South Australia Government Health website: Mental health services for older people in South Australia",
-                  link: "http://www.sahealth.sa.gov.au/wps/wcm/connect/public+content/sa+health+internet/health+services/mental+health+services/older+persons+mental+health+services",
-                  type: "link",
-                  prefix: "",
                 }
               ]
             },
@@ -818,7 +805,7 @@ export const QuestionFlow = {
             },
             {
               label: "Help with travel to appointments",
-              abstract: "Call My Aged Care to be assessed. If you qualify, you could be picked up by a transport service or alternatively get vouchers or subsidies for taxi services.",
+              abstract: "Call My Aged Care to enquire and register to get support. If you qualify, you could be picked up by a transport service or alternatively get vouchers or subsidies for taxi services.",
               type: "",
               condition: "transport",
               actions: [
