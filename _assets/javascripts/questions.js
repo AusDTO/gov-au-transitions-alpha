@@ -202,7 +202,7 @@ export const QuestionFlow = {
           items: [
             {
               label: "Getting home help",
-              abstract: "You can arrange for an assessor to visit you in your home so they can see your situation and work out the right help for you.They will then decide if the government should pay for some or all of your support services.",
+              abstract: "If you would like subsidised support at home you can arrange for an assessor to visit you to work out the help you need. They will then decide if the government should pay for some or all of your support services.",
               type: "",
               condition: "ownhome,notsure",
               actions: [
@@ -215,8 +215,8 @@ export const QuestionFlow = {
               ]
             },
             {
-              label: "Arrange for an assessment",
-              abstract: "If you would like an assessment in your home call My Aged Care.They will then recommend service providers, or give you a referral code to choose your own. Call Monday to Friday 8am to 8pm, or Saturday 10am to 2pm",
+              label: "Arranging for an assessment",
+              abstract: "To arrange for an assessment in your home call My Aged Care. If you have not yet registered, this will start the process of getting you home help. Once you have registered you can also call to let them know your needs have changed. An assessor will then be in touch with you to make an appointment. Call Monday to Friday 8am to 8pm, or Saturday 10am to 2pm",
               type: "",
               condition: "ownhome,notsure",
               actions: [
@@ -226,30 +226,20 @@ export const QuestionFlow = {
                   type: "link",
                   prefix: "Call:"
                 },
-            // {
-            //   label: "Types of home help",
-            //   abstract: "There are two kinds of in-home help that are subsidised by the government — basic home support and a package of support services coordinated by an advisor or case manager.",
-            //   type: "",
-            //   condition: "ownhome,notsure",
-            //   actions: [
-            //     {
-            //       label: "Compare basic home support and home care packages",
-            //       link: "",
-            //       type: "link"
-            //     },
-            //   ]
-            // },
-            // {
-            //   label: "Estimate home care package fees",
-            //   abstract: "Your provider may ask you to pay a basic daily fee of up to 17.5% of the single basic age pension. You will also need to contribute an income-tested care fee if your income is over a certain amount.",
-            //   condition: "ownhome,notsure",
-            //   actions: [
-            //     {
-            //       label: "View the My Aged Care website: Estimate home care package fees",
-            //       link: "http://www.myagedcare.gov.au/fee-estimator/home-care/form",
-            //       type: "external",
-            //       prefix: ""
-            //     },
+              ]
+            },
+            {
+              label: "Choosing a service provider",
+              abstract: "Some of the services provided may be very personal so it is important you or the person you are caring for feels comfortable with them. Find out what you need to consider before contacting a selection of providers.",
+              type: "",
+              condition: "ownhome,notsure",
+              actions: [
+                {
+                  label: "Choosing a home help service provider",
+                  link: "https://gov-au-beta.apps.platform.digital.gov.au/help-for-older-people/choosing-a-home-help-service-provider",
+                  type: "link",
+                  prefix: ""
+                },
               ]
             },
           ]
@@ -420,18 +410,57 @@ export const QuestionFlow = {
     {
       title: "Moving to a retirement village",
       id: "retirementresult",
-      condition: "retirement",
-      abstract: "In a retirement village you can apply for the government-subsidised services you need to stay independent in your home.",
-      categorysnippet: "In a retirement village you can apply for the government-subsidised services you need to stay independent in your home.",
+      condition: "retirement,notsure",
+      abstract: "Practical guidance for when you are thinking about moving to a retirement village, and how to get subsidised support if you need it.",
+      categorysnippet: "Practical guidance for when you are thinking about moving to a retirement village, and how to get subsidised support if you need it.",
       list: [
         {
           title: "Possible next steps",
           type: "steps",
           items: [
             {
-              label: "Being assessed for care",
-              abstract: "First have your needs assessed to receive care. To arrange for this call My Aged Care. If you are eligible you will then receive a letter of approval for a place in an aged care home. Call Monday to Friday 8am to 8pm, or Saturday 10am to 2pm, AEST.",
-              condition: "moving,notsure",
+              label: "Choosing a retirement village",
+              abstract: "Checklists and questions to ask, whether you are looking for a retirement village unit for yourself or on behalf of someone else.",
+              condition: "retirement",
+              actions: [
+                {
+                  label: "Choosing a retirement village",
+                  link: "",
+                  type: "link",
+                  prefix: ""
+                }
+              ]
+            },
+            {
+              label: "Visit the SA Seniors Information Centre",
+              abstract: "To understand your retirement village options you can call to make an appointment with a housing consultant or attend a seminar.",
+              condition: "retirement",
+              actions: [
+                {
+                  label: "(08) 8168 8776",
+                  link: "tel:0881688776",
+                  type: "link",
+                  prefix: "Call:"
+                }
+              ]
+            },
+            {
+              label: "Getting home help",
+              abstract: "If you find you need subsidised support once you have moved in, you can arrange for an assessor to visit you to work out the help you need.",
+              condition: "retirement",
+              actions: [
+                {
+                  label: "Being assessed for support",
+                  link: "https://gov-au-beta.apps.platform.digital.gov.au/help-for-older-people/being-assessed-for-support",
+                  type: "link",
+                  prefix: ""
+                }
+              ]
+            },
+            {
+              label: "Arranging for an assessment",
+              abstract: "To arrange for an assessment for support in your home call My Aged Care. If you have not yet registered, this will start the process of getting you home help. Once you have registered can you can also call to let them know when your needs have changed. Call Monday to Friday 8am to 8pm, or Saturday 10am to 2pm",
+              condition: "retirement",
               actions: [
                 {
                   label: "1800 200 422",
@@ -447,12 +476,27 @@ export const QuestionFlow = {
           title: "Explore local services in",
           type: "result",
           items: [
+            {
+              label: "Retirement Villages",
+              link: "http://sacommunity.org/search?s=Retirement+Accommodation&location=33&op=Search&form_build_id=form-ed37b83fe2d38c285498f563a7f1a4f0&form_id=_cu_display_search_block_form",
+              number: 10
+            },
           ]
         },
         {
           title: "Further information",
           type: "information",
           items: [
+            {
+              label: "View the SA Seniors Information Service website: About retirement villages",
+              link: "http://www.seniors.asn.au/centric/retirement_housing/retirement_villages_introduction.jsp",
+              condition: "retirement",
+            },
+            {
+              label: "Visit the Australian Competition and Consumer Commission website: Types of retirement villages",
+              link: "http://www.accc.gov.au/consumers/health-home-car/retirement-homes",
+              condition: "retirement",
+            },
           ]
         },
       ]
