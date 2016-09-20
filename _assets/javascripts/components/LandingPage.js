@@ -8,7 +8,7 @@ const relatedTopics = [
     link: "https://gov-au-beta.apps.platform.digital.gov.au/help-for-older-people/being-assessed-for-support",
   },
   {
-    title: 'Consider consent needs',
+    title: 'Considering consent needs',
     content: 'There are a few ways to appoint someone legally to make decisions on your behalf, in the short and long term.',
     link: "https://gov-au-beta.apps.platform.digital.gov.au/help-for-older-people/considering-consent-needs",
   },
