@@ -1,17 +1,6 @@
 export const QuestionFlow = {
   questions: [
     {
-      question: "Are you looking for someone else or yourself?",
-      name: "yourselforsomeone",
-      type: "radio",
-      setLanguage: true,
-      //legend: "Select as many as apply",
-      values: [
-        {value: "third", label: "Someone else"},
-        {value: "first", label: "Myself"}
-      ]
-    },
-    {
       question: "What best describes your current need?",
       name: "situation",
       type: "radio",
@@ -26,6 +15,17 @@ export const QuestionFlow = {
       name: "crisis",
       type: "crisis",
       condition: "crisis",
+    },
+    {
+      question: "Are you looking for someone else or yourself?",
+      name: "yourselforsomeone",
+      type: "radio",
+      setLanguage: true,
+      //legend: "Select as many as apply",
+      values: [
+        {value: "third", label: "Someone else"},
+        {value: "first", label: "Myself"}
+      ]
     },
     {
       question: "What support are you interested in learning about?",
