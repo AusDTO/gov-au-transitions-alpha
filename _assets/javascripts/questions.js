@@ -1,6 +1,22 @@
 export const QuestionFlow = {
   questions: [
     {
+      question: "What best describes your current need?",
+      name: "situation",
+      type: "radio",
+      //legend: "Select as many as apply",
+      values: [
+        {value: "crisis", label: "I need help now"},
+        {value: "future", label: "I’m thinking about the future"}
+      ]
+    },
+    {
+      question: "We just want to check. Do you need immediate help?",
+      name: "crisis",
+      type: "crisis",
+      condition: "crisis",
+    },
+    {
       question: "Are you looking for someone else or yourself?",
       name: "yourselforsomeone",
       type: "radio",
@@ -9,16 +25,6 @@ export const QuestionFlow = {
       values: [
         {value: "third", label: "Someone else"},
         {value: "first", label: "Myself"}
-      ]
-    },
-    {
-      question: "What best describes your current need?",
-      name: "situation",
-      type: "radio",
-      //legend: "Select as many as apply",
-      values: [
-        {value: "crisis", label: "I need help now"},
-        {value: "future", label: "I’m thinking about the future"}
       ]
     },
     {
@@ -95,6 +101,7 @@ export const QuestionFlow = {
         {value: "eating", label: "Cooking and eating"},
         {value: "culturehome", label: "Cultural background support"},
         {value: "maintenance", label: "Home maintenance"},
+        {value: "gardening", label: "Gardening"},
         {value: "housework", label: "Housework"},
         {value: "medications", label: "Managing medication"},
         {value: "hygiene", label: "Personal hygiene"},
@@ -163,7 +170,7 @@ export const QuestionFlow = {
           third: "Where do they live?",
       },
       name: "location",
-      condition: "ownhome,transport!moving,notsure,health!moving,social!moving",
+      condition: "ownhome,ownhome+moving,!moving,transport,health,social,notsure",
       type: "location",
       legend: "This helps us to suggest local services. Please enter a suburb, town or postcode.",
       values: []
@@ -174,7 +181,7 @@ export const QuestionFlow = {
         third: "Where are they considering living?",
       },
       name: "locationconsidering",
-      condition: "moving+health,notsure",
+      condition: "!ownhome,moving,!transport!health!social!notsure",
       type: "location",
       legend: "Please enter a suburb, town or postcode.",
       values: []
@@ -191,11 +198,25 @@ export const QuestionFlow = {
         {
           title: "Possible next steps",
           type: "steps",
-          description: "Stay independent in your home with support for day-to-day activities, personal care, transport and nursing and health care.",
+          description: "Find out how to stay independent in your home by getting support for day-to-day activities, personal care, transport and nursing and health care.",
           items: [
             {
-              label: "Getting in-home help",
-              abstract: "Call My Aged Care to arrange an assessment in your home for the support services you need.They will then recommend service providers, or give you a referral code to choose your own. Call Monday to Friday 8am to 8pm, or Saturday 10am to 2pm, AEST.",
+              label: "Getting home help",
+              abstract: "If you would like subsidised support at home you can arrange for an assessor to visit you to work out the help you need. They will then decide if the government should pay for some or all of your support services.",
+              type: "",
+              condition: "ownhome,notsure",
+              actions: [
+                {
+                  label: "Being assessed for support",
+                  link: "https://gov-au-beta.apps.platform.digital.gov.au/help-for-older-people/being-assessed-for-support",
+                  type: "link",
+                  prefix: ""
+                },
+              ]
+            },
+            {
+              label: "Arranging for an assessment",
+              abstract: "To arrange for an assessment in your home call My Aged Care. If you have not yet registered, this will start the process of getting you home help. Once you have registered you can also call to let them know your needs have changed. An assessor will then be in touch with you to make an appointment. Call Monday to Friday 8am to 8pm, or Saturday 10am to 2pm",
               type: "",
               condition: "ownhome,notsure",
               actions: [
@@ -205,41 +226,19 @@ export const QuestionFlow = {
                   type: "link",
                   prefix: "Call:"
                 },
-                {
-                  label: "Being assessed for home help",
-                  link: "",
-                  type: "secondary"
-                }
               ]
             },
             {
-              label: "Types of home help",
-              abstract: "There are two kinds of in-home help that are subsidised by the government — basic home support and a package of support services coordinated by an advisor or case manager.",
+              label: "Choosing a service provider",
+              abstract: "Some of the services provided may be very personal so it is important you or the person you are caring for feels comfortable with them. Find out what you need to consider before contacting a selection of providers.",
               type: "",
               condition: "ownhome,notsure",
               actions: [
                 {
-                  label: "Compare basic home support and home care packages",
-                  link: "",
-                  type: "link"
-                },
-              ]
-            },
-            {
-              label: "Estimate home care package fees",
-              abstract: "Your provider may ask you to pay a basic daily fee of up to 17.5% of the single basic age pension. You will also need to contribute an income-tested care fee if your income is over a certain amount.",
-              condition: "ownhome,notsure",
-              actions: [
-                {
-                  label: "View the My Aged Care website: Estimate home care package fees",
-                  link: "http://www.myagedcare.gov.au/fee-estimator/home-care/form",
-                  type: "external",
+                  label: "Choosing a home help service provider",
+                  link: "https://gov-au-beta.apps.platform.digital.gov.au/help-for-older-people/choosing-a-home-help-service-provider",
+                  type: "link",
                   prefix: ""
-                },
-                {
-                  label: "Choosing a home care service provider",
-                  link: "",
-                  type: "link"
                 },
               ]
             },
@@ -247,10 +246,9 @@ export const QuestionFlow = {
         },
 
         {
-          title: "Local services",
+          title: "Explore local services in",
           description: "Explore these services to see what’s available in your area.",
           type: "result",
-
           items: [
             {
               label: "Home care package providers - My Aged Care",
@@ -294,7 +292,7 @@ export const QuestionFlow = {
       ]
     },
     {
-      title: "Moving to an aged care home",
+      title:"Moving to an aged care home",
       id: "agedcarresult",
       condition: "agedcare,notsure",
       abstract: "Consider aged care as a next step when you’re not able to look after yourself as well as you used to.",
@@ -306,8 +304,21 @@ export const QuestionFlow = {
           description: "There are a few things you need to know and do to move into an aged care home that is subsidised by the Australian government.",
           items: [
             {
-              label: "Being assessed for care",
-              abstract: "First have your needs assessed to receive care. To arrange for this call My Aged Care. If you are eligible you will then receive a letter of approval for a place in an aged care home. Call Monday to Friday 8am to 8pm, or Saturday 10am to 2pm, AEST.",
+              label: "Being assessed for aged care",
+              abstract: "If you are looking into subsidised aged care, you will need to be assessed for your eligibility for a place in an aged care home.",
+              condition: "moving,notsure",
+              actions: [
+                {
+                  label: "Being assessed for support",
+                  link: "https://gov-au-beta.apps.platform.digital.gov.au/help-for-older-people/being-assessed-for-support",
+                  type: "link",
+                  prefix: ""
+                },
+              ]
+            },
+            {
+              label: "Getting approval for aged care",
+              abstract: "To start the approval process you will first need to call My Aged Care to register and be assessed. If you are already registered, you may wish to let them know if your needs have changed. They will make arrangements for an assessor to visit you in your home. Call Monday to Friday 8am to 8pm, or Saturday 10am to 2pm.",
               condition: "moving,notsure",
               actions: [
                 {
@@ -315,18 +326,6 @@ export const QuestionFlow = {
                   link: "tel:1800200422",
                   type: "link",
                   prefix: "Call:"
-                },
-                {
-                  label: "Being assessed for aged care",
-                  link: "",
-                  type: "secondary",
-                  prefix: ""
-                },
-                {
-                  label: "Choosing an aged care home",
-                  link: "",
-                  type: "secondary",
-                  prefix: ""
                 },
               ]
             },
@@ -338,6 +337,18 @@ export const QuestionFlow = {
                 {
                   label: "View My Aged Care website: Estimate residential care fees",
                   link: "http://www.myagedcare.gov.au/fee-estimator/residential-care/form",
+                  type: "link"
+                },
+              ]
+            },
+            {
+              label: "Choosing an aged care home",
+              abstract: "Knowing the kinds of questions to ask and thinking about your needs, can help you get started when looking for an aged care home.",
+              condition: "moving,notsure",
+              actions: [
+                {
+                  label: "Choosing an aged care home",
+                  link: "https://gov-au-beta.apps.platform.digital.gov.au/help-for-older-people/choosing-an-aged-care-home",
                   type: "link"
                 },
               ]
@@ -357,7 +368,7 @@ export const QuestionFlow = {
           ]
         },
         {
-          title: "Local services",
+          title: "Explore local services in",
           type: "result",
           description: "Explore these facilities to see what’s available in your area.",
           items: [
@@ -399,18 +410,57 @@ export const QuestionFlow = {
     {
       title: "Moving to a retirement village",
       id: "retirementresult",
-      condition: "retirement",
-      abstract: "In a retirement village you can apply for the government-subsidised services you need to stay independent in your home.",
-      categorysnippet: "In a retirement village you can apply for the government-subsidised services you need to stay independent in your home.",
+      condition: "retirement,notsure",
+      abstract: "Practical guidance for when you are thinking about moving to a retirement village, and how to get subsidised support if you need it.",
+      categorysnippet: "Practical guidance for when you are thinking about moving to a retirement village, and how to get subsidised support if you need it.",
       list: [
         {
           title: "Possible next steps",
           type: "steps",
           items: [
             {
-              label: "Being assessed for care",
-              abstract: "First have your needs assessed to receive care. To arrange for this call My Aged Care. If you are eligible you will then receive a letter of approval for a place in an aged care home. Call Monday to Friday 8am to 8pm, or Saturday 10am to 2pm, AEST.",
-              condition: "moving,notsure",
+              label: "Choosing a retirement village",
+              abstract: "Checklists and questions to ask, whether you are looking for a retirement village unit for yourself or on behalf of someone else.",
+              condition: "retirement",
+              actions: [
+                {
+                  label: "Choosing a retirement village",
+                  link: "https://gov-au-beta.apps.platform.digital.gov.au/help-for-older-people/choosing-a-retirement-village",
+                  type: "link",
+                  prefix: ""
+                }
+              ]
+            },
+            {
+              label: "Visit the SA Seniors Information Centre",
+              abstract: "To understand your retirement village options you can call to make an appointment with a housing consultant or attend a seminar.",
+              condition: "retirement",
+              actions: [
+                {
+                  label: "(08) 8168 8776",
+                  link: "tel:0881688776",
+                  type: "link",
+                  prefix: "Call:"
+                }
+              ]
+            },
+            {
+              label: "Getting home help",
+              abstract: "If you find you need subsidised support once you have moved in, you can arrange for an assessor to visit you to work out the help you need.",
+              condition: "retirement",
+              actions: [
+                {
+                  label: "Being assessed for support",
+                  link: "https://gov-au-beta.apps.platform.digital.gov.au/help-for-older-people/being-assessed-for-support",
+                  type: "link",
+                  prefix: ""
+                }
+              ]
+            },
+            {
+              label: "Arranging for an assessment",
+              abstract: "To arrange for an assessment for support in your home call My Aged Care. If you have not yet registered, this will start the process of getting you home help. Once you have registered can you can also call to let them know when your needs have changed. Call Monday to Friday 8am to 8pm, or Saturday 10am to 2pm",
+              condition: "retirement",
               actions: [
                 {
                   label: "1800 200 422",
@@ -423,15 +473,30 @@ export const QuestionFlow = {
           ]
         },
         {
-          title: "Local services",
+          title: "Explore local services in",
           type: "result",
           items: [
+            {
+              label: "Retirement Villages",
+              link: "http://sacommunity.org/search?s=Retirement+Accommodation&location=33&op=Search&form_build_id=form-ed37b83fe2d38c285498f563a7f1a4f0&form_id=_cu_display_search_block_form",
+              number: 10
+            },
           ]
         },
         {
           title: "Further information",
           type: "information",
           items: [
+            {
+              label: "View the SA Seniors Information Service website: About retirement villages",
+              link: "http://www.seniors.asn.au/centric/retirement_housing/retirement_villages_introduction.jsp",
+              condition: "retirement",
+            },
+            {
+              label: "Visit the Australian Competition and Consumer Commission website: Types of retirement villages",
+              link: "http://www.accc.gov.au/consumers/health-home-car/retirement-homes",
+              condition: "retirement",
+            },
           ]
         },
       ]
@@ -463,7 +528,7 @@ export const QuestionFlow = {
           ]
         },
         {
-          title: "Local services",
+          title: "Explore local services in",
           type: "result",
           items: [
           ]
@@ -480,7 +545,7 @@ export const QuestionFlow = {
     {
       title: "Support for health and wellbeing",
       id: "healthwellbeingresult",
-      condition: "health",
+      condition: "health,medications",
       abstract: "Explore local services, information and contacts to get the help and advice you need.",
       categorysnippet: "Find out about the government support, advice and local services you need.",
       list: [
@@ -488,19 +553,19 @@ export const QuestionFlow = {
           title: "Possible next steps",
           type: "steps",
           items: [
-            {
-              label: "Croatian community support",
-              abstract: "Get support from Croatian-speaking carers who provide transport and outings, social support and domestic assistance through this not-for-profit organisation.",
-              condition: "croatianbkg,croatianlang",
-              actions: [
-                {
-                  label: "View the Croatian Club Adelaide website: care for the aged",
-                  link: "http://www.croatianclubadelaide.com/croatian-care-for-the-aged",
-                  type: "link",
-                  prefix: "Visit:",
-                }
-              ]
-            },
+            // {
+            //   label: "Croatian community support",
+            //   abstract: "Get support from Croatian-speaking carers who provide transport and outings, social support and domestic assistance through this not-for-profit organisation.",
+            //   condition: "croatianbkg,croatianlang",
+            //   actions: [
+            //     {
+            //       label: "View the Croatian Club Adelaide website: care for the aged",
+            //       link: "http://www.croatianclubadelaide.com/croatian-care-for-the-aged",
+            //       type: "link",
+            //       prefix: "Visit:",
+            //     }
+            //   ]
+            // },
             {
               label: "Arthritis: Help for arthritis",
               abstract: "Find products to make living with arthritis easier",
@@ -526,21 +591,8 @@ export const QuestionFlow = {
               ]
             },
             {
-              label: "Depression: Access free professional support for older people",
-              abstract: "You can see a free psychiatrist, psychologist or social worker or other health professional by appointment.",
-              condition: "depression",
-              actions: [
-                {
-                  label: "View the South Australia Government Health website: Mental health services for older people in South Australia",
-                  link: "http://www.sahealth.sa.gov.au/wps/wcm/connect/public+content/sa+health+internet/health+services/mental+health+services/older+persons+mental+health+services",
-                  type: "link",
-                  prefix: "",
-                }
-              ]
-            },
-            {
               label: "Depression: Counselling through Medicare",
-              abstract: "To get subsidised medication and 10 counselling sessions for depression you will need to have a Medicare care and a mental health plan in place with your doctor.",
+              abstract: "To get subsidised medication and 10 counselling sessions for depression you will need to have a Medicare card and a mental health plan in place with your doctor.",
               type: "",
               condition: "depression",
               actions: [
@@ -683,10 +735,23 @@ export const QuestionFlow = {
                 },
               ]
             },
+            {
+              label: "Magaging your medications",
+              abstract: "There are ways of helping you remember to take your medicines at the right time and in the right order. You may also be able to get help with paying for medicines, and arranging a review will help you understand what you are taking and any changes you might need.",
+              condition: "medications",
+              actions: [
+                {
+                  label: "Managing medications",
+                  link: "https://gov-au-beta.apps.platform.digital.gov.au/help-for-older-people/managing-medications",
+                  type: "link",
+                  prefix: ""
+                },
+              ]
+            },
           ]
         },
         {
-          title: "Local services",
+          title: "Explore local services in",
           type: "result",
           items: [
             {
@@ -797,7 +862,7 @@ export const QuestionFlow = {
             },
             {
               label: "Help with travel to appointments",
-              abstract: "Call My Aged Care to be assessed. If you qualify, you could be picked up by a transport service or alternatively get vouchers or subsidies for taxi services.",
+              abstract: "Call My Aged Care to enquire and register to get support. If you qualify, you could be picked up by a transport service or alternatively get vouchers or subsidies for taxi services.",
               type: "",
               condition: "transport",
               actions: [
@@ -890,7 +955,7 @@ export const QuestionFlow = {
           ]
         },
         {
-          title: "Local services",
+          title: "Explore local services in",
           type: "result",
           items: [
             {

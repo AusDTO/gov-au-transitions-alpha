@@ -3,20 +3,24 @@ import { Link } from 'react-router';
 
 const relatedTopics = [
   {
-    title: 'Getting home support',
-    content: 'You can be assessed to receive the support you need in your home. Call My Aged Care to get started.'
+    title: 'Being assessed for support',
+    content: 'If you would like subsidised support at home you can arrange for an assessor to visit you to work out the help you need.',
+    link: "https://gov-au-beta.apps.platform.digital.gov.au/help-for-older-people/being-assessed-for-support",
   },
   {
     title: 'Considering consent needs',
-    content: 'There are a few ways to appoint someone legally to make decisions on your behalf, in the short and long term.'
+    content: 'There are a few ways to appoint someone legally to make decisions on your behalf, in the short and long term.',
+    link: "https://gov-au-beta.apps.platform.digital.gov.au/help-for-older-people/considering-consent-needs",
   },
   {
     title: 'Support for carers',
-    content: 'Carers can apply for government support to care for family members and friends who are frail or aged.'
+    content: 'Carers can apply for government support to care for family members and friends who are frail or aged.',
+    link: "https://gov-au-beta.apps.platform.digital.gov.au/help-for-older-people/support-for-carers",
   },
   {
     title: 'Choosing an aged care home',
-    content: 'Thinking about what you need and the kinds of questions to ask can help you get started.'
+    content: 'Thinking about what you need and the kinds of questions to ask can help you get started.',
+    link: "https://gov-au-beta.apps.platform.digital.gov.au/help-for-older-people/choosing-an-aged-care-home",
   }
 ]
 
@@ -39,11 +43,11 @@ const LandingPage = () => {
         <article>
           <h2>Related topics</h2>
             <ul className="list-vertical--fourths real-list">
-              {relatedTopics.map(({ title, content }, i) => (
+              {relatedTopics.map(({ title, content, link }, i) => (
                 <li key={i}>
                   <article>
                     <h3>
-                      <a href="/">{title}</a>
+                      <a href={link}>{title}</a>
                     </h3>
                     <p>{content}</p>
                   </article>

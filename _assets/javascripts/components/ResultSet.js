@@ -1,5 +1,6 @@
 import React from 'react'
 import Accordion from './Accordion'
+import LocationChangerLinker from '../containers/LocationChangerLinker'
 
 const getStepActions = actions => {
   return actions.map(action => {
@@ -9,7 +10,7 @@ const getStepActions = actions => {
         {action.prefix ? action.prefix : ""} <a
           role={action.type === "button" ? "button" : ""}
           rel={action.type === "external" ? "external" : ""}
-          href={action.link} target="_blank">
+          href={action.link}>
             {action.label}
           </a>
       </li>
@@ -17,53 +18,9 @@ const getStepActions = actions => {
   })
 }
 
-// const getAccordionContent = (items, checked, onChange) => {
-//   switch (items.type) {
-//     case "result":
-//       return (<ul>{items.items.map(item => {
-//         return (
-//           <li key={item.label.split(" ").join("_")}>
-//             <span className="number">{item.number}</span>
-//             <span>
-//             <a rel="external" href={item.link} target="_blank">{item.label}</a>
-//             </span>
-//           </li>
-//         )
-//       })}</ul>)
-//     case "steps":
-//       return (<form><ul className="module-list">{items.items.map(item => {
-//         let name = item.label.split(" ").join("_")
-//         return (
-//           <li key={name}>
-//             <input name={name}
-//               id={name}
-//               type="checkbox"
-//               value="true"
-//               checked={checked.indexOf(name) > -1 ? true : false}
-//               onChange={onChange.bind(null, name)} />
-//             <label htmlFor={name}>{item.label}</label>
-//             <p>{item.abstract}</p>
-//             <ul className="step-actions">{getStepActions(item.actions)}</ul>
-//             {item.type === "funded" ? (<div className="step-actions"><span className="info-badge">Goverment funded</span></div>) : ""}
-//           </li>)
-//       })}</ul></form>)
-//       return (<div>Step type set</div>)
-//       break;
-//     case "information":
-//     default:
-//       return (<ul>{items.items.map(item => {
-//         return (
-//           <li key={item.label.split(" ").join("_")}>
-//             <a rel="external" href={item.link} target="_blank">{item.label}</a>
-//           </li>
-//           )
-//       })}</ul>)
-//   }
-// }
-
 const getLocalResults = items => (
   <div key={items.title.split(" ").join("_")}>
-    <h3>{items.title}</h3>
+    <LocationChangerLinker prefix={items.title} />
     {items.description ? <p>{items.description}</p> : <span /> }
     <div className={items.type + "-list"}>
       <ul>
@@ -72,7 +29,7 @@ const getLocalResults = items => (
             <li key={item.label.split(" ").join("_")}>
               <span className="number">{item.number}</span>
               <span>
-              <a rel="external" href={item.link} target="_blank">{item.label}</a>
+              <a rel="external" href={item.link}>{item.label}</a>
               </span>
             </li>
           )
@@ -91,7 +48,7 @@ const getInformationResults = items => (
       <ul>
         {items.items.map(item => (
           <li key={item.label.split(" ").join("_")}>
-            <a rel={item.external ? "external" : ""} href={item.link} target="_blank">{item.label}</a>
+            <a rel={item.external ? "external" : ""} href={item.link}>{item.label}</a>
           </li>
         )
         )}
@@ -158,10 +115,14 @@ const getSubContent = (list, checked, onChange) => {
 }
 
 const ResultSet = ({result, resultSteps, onChange}) => {
+
   return (
     <div key={result.id} id={result.id} className="results-set">
       <h1>{result.title}</h1>
-      <p className='abstract'>{result.abstract}</p>
+      <div className='abstract area-abstract'>
+        <p>{result.abstract}</p>
+        <LocationChangerLinker className="margin" />
+      </div>
       {getSubContent(result.list, resultSteps, onChange)}
     </div>
   )

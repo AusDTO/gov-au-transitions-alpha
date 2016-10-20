@@ -1,13 +1,11 @@
 import { connect } from 'react-redux'
-
 import ResultSet from '../components/ResultSet'
 import { getResultsList } from '../helpers'
-import { resultCheck } from '../actions'
+import { resultCheck, moveTo } from '../actions'
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
   return {
-    resultSets: getResultsList(state),
-    resultSteps: state.resultSteps
+    ...ownProps
   }
 }
 

@@ -114,6 +114,43 @@ const getFieldset = (type, values, name, selectedValues, onChange) => {
         ))
       }
       return autocompletes
+    case "crisis":
+      return (
+      <div className="crisis-callout">
+        <ul className="list-horizontal">
+          <li className="offset-item">
+            <div className="offset-title">
+              <h4><a href="tel:000000">000</a></h4>
+            </div>
+            <div>
+              <p><strong>Triple zero (000) </strong></p>
+              <p>For urgent medical help</p>
+            </div>
+          </li>
+          <li className="offset-item">
+            <div className="offset-title">
+              <h4><a href="tel:000000">131 114</a></h4>
+            </div>
+            <div>
+              <p><strong>Lifeline 24/7 </strong></p>
+              <p>For support in an emotional crisis</p>
+            </div>
+          </li>
+          <li className="offset-item">
+            <div className="offset-title">
+              <h4><a href="tel:000000">1800 059 059</a></h4>
+            </div>
+            <div>
+              <p><strong>Emergency respite support </strong></p>
+              <p>For urgent help caring for someone</p>
+            </div>
+          </li>
+        </ul>
+          <div className="abstract">
+          <p>I’m OK thanks, I can continue to the next step.</p>
+          </div>
+      </div>
+      )
     default:
       return [(<span key={name}>{name}</span>)]
   }
@@ -123,6 +160,10 @@ const QuestionBody = ({questionId, name, legend, type, allValues, selectedValues
   if (type === "") {
     return <div></div>
   }
+  let buttonText = 'Next'
+if (type === 'crisis') {
+   buttonText = 'Continue'
+}
 
   return (
     <form data-current-question={questionId} className={"form-" + type}
@@ -137,7 +178,7 @@ const QuestionBody = ({questionId, name, legend, type, allValues, selectedValues
         {getFieldset(type, allValues, name, selectedValues, onChange)}
       </fieldset>
       <Glossary list={glossary} />
-      <button type="submit">Next  <i className="fa fa-chevron-right" aria-hidden="true"></i></button>
+      <button type="submit">{buttonText}  <i className="fa fa-chevron-right" aria-hidden="true"></i></button>
     </form>
   )
 }

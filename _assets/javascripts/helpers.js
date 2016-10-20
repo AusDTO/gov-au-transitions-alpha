@@ -97,6 +97,19 @@ export const determinePrevQuestion = (current, answers) => {
   return prev
 }
 
+function negateValidation(rule, answers) {
+  const parts = rule.split('!')
+  const negateRules = parts.slice(1) || []
+  const negateFound = negateRules.filter(negateRule => {
+    return answers.indexOf(negateRule) !== -1
+  })
+  const goodAnswer = parts.shift()
+  const badRuleFound = negateFound.length ? true : false
+  const goodRuleFound = goodAnswer && answers.indexOf(goodAnswer) !== -1
+
+  return goodRuleFound && !badRuleFound || !badRuleFound
+}
+
 /**
  * TODO Function too long, split into smaller functions.
  * Loop through the current answer set to see if the conditions of the
@@ -118,7 +131,7 @@ export const determineQuestionCanShow = (index, answers) => {
       let andRules = rules[i].split('+')
       let result = true
       for (let j = 0; j < andRules.length; j += 1) {
-        if (answers.indexOf(andRules[i]) === -1) {
+        if (answers.indexOf(andRules[j]) === -1) {
           result = false
         }
       }
@@ -126,11 +139,10 @@ export const determineQuestionCanShow = (index, answers) => {
         return true
       }
     } else if (rules[i].indexOf('!') !== -1) {
-      const negateRules = rules[i].split('!').slice(1) || []
-      const negateFound = negateRules.filter(negateRule => {
-        return answers.indexOf(negateRule) !== -1
-      })
-      return !negateFound.length
+      var res = negateValidation(rules[i], answers)
+      if (!res) {
+        return false
+      }
     } else {
       if (answers.indexOf(rules[i]) !== -1) {
         return true
@@ -326,4 +338,30 @@ export const getPath = index => {
   } else {
     return '/question/' + getIdFromIndex(index)
   }
+}
+
+
+export const getLocationAnswer = (answers) => {
+
+    const locationObj = answers.reduce((c, p ,i, a) => {
+      let question = QuestionFlow.questions[i]
+      if (p && question.type === 'location') {
+        return {
+          index: i,
+          answer: p
+        }
+      }
+      return c
+    }, {})
+
+    const flat = flattenArray(locationObj.answer)
+
+    if (flat.length) {
+      const location = flat[0]
+      return {
+        short: location.split(',')[0],
+        long: location,
+        ...locationObj
+      }
+    }
 }
